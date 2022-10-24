@@ -172,31 +172,31 @@
                     </div>
                 </div>
 
-                <!-- 아티스트 -->
-                <div class="artist section_ctrl">
+            <!-- 아티스트 -->
+            <div class="artist section_ctrl">
                     <h2>ARTIST</h2>
-                    <p>테스트</p>
-                    <img class="cross" src="../../assets/img/site_main_cross.png" alt="">
+                    <p>다른 작가들의 소식을 빠르게 확인해보자!</p>
+                    <img class="artist_cross" src="../../assets/img/site_main_cross.png" alt="x">
                     <div class="artist_cont">
-                        <div class="artist_list_item_01">
-                            <img src="../../assets/img/.png" alt="프로파일">
-                            <img src="../../assets/img/.png" alt="하트">
+                        <div class="artist_list_item">
+                            <img src="../../assets/img/site_artist1.png" alt="프로파일">
+                            <img src="../../assets/img/site_artist_heart1.png" class="artist_heart" alt="하트">
                         </div>
-                        <div class="artist_list_item_02">
-                            <img src="../../assets/img/.png" alt="프로파일">
-                            <img src="../../assets/img/.png" alt="하트">
+                        <div class="artist_list_item">
+                            <img src="../../assets/img/site_artist1.png" alt="프로파일">
+                            <img src="../../assets/img/site_artist_heart2.png" class="artist_heart" alt="하트">
                         </div>
-                        <div class="artist_list_item_03">
-                            <img src="../../assets/img/.png" alt="프로파일">
-                            <img src="../../assets/img/.png" alt="하트">
+                        <div class="artist_list_item">
+                            <img src="../../assets/img/site_artist2.png" alt="프로파일">
+                            <img src="../../assets/img/site_artist_heart1.png" class="artist_heart" alt="하트">
                         </div>
-                        <div class="artist_list_item_04">
-                            <img src="../../assets/img/.png" alt="프로파일">
-                            <img src="../../assets/img/.png" alt="하트">
+                        <div class="artist_list_item">
+                            <img src="../../assets/img/site_artist3.png" alt="프로파일">
+                            <img src="../../assets/img/site_artist_heart2.png" class="artist_heart" alt="하트">
                         </div>
-                        <div class="artist_list_item_05">
-                            <img src="../../assets/img/.png" alt="프로파일">
-                            <img src="../../assets/img/.png" alt="하트">
+                        <div class="artist_list_item">
+                            <img src="../../assets/img/site_artist3.png" alt="프로파일">
+                            <img src="../../assets/img/site_artist_heart2.png" class="artist_heart" alt="하트">
                         </div>
                     </div>
                 </div>

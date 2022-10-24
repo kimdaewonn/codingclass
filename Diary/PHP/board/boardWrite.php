@@ -52,7 +52,7 @@
                             <legend class="ir">회원가입을 위한 정보 입력영역</legend>
                             <section class="boardWrite">
                                 <div style="display: flex; justify-content:center; margin-bottom: 20px; height: 52px;">
-                                    <div class="Option write" style="margin-right:10px; width: 25%;">
+                                    <div class="Option write" style="width: 20%;">
                                         <select name="boardSection" id="searchOption">
                                             <option value="notion">공지</option>
                                             <option value="event">이벤트</option>

@@ -1300,6 +1300,34 @@ fieldset{
 }
 
 /* 아티스트 */
+
+/* 아티스트 */
+.artist h2 {
+    margin-top: 120px;
+    font-size: 26px;
+    font-weight: 800;
+}
+.artist_cont {
+    display: flex;
+    margin-bottom: 120px;
+}
+.artist_cross {
+    margin-bottom: 20px;
+}
+.artist_list_item {
+    position: relative;
+    margin-right: 20px;
+}
+.artist_list_item:last-child {
+    margin-right: 0;
+}
+.artist_heart {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
 .community_cont_inner{
     display: flex;
     max-width: 1160px;
@@ -1633,3 +1661,4 @@ fieldset{
     .intro_page{
         scroll-snap-align: start;
     } */
+}
