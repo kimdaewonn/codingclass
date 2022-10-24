@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기 카드유형</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <link rel="stylesheet" href="../assets/css/study_style.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기 : 카드 유형 03</h2>
+            <p class="t_desc2">
+                사이트를 만들기에 앞서 다양한 유형으로 나누어서 공부해보려고 합니다.<br>
+                가장 먼저 공부해 볼 유형은 카드유형 입니다.<br>
+                피그마로 먼저 레이아웃을 잡아준 뒤에 수치대로 코딩합니다.<br>
+                이번 카드 만들기에는 ir 효과(이미지 대체 효과 alt)와 1줄 줄임효과 3줄 줄임효과가 추가됩니다.
+            </p>
+
+            <hr> <!-- 구간나눔 -->
+
+            <h3 class="t_tit2">01. Figma로 레이아웃 잡기</h3>
+            <div class="t_box">
+                <p>Figma로 전체적인 틀을 잡아줍니다.</p>
+            </div>
+            <div class="t_iframe">
+                <iframe
+                    src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FoNKQOTi0hGT2rl7LwQTdYb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D218%253A166"
+                    allowfullscreen></iframe>
+            </div>
+            <hr> <!-- 구간나눔 -->
+            <h3 class="t_tit2">02. HTML</h3>
+            <div class="t_box">
+                <p> ir태그를 설정하여 이미지 볼 수 없는 사용자에게 적절한 대체 텍스트를 제공 해줍니다.
+                </p>
+            </div>
+            <div class="t_code">
+<pre><code class="language-html">{
+    &lt;body&gt;
+    &lt;section id="cardType02" class="card__wrap score section gray"&gt;
+        &lt;div class="card__inner container"&gt;
+            &lt;article class="card"&gt;
+                &lt;div class="img1"&gt;
+                    &lt;img src="img/card_bg03_01.jpg" alt="토끼"&gt;
+                &lt;/div&gt;
+                &lt;h3 class="tit"&gt;동물의 종류는 다양합니다.
+                    동물은 육식동물, 초식동물 등등.&lt;/h3&gt;
+                &lt;p class="desc"&gt;
+                    대체적으로 긴 귀와 솜뭉치 모양으로 위쪽으로
+                    짧아 보이게 말려 있는 꼬리 길이는 생각보다 길다....
+                &lt;/p&gt;
+                &lt;div class="more_mom"&gt;
+                    &lt;a href="#" class="more"&gt;&lt;span class="ir"&gt;더보기&lt;/span&gt;&lt;/a&gt;
+                    &lt;span class="animal"&gt;
+                        &lt;img src="img/animal.jpg" alt="동물박사"&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;div class="img1"&gt;
+                    &lt;img src="img/card_bg03_02.jpg" alt="사자"&gt;
+                &lt;/div&gt;
+                &lt;h3 class="tit"&gt;동물의 종류는 다양합니다.
+                    동물은 육식동물, 초식동물 등등.&lt;/h3&gt;
+                &lt;p class="desc"&gt;
+                    용맹한 이미지와 달리 수컷 사자는 하루의 20시간을 그늘에서 쉬며 보낸다.
+                    이 때문에 게으른 이미지가 강하다...
+                &lt;/p&gt;
+                &lt;div class="more_mom"&gt;
+                    &lt;a href="#" class="more"&gt;&lt;span class="ir"&gt;더보기&lt;/span&gt;&lt;/a&gt;
+                    &lt;span class="animal"&gt;
+                        &lt;img src="img/animal.jpg" alt="동물박사"&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;div class="img1"&gt;
+                    &lt;img src="img/card_bg03_03.jpg" alt="북극곰"&gt;
+                &lt;/div&gt;
+                &lt;h3 class="tit"&gt;동물의 종류는 다양합니다.
+                    동물은 육식동물, 초식동물 등등.&lt;/h3&gt;
+                &lt;p class="desc"&gt;
+                    북극 지방에 서식하는 곰. 현존하는 곰 중에서 가장 큰 곰이다.
+                    겉모습은 귀엽지만 무서운 맹수다...
+                &lt;/p&gt;
+                &lt;div class="more_mom"&gt;
+                    &lt;a href="#" class="more"&gt;&lt;span class="ir"&gt;더보기&lt;/span&gt;&lt;/a&gt;
+                    &lt;span class="animal"&gt;
+                        &lt;img src="img/animal.jpg" alt="동물박사"&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+&lt;/body&gt;
+}
+</code></pre>
+            </div>
+            <hr> <!-- 구간나눔 -->
+            <h3 class="t_tit2">03. CSS</h3>
+            <p class="t_box">Figma에서 정해놓은 수치대로 CSS를 넣어 줍니다.<br>
+                /* 1줄효과 */<br>
+                overflow: hidden;<br>
+                white-space: nowrap;<br>
+                text-overflow: ellipsis;<br>
+
+                padding-right: 18px;<br>
+
+                /* 3줄효과 */<br>
+                overflow: hidden;<br>
+                text-overflow: ellipsis;<br>
+                display: -webkit-box;<br>
+                -webkit-line-clamp: 3;<br>
+                -webkit-box-orient: vertical; <br>
+                를 추가 해주면 해당 줄수가 넘어가면...으로 표시됩니다.<br>
+                + webkit-line-clamp 에 따라 줄의 수치를 설정 할 수 있습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">{
+    /* fonts */
+    @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+    .score {
+        font-family: 'SCoreDream';
+        font-weight: 500;
+    }
+
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: normal;
+    }
+
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+        min-width: 1160px;
+    }
+
+    .section {
+        padding: 120px 0;
+    }
+
+    .section>h2 {
+        font-size: 50px;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .section>p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    .gray {
+        background-color: #fff;
+
+    }
+
+    /* ir 효과(이미지 대체 효과 alt) */
+    .ir {
+        display: block;
+        overflow: hidden;
+        font-size: 0;
+        line-height: 0;
+        text-indent: -9999px;
+    }
+
+    .card__inner .card .tit {
+        font-size: 28px;
+        margin-bottom: 10px;
+        /* 1줄효과 */
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        padding-right: 18px;
+    }
+
+    .card__inner .card .desc {
+        font-size: 18px;
+        font-weight: 300;
+        color: #666;
+        line-height: 1.4;
+        /* 3줄효과 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    /* card 03 */
+    .card__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #fff;
+        background-color: #1B5BFF;
+        height: 450px;
+
+    }
+
+    .card__inner .card {
+        width: 28.8%;
+        position: relative;
+        border-right: solid 1px #dedede;
+        box-sizing: border-box;
+        background-color: #f5f5f5;
+
+
+    }
+
+    .more_mom {}
+
+    .card__inner .card .more {
+        background-image: url(img/more.svg);
+        width: 50px;
+        height: 50px;
+        display: block;
+        position: absolute;
+        right: 0;
+        left: 270px;
+        top: 365px;
+    }
+
+    .animal {
+        width: 150px;
+        display: block;
+        position: absolute;
+        right: 0;
+        left: 110px;
+        top: 370px;
+    }
+
+    .img1 {
+        width: 334px;
+        height: 200px;
+    }
+
+    .tit {
+        width: 334px;
+        height: 68px;
+        padding-top: 20px;
+    }
+
+    .desc {
+        width: 334px;
+        height: 75px;
+    }
+}
+</code></pre>
+            </div>
+
+            <hr> <!-- 구간나눔 -->
+
+            <h4 class="t_tit3">최종 결과</h4>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/site/cardType/cardType03.html"
+                    frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href=https://kimdaewonn.github.io/coding/site/cardType/cardType03.html>원본 사이트 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href=https://github.com/kimdaewonn/coding/blob/main/site/cardType/cardType03.html>원본 소스 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

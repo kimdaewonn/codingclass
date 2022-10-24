@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형03</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .score {
+            font-family: 'SCoreDream';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        /* blind : 접근성을 이유 */
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden;
+        }
+        /* cardType03 */
+        body {
+            background-color: #2254c3;
+        }
+        .card__inner {
+            display: flex;
+        }
+        .card__inner .card {
+            padding: 26px;
+            width: 33.3333%;
+            background-color: #fff;
+        }
+        .card__inner .card:nth-child(1) {
+            border: 1px solid #eee;
+        }
+        .card__inner .card:nth-child(2) {
+            border: 1px solid #eee;
+
+        }
+        .card__header {
+            position: relative;
+        }
+        .card__header img {
+            border-radius: 10px;
+            box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        .card__header dd{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            background-color: #fff;
+            text-align: center;
+            font-size: 14px;
+            color: #7b7b7b;
+        }
+        .card__contents h3 {
+            font-size: 20px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            width:100px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .card__contents p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.7;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; 
+            -webkit-box-orient: vertical;
+            margin-bottom: 30px;
+        }
+        .card__footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .card__footer h4 {
+            text-align: right;
+            color : #dd2a2a
+        }
+        .card__footer em {
+            display: block;
+            color: #666;
+            font-style: normal;
+        }
+        .card__footer span {
+            width: 40px;
+            height: 40px;
+            background-color: #000;
+            border-radius: 50%;
+            overflow: hidden;
+            display: block;
+            margin-left: 10px;
+            margin-top: -3px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+        }
+        .card__footer span img {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="cardType03" class="card__wrap score section" >
+        <h2 class="blind">건축의 세계</h2>
+        <div class="card__inner container">
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg03_01.jpg" alt="Architects">
+                    <dd>Animals</dd>
+                </figure>
+                <div class="card__contents">
+                    <h3>동물의 종류는 다양합니다.
+                        동물은 육식동물, 초식동물 등등.</h3>
+                    <p>대체적으로 긴 귀와 솜뭉치 모양으로 위쪽으로 짧아 보이게 말려 있는 꼬리 길이는 생각보다 길다앞다리보다 훨씬 긴 뒷다리를 이용하여 깡충깡충 뛰어다닌다.</p>
+
+                </div>
+                <div class="card__footer">
+                    <h4>동물박사 <em>Doctor of Animals</em></h4>
+                    <span><img src="img/Rectangle 13.png" alt=""></span>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg03_02.jpg" alt="Architects">
+                    <dd>Animals</dd>
+                </figure>
+                <div class="card__contents">
+                    <h3>동물의 종류는 다양합니다.
+                        동물은 육식동물, 초식동물 등등.</h3>
+                    <p>용맹한 이미지와 달리 수컷 사자는 하루의 20시간을 그늘에서 쉬며 보낸다. 이 때문에 게으른 이미지가 강하지만, 이는 재생산 효율의 문제이며 본래 사냥 실력은 고양잇과답게 매우 뛰어나다. </p>
+
+                </div>
+                <div class="card__footer">
+                    <h4>동물박사 <em>Doctor of Animals</em></h4>
+                    <span><img src="img/Rectangle 13.png" alt=""></span>
+                </div>
+            </article>
+            <article class="card">
+                <figure class="card__header">
+                    <img src="img/card_bg03_03.jpg" alt="Architects">
+                    <dd>Animals</dd>
+                </figure>
+                <div class="card__contents">
+                    <h3>동물의 종류는 다양합니다.
+                        동물은 육식동물, 초식동물 등등.</h3>
+                    <p>북극 지방에 서식하는 곰. 현존하는 곰 중에서 가장 큰 곰이다.  겉모습은 귀엽지만 무서운 맹수이며, 발가락 사이에 물갈퀴가 있어서 헤엄도 기가 막히게 잘 친다</p>
+
+                </div>
+                <div class="card__footer">
+                    <h4>동물박사 <em>Doctor of Animals</em></h4>
+                    <span><img src="img/Rectangle 13.png" alt=""></span>
+                </div>
+            </article>
+
+ 
+
+
+        </div>
+    </section>
+</body>
+
+</html>

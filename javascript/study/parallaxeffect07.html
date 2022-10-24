@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 이펙트 07</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">패럴랙스 이펙트 07</h2>
+            <div class="t_desc2">
+                    페럴랙스 이펙트 일곱 번째 시간입니다.<br>
+                    이번 시간에는 스크롤을 내릴때 리빌(reveal) 효과를 줬습니다.
+            </div>
+            <hr>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/javascript/effect/parallaxEffect07.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href=https://kimdaewonn.github.io/coding/javascript/effect/parallaxEffect07.html>원본 사이트 보기</a>
+                <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/parallaxEffect07.html>원본 소스 보기</a>
+            </div>
+            <h3 class="t_tit2">01. HTML 코드</h3>
+            <p class="t_desc2">
+                data-delay와 class에 reveal을 추가했습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">{
+    &lt;main id="parallax__cont"&gt;
+    &lt;div id="contents"&gt;
+        &lt;section id="section1" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal" data-delay="1500"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section1 --&gt;
+        &lt;section id="section2" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-RTL"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal" data-delay="500"&gt;피할수 없으면 즐겨라&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section2 --&gt;
+        &lt;section id="section3" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TTB"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal" data-delay="500"&gt;승리하면 조금 배울 수 있고 패배하면 모든 것을 배울 수 있다&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section3 --&gt;
+        &lt;section id="section4" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-RTL" data-delay="500"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal"&gt;과거를 지배하는 자가 마래를 지배하며 현재를 지배하는 자가 과거를 지배한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section4 --&gt;
+        &lt;section id="section5" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-BTT"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal"&gt;세상은 고통으로 가득하지만 한편 그것을 이겨내는 일로도 가득차 있다&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section5 --&gt;
+        &lt;section id="section6" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-RTL"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal"&gt;가장 하기 힘든 일은 아무 일도 안하는 것이다&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section6 --&gt;
+        &lt;section id="section7" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-BTT"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO"&gt;말을 많이 하는 것과 말을 잘하는 것은 다르다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section7 --&gt;
+        &lt;section id="section8" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-RTL reveal-TWO"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal reveal-TTB reveal-BTT"&gt;오늘 할 수 있는 일에 전력을 다하라, 그러면 내일에는 한 걸음 더 진보한다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section8 --&gt;
+        &lt;section id="section9" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TTB reveal-BTT"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+            &lt;p class="content__item__desc reveal reveal-BTT reveal-TWO" data-delay="500"&gt;끝을 맺기를 처음과 같이 하면 실패가 없다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- //section9 --&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+}
+</code></pre>
+                </div>
+                <h3 class="t_tit2">02. CSS 코드</h3>
+                <p class="t_desc2">
+                    키프레임을 이용해서 다양한 방향의 애니메이션 효과를 만들었습니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">{
+    #parallax__nav {
+        position:fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 2000;
+        background-color: rgba(0,0,0,0.4);
+        padding: 20px 30px;
+        border-radius: 50px;
+        transition: top .4s ease;
+    }
+    #parallax__nav li {
+        display: inline;
+        margin: 0 5px;
+    }
+    #parallax__nav li a {
+        display: inline-block;
+        height: 30px;
+        padding: 5px 20px;
+        text-align: center;
+        line-height: 30px;
+
+    }
+
+    #parallax__nav li.active a {
+        background-color: #fff;
+        color: #000;
+        border-radius: 20px;
+        box-sizing: content-box;
+    }
+    #parallax__cont {
+        max-width: 1600px;
+        width: 98%;
+        margin: 0 auto;
+        /* background-color: rgba(255,255,255,0.1); */
+    }
+    .content__item {
+        width: 1000px;
+        max-width: 70vw;
+        margin: 30vw auto;
+        /* background-color: rgba(255,255,255,0.3); */
+        text-align: left;
+        margin-right: 0;
+        position: relative;
+        padding-top: 8vw;
+    }
+    .content__item:nth-child(even){
+        margin-left: 0;
+        text-align: right;
+    }
+    .content__item__num {
+        font-size: 35vw;
+        font-family: 'Lato';
+        font-weight: 100;
+        position: absolute;
+        left: -5vw;
+        top: -16vw;
+        opacity: 0.07;
+        z-index: -2;
+    }
+    .content__item:nth-child(even) .content__item__num {
+        left: auto;
+        right: -5vw;
+    }
+    .content__item__title {
+        font-weight: 400;
+        text-transform: capitalize;
+        
+    }
+    .content__item__imgWrap {
+        width: 100%;
+        padding-bottom: 56.25%;
+        position: relative;
+        overflow: hidden;
+        z-index: -1;
+    }
+    .content__item__img {
+        position: absolute;
+        background: url(../assets/img/effect_bg18-min.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 110%;
+        height: 110%;
+        left: -5%;
+        top: -5%;
+        filter: saturate(0%);
+        /* transition: all 1s; */
+        padding-top: 8vw;
+    }
+    .content__item:nth-child(1) .content__item__img {
+        background-image: url(../assets/img/effect_bg14-min.jpg);
+    }
+    .content__item:nth-child(2) .content__item__img {
+        background-image: url(../assets/img/effect_bg15-min.jpg);
+    }
+    .content__item:nth-child(3) .content__item__img {
+        background-image: url(../assets/img/effect_bg16-min.jpg);
+    }
+    .content__item:nth-child(4) .content__item__img {
+        background-image: url(../assets/img/effect_bg17-min.jpg);
+    }
+    .content__item:nth-child(5) .content__item__img {
+        background-image: url(../assets/img/effect_bg18-min.jpg);
+    }
+    .content__item:nth-child(6) .content__item__img {
+        background-image: url(../assets/img/effect_bg19-min.jpg);
+    }
+    .content__item:nth-child(7) .content__item__img {
+        background-image: url(../assets/img/effect_bg01-min.jpg);
+    }
+    .content__item:nth-child(8) .content__item__img {
+        background-image: url(../assets/img/effect_bg02-min.jpg);
+    }
+    .content__item:nth-child(9) .content__item__img {
+        background-image: url(../assets/img/effect_bg03-min.jpg);
+    }
+    .content__item__desc {
+        font-size: 4vw;
+        line-height: 1.4;
+        margin-top: -5vw;
+        margin-left: -4vw;
+        word-break: keep-all;
+    }
+    .content__item:nth-child(even) .content__item__desc {
+        margin-left: auto;
+        margin-right: -4vw;
+    }
+
+    @media (max-width: 800px){
+        #parallax__cont {
+            margin-top: 70vw;
+        }
+        #parallax__nav {
+            padding: 10px;
+            right: auto;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 5px;
+            background-color: rgba(0,0,0,0.8);
+        }
+        #parallax__nav li {
+            display: block;
+            margin: 5px;
+        }
+        #parallax__nav li a {
+            font-size: 14px;
+            padding: 5px;
+            border-radius: 5px;
+            height: auto;
+            line-height: 1;
+
+        }
+        #parallax__nav li.active a {
+            border-radius: 5px;
+        }
+        #parallax__info {
+            left: 10px;
+            bottom: 10px;
+        }
+    }
+    #parallax__info {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 2000;
+        background-color: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    /* option */
+    .reveal > div,
+    .reveal > span {
+        opacity: 0;
+    }
+    .reveal.show > div {
+        animation: opacity 1s linear forwards;
+    }
+    .reveal.show > span {
+        opacity: 1;
+    }
+    .reveal {
+        position: relative;
+    }
+    .reveal::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background-color: #fff;
+        z-index: 1;
+    }
+    .reveal.reveal-TWO::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        z-index: 1;
+        background: orange;
+    }
+
+    /* 1개 */
+    .reveal.show::before {
+        animation: reveal 1s;
+    }
+    .reveal.reveal-RTL.show:before {
+        animation: reveal-RTL 1s;
+    }
+    .reveal.reveal-TTB.show:before {
+        animation: reveal-TTB 1s;
+    }
+    .reveal.reveal-BTT.show:before {
+        animation: reveal-BTT 1s;
+    }
+    
+    /* 2개 */
+    .reveal.show::after {
+        animation: reveal 1s 0.3s;
+    }
+    .reveal.reveal-RTL.show::after {
+        animation: reveal-RTL 1s 0.3s;
+    }
+    .reveal.reveal-TTB.show::after {
+        animation: reveal-TTB 1s 0.3s;
+    }
+    .reveal.reveal-BTT.show::after {
+        animation: reveal-BTT 1s 0.3s;
+    }
+
+    @keyframes opacity {
+        0%   {opacity: 0;}
+        60%  {opacity: 0;}
+        70%  {opacity: 1;}
+        100% {opacity: 1;}
+    }
+    @keyframes reveal {
+        0%   {width: 0;    left: 0}
+        50%  {width: 100%; left: 0;}
+        80%  {width: 100%; left: 0;}
+        100% {width: 0;    left: 100%;}
+    }
+    @keyframes reveal-RTL {
+        0%   {width: 0;    right: 0; left: auto;}
+        50%  {width: 100%; right: 0; left: auto;}
+        80%  {width: 100%; right: 0; left: auto;}
+        100% {width: 0;    right: 100%; left: auto;}
+    }
+    @keyframes reveal-TTB {
+        0%   {width: 100%; height: 0; top: 0;}
+        50%  {width: 100%; height: 100%; top: 0;}
+        80%  {width: 100%; height: 100%; top: 0;}
+        100% {width: 100%; height: 0; top: 100%;}
+    }
+    @keyframes reveal-BTT {
+        0%   {width: 100%; height: 0;    bottom: 0;       top: auto;}
+        50%  {width: 100%; height: 100%; bottom: 0;       top: auto;}
+        80%  {width: 100%; height: 100%; bottom: 0;       top: auto;}
+        100% {width: 100%; height: 0;    bottom: 100%;    top: auto;}
+    }
+}
+</code></pre>
+                </div>
+
+            <h3 class="t_tit2">03. script 코드</h3>
+            <p class="t_desc2">
+               리빌 클래스를 span태그로 감싸줍니다.<br>
+               scrollTop 값을 구한 뒤, revealOffset와 revealDelay를 정의해줍니다.<br>
+               조건문을 걸어서 스크롤이 원하는 영역에 왔을때 효과를 나타나게 해줍니다. 
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">{
+    // reveal 클래스 자식에 글씨만 있다면 가상으로 span 태그 만들어서 넣어주세요
+    const reveal = document.querySelectorAll('.reveal');
+     reveal.forEach((el) => {
+         let text = el.innerText;
+         if (text) {
+             el.innerHTML = "&lt;span&gt;" + text + "&lt;/span&gt;";
+         }
+     });
+
+     function scroll() {
+         let scrollTop = window.scrollY;
+         reveal.forEach((el, index) => {
+             let revealOffset = el.offsetTop + el.parentElement.offsetTop;
+             let revealDelay = el.dataset.delay;
+
+             // if(scrollTop > revealOffset - window.innerHeight) {
+             //     el.classList.add('show');
+             // }
+
+             if (scrollTop > revealOffset - window.innerHeight / 2) {
+                 if (!revealDelay) {
+                     el.classList.add('show');
+                 }
+                 else {
+                     setTimeout(() => {
+                         el.classList.add("show");
+                     }, revealDelay);
+                 }
+             }
+         });
+         requestAnimationFrame(scroll);
+     }
+     scroll();
+}
+</code></pre>
+            </div>
+        
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

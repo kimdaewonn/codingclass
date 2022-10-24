@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 쿼리</title>
+    <link rel="stylesheet" href="../assets/css/study_style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">미디어 쿼리(media query)</h2>
+                <p class="t_desc2">
+                    오늘은 미디어 쿼리에 대해 알아보는 시간을 가지겠습니다.<br>
+                    뷰포트 해상도에 따라 CSS를 분기시키는 미디어쿼리는 반응형 프로젝트에서
+                    반드시 필요한 기법입니다.
+                </p>
+
+                <hr> <!-- 구간나눔 -->
+
+                <h3 class="t_tit2">01. &lt;link ~ media=""&gt;</h3>
+                <div class="t_code">
+<pre><code class="language-js">{
+        &lt;link rel="stylesheet" type="text/css" media="all and (min-width: 1000px)" href="style_
+    pc.css"&gt;
+}
+</code></pre>
+                </div>
+                <p class="t_box">
+                    최소 가로폭이 1000px, 즉 1000px 보다 넓은 해상도일 때에 style_pc.css를 연결한다는 뜻입니다.<br>
+                    태블릿이나 모바일 기기마다 가로폭이 다른데, 크롬 브라우저에서 개발자 도구를 열고 Toggle device
+                    Toolbar를 누르면 기기마다의 해상도도 확인할 수 있고 기기 모델도 추가할 수 있습니다.<br>
+                    또한 다음 트로이(http://troy.labs.daum.net/)에서는 기기별 해상도를 제공하고 실제 작동 화면을 확인할
+                    수 있는 VIEW를 제공합니다.
+                </p>
+                <br>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>모바일 기기</th>
+                            <th>가로</th>
+                            <th>세로</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">iPhone X</td>
+                            <td class="ce">375</td>
+                            <td class="ce">812</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">iPhone 6,7,8</td>
+                            <td class="ce">375</td>
+                            <td class="ce">667</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">iPhone 6,7,8 plus</td>
+                            <td class="ce">414</td>
+                            <td class="ce">736</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">iPhone 5</td>
+                            <td class="ce">320</td>
+                            <td class="ce">568</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">Galaxy S5, S8</td>
+                            <td class="ce">360</td>
+                            <td class="ce">640</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">Galaxy Note 8</td>
+                            <td class="ce">360</td>
+                            <td class="ce">640</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">iPad Pro</td>
+                            <td class="ce">1024</td>
+                            <td class="ce">1366</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">⋮</td>
+                            <td class="ce">⋮</td>
+                            <td class="ce">⋮</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+
+                <h3 class="t_tit2">02. @media</h3>
+                <p class="t_box">
+                    처음 로딩할 때 성능이 저하되지 않도록 CSS 파일을 하나로 만들어서 CSS 내부에서 조건에 따라 분기시키는
+                    것이 일반적인 형태의 반응형웹 CSS입니다.
+                </p>
+                <br>
+                <div class="t_code">
+                    <pre><code class="language-js">{
+    @media all and (min-width: 1000px) {
+        모든 기기에서 해상도가 최소 1000px 인 경우 적용할 속성들 ...
+    }
+}
+</code></pre>
+                </div>
+                <p class="t_box">all은 Media Type을 나타냅니다. and 전, 후에 띄어 씁니다.</p><br>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>Media Type</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">all</td>
+                            <td>모든 미디어 장치에 사용 (기본값)</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">print</td>
+                            <td>프린터에 사용</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">screen</td>
+                            <td>PC, 태블릿, 스마트폰에 사용</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">speech</td>
+                            <td>스크린리더기가 페이지를 읽는데 사용</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <div class="t_code">
+<pre><code class="language-js">{
+    body { color: red; }
+    media only screen and (max-width: 768px) {
+        body { color: blue; }
+    }
+}
+</code></pre>
+                </div>
+            <p class="t_box">위 구문은 원래 글자색이 빨간색인데, 화면이 768px보다 작아졌을 때는
+                파란색으로 지정한다는 뜻이므로 PC에서는 글자 색상이 빨간색으로, 모바일에서는 파란색으로 나타나게 됩니다.
+            <br><br>작은 장치에서 페이지를 더 빠르게 표시되게 하려면 모바일을 우선으로 설계합니다.
+            </p>
+            <br>
+            <div class="t_code">
+<pre><code class="language-js">{
+    body { color: blue; }
+    @media only screen and (min-width: 768px) {
+        body { color : red; }
+    }
+}
+</code></pre>
+            </div>
+            <p class="t_box">위 구문은 원래 글자색이 파란색인데, 화면이 768px보다 커지면 글자색을 빨간색으로 지정한다는 뜻이므로
+                모바일 우선으로 하면서도 같은 결과를 가져옵니다.<br><br>
+                미디어쿼리를 이용하여 브라우저의 방향에 따라 다른 레이아웃을 제공할 수 있습니다.
+            </p>
+            <br>
+            <div class="t_code">
+<pre><code class="language-js">{
+    @media only screen and (orientation: portrait) {
+        body { background: skyblue; }
+    }
+}
+</code></pre>
+                </div>
+                <p class="t_box">
+                    위 구문은 모바일 기기를 세워 세로가 가로보다 긴 세로방향이 되면
+                    배경색을 하늘색으로 지정한다는 뜻입니다.
+                </p>
+                <br>
+                <div class="t_code">
+<pre><code class="language-js">{
+    @media only screen and (orientation: landscape) {
+        body { background: lightgreen; }
+    } 
+}
+</code></pre>
+                </div>
+                <p class="t_box">
+                    위 구문은 모바일 기기를 눕혀 가로가 세로보다 긴 가로방향이 되면 배경색을
+                    연두색으로 지정한다는 뜻입니다.<br><br>
+                    쉼표로 구분하여 조건을 추가할 수 있습니다.
+                </p>
+                <br>
+                <div class="t_code">
+<pre><code class="language-js">{
+    @media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {
+        body { color: red; }
+    }
+}
+</code></pre>
+                </div>
+                <p class="t_box">
+                    위 구문은 가로가 600px에서 900px 사이일 때, 그리고 1100px 이상일 때에만 글자색을 빨간색으로 한다
+                    는 뜻입니다.
+                </p>
+                <hr> <!-- 구간나눔 -->
+                <h3 class="t_tit2">★ 실습 ★</h3>
+                <p class="t_desc2">
+                    반응형 웹이라고 해서 LukeW의 5가지 패턴대로만 디자인해야 하는 것은 아니지만, 해상도 구분은 지금까지
+                    그대로 참고해도 될 것 같으니, 모바일과 태블릿 그리고 PC의 경계를 768px, 1024px, 1280px로 하여
+                    레이아웃이 달라지는 media query를 실습해 봅시다.<br><br>
+                    레이아웃 템플릿은 다음과 같이 계획하겠습니다.
+                </p>
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FYwoF43XlFnRZ7PUFz6jk0X%2F%25EA%25B3%25BC%25EC%25A0%259C%25EC%259A%25A9%3Fnode-id%3D81%253A79" allowfullscreen></iframe>
+                </div>
+                <h4 class="t_tit3">02-1. 모바일</h4>
+                <p class="t_desc2">
+                    모바일을 기본으로 코딩합니다.<br>
+                    모바일 레이아웃은 모두 100%이니 요소들에 어떤 요소에도 float 또는 position이 없고, width를 지정할 필
+                    요가 없습니다.<br><br>
+                    1, 2, 3, 4 까지는 디자인에 상관없이 기본적으로 들어가는 스타일입니다. box-sizing: border-box;를
+                    기본 속성으로 부여한 것은 가로 폭과 계산 없이 편하게 여백을 주려는 의도입니다.
+                </p>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kimdaewonn/embed/OJvBBRR?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimdaewonn/pen/OJvBBRR">
+                    Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+                <h4 class="t_tit3">02-2. 태블릿</h4>
+                <p class="t_desc2">
+                    태블릿 사이이즈의 레이아웃을 위한 미디어쿼리를 style에 추가합니다.<br>
+                    가로 폭이 최소 768px부터 최대 1024px 까지의 레이아웃입니다. 계획했던 대로 lnb와 cotent를 가로로 배치하고
+                    float 해제까지 해줍니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">{
+    @media all and (min-width: 768px) and (max-width: 1024px) {
+        .lnb {
+            float : left;
+            width: 25%;
+        }
+        .content {
+            float: left;
+            width: 75%;
+        }
+        .aside {
+            clear: both;
+        }
+    }
+}
+</code></pre>
+                </div>
+                <h4 class="t_tit3">02-3. PC</h4>
+                <p class="t_desc2">
+                    이번에는 PC 사이즈의 레이아웃을 위한 미디어쿼리를 추가합니다.<br>
+                    가로 폭이 최소 1025px 이상의 레이아웃입니다.<br><br>
+                    lnb와 content, aside를 가로로 배치하고 float 해제는 &lt;div id="container" class="clear"&gt; 할 때 이미 준비되어
+                    있었습니다. .wrap의 최대 폭이 1280인 것은 브라우저를 더 가로로 길게 확대해도 콘텐츠들은 더 이상
+                    확대되지 않고 여전히 1280px 안에 있도록 한다는 뜻입니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">{
+    @media all and (min-width: 1025px) {
+        .wrap {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .lnb {
+            float: left;
+            width: 20%;
+        }
+        .content {
+            float: left;
+            width: 50%;
+        }
+        .aside {
+            float: left;
+            width: 30%;
+        }
+    }
+}
+</code></pre>
+                </div>
+                <h4 class=t_tit3>결과물</h4>
+            <hr>
+                <h3 class="t_tit2">03. media query를 흉내내는 script</h3>
+                <div class="t_code">
+<pre><code class="language-js">{
+    function initLayout() {
+        var widthWin = $(window).width();
+        if (widthWin &lt; 1000) $('body').addClass('mob').removeClass('pc');
+        else $('body').removeClass('mob').addClass('pc');
+    }
+}
+</code></pre>
+                </div>
+                <p class="t_desc">
+                    창의 가로 크기를 재고 1000px 보다 좁으면 body에 mob 클래스를 붙이고 pc 클래스는 제거하고, 1000px
+                    이상이면 body에 pc 클래스를 붙이고, mob 클래스를 제거한다는 뜻입니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">{
+    $(window).resize(function() {
+        initLayout();
+    });
+}
+</code></pre>
+                </div>
+                <p class="t_desc">
+                    미리 만들어둔 스크립트를 창 크기가 바뀔 때마다 실행합니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">{
+    …
+        body.mob { max-width: 720px; }
+    …
+}
+</code></pre>
+                </div>
+                <p class="t_desc">
+                    css에서 body.mob 속성을 추가하면 모바일일 때의 속성이 등록되는 것입니다.
+                </p><br><br>
+                <h4 class="tit_3"># NOTE</h4>
+                <p class="t_desc">
+                    IE10부터는 조건주석문을 지원하지 않습니다. 아직 iE9는 사용 중이기에 잠시 언급한다면, 과거 iE 버전별 이
+                    슈가 많았을 때에는 조건 주석문을 종종 사용했습니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">{
+    &lt;!--[if lte IE 9]&gt;
+        &lt;link rel="stylesheet" type="text/css" href="ie9.css" /&gt;
+    &lt;![endif]--&gt;  
+}
+</code></pre>
+                </div>
+                <p class="t_desc">
+                    'IE9 이하 버전일 경우 ie9.css를 연결하시오' 라는 뜻으로 위처럼 기술했던 것입니다.
+                </p>
+                
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

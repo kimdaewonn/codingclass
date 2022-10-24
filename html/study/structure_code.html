@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조 요소</title>
+    <style>
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        .gmarket {
+            font-family: 'GmarketSans';
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+            font-size: 14px
+        }
+
+        #wrap {
+            width: 1160px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #3083FF;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            position: relative;
+
+        }
+
+        h1 {
+            width: 100px;
+            height: 100px;
+            background-color: #DEE0FD;
+            margin: 20px;
+            line-height: 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        .navB {
+            background-color: #DEE0FD;
+            width: 942px;
+            height: 50px;
+            margin-top: 70px;
+            margin-bottom: 20px;
+            line-height: 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        li {
+            display: inline;
+        }
+
+        li>a {
+            padding-right: 50px;
+        }
+
+        #container {
+            width: 1160px;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        .section_king {
+            background-color: #3083FF;
+            position: relative;
+        }
+
+        .section_left {
+            width: 973px;
+            height: 430px;
+            background-color: #DEE0FD;
+            margin: 20px;
+            line-height: 430px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section_right {
+            width: 973px;
+            height: 430px;
+            background-color: #DEE0FD;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            line-height: 430px;
+            text-align: center;
+            position: relative;
+        }
+        .right_container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: 20px;
+        }
+        .article {
+            width: 353px;
+            height: 205px;
+            background-color: #DEE0FD;
+            margin-top: 20px;
+            line-height: 250px;
+            text-align: center;
+            position: relative;
+        }
+
+        .aside {
+            width: 353px;
+            height: 205px;
+            background-color: #DEE0FD;
+            line-height: 205px;
+            text-align: center;
+            position: relative;
+        }
+        footer {
+            background-color: #3083FF;
+            margin-top: 20px;
+            height: 106px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column
+        }
+        .addresss {
+            width: 528px;
+            height: 38px;
+            background-color: #DEE0FD;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 150px;
+            line-height: 38px;
+            text-align: center;
+            position: relative;
+        }
+        .footer_p {
+            width: 528px;
+            height: 38px;
+            background-color: #DEE0FD;
+            margin-left: 150px;
+            line-height: 38px;
+            text-align: center;
+            position: relative;
+        }
+        .h1_span {
+            color: #fff;
+            background-color: #666;
+            position: absolute;
+            width: 60px;
+            height: 23px;
+            line-height: 23px;
+            left: 20px;
+            margin-top: 10px;
+        }
+        .nav_span {
+            width: 78px;
+            height: 23px;
+            background-color: #666;
+            position: absolute;
+            color: #fff;
+            line-height: 23px;
+            left: 20px;
+            margin-top: 10px;
+
+        }
+        .header_span {
+            background-color: #101010;
+            color: #fff;
+            width: 78px;
+            height: 23px;
+            position: absolute;
+            left: 546px;
+            line-height: 23px;
+            margin-top: 5px;
+        }
+        em {
+            background-color: #101010;
+            color: #fff;
+            width: 78px;
+            height: 23px;
+            position: absolute;
+            line-height: 23px;
+            left: -20px;
+            top: -20px;
+        }
+        .left_span {
+            background-color: #666;
+            color: #fff;
+            width: 60px;
+            height: 23px;
+            position: absolute;
+            left: 40px;
+            top: 30px;
+            line-height: 23px;   
+        }
+        .right_span {
+            background-color: #666;
+            color: #fff;
+            width: 60px;
+            height: 23px;
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            line-height: 23px; 
+        }
+        .article_span {
+            background-color: #666;
+            color: #fff;
+            width: 60px;
+            height: 23px;
+            position: absolute;
+            line-height: 23px;
+            top: 0;
+            left: 0;
+        }
+        .aside_span {
+            background-color: #666;
+            color: #fff;
+            width: 60px;
+            height: 23px;
+            position: absolute;
+            line-height: 23px;
+            top: 245px;
+            text-align: center;
+        }
+        .footer_address {
+            background-color: #666;
+            color: #fff;
+            width: 60px;
+            height: 23px;
+            position: absolute;
+            line-height: 23px;
+            left: 0;
+        }
+        .footer_sp {
+            background-color: #666;
+            color: #fff;
+            width: 60px;
+            height: 23px;
+            position: absolute;
+            line-height: 23px;
+            left: 0; 
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="gmarket">
+        <header>
+            <h1><a href="#"><span class="h1_span">h1</span><span class="header_span">header</span>반응형웹</a></h1>
+            <div class="navB">
+                <ul>
+                    <span class="nav_span">nav</span>
+                    <li><a href="#">MENU01</a></li>
+                    <li><a href="#">MENU02</a></li>
+                    <li><a href="#">MENU03</a></li>
+                    <li><a href="#">MENU04</a></li>
+                    <li><a href="#">MENU05</a></li>
+                </ul>
+            </div>
+        </header>
+        <div id="container" class="section_king">
+            <section class="section_left">
+                <em>div</em>
+                <h2>콘텐츠 그룹01</h2><span class="left_span">section</span>
+            </section>
+            <section class="section_right">
+                <h2>콘텐츠 그룹02</h2><span class="right_span">section</span>
+            </section>
+            <div class="right_container">
+                <article class="article">
+                    <h2>주요 기사</h2><span class="article_span">article</span>
+                </article>
+                <aside class="aside">광고</aside><span class="aside_span">aside</span>
+            </div>
+        </div>
+    <footer>
+        <address class="addresss"><span class="footer_address">address</span>경기도 안산시 031)123-4567 eodnjs9605@gmail.com</address>
+        <p class="footer_p">COPYRIGHT ⓒ All rights reserved. <span class="footer_sp">p</span></p>
+    </footer>
+    </div>
+</body>
+
+</html>

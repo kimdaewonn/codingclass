@@ -1,0 +1,341 @@
+@import url('https://webfontworld.github.io/naver/NanumGothic.css');
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+img {
+    width: 100%;
+}
+.nanum {
+    font-family: 'NanumGothic';
+    font-weight: 400;
+}
+li {
+    list-style: none;
+}
+.container {
+    width: 1100px;
+    margin: 0 auto;
+}
+/* layout */
+
+/* header */
+.header__inner {
+    margin-top: 50px;
+    margin-bottom: 7px;
+    overflow: hidden;
+}
+.logo {
+    float: left;
+}
+.logo img {
+    width: 100px;
+    height: 30px;
+}
+#header ul {
+    margin-top: 10px;
+    float: right;
+}
+#header ul li {
+    display: inline;
+    padding-right: 35px;
+}
+#header ul li:nth-child(4){
+    margin-right: 70px;
+}
+/* slider */
+.slider__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider__img {
+    width: 1100px;
+    position: relative;
+    overflow: hidden;
+}
+.slider__inner {
+    width: 6600px;
+    display: flex;
+}
+.sliderr img {
+    position: relative;
+    width: 1100px;
+}
+.prev img {
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    width: 50px;
+    height: 50px;
+}
+.next img {
+    position: absolute;
+    top: 200px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+}
+/* //slider */
+.text1__header {
+    overflow: hidden;
+    background-color: rgb(230 238 255);
+    position: relative;
+}
+.text1__header > h2 {
+    float: left;
+    width: 95%;
+    text-align: center;
+    font-size: 28px;
+    margin: 25px 0;
+}
+.plus {
+    border: 1px solid #000;
+    padding: 5px 8px;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+}
+
+.cardInner {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: rgb(230 238 255);
+}
+.cardInner .text1__box1 {
+    margin-right: 1%;
+    border: solid 1px #dedede;
+    padding: 25px;
+    line-height: 2;
+}
+.ddd {
+    border: solid 1px rgb(91, 161, 227);
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: rgb(91, 161, 227);
+}
+.text1__box1__head {
+    font-size: 20px;
+}
+.saup {
+    background-color: rgb(91, 161, 227);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+.dd {
+    background-color: rgb(91, 161, 227);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px
+}
+.text__inner2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.textT__1 {
+    width: 30%;
+    border: 1px solid #dedede;
+    padding: 20px 20px 0 20px;
+}
+.textT__2 {
+    width: 60%;
+    border: 1px solid #dedede;
+    padding: 20px 20px 0px 20px;
+}
+.textT__dd {
+    display: flex;
+}
+.textT__1_header {
+    display: flex;
+    font-size: 18px;
+}
+.bodo {
+    font-size: 18px;
+    padding-right: 10px;
+}
+.unlone {
+    font-size: 18px;
+    color: #999;
+    border-left: 1px solid #000;
+    padding-left: 10px;
+}
+.plus2 {
+    border: 1px solid #000;
+    margin-left: 140px;
+    padding: 0 3px; 
+}
+.fafafafa {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.datee {
+    color: #666;
+}
+.ededede {
+    display: flex;
+    position: relative;
+}
+.ededede > h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.plus3 {
+    border: 1px solid #000;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 0 2px;
+}
+.king {
+    display: flex;
+    line-height: 2;
+}
+.text2_right1 {
+    width: 16%;
+    margin-right: 10px;
+}
+.text2_right2 {
+    width: 60%;
+    line-height: 3;
+}
+.text2_right3 {
+    width: 20%;
+    line-height: 3;
+}
+.youngu {
+    padding: 0 5px;
+    text-align: center;
+    background-color: rgb(22, 122, 209);
+    margin-top: 10px;
+    color: #fff;
+}
+.textType2Img img {
+    width: 370px;
+    height: 200px;
+    margin-left: -20px;
+    margin-top: -20px;
+}
+.king2 {
+    display: flex;
+}
+.ban1 {
+    width: 50%;
+    border-right: 1px solid #dedede;
+}
+.ban2 {
+    width: 50%;
+    padding-left: 30px;
+}
+.headd {
+    position: relative;
+}
+.headd h3 {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+.plus4 {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    padding: 0 2px;
+    border: solid 1px #000;
+
+}
+.dattt {
+    color: #999;
+    margin-bottom: 20px;
+}
+#footer {
+    position: relative;
+    background-color: rgb(39 64 95);
+    color: rgb(98 116 140);
+}
+.footer1 {
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+    margin: 25px 0px;
+    padding-top: 25px;
+    margin-left: 15px;
+}
+.footer1> div :nth-child(1){
+    border-right: #000 solid 1px;
+}
+.footer1 > div:nth-child(2){
+    border-right: #000 solid 1px;
+    padding-right: 15px;
+}
+.footer1 > div:nth-child(3){
+    border-right: #000 solid 1px;
+    padding-right: 15px;
+}
+.footer1 > div:nth-child(4){
+    border-right: #000 solid 1px;
+    padding-right: 15px;
+}
+.footer1 > div:nth-child(5){
+    border-right: #000 solid 1px;
+    padding-right: 15px;
+}
+.footer2 {
+    display: flex;
+    border-top: 1px solid #000;
+}
+.goop {
+    border: 1px solid #000;
+    padding: 3px 20px 3px 3px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+}
+.gngn {
+    margin-bottom: 15px;
+    margin-right: 50px;
+}
+.footer__logo img {
+    width: 130px;
+    height: 60px;
+}
+.footer__logo2 img {
+    width: 130px;
+    height: 60px;
+}
+.footer2 {
+    padding-bottom: 50px;
+}
+.footer2-1 {
+    width: 78%;
+    display: flex;
+    padding-top: 10px;
+}
+.footer__logo {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.footer2-2 {
+    width: 22%;
+    padding-left: 10px;
+ 
+}
+.footertade {
+    border-left: 1px solid #000;
+    margin-top: 30px;
+    padding-left: 20px;
+    color: #fff;
+}
+.aafafaf {
+    font-size: 20px;
+}
+.dddddddddddd {
+    color: #999;
+    line-height: 2.5;
+}
+.timee {
+    font-size: 11px;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형 02</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmarket {
+            font-family: 'GmarketSans';
+            font-weight: 400;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;  
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #666;
+        }
+        
+        /* imageType */
+        .image__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image {
+            width: 32%;
+            position: relative;
+            overflow: hidden;
+        }
+        .image__box {
+            height: 100%;
+        }
+        .image__box img {
+            transition: all 0.5s ease-in-out;
+        }
+        .image__desc {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            backdrop-filter: blur(16px);
+            transition: all 0.3s ease-in-out;
+        }
+        /* 박스 색 설정 */
+        .img1 > .image__desc {
+            background: rgba(219, 217, 69, 0.452);
+        }
+        .img1 > .image__desc h3 {
+            color: #000;
+        }
+        .img1 > .image__desc .more {
+            color: #000;
+        }
+        .img2 > .image__desc {
+            background-color: rgba(148, 121, 74, 0.452)
+        }
+        .img2 > .image__desc h3 {
+            color: #fff;
+        }
+        .img2 > .image__desc .more {
+            color: #fff;
+        }
+        .img3 > .image__desc {
+            background-color: rgba(27, 23, 56, 0.452)
+        }
+        .img3  > .image__desc h3 {
+            color: #fff;
+        }
+        .img3  > .image__desc .more {
+            color: #fff;
+        }
+        /* 애니메이션 효과 */
+        .img1 .image__desc {
+            bottom: -100px;
+        }
+        .img1:hover .image__desc {
+            bottom: 0;
+        }
+        .img2 .image__desc {
+            bottom: -100px;
+        }
+        .img2:hover .image__desc {
+            bottom: 0;
+        }
+        .img3 .image__desc {
+            bottom: -100px;
+        }
+        .img3:hover .image__desc {
+            bottom: 0;
+        }
+        .image:hover .image__box img {
+            transform: scale(1.05);
+        }
+        .image__desc h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .image__desc .more {
+            font-size: 16px;
+            font-weight: 300;
+        }
+        .image__desc .more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <section id="imageType02" class="image__wrap gmarket section">
+        <h2>귀여운 동물들</h2>
+        <p>귀엽고 귀여운 동물들 리스트 입니다.</p>
+        <div class="image__inner container">
+            <article class="image img1">
+                <figure class="image__box">
+                    <img src="img/image_bg02_01.jpg" alt="멍멍이">
+                </figure>
+                <div class="image__desc">
+                    <h3>멍멍이</h3>
+                    <a href="/" class="more" title="자세히 보기">자세히 보기</a>
+                </div>
+            </article>
+            <article class="image img2">
+                <figure class="image__box">
+                    <img src="img/image_bg02_02.jpg" alt="토끼">
+                </figure>
+                <div class="image__desc">
+                    <h3>토끼</h3>
+                    <a href="/" class="more" title="자세히 보기">자세히 보기</a>
+                </div>
+            </article>
+            <article class="image img3">
+                <figure class="image__box">
+                    <img src="img/image_bg02_03.jpg" alt="판다">
+                </figure>
+                <div class="image__desc">
+                    <h3>판다</h3>
+                    <a href="/" class="more" title="자세히 보기">자세히 보기</a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

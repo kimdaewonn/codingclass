@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규식 표현</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="fun_ction.html">함수</a></li>
+                <li><a href="area.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01~04.html">퀴즈</a></li>
+                <li><a href="study/element.html">요소선택</a></li>
+                <li><a href="join_pop_push.html">join()/pop()/push()</a></li>
+                <li><a href="inner_function.html">내장 함수</a></li>
+                <li><a href="regular_expression.html">정규식 표현</a></li>
+                <li><a href="slice_substring_substr.html">slice() / substring() / substr()</a></li>
+                <li><a href="indexOf.html">indexOf</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">정규식 표현</h2>
+                    <p class="t_desc2">
+                        정규 표현식 또는 정규식은 특정한 규칙을 가진 문자열의 집합을
+                        표현하는데 사용하는 형식언어입니다.
+                    </p>
+            <hr> <!-- 구간나눔 -->  
+                <h3 class="t_tit2">01. 정규표현식 객체 주요 패턴</h3>
+
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>패턴</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">abc</td>
+                        <td>abc 문자열을 검색합니다.<br>
+                            /abc/는 'abc'
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">[abc]</td>
+                        <td>a,b,c중 문자 하나를 검색합니다.<br>
+                            /[abc]d/는 'ad', 'bd', 'cd'
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">[^abc]</td>
+                        <td>a,b,c를 제외한 문자 하나를 검색합니다.<br>
+                            /[^abc]d/는 'ed', 'fd', 'gd'
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">[A-Z]</td>
+                        <td>알파벳 대문자 문자를 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">[a-z]</td>
+                        <td>알파벳 소문자 문자를 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">[0-9]</td>
+                        <td>0-9까지의 숫자를 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">.</td>
+                        <td>하나의 문자를 검색합니다. 만약 '마침표' 문자 그대로의 의미를 사용할 경우 '₩.'
+                            으로 표현해야 합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">\w</td>
+                        <td>알파벳, 숫자, _를 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">\W</td>
+                        <td>알파벳, 숫자, _를 제외하고 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">\d</td>
+                        <td>숫자를 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">\D</td>
+                        <td>숫자를 제외하고 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">\s</td>
+                        <td>하나의 공백을 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">\S</td>
+                        <td>공백을 제외하고 검색합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">^</td>
+                        <td>행의 첫 문자가 일치해야 함을 의미합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">$</td>
+                        <td>행의 끝 문자가 일치해야 함을 의미합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">*</td>
+                        <td>* 앞의 문자가 0번 이상 반복을 의미합니다.<br>
+                            /a*b/는 'b', 'ab', 'aab', 'aaab', 'aaa...b'
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">+</td>
+                        <td>+ 앞의 문자가 1번 이상 반복을 의미합니다.<br>
+                            /a+b/는 'ab', 'aab', 'aaab', 'aaa...b'</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">?</td>
+                        <td>? 앞의 문자가 0번 또는 1번 의미합니다.<br>
+                            /a?b/는 'b', 'ab'
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">{}</td>
+                        <td>/￦{3}/은 숫자 3개를 의미합니다.<br>
+                            /￦{3,5}/은 숫자 3~5개를 의미합니다.<br>
+                            /￦d{3,}/은 숫자 3개 이상을 의미합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">a|b</td>
+                        <td>a or b를 의미합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">(abc)</td>
+                        <td>그룹화를 의미합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr> <!-- 구간나눔 -->
+
+            <h3 class="t_tit2">02. 예제</h3>
+                    <div class="t_code">
+<pre><code class="language-html">{
+    &lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;정규표현식 객체&lt;/title&gt;
+    &lt;script&gt;
+        var hpReg = /^￦d{10,11}$/;
+        var emailReg = /^[A-Za-z0-9!#$%^&*_-]+@[A-Za-z0-9_-]+(￦.[A-Za-z0-9_-]+){1,2}$/;
+        var hp1 = '010123456';
+        var hp2 = '01012345678';
+        var email1 = 'abc&1_23&A-BC@icox';
+        var email2 = 'abc&1_23&A-BC@icox.com';
+        var email3 = 'abc&1_23&A-BC@icox.co.kr';
+        var email4 = 'abc&1_23&A-BC@icox.abc.co.kr';
+        console.log(hpReg.test(hp1));
+        console.log(hpReg.test(hp2));
+        console.log(emailReg.test(email1));
+        console.log(emailReg.test(email2));
+        console.log(emailReg.test(email3));
+        console.log(emailReg.test(email4));
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+}
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample_result">
+                            false<br>
+                            true<br>
+                            false<br>
+                            true<br>
+                            true<br>
+                            false<br>
+                        </div>
+                    </details>
+                </div>
+                <hr>
+            <h3 class="t_tit2">03. 예제 풀이</h3>
+            <div class="t_box">
+                <h4 class="t_tit3"><i>￦d{10,11}</i></h4>
+                <p class="desc">￦d는 숫자를 의미하고 {10,11}는 10~11자를 의미합니다.</p>
+                <h4 class="t_tit3"><i>[A-Za-z0-9!#$%^&*_-]</i></h4>
+                <p class="desc">이메일 아이디 부분에 해당하며 영문, 숫자, 특수문자 중 하나의 문자를 의미합니다.</p>
+                <h4 class="t_tit3">[A-Za-z0-9!#$%^&*_-]<i>+</i></i></h4>
+                <p class="desc">이메일 아이디 부분에 해당하며 영문, 숫자, 특수문자 중 하나의 문자가 1번 이상 반복해서 나와야 하기 때문에 + 패턴을 추가합니다.</p>
+                <h4 class="t_tit3">[A-Za-z0-9!#$%^&*_-]+<i>@</i></h4>
+                <p class="desc">이메일의 '이메일 아이디@' 패턴을 만듭니다.</p>
+                <h4 class="t_tit3">[A-Za-z0-9!#$%^&*_-]<i>+@[A-Za-z0_-]+</i></h4>
+                <p class="desc">이메일 주소 앞부분에 해당하며 영문, 숫자, 특수문자 중 하나의 문자가 1번 이상 반복해서 올 수 있습니다.
+                    '이메일 아이디@이메일 앞 주소'
+                </p>
+                <h4 class="t_tit3">[A-Za-z0-9!#$%^&*_-]+@[A-Za-z0_-]+<i>(￦.[A-Za-z0-9_-]+){1,2}</i></h4>
+                <p class="desc">이메일 주소 나머지 부분에 해당하면 '.나머지 주소'가 1번~2번 올 수 있습니다.<br>
+                    '이메일 아이디@이메일 앞 주소. 나머지 주소' 또는 '이메일 아이디@이메일 앞 주소.나머지 주소.나머지 주소'
+                </p>
+            </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

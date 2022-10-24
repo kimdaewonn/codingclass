@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 애니메이션</title>
+    <link rel="stylesheet" href="../assets/css/study_style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+</head>
+<body>
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">간단한 애니메이션 03</h2>
+                    <p class="t_desc2">
+                        간단한 애니메이션 만들기 세번째 시간입니다.<br>
+                        잔상을 남기며 통통 튀는 공을 만들어보겠습니다.
+                    </p>
+
+            <hr> <!-- 구간나눔 -->
+
+            <h3 class="t_tit2">01. HTML</h3>
+                <div class="t_code">
+<pre><code class="language-html">{
+    &lt;div class="wrapper"&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="wrapper"&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="wrapper"&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="wrapper"&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="wrapper"&gt;
+    &lt;div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+}
+</code></pre>
+                </div>
+                <hr> <!-- 구간나눔 --> 
+            <h3 class="t_tit2">02. CSS</h3>
+                <div class="t_code">
+<pre><code class="language-css">{
+    *{
+        box-sizing:border-box;
+      }
+      body{
+        background: linear-gradient(to top, #A18CD1 0%, #FBC2EB 100%);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin : 0;
+        padding: 0;
+      }
+      .wrapper{
+        position: absolute;
+        animation: x 1s ease-in-out alternate infinite 0s both;
+      }
+      .wrapper>div{
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 100%;
+        margin: 40px;
+        animation: y 1s linear infinite 0s both;
+      }
+      @keyframes x {
+        0%{
+          transform:translatex(-100px)
+        }
+        100%{
+          transform:translatex(100px)
+        }
+      }
+      @keyframes y {
+        25%{transform: translatey(-50px);}
+        0%, 50%, 100%{transform: translatey(0);}
+        75%{transform: translatey(50px);}
+      }
+      .wrapper:nth-of-type(2){
+        animation-delay: 0.1s;
+      }
+      .wrapper:nth-of-type(3){
+        animation-delay: 0.2s;
+      }
+      .wrapper:nth-of-type(4){
+        animation-delay: 0.3s;
+      }
+      .wrapper:nth-of-type(5){
+        animation-delay: 0.4s;
+      }
+      .wrapper:nth-of-type(2)>div{
+        animation-delay: 0.1s;
+        height: 40px;
+        width: 40px;
+        opacity:0.8;
+      }
+      .wrapper:nth-of-type(3)>div{
+        animation-delay: 0.2s;
+        height: 30px;
+        width: 30px;
+        opacity:0.6;
+      }
+      .wrapper:nth-of-type(4)>div{
+        animation-delay: 0.3s;
+          height: 20px;
+        width: 20px;
+        opacity:0.4;
+      }
+      .wrapper:nth-of-type(5)>div{
+        animation-delay: 0.4s;
+          height: 10px;
+        width: 10px;
+        opacity:0.2;
+      }
+}
+</code></pre>
+                </div> 
+                <hr> <!-- 구간나눔 -->  
+               
+                <h3 class="t_tit2">03. 결과물</h3>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kimdaewonn/embed/RwywazK?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimdaewonn/pen/RwywazK">
+                    Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="fun_ction.html">함수</a></li>
+                <li><a href="area.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01~04.html">퀴즈</a></li>
+                <li><a href="study/element.html">요소선택</a></li>
+                <li><a href="join_pop_push.html">join()/pop()/push()</a></li>
+                <li><a href="inner_function.html">내장 함수</a></li>
+                <li><a href="regular_expression.html">정규식 표현</a></li>
+                <li><a href="slice_substring_substr.html">slice() / substring() / substr()</a></li>
+                <li><a href="indexOf.html">indexOf</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">Search Effect01</h2>
+            <div class="t_desc2">
+                <p>이번 시간에는 오늘 배운 indexOf()를 활용하여 만든 검색 프로그램에 대해 알아보겠습니다.<br>
+                    키워드를 입력하면 그와 관련된 태그들과 함께 설명이 나옵니다.
+                </p>
+            </div>
+            <hr>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/javascript/effect/searchEffect01.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href=https://kimdaewonn.github.io/coding/javascript/effect/searchEffect01.html>원본 사이트 보기</a>
+                <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/searchEffect01.html>원본 소스
+                    보기</a>
+            </div>
+
+            <h3 class="t_tit2">01. HTML</h3>
+            <p class="t_box">search__list에 있는 li에 data-name을 주어 검색으로 찾을 수 있게 해줍니다.</p>
+            <div class="result">
+                <details>
+                    <summary>코드 보기</summary>
+                    <div class="sample_result">
+                        <div class="t_code">
+<pre><code class="language-html">{
+    &lt;main id="main"&gt;
+        &lt;div class="search__wrap"&gt;
+            &lt;span&gt;indexOf()를 이용하여 검색하기&lt;/span&gt;
+            &lt;h1&gt;HTML 태그 검색하기&lt;/h1&gt;
+
+            &lt;div class="search__box"&gt;
+                &lt;label for="search"&gt;검색하기&lt;/label&gt;
+                &lt;input type="text" id="search" placeholder="HTML 태그를 입력해주세요!"&gt;
+            &lt;/div&gt;
+            &lt;div class="search__list"&gt;
+                &lt;div class="html"&gt;
+                    &lt;ul&gt;
+                        &lt;li data-name="a"&gt;&lt;strong&gt;a&lt;/strong&gt; : a 태그는 다른 페이지 이동을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="abbr"&gt;&lt;strong&gt;abbr&lt;/strong&gt; : abbr 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.&lt;/li&gt;
+                        &lt;li data-name="acronym"&gt;&lt;strong&gt;acronym&lt;/strong&gt; : acronym 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.&lt;/li&gt;
+                        &lt;li data-name="address"&gt;&lt;strong&gt;address&lt;/strong&gt; : address 태그는 웹 페이지의 연락처 정보를 설정합니다&lt;/li&gt;
+                        &lt;li data-name="applet"&gt;&lt;strong&gt;applet&lt;/strong&gt; : applet 태그는 애플랫 요소를 설정합니다. 현재는 사용하지 않습니다.&lt;/li&gt;
+                        &lt;li data-name="area"&gt;&lt;strong&gt;area&lt;/strong&gt; : area 태그는 이미지 맵의 영역을 정의합니다. &lt;/li&gt;
+                        &lt;li data-name="article"&gt;&lt;strong&gt;article&lt;/strong&gt; : article 태그는 사이트의 독립적인 컨텐츠 섹션을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="aside"&gt;&lt;strong&gt;aside&lt;/strong&gt; : aside 태그는 주요 콘텐츠의 보조적 컨텐츠 섹션을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="audio"&gt;&lt;strong&gt;audio&lt;/strong&gt; : audio 태그는 오디오 파일을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="b"&gt;&lt;strong&gt;b&lt;/strong&gt; : b 태그는 다른 텍스트와 구별 할 때 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="base"&gt;&lt;strong&gt;base&lt;/strong&gt; : base 태그는 모든 문서의 기본이 되는 URL을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="basefont"&gt;&lt;strong&gt;basefont&lt;/strong&gt; : basefont 태그는 문서의 기본 폰트, 사이즈, 종류를 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="bdi"&gt;&lt;strong&gt;bdi&lt;/strong&gt; : bdi 태그는 텍스트의 출력 방향 영역을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="bdo"&gt;&lt;strong&gt;bdo&lt;/strong&gt; : bdo 태그는 텍스트의 방향을 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="big"&gt;&lt;strong&gt;big&lt;/strong&gt; : big 태그는 텍스트의 크기를 크게 설정합니다.&lt;/li&gt;
+                        &lt;li data-name="blockquote"&gt;&lt;strong&gt;blockquote&lt;/strong&gt; : 태그는 긴 문장의 인용문을 설정합니다.&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+}
+</code></pre>
+                        </div>
+
+                    </div>
+                </details>
+            </div>
+            <h3 class="t_tit2">02. CSS</h3>
+            <p class="t_box">HTML로 짜놓은 틀에 CSS를 입힙니다.</p>
+            <div class="result">
+                <details>
+                    <summary>코드 보기</summary>
+                    <div class="sample_result">
+                        <div class="t_code">
+<pre><code class="language-js">{
+    :root {
+        --htmlColor : #223547;
+        --cssColor : #472222;
+        --javscriptColor : #224736;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'NexonLv1Gothic';
+        color: #223547;
+    }
+    *, *:before, *:after {
+        box-sizing:border-box;
+    }
+    a {
+        color: #223547;
+        text-decoration: none;
+    }
+    li {
+        list-style: none;
+    }
+    
+    /* header */
+    #header {
+        display: flex;
+        justify-content: space-between;
+    }
+    #header h1 {
+        margin: 10px;
+        font-family: 'Tmon';
+        font-size: 40px;
+    }
+    #header nav {
+        margin: 10px;
+    }
+    #header nav li {
+        position: relative;
+        display: inline;
+    
+    }
+    #header nav li a {
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--htmlColor);
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        line-height: 30px;
+        font-family: 'NexonLv1Gothic';
+    }
+    #header nav li.active a {
+        background-color: #223547;
+        color: #fff;
+    }
+    #header nav li .sub {
+        position: absolute;
+        left: 0;
+        top: 35px;
+        width: 400px;
+    }
+    #header nav li .sub a {
+        width: auto;
+        background-color: transparent;
+        color: #223547;
+        border: 0;
+        text-align: left;
+        line-height: 1.2;
+    }
+    #header nav li .sub li.active a {
+        text-decoration: underline;
+    } 
+    /* main */
+    #main {
+        margin: 50px 10px;
+    }
+    .search__wrap {
+        max-width: 1400px;
+        margin: 0 auto;
+        border: 3px solid #223547;
+        border-radius: 20px;
+        background-color: #F1F3F6;
+        padding: 30px;
+        text-align: center;
+    }
+    .search__wrap > span {
+        font-size: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+    .search__wrap > h1 {
+        font-family: 'Tmon';
+        color: #223547;
+        font-size: 6vw;
+        margin-bottom: 10px;
+    }
+    .search__box {
+        margin-bottom: 40px;
+    }
+    .search__box label {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+    }
+    .search__box input {
+        border: 2px solid #223547;
+        padding: 15px 40px;
+        width: 70%;
+        border-radius: 50px;
+        font-size: 20px;
+    }
+    
+    .search__list li {
+        text-align: left;
+        line-height: 1.7;
+    }
+    .search__list li.hide {
+        display: none;
+    }
+    @media (max-width: 600px){
+        .search__wrap {
+            padding: 20px;
+        }
+        .search__wrap > span {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .search__wrap > h1 {
+            font-size: 44px;
+        }
+        .search__box input {
+            font-size: 16px;
+            padding: 12px 30px;
+        }
+    }
+    /* footer */
+    #footer {
+        text-align: center;
+    }
+    #footer a {
+        color: #000;
+        font-family: 'NexonLv1Gothic';
+        padding-bottom: 50px;
+    }
+    #footer a:hover {
+        text-decoration: underline;
+    }
+</code></pre>
+                        </div>
+
+                    </div>
+                </details>
+            </div>
+                <h3 class="t_tit2">03. JAVASCRIPT</h3>
+                <p class="t_desc2">querySelector를 통해 선택자를 지정합니다.<br>
+                    addEventListener에 keyup 이벤트를 넣어 키를 누르고 뗐을 때 event를 발생시킵니다.<br>
+                    forEach문을 돌려 search__list의 모든 el을 순환합니다.<br>
+                    마지막으로 if문안에 indexOf 메서드를 넣어주어 맞는 값(키워드를 포함한 값)은 0을 반환하여 hide를 지워주고 나머지는 추가한 hide를 남겨줍니다.<br>
+                    결과적으로 indpxOf로 0을 반환한 값이 출력됩니다.
+                    
+                     
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">{
+    //선택자
+    const searchBox = document.querySelector(".search__box input");         //검색 영역
+    const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
+
+    searchBox.addEventListener("keyup", () => { //키 누르고 땠을 때 event 발생
+        const searchWord = searchBox.value;     //사용자가 입력한 키워드
+
+        searchList.forEach(el => {
+            const cssName = el.dataset.name;    //forEach문을 이용하여 search__list의 el 순환
+            
+            if(cssName.indexOf(searchWord)){    //searchWord(사용자 입력값)이 맞을 경우 indexOf가 0을 반환합니다.
+                el.classList.add("hide");       
+            } else {                            //0 은 false로
+                el.classList.remove("hide");    //indexOf()값이 0(false)이되는 값만 hide를 지워줍니다.
+            }
+        });
+    });
+}
+</code></pre>
+                </div>
+
+
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

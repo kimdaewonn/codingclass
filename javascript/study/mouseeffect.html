@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 01</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="fun_ction.html">함수</a></li>
+                <li><a href="area.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01~04.html">퀴즈</a></li>
+                <li><a href="study/element.html">요소선택</a></li>
+                <li><a href="join_pop_push.html">join()/pop()/push()</a></li>
+                <li><a href="inner_function.html">내장 함수</a></li>
+                <li><a href="regular_expression.html">정규식 표현</a></li>
+                <li><a href="slice_substring_substr.html">slice() / substring() / substr()</a></li>
+                <li><a href="indexOf.html">indexOf</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">마우스 이펙트</h2>
+            <div class="t_desc2">
+                <p>
+                    이번 시간에는 마우스 이펙트 대해 알아보겠습니다.
+                </p>
+            </div>
+            <hr>
+            <h3 class="t_tit2">마우스 이펙트 01</h3>
+            <p class="t_desc2">
+                동그란 공이 마우스를 따라 다닙니다.<br>
+                마우스 움직임에 따라 좌표값이 실시간으로 변하며, 특정 위치에 갔을때 여러가지 transform 효과를 줍니다.
+            </p>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/javascript/effect/mouseEffect01.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href=https://kimdaewonn.github.io/coding/javascript/effect/mouseEffect01.html>원본 사이트 보기</a>
+                <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/mouseEffect01.html>원본 소스 보기</a>
+            </div>
+            <h3 class="t_tit2">01. HTML 코드</h3>
+            <div class="t_code">
+<pre><code class="language-html">{
+    &lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;p&gt;I &lt;span class="style1"&gt;determine&lt;/span&gt; a &lt;span class="style2"&gt;future&lt;/span&gt; all by &lt;span class="style3"&gt;myself.&lt;/span&gt;&lt;/p&gt;
+            &lt;p&gt;내 &lt;span class="style4"&gt;미래는&lt;/span&gt; 전적으로 &lt;span class="style5"&gt;나&lt;/span&gt; 스스로 &lt;span class="style6"&gt;만든다.&lt;/span&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;div class="mouse__info"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;clientX : &lt;span class="clientX"&gt;0px&lt;/span&gt;&lt;span&gt;px&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;clientY : &lt;span class="clientY"&gt;0px&lt;/span&gt;&lt;span&gt;px&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;offsetX : &lt;span class="offsetX"&gt;0px&lt;/span&gt;&lt;span&gt;px&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;offsetY : &lt;span class="offsetY"&gt;0px&lt;/span&gt;&lt;span&gt;px&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;pageX : &lt;span class="pageX"&gt;0px&lt;/span&gt;&lt;span&gt;px&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;pageY : &lt;span class="pageY"&gt;0px&lt;/span&gt;&lt;span&gt;px&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;screenX : &lt;span class="screenX"&gt;0px&lt;/span&gt;&lt;span&gt;px&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;screenY : &lt;span class="screenY"&gt;0px&lt;/span&gt;&lt;span&gt;px&lt;/span&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+} 
+</code></pre>
+                </div>
+
+                <h3 class="t_tit2">02. CSS 코드</h3>
+                <div class="t_code">
+<pre><code class="language-css">{
+    .mouse__wrap {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+        overflow: hidden;
+        cursor: none;
+    }
+    .mouse__wrap p {
+        font-size: 2vw;
+        line-height: 2;
+        font-weight: 300;
+    }
+    .mouse__wrap p:last-child {
+        font-size: 3vw;
+        font-weight: 400;
+    }
+    .mouse__wrap p span {
+        border-bottom: 0.15vw dashed orange;
+        color: orange;
+    }
+    @media (max-width: 800px){
+        .mouse__wrap p {
+            padding: 0 20px;
+            font-size: 24px;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 10px;
+    }
+        .mouse__wrap p:last-child {
+            font-size: 40px;
+            line-height: 1.5;
+            text-align: center;
+            word-break: keep-all;
+    }
+    }
+    .mouse__cursor {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        background-color: rgba(255,255,255,0.1);
+        user-select: none;
+        pointer-events: none;
+        transition:
+            background-color 0.3s,
+            border-color 0.3s,
+            transform 0.6s,
+            border-radius 0.3s;
+    }
+    .mouse__cursor.style1 {
+        background-color: rgb(238, 198, 156);
+        border-color: rgb(238, 198, 156);
+    }
+    .mouse__cursor.style2 {
+        background-color: rgb(182, 32, 237);
+        border-color: rgb(182, 32, 237);
+        transform: scale(2) rotateY(720deg);
+        
+    }
+    .mouse__cursor.style3 {
+        background-color: rgb(102, 199, 12);
+        border-color: rgb(102, 199, 12);
+        transform: scale(1.5) rotateY(45deg);
+
+    }
+    .mouse__cursor.style4 {
+        background-color: rgb(95, 43, 229);
+        border-color: rgb(95, 43, 229);
+        transform: scale(10);
+    }
+    .mouse__cursor.style5 {
+        background-color: rgb(125, 41, 15);
+        border-color: rgb(125, 41, 15);
+        transform: scale(0.1);
+    }
+    .mouse__cursor.style6 {
+        background-color: rgb(222, 229, 22);
+        border-color: rgb(222, 229, 22);
+        border-radius: 0;
+        transform: scale(5);
+    }
+    .mouse__info {
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #fff;
+    }
+}
+</code></pre>
+                </div>
+            <h3 class="t_tit2">03. script 코드</h3>
+            <p class="t_desc2">
+                mousemove 이벤트로 마우스 좌표를 구하고 커서를 따라다니게 합니다.<br>
+                그 뒤에 반복문안에 mouseover,mouseout를 넣어서 강조 표시된 단어에 마우스를 댔을때
+                효과를 주고, 나올때 효과를 빼줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">{
+    // 마우스 좌표
+    window.addEventListener("mousemove", (event) => {
+        document.querySelector(".clientX").innerText = event.clientX;
+        document.querySelector(".clientY").innerText = event.clientY;
+        document.querySelector(".offsetX").innerText = event.offsetX;
+        document.querySelector(".offsetY").innerText = event.offsetY;
+        document.querySelector(".pageX").innerText = event.pageX;
+        document.querySelector(".pageY").innerText = event.pageY;
+        document.querySelector(".screenX").innerText = event.screenX;
+        document.querySelector(".screenY").innerText = event.screenY;
+    });
+    // 따라다니게 하기
+    const cursor = document.querySelector(".mouse__cursor");
+    window.addEventListener("mousemove", (e) => {
+        
+        cursor.style.left = e.clientX - 25 + "px";
+        cursor.style.top = e.clientY - 25 + "px";
+    });
+    
+    // 노가다 방법
+
+    // document.querySelector(".style1").addEventListener("mouseover", () => {
+    //    cursor.classList.add("style1"); 
+    // });
+    // document.querySelector(".style1").addEventListener("mouseout", () => {
+    //    cursor.classList.remove("style1"); 
+    // });
+
+    // document.querySelector(".style2").addEventListener("mouseover", () => {
+    //    cursor.classList.add("style2"); 
+    // });
+    // document.querySelector(".style2").addEventListener("mouseout", () => {
+    //    cursor.classList.remove("style2"); 
+    // });
+
+    // document.querySelector(".style3").addEventListener("mouseover", () => {
+    //    cursor.classList.add("style3"); 
+    // });
+    // document.querySelector(".style3").addEventListener("mouseout", () => {
+    //    cursor.classList.remove("style3"); 
+    // });
+
+    // document.querySelector(".style4").addEventListener("mouseover", () => {
+    //    cursor.classList.add("style4"); 
+    // });
+    // document.querySelector(".style4").addEventListener("mouseout", () => {
+    //    cursor.classList.remove("style4"); 
+    // });
+
+    // document.querySelector(".style5").addEventListener("mouseover", () => {
+    //    cursor.classList.add("style5"); 
+    // });
+    // document.querySelector(".style5").addEventListener("mouseout", () => {
+    //    cursor.classList.remove("style5"); 
+    // });
+
+    // document.querySelector(".style6").addEventListener("mouseover", () => {
+    //    cursor.classList.add("style6"); 
+    // });
+    // document.querySelector(".style6").addEventListener("mouseout", () => {
+    //    cursor.classList.remove("style6"); 
+    // });
+
+    // for문
+
+    // for(let i=1; i&lt;=6; i++){
+    //     document.querySelector(".style"+i).addEventListener("mouseover", () => {
+    //         cursor.classList.add("style"+i); 
+    //     });
+    //     document.querySelector(".style"+i).addEventListener("mouseout", () => {
+    //         cursor.classList.remove("style"+i); 
+    //     });
+    // }
+
+    // forEach문
+
+    //   document.querySelectorAll(".mouse__wrap span").forEach((span, num) => {
+    //     span.addEventListener("mouseover", () => {
+    //       cursor.classList.add("style" + (num+1));
+    //     });
+    //     span.addEventListener("mouseout", () => {
+    //       cursor.classList.remove("style" + (num+1));
+    //     });
+    //   });
+
+    // getAtrribute() 가장 추천하는 방법
+
+        document.querySelectorAll(".mouse__wrap span").forEach((span) => {
+        let attr = span.getAttribute("class");
+
+        span.addEventListener("mouseover", () => {
+        cursor.classList.add(attr);
+        });
+        span.addEventListener("mouseout", () => {
+        cursor.classList.remove(attr);
+        });
+    });
+}
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

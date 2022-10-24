@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비트맵 / 벡터</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <link rel="stylesheet" href="../assets/css/study_style.css">
+</head>
+<body>
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">비트맵(Bitmap)과 벡터(Vector)</h2>
+                    <p class="t_desc">
+                        벡터 방식과 비트맵 방식에 대해 알아보겠습니다. 
+                    </p>
+
+            <hr> <!-- 구간나눔 -->  
+
+            <h3 class="t_tit2">01. 비트맵(Bitmap) 방식</h3>
+            <p  class="t_desc2">
+                비트맵은 비트의 지도란 뜻으로 각 픽셀에 저장된 일련의 비트 정보 집합을 말합니다.
+                디스플레이는 픽셀의 배열로 구성되어 있습니다. 픽셀들의 배열 방식과 픽셀의 숫자와 비율이 디스플레이의 해상도를 결정한다고 할 수 있습니다.
+                1920x1080의 해상도를 가진 디스플레이의 경우 가로 1920개, 세로 1080개의 픽셀들로 구성되어 있다고 생각하면 됩니다.<br>
+                비트맵 이미지는 크기를 늘이거나 줄이게 되면 원본 이미지에 손상이 가게 됩니다. 흔히 이것을 '이미지가 깨졌다'라고 표현합니다.<br>
+                비트맵 방식의 확장자로는 JPG, PNG, GIF, WebP 가 있습니다.
+                <div class="t_desc">
+                    # 픽셀이란 이미지를 구성하는 최소단위의 점을 말합니다. Picture(그림)+Element(원소)의 합성어입니다.<br>
+                    # 인터넷에서 이미지가 로딩되는 시간을 단축하기 위해 Google이 WebP(웹피) 출시 고품질, 저용량
+                    <h3 class="t_tit2">02. 벡터(Vector) 방식</h3>
+                <p class="t_desc2">
+                    벡터는 점과 점을 연결해 수학적인 함수관계로 이미지를 표현해 선과 면을 만들어내는 것을 말합니다.
+                    점과 점을 연결해 선을 만들 수 있고 선이 3개 이상 모이면 면을 만들 수 있습니다.
+                    이렇게 만들어진 선은 두께, 색상, 곡률 값을 갖게 되고 면은 색상 값을 가질 수 있습니다. 이러한 점, 선, 면이 모여 벡터 그래픽을 만들게 됩니다.<br>
+                    
+                    벡터는 수학 방정식 원리로 그림이 그려지기 때문에 이미지를 키우거나 줄여도 깨지는 현상이 나타나지가 않습니다.
+                    하지만 복잡한 계산이 필요한 그림에는 컴퓨터에 부담을 주기 때문에 일러스트로 편집할 경우 로딩과 편집 속도가 느려질 수가 있습니다.<br>
+
+                    따라서 로고나 서체 등 다양한 곳에 자유롭게 응용되어야 하는 제작물같은 그래픽 요소를 만들 때는 벡터를 사용해야 합니다.
+                    반면 사진 이미지를 제작할때는 비트맵을 사용합니다. 내가 사용하려는 작업물의 용도에 따라 벡터와 비트맵 중 더 효과적인 방식으로 사용하면 됩니다. 
+                </p>
+                    <h3 class="t_tit2">03. 비트맵과 벡터의 비교</h3>
+                        <p class="t_box">
+                            표로 정리하면 다음과 같습니다.
+                        </p>
+                        <br>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>비트맵(Bitmap)</th>
+                        <th>벡터(Vector)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">정의</td>
+                        <td>정사각형의 픽셀에 저장된<br>
+                            비트 정보의 집합</td>
+                        <td>수학적인 함수 관계로 만든<br>
+                            그래픽 이미지</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">확대</td>
+                        <td>계단 현상</td>
+                        <td>뚜렷한 외곽선</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">변화/회전</td>
+                        <td>이미지 품질 손상</td>
+                        <td>변화 없음</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">특징</td>
+                        <td>사실적인 표현, 특수 효과,<br>
+                            풍부한 색감 표현</td>
+                        <td>선명한 표현, 효과적인<br>
+                            응용 작업</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">단점</td>
+                        <td>이미지의 축소, 확대로 인한<br>
+                            이미지 품질 손상</td>
+                        <td>사진과 같은 이미지 그래픽<br>
+                            의 정교한 작업의 한계점</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">확장자</td>
+                        <td>JPG, PNG, GIF 등</td>
+                        <td>AI, SVG, VML 등</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">프로그램</td>
+                        <td>포토샵, 페인터 등</td>
+                        <td>일러스트레이터, 플레시 등</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

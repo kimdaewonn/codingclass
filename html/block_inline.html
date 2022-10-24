@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블록구조 / 인라인 구조</title>
+    <link rel="stylesheet" href="assets/css/dracular.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">블록구조(block) / 인라인 구조(inline)</h2>
+                <p class="t_desc">
+                    블록구조 / 인라인 구조에 대해 알아보는 시간을 가지도록 하겠습니다.<br>
+                </p>
+
+                <hr> <!-- 구간나눔 -->
+
+                <h3 class="t_tit2">01. 블록구조(block) / 인라인 구조(inline)의 특성</h3>
+                <p class="t_desc2">
+                블록 레벨 요소는 마크업을 할 때 줄이 바뀌는 특성을 가지고 있습니다.<br>
+                인라인 요소는 블록 레벨 요소와 달리 줄 바꿈 특성이 없습니다.
+                즉, 행이 바뀌지 않고 한줄로 출력됩니다.<br>
+                마크업을 할 때 블록 레벨 요소와 인라인 요소의 특성을 잘 알고 있어야 문법적 오류를 방지할 수 있습니다.<br>
+                특징을 정리해보면 아래와 같습니다.</p>
+                    <table class="t_table">
+                        <thead>
+                                <th>요소 유형</th>
+                                <th>특징</th>
+                                <th>자주 사용하는 태그</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ce">블록 레벨<br>요소</td>
+                                <td>1. 블록 레벨 요소는 줄 바꿈이 일어납니다.<br>
+                                    2. 블록 레벨 요소는 텍스트(문자)와 인라인 요소를 자식 요소로 포함할 수 있습니다.<br>
+                                    3. 블록 레벨 요소 중에는 블록 레벨 요소를 자식 요소로 포함 할 수 있는 요소와 포함할 수 없는<br>
+                                    요소가 있습니다.</td>
+                                <td>기본설정이 block인 태그입니다<br>
+                                    (div, p, h1~h6, ul, li, ol, table, form, section, footer...)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ce">인라인 요소</td>
+                                <td>1. 인라인 요소는 줄 바꿈이 일어나지 않습니다.<br>
+                                    2. 인라인 요소는 텍스트(문자)와 인라인 요소를 자식 요소로 포함할 수 있습니다.<br>
+                                    3. 인라인 요소는 블록 레벨 요소를 자식 요소로 포함할 수 없습니다.</td>
+                                    <td>기본설정이 inline인 태그입니다<br>
+                                        (span, a, em, i, strong, del, ins, sub, sup, textarea...)
+                                    </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <hr>
+                <h3 class="t_tit2">02. 코드펜으로 비교</h3>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kimdaewonn/embed/JjLxLZP?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimdaewonn/pen/JjLxLZP">
+                    Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

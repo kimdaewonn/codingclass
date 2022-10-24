@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오답노트 정리 04</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">Javascript 오답노트 04</h2>
+                    <p class="t_box">
+                        Javascript 오답노트 정리 네 번째 시간입니다.<br>
+                        2022년 10월 21일 프로그래머스 1단계 10문제 쪽지시험을 봤습니다.<br>
+                        간만에 봐서 그런지(?) 거의 다 틀렸네요<br>
+                    </p>
+
+            <hr> <!-- 구간나눔 -->  
+
+        <h3 class="t_tit2">01. 다음의 결괏값을 작성하시오.</h3>
+            <div class="t_code">
+<pre><code class="language-js">{
+    const arr = [1,1,3,3,0,1,1];
+        
+    function solution(arr){
+        return arr.filter((item,idx) => item !== arr[idx+1]);
+    }
+
+    console.log(solution(arr))
+}
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc2">
+                filter 메서드를 이용한 중복제거에 대한 문제입니다.<br>
+                idx 인덱스값 0부터 넣고 비교해보면
+                1은 arr[1](1)과 같으니 뺍니다.<br>
+                1은 arr[2](3)과 다르니 넣습니다.<br>
+                3은 arr[3](3)과 같으니 뺍니다.<br>
+                3은 arr[4](0)과 다르니 넣습니다.<br>
+                0은 arr[5](1)과 다르니 넣습니다.<br>
+                1은 arr[6](1)과 같으니 뺍니다.<br>
+                1은 arr[7](?)와 다르니 넣습니다.?<br>
+                위 과정을 거치면 반환되는 배열값은 [1, 3, 0, 1]이 나옵니다.              
+            </p>
+            <div class="result">
+                <details>
+                    <summary>정답 확인하기</summary>
+                    <div class="sample_result">
+                        [1, 3, 0, 1]
+                    </div>
+                </details>
+            </div>
+
+        <hr> <!-- 구간나눔 -->  
+
+        <h3 class="t_tit2">02. 다음의 결괏값을 작성하시오.</h3>
+            <div class="t_code">
+<pre><code class="language-js">{
+    const arr = "webstoryboy";
+
+    function solution(s) {
+        const answer = "";
+        return s.length % 2 == 1 ? s[s.length/2 | 0] : s.slice(s.length/2 -1, s.length/2 +1);
+    }
+    console.log(solution(arr))
+}
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc2">
+                삼항연산자를 이용한 문자열 가운데 영어 찾기유형 문제입니다.<br>
+                11 % 2 = 1이  true이므로 s[s.length/2 | 0]로 진행합니다.<br>
+                11 / 2 = 5.5 + 0 = 5.5가 나와서? s[5]의 값은 o가 됩니다.
+            </p>
+            <div class="result">
+                <details>
+                    <summary>정답 확인하기</summary>
+                    <div class="sample_result">
+                        o
+                    </div>
+                </details>
+            </div>
+
+    <hr> <!-- 구간나눔 -->  
+
+        <h3 class="t_tit2">03. 다음의 결괏값을 작성하시오.</h3>
+            <div class="t_code">
+<pre><code class="language-js">{
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    function solution(numbers){
+        var answer = 0;
+        for(let i =0; i&lt;numbers.length; i++){
+            answer = answer + numbers[i]
+        }
+        answer = answer/numbers.length;
+        return answer;
+    }
+
+    console.log(solution(arr));
+}
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc2">
+                for문을 이용해서 평균을 구하는 문제 유형입니다.<br>
+                i는 0 부터 대입해서 9까지 해보면<br>
+                i = 0 , 0+1<br>
+                i = 1 , 1+2<br>
+                i = 2 , 3+3<br>
+                ...<br>
+                i = 9 , 45+10<br>
+                55/10 = 5.5가 나옵니다.<br>
+                덧셈을 못해서 틀렸네요 ㅜㅜ
+            </p>
+            <div class="result">
+                <details>
+                    <summary>정답 확인하기</summary>
+                    <div class="sample_result">
+                        5.5
+                    </div>
+                </details>
+            </div>
+
+        <hr> <!-- 구간나눔 -->  	      
+
+        <h3 class="t_tit2">06. 다음의 결괏값을 작성하시오.</h3>
+            <div class="t_code">
+<pre><code class="language-js">{
+    const num = "webstoryboy";
+
+    function solution(s) {
+        let answer;
+        let arr = [...s]
+        if(arr.length % 2 == 0) {
+            answer = arr.splice(arr.length/2-1, 2);
+        } else {
+            answer = arr.splice(Math.floor(arr.length/2), 1);
+        }
+        return answer.join("");
+    }
+
+    console.log(solution(num))
+}
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc2">
+                splice 와 join 메서드를 사용한 가운데찾기 문제유형입니다.<br>
+                webstoryboy값을 s로 받아와 펼침연산자로 배열안에 값을 저장해줍니다.<br>
+                11 % 2 = false 이므로 else로 진행합니다.<br>
+                arr.splice(5,1)의 값은 o가나옵니다.
+                
+            </p>
+            <div class="result">
+                <details>
+                    <summary>정답 확인하기</summary>
+                    <div class="sample_result">
+                        o
+                    </div>
+                </details>
+            </div>
+
+            <hr> <!-- 구간나눔 -->  	      
+
+        <h3 class="t_tit2">07. 다음의 결괏값을 작성하시오.</h3>
+            <div class="t_code">
+<pre><code class="language-js">{
+    const num = [5, 9, 7, 10];
+
+    function solution(arr, divisor) {
+        var answer = [];
+
+        for(i=0; i&lt;arr.length; i++){
+            if(arr[i] % divisor ==0) answer.push(arr[i]);
+        }
+        return answer;
+    }
+    console.log(solution(num, 5))
+}
+</code></pre>
+            </div>
+            <br>
+            <p class="t_desc2">
+                for문 push에 대한 문제입니다.<br>
+                0부터 3까지대입해보면 조건에 맞을때는 i= 0 , i= 3일때 조건을 만족하므로 배열끝에 push해줍니다.
+                순서대로 넣어주면 답은 [5, 10]가 나옵니다.
+            </p>
+            <div class="result">
+                <details>
+                    <summary>정답 확인하기</summary>
+                    <div class="sample_result">
+                        [5, 10]
+                    </div>
+                </details>
+            </div>
+
+            <hr> <!-- 구간나눔 -->  	      
+
+        <h3 class="t_tit2">08. 다음의 결괏값을 작성하시오.</h3>
+            <div class="t_code">
+<pre><code class="language-js">{
+    const num = [5, 9 ,7, 10];
+
+    function solution(arr) {
+        let sm = arr[0], index = 0;
+
+        for(i=0; i&lt;arr.length; i++){
+            if(arr[i] &lt; sm) {
+                sm = arr[i];
+                index = i;
+            }
+        }
+        arr.splice(index, 1);
+        return arr;
+    }
+    console.log(solution(num))
+}
+</code></pre>
+            </div>
+
+            <p class="t_desc2">
+                for문과 splice를 이용해서 제일 작은수를 제거해주는 문제 유형입니다.<br>
+                sm은 5, index는 0으로 시작합니다.<br>
+                i에 0~3 대입시 모두 false가 나오므로 index값은 그대로 0이되고 arr.splice(0,1)의 값은 [9, 7, 10]가 됩니다.
+            </p>
+            <div class="result">
+                <details>
+                    <summary>정답 확인하기</summary>
+                    <div class="sample_result">
+                        [9, 7, 10]
+                    </div>
+                </details>
+            </div>
+
+        <hr> <!-- 구간나눔 -->
+
+        <h3 class="t_tit2">09. 다음의 결괏값을 작성하시오.</h3>
+            <div class="t_code">
+<pre><code class="language-js">{
+    const num = "webstoryboy";
+
+    function solution(s) {
+        let answer = s.split("");
+
+        for(i=0; i&lt;answer.length-4; i++){
+            answer[i] = "*";
+        }
+        return answer.join("");
+    }
+    console.log(solution(num))
+}
+</code></pre>
+            </div>
+
+            <p class="t_desc2">
+             split과 join메서드의 개념을 묻는 문제입니다.<br>
+             먼저 split 메서드를 이용해서 매개변수로 받아온 webstrybody를  쪼개서 배열안에 넣어줍니다.<br>
+             for문에 의해 0~7번째 자리는 *로 차게 되어 ['*', '*', '*', '*', '*', '*', '*', 'y', 'b', 'o', 'y']가 됩니다.<br>
+             여기서 join 메서드를 거치면 *******yboy가 됩니다.             
+            </p>
+            <div class="result">
+                <details>
+                    <summary>정답 확인하기</summary>
+                    <div class="sample_result">
+                        *******yboy
+                    </div>
+                </details>
+            </div>
+
+            <hr> <!-- 구간나눔 -->
+
+            <h3 class="t_tit2">10. 다음의 결괏값을 작성하시오.</h3>
+            <div class="t_code">
+<pre><code class="language-js">{
+    function solution(arr1, arr2){
+        let answer = [];
+        arr1.sort();
+        arr2.sort();
+        let p1 = p2 = 0;
+
+        while(p1 &lt;0 arr1.length && p2 &lt; arr2.length){
+            if(arr1[p1] == arr2[p2]){
+                answer.push(arr1[p1++]);
+                p2++;
+            }
+            else if(arr1[p1] &lt; arr2[p2]) p1++;
+            else p2++;
+        }
+        return answer;
+    }
+
+    let a=[1,3,9,5,2];
+    let b=[3,2,5,7,8];
+
+    console.log(solution(a,b));
+}
+</code></pre>
+            </div>
+    
+                <p class="t_desc2">
+                    중복되는 문자 찾기 유형입니다.<br>
+                    sort로 오름차순 정렬을 시킵니다<br>
+                    a배열과 b배열을 비교해서 p1 p2를 증가시키면서 push로 넣어주며 계속 돌리면 답이 [2,3,5]가 나옵니다.<br>
+                    이 문제는 아직 잘 모르겠네요..
+                    10번 쌤이 뭐 바꾸라고 하신거 같은데 아시는분 제보 바랍니다.
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>정답 확인하기</summary>
+                        <div class="sample_result">
+                            [2, 3, 5]
+                        </div>
+                    </details>
+                </div>
+
+                <hr> <!-- 구간나눔 --> 
+                <br> 	      
+                <div class="t_desc">
+                    이해한대로 적었기에 설명이 틀릴 수 있습니다.<br>
+                    틀린점은 알려주시면 감사하겠습니다!!<br>
+                    오늘도 반타작에 실패한 저는 문제를 만들러 갑니다...
+                </div> 
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+
+    // 01
+    {
+        // const arr = [1,1,3,3,0,1,1];
+        
+        // function solution(arr){
+            
+        //     return arr.filter((item,idx) => item !== arr[idx+1]);
+        // }
+
+        // console.log(solution(arr))
+    }
+    // 02
+    {
+        // const arr = "webstoryboy";
+
+        // function solution(s) {
+        //     const answer = "";
+        //     return s.length % 2 == 1 ? s[s.length/2 | 0] : s.slice(s.length/2 -1, s.length/2 +1);
+        // }
+        // console.log(solution(arr))
+    }
+    // 03
+    {
+        // const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // function solution(numbers){
+        //     var answer = 0;
+        //     for(let i =0; i<numbers.length; i++){
+        //         answer = answer + numbers[i]
+        //     }
+        //     answer = answer/numbers.length;
+        //     return answer;
+        // }
+
+        // console.log(solution(arr));
+    }
+    // 06
+    {
+        // const num = "webstoryboy";
+
+        // function solution(s) {
+        //     let answer;
+        //     let arr = [...s]
+        //     if(arr.length % 2 == 0) {
+        //         answer = arr.splice(arr.length/2-1, 2);
+        //     } else {
+        //         answer = arr.splice(Math.floor(arr.length/2), 1);
+        //     }
+        //     return answer.join("");
+        // }
+
+        // console.log(solution(num))
+    }
+    // 07
+    {
+        // const num = [5, 9, 7, 10];
+
+        // function solution(arr, divisor) {
+        //     var answer = [];
+
+        //     for(i=0; i<arr.length; i++){
+        //         if(arr[i] % divisor ==0) answer.push(arr[i]);
+        //     }
+        //     return answer;
+        // }
+        // console.log(solution(num, 5))
+    }
+    // 08
+    {
+        // const num = [5, 9 ,7, 10];
+
+        // function solution(arr) {
+        //     let sm = arr[0], index = 0;
+
+        //     for(i=0; i<arr.length; i++){
+        //         if(arr[i] < sm) {
+        //             sm = arr[i];
+        //             index = i;
+        //         }
+        //     }
+        //     arr.splice(index, 1);
+        //     return arr;
+
+        // }
+        // console.log(solution(num))
+    }
+    // 09
+    {
+        // const num = "webstoryboy";
+
+        // function solution(s) {
+        //     let answer = s.split("");
+
+        //     for(i=0; i<answer.length-4; i++){
+        //         answer[i] = "*";
+        //     }
+        //     return answer.join("");
+        // }
+        // console.log(solution(num))
+    }
+    // 10
+    {
+        function solution(arr1, arr2){
+            let answer = [];
+            arr1.sort();
+            arr2.sort();
+            let p1 = p2 = 0;
+
+            while(p1 < arr1.length && p2 < arr2.length){
+                if(arr1[p1] == arr2[p2]){
+                    answer.push(arr1[p1++]);
+                    p2++;
+                }
+                else if(arr1[p1] < arr2[p2]) p1++;
+                else p2++;
+            }
+            return answer;
+        }
+
+        let a=[1,3,9,5,2];
+        let b=[3,2,5,7,8];
+
+        console.log(solution(a,b));
+    }
+
+    </script>
+</body>
+</html>

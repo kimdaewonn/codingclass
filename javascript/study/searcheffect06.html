@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서치06</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">Search Effect06</h2>
+            <div class="t_desc2">
+                <p>이번 시간에는 sort(), reverse() 메서드를 이용해서 숫자와 문자열을 정렬하고 반대로도 정렬해보았습니다.
+                </p>
+            </div>
+            <hr>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/javascript/effect/searchEffect06.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href=https://kimdaewonn.github.io/coding/javascript/effect/searchEffect06.html>원본 사이트 보기</a>
+                <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/searchEffect06.html>원본 소스
+                    보기</a>
+            </div>
+
+            <h3 class="t_tit2">01. HTML</h3>
+            <p class="t_desc2">
+                search__click메뉴에 btn 리스트를 추가했습니다.
+            </p>
+            <div class="result">
+                <details>
+                    <summary>코드 보기</summary>
+                    <div class="sample_result">
+                        <div class="t_code">
+<pre><code class="language-html">{
+    &lt;main id="main"&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;span&gt;sort(), reverse()를 이용하여 정렬하기&lt;/span&gt;
+        &lt;h1&gt;&lt;a href="searchEffect.html"&gt;CSS 속성 정렬하기&lt;/a&gt;&lt;/h1&gt;
+    &lt;div class="search__click"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#" class="btn1"&gt;반대로 정렬하기&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="btn2"&gt;오름차순 정렬하기&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="btn3"&gt;내림차순 정렬하기&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="btn4"&gt;알파벳순(a~z)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="btn5"&gt;알파벳순(z~a)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="btn6"&gt;랜덤정렬&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+        &lt;div class="search__info"&gt;
+            &lt;div&gt;찾은 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="search__list"&gt;
+            &lt;ul class="line"&gt;&lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+&lt;/main&gt;
+}
+</code></pre>
+                </div>
+
+                    </div>
+                </details>
+            </div>
+            <h3 class="t_tit2">02. CSS</h3>
+            <div class="result">
+                <details>
+                    <summary>코드 보기</summary>
+                    <div class="sample_result">
+                        <div class="t_code">
+<pre><code class="language-css">{
+    /* main */
+    #main {
+        margin: 50px 10px;
+    }
+    .search__wrap {
+        max-width: 1400px;
+        margin: 0 auto;
+        border: 3px solid #223547;
+        border-radius: 20px;
+        background-color: #F1F3F6;
+        padding: 30px;
+        text-align: center;
+    }
+    .search__wrap > span {
+        font-size: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+    .search__wrap > h1 {
+        font-family: 'Tmon';
+        color: #223547;
+        font-size: 6vw;
+        margin-bottom: 10px;
+    }
+    .search__box {
+        margin-bottom: 40px;
+    }
+    .search__box label {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+    }
+    .search__box input {
+        border: 2px solid #223547;
+        padding: 15px 40px;
+        width: 70%;
+        border-radius: 50px;
+        font-size: 20px;
+    }
+    
+    .search__list li {
+        text-align: left;
+        line-height: 1.7;
+    }
+    .search__list li.hide {
+        display: none;
+    }
+    .search__list li.show {
+        display: block;
+    }
+    .search__list span {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid var(--htmlColor);
+        border-radius: 50px;
+        margin-bottom: 5px;
+        text-align: left;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    .search__list span:hover {
+        background-color: var(--htmlColor);
+        color: #fff;
+    }
+    .search__list em {
+        float: right;
+        font-style: normal;
+    }
+    .search__list .line {
+        margin-top: 50px 0;
+    }
+    .search__list .line li {
+        background: #e3eaf5;
+        padding: 10px 30px;
+        margin-bottom: 5px;
+        border-radius: 50px;
+    }
+    .search__list .line li:hover {
+        background: #d3e2fa;
+        cursor: pointer;
+    }
+    .search__info {
+        text-align: right;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed var(--htmlColor);
+    }
+    .search__info .type {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .search__info  .keyword {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .search__info  .keyword span {
+        border: 2px solid var(--htmlColor);
+        border-radius: 50px;
+        padding: 10px;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+    .search__info  .keyword span:hover {
+        background-color: var(--htmlColor);
+        color: #fff;
+        cursor:pointer;
+    }
+    .search__desc {
+        padding: 20px 40px 20px 60px;
+        margin-bottom: 50px;
+        border-radius: 50px;
+        display: inline-block;
+        background: var(--htmlColor);
+        color: #fff;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: 22px 17px;
+    }
+    .search__click {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    .search__click li {
+        display: inline;
+        margin: 5px;
+    }
+    .search__click li a {
+        display: inline-block;
+        border: 1px solid var(--htmlColor);
+        border-radius: 50px;
+        padding: 10px 20px;
+        margin: 5px 0;
+    }
+    .search__click li a:hover {
+        background-color: var(--htmlColor);
+        color: #fff;
+    }
+}
+</code></pre>
+                </div>
+
+                    </div>
+                </details>
+            </div>
+            <h3 class="t_tit2">03. JAVASCRIPT</h3>
+            <p class="t_desc2">
+                1. updateList 라는 익명함수를 만들어 cssProperty에 있는 배열의 값 num, name, desc를 li태그로 묶어서 listCSS에 추가해줍니다.<br>
+                2. btn1에 addEventListener를 걸고 reverse()메서드를 이용해서 cssProperty값이 반대로 출력되게 해줍니다.<br>
+                3. btn2에 sort() 메서드를 이용해서 cssProperty값이 a-b순 오름차순으로 출력되게 해줍니다.<br>
+                4. btn3에 sort() 메서드를 이용해서 cssProperty값이 b-a순 내림차순으로 출력되게 해줍니다.<br>
+                5. btn4에 addEventListener를 걸고 안에 let x, y를 변수로 지정해 a.name , b.name 값을 저장해줍니다. 그리고 리턴값으로 x를 localeCompare를 이용해서y와 비교해서 출력해줍니다.<br>
+                6. btn5에 addEventListener를 걸고 안에 let x, y를 변수로 지정해 a.name , b.name 값을 저장해줍니다. 그리고 리턴값으로 y를 localeCompare를 이용해서x와 비교해서 출력해줍니다.<br>
+                7. btn6에 for문에 Math.random을 이용해서 cssProperty 수만큼 난수를 생성해주고 randomIndex 에 저장해줍니다.<br>
+                [cssProperty[i], cssProperty[randomIndex]] = [cssProperty[randomIndex], cssProperty[i]] 과정을 거쳐서 중복을 제거해줍니다.<br>
+                cssProperty를 랜덤하게 출력해줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">{
+    const cssProperty = [
+    { num: 1, name: "accent-color", desc: "특정 요소에 색상을 지정할 때 사용됩니다." },
+    { num: 2, name: "align-content", desc: "콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다." },
+    { num: 3, name: "align-items", desc: "콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다." },
+    { num: 4, name: "align-self", desc: "개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다." },
+    { num: 5, name: "all", desc: "요소의 속성을 초기화 또는 상속을 설정합니다." },
+    { num: 6, name: "animation", desc: "애니메이션과 관련된 속성을 일괄적으로 설정합니다." },
+    { num: 7, name: "animation-delay", desc: "애니메이션 지연 시간을 설정합니다." },
+    { num: 8, name: "animation-direction", desc: "애니메이션 움직임 방향을 설정합니다." },
+    { num: 9, name: "animation-duration", desc: "애니메이션 움직임 시간을 설정합니다." },
+    { num: 10, name: "animation-fill-mode", desc: "애니메이션이 끝난 후의 상태를 설정합니다." },
+    { num: 11, name: "animation-iteration-count", desc: "애니메이션의 반복 횟수를 설정합니다." },
+    { num: 12, name: "animation-name", desc: "애니메이션 keyframe 이름을 설정합니다." },
+    { num: 13, name: "animation-play-state", desc: "애니메이션 진행상태를 설정 합니다." },
+    { num: 14, name: "animation-timeline", desc: "x" },
+    { num: 15, name: "animation-timing-function", desc: "애니메이션 움직임의 속도를 설정 합니다." },
+    { num: 16, name: "appearance", desc: "운영체제 및 브라우저에 기본적으로 설정되어 있는 테마를 기반으로 요소를 표현합니다." },
+    { num: 17, name: "aspect-ratio", desc: "요소의 크기를 비율대로 조정할 수 있게 합니다." },
+    { num: 18, name: "backdrop-filter", desc: "요소 뒤 영역에 흐림이나 색상 시프트 등 그래픽 효과를 적용할 수 있는 속성입니다." },
+    { num: 19, name: "backface-visibility", desc: "입체적인 모습의 뒷면의 가시성을 결정하는 속성이다." },
+    { num: 20, name: "background", desc: "백그라운드 속성을 일괄적으로 설정 합니다." },
+    { num: 21, name: "background-attachment", desc: "배경 이미지의 고정 여부를 설정 합니다." },
+    { num: 22, name: "background-blend-mode", desc: "배경을 혼합했을 때 그래픽 효과를 설정 합니다." },
+    { num: 23, name: "background-clip", desc: "백그라운드 이미지의 위치 기준점을 설정 합니다." },
+    { num: 25, name: "background-color", desc: "백그라운드 색을 설정 합니다." },
+    { num: 26, name: "background-image", desc: "백그라운드 이미지 속성을 설정 합니다." },
+    { num: 5, name: "background-origin", desc: "백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다." },
+    { num: 5, name: "background-position", desc: "백그라운드 이미지의 위치 영역을 설정 합니다." },
+    { num: 5, name: "background-position-x", desc: "백그라운드 이미지의 x축 위치 영역을 설정 합니다." },
+    { num: 5, name: "background-position-y", desc: "백그라운드 이미지의 y축 위치 영역을 설정 합니다." },
+    { num: 5, name: "background-repeat", desc: "백그라운드 이미지 반복 여부를 설정 합니다." },
+    { num: 5, name: "background-size", desc: "백그라운드 이미지 사이즈를 설정 합니다." },
+    { num: 5, name: "block-size", desc: "기록 모드에 따라서, 요소의 블록의 수평과 수직 크기를 정의합니다." },
+    { num: 5, name: "border", desc: "테두리 속성을 일괄적으로 설정 합니다." },
+                                        ...너무 많아
+    ];
+    const cssList = document.querySelector(".search__list .line");
+        // 데이터 출력하기
+        const updateList = () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc}&lt;/li&gt;`;
+            });
+            cssList.innerHTML = listCSS;
+        }
+        updateList();
+        // 반대로 정렬 클릭
+        document.querySelector(".btn1").addEventListener("click", (e) => {
+            e.preventDefault();
+            cssProperty.reverse();
+            updateList();
+        });
+        // 오름차순 정렬 클릭
+        document.querySelector(".btn2").addEventListener("click", (e) => {
+            e.preventDefault();
+            cssProperty.sort((a,b) => {
+                return a.num - b.num;
+            });
+            updateList();
+        });
+        // 내림차순 정렬 클릭
+        document.querySelector(".btn3").addEventListener("click", (e) => {
+            e.preventDefault();
+            cssProperty.sort((a,b) => {
+                return b.num - a.num;
+            });
+            updateList();
+        });
+        // 알파벳 정렬(a~z) 클릭
+        document.querySelector(".btn4").addEventListener("click", (e) => {
+            e.preventDefault();
+            cssProperty.sort((a, b) => {
+                let x = a.name;
+                let y = b.name;
+                return x.localeCompare(y);
+            });
+            updateList();
+        });
+        // 알파벳 정렬(z~a) 클릭
+        document.querySelector(".btn5").addEventListener("click", (e) => {
+            e.preventDefault();
+            cssProperty.sort((a, b) => {
+                let x = a.name;
+                let y = b.name;
+                return y.localeCompare(x);
+            });
+            updateList();
+        });
+        // 랜덤 정렬
+        document.querySelector(".btn6").addEventListener("click", (e) => {
+            e.preventDefault();
+            for(let i=cssProperty.length-1; i>=0; i--){
+                const randomIndex = Math.floor(Math.random() * (i+1));      //난수 생성
+                [cssProperty[i], cssProperty[randomIndex]] = [cssProperty[randomIndex], cssProperty[i]];    // 중복 제거
+                cssProperty.innerHTML += cssProperty[i]
+            }
+            updateList();
+        });
+}
+
+</code></pre>
+            </div>
+
+
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

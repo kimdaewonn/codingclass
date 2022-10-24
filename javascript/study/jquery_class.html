@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="fun_ction.html">함수</a></li>
+                <li><a href="area.html">지역변수/전역변수</a></li>
+                <li><a href="study/element.html">요소선택</a></li>
+                <li><a href="quiz01~04.html">퀴즈</a></li>
+                <li><a href="join_pop_push.html">join()/pop()/push()</a></li>
+                <li><a href="inner_function.html">내장 함수</a></li>
+                <li><a href="regular_expression.html">정규식 표현</a></li>
+                <li><a href="slice_substring_substr.html">slice() / substring() / substr()</a></li>
+                <li><a href="indexOf.html">indexOf</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">jQuery 클래스 관련 메서드</h2>
+                <p class="t_dsec2">
+                    <i>jQuery 클래스 관련 메서드</i>에 대해 알아보는 시간을 가지도록 하겠습니다.<br>
+                    클래스 관련 메서드에는 addClass(), removeClass(), toggleClass(), hasClass()가 있습니다.<br>
+                </p>
+                <hr> <!-- 구간나눔 -->
+                <h3 class="t_tit2">01. addClass() 메서드</h3>
+                <p class="t_desc">요소에 class 속성을 추가합니다.</p>
+                
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>실행 분류</th>
+                            <th>형식</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">추가</td>
+                            <td>$("div").addClass("클래스명");</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">콜백 함수</td>
+                            <td>$("div").addClass(function(index, className) {<br>
+                                // index는 각 div 요소의 index 0, 1, 2<br>
+                                // className은 각 div의 class 속성<br>
+                                return class 속성 // 각 div에 class 속성을 추가 합니다.<br>
+                             });<br>
+                            …<br>
+                            &lt;div&gt;내용1&lt;/div&gt;<br>
+                            &lt;div&gt;내용2&lt;/div&gt;<br>
+                            &lt;div&gt;내용3&lt;/div&gt;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 class="t_tit3">01-1. 예제</h4>
+                <div class="t_code">
+<pre><code class="language-html">{
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="ko"&gt;
+    &lt;head&gt;
+      &lt;meta charset="UTF-8"&gt;
+      &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+      &lt;title&gt;addClass() 메서드&lt;/title&gt;
+      &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+      &lt;style&gt;
+        *  {
+          margin: 0;
+          padding: 0;
+        }
+        #m2 {
+          text-align: center;
+        }
+        .box {
+          border-bottom: 2px solid #ccc;
+          text-align: center;
+          padding: 20px;
+          margin-bottom: 10px;
+        }
+        .circle0,
+        .circle1,
+        .circle2 {
+          width: 200px;
+          height: 200px;
+          border-radius: 200px;
+          border: 4px solid #ff6600;
+          line-height: 200px;
+          display: inline-block;
+        }
+      &lt;/style&gt;
+      &lt;script&gt;
+        $(document).ready(function() {
+          $("m1 &gt; div").addClass("box");
+          $("m2 &gt; div").addClass(function(index){
+            return "circle" + index;
+          });
+        });
+      &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;div id="m1"&gt;
+        &lt;div&gt;jQuery&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div id="m2"&gt;
+        &lt;div&gt;html&lt;/div&gt;
+        &lt;div&gt;css&lt;/div&gt;
+        &lt;div&gt;javascript&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+}
+</code></pre>
+                </div>
+                <h4 class="t_tit3">01-2. 결과물</h4>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kimdaewonn/embed/VwxwqZr?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimdaewonn/pen/VwxwqZr">
+                    Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            <hr>
+                <h3 class="t_tit2">02. removeClass() 메서드</h3>
+                <p class="t_desc">
+                   요소에서 class 속성을 제거합니다.
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>실행 분류</th>
+                            <th>형식</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">제거</td>
+                            <td>$("div").removeClass("클래스명");</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">콜백 함수</td>
+                            <td>$("div").removeClass(function(index, className) {<br>
+                                // index는 각 div 요소의 index 0, 1, 2<br>
+                                // className은 각 div의 class 속성 m1, m2, m3<br>
+                                return class 속성 // 각 div에 class 속성을 제거 합니다.<br>
+                             });<br>
+                            …<br>
+                            &lt;div class="m1"&gt;내용1&lt;/div&gt;<br>
+                            &lt;div class="m2"&gt;내용2&lt;/div&gt;<br>
+                            &lt;div class="m3"&gt;내용3&lt;/div&gt;
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>  
+                <h4 class="t_tit3">02-1. 예제</h4>
+                <div class="t_code">
+<pre><code class="language-html">{
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="ko"&gt;
+    &lt;head&gt;
+      &lt;meta charset="UTF-8"&gt;
+      &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+      &lt;title&gt;removeClass() 메서드&lt;/title&gt;
+      &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+      
+      &lt;script&gt;
+        $(document).ready(function() {
+          $("#m1 &gt; div").removeClass("con");
+          $("#m2 &gt; div").removeClass(function() {
+            return "bg";
+          });
+        });
+      &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;div id="m1"&gt;
+        &lt;div class="con"&gt;콘텐츠&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div id="m2"&gt;
+        &lt;div class="c1 bg"&gt;내용1&lt;/div&gt;
+        &lt;div class="c2 bg"&gt;내용2&lt;/div&gt;
+        &lt;div class="c3 bg"&gt;내용3&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+}
+</code></pre>
+                </div>
+                <h4 class="t_tit3">02-2. 결과물</h4>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kimdaewonn/embed/MWGWZKa?default-tab=css%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimdaewonn/pen/MWGWZKa">
+                    Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+                <hr>
+                  <h3 class="t_tit2">03. toggleClass() 메서드</h3>
+                  <p class="t_desc">
+                    요소에 class 속성이 없으면 addClass ()가 적용되고 class 속성이 있으면 removeClass()가 적용됩니다.
+                  </p>
+                  <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>실행 분류</th>
+                            <th>형식</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">추가, 제거</td>
+                            <td>$("div").toggleClass("클래스명");</td>
+                        </tr>
+                    </tbody>
+                </table><br>
+                    <p class="t_desc">
+                        toggleClass() 메서드와 removeClass() 메서드를 이용하여 어코디언 메뉴를 실습해 보도록 하겠습니다.<br>
+                    </p>
+                <h4 class="t_tit3">03-1. 예제</h4>
+                <div class="t_code">
+<pre><code class="language-html">{
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="ko"&gt;
+    &lt;head&gt;
+      &lt;meta charset="UTF-8"&gt;
+      &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+      &lt;title&gt;toggleClass() 메서드&lt;/title&gt;
+      &lt;script src="jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+      
+      &lt;script&gt;
+        $(document).ready(function() {
+            $("#m_menu a.m").click(function() {
+                $(this).next().addBack().toggleClass("on").end().find(".m, ul").
+                removeClass("on").end().parent().siblings().find(".m, ul").removeClass("on");
+                    return false;
+            });
+        });
+      &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    
+    &lt;/body&gt;
+    &lt;/html&gt;
+}
+</code></pre>
+                </div>
+<br>
+                <p class="t_desc">
+                    예제에서 $(this).next().addBack.toggleClass("on").end().find(".m, ul").<br>
+                    removeClass("on").end().parent().siblings().find(".m, ul").removeClass("on")은 다음과 같이 선택됩니다.
+                </p>
+                <div class="t_box">
+                    <p>서브 메뉴(ul 요소가 존재하는 a 요소(.m)를 click 하면,<br>
+                        $(this).toggleClass("on") // 자신 요소(.m)의 폰트 컬러를 주황색, 회색으로 toggle 시킵니다.<br>
+                        $(this).next().toggleClass("on") // 자신의 서브 메뉴를 show, hide로 toggle 시킵니다.<br>
+                        $(this).next().find(".m, ul").removeClass("on") // 자신의 하위 메뉴들과 하위 서브 메뉴들을 초기화 시킵니다.<br>
+                        $(this).next().siblings().find(".m, ul").removeClass("on") // 다른 메뉴들을 초기화 시킵니다.
+                    </p>
+                </div>
+            <hr>
+                <h3 class="t_tit2">04. hasClass() 메서드</h3>
+                <p class="t_desc">if 문의 조건식으로 사용됩니다. 선택한 요소 클래스가 있으면 true, 없으면 false를 반환합니다.</p>
+                <div class="t_code">
+<pre><code class="language-js">{
+    if($("#box").hasClass("m")){
+        console.log("클래스 있음") // 클래스 있음
+    } else {
+        console.log("클래스 없음");
+    }
+    ...
+    &lt;div id="#box" class="m"&gt;내용&lt;/div&gt;   
+}
+</code></pre>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

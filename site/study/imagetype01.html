@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기 이미지 유형</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <link rel="stylesheet" href="../assets/css/study_style.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기 : 이미지 유형 01</h2>
+            <p class="t_desc2">
+                사이트를 만들기에 앞서 다양한 유형으로 나누어서 공부해보려고 합니다.<br>
+                이번 시간에 공부해 볼 유형은 이미지 유형 입니다.<br>
+                피그마로 먼저 레이아웃을 잡아준 뒤에 수치대로 코딩합니다.<br>
+            </p>
+
+            <hr> <!-- 구간나눔 -->
+
+            <h3 class="t_tit2">01. Figma로 레이아웃 잡기</h3>
+            <div class="t_box">
+                <p>Figma로 전체적인 틀을 잡아줍니다.</p>
+            </div>
+            <div class="t_iframe">
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FoNKQOTi0hGT2rl7LwQTdYb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D755%253A219" allowfullscreen></iframe>
+            </div>
+            <hr> <!-- 구간나눔 -->
+            <h3 class="t_tit2">02. HTML</h3>
+            <div class="t_box">
+                <p> 피그마 구도에 맞게 틀을 잡아줍니다.
+                </p>
+            </div>
+            <div class="t_code">
+<pre><code class="language-html">{
+    &lt;body&gt;
+    &lt;section id="imageType01" class="image__wrap nexon section"&gt;
+        &lt;h2&gt;육식 동물들&lt;/h2&gt;
+        &lt;p&gt;사납고 무서운 동물들 리스트 입니다.&lt;/p&gt;
+        &lt;div class="image__inner container"&gt;
+            &lt;article class="image img1"&gt;
+                &lt;h3 class="image__title"&gt;무서운 맹수 호랑이&lt;/h3&gt;
+                &lt;p class="image__desc"&gt;
+                    호랑이는 무섭습니다. 무서운 맹수입니다. 호랑이는 사납습니다.
+                    호랑이는 매우 위협적인 동물입니다. 만나면 도망가야합니다.&lt;/p&gt;
+                &lt;a class="image__btn" href="/" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/article&gt;
+            &lt;article class="image img2"&gt;
+                &lt;h3 class="image__title"&gt;사나운 맹수 늑대&lt;/h3&gt;
+                &lt;p class="image__desc"&gt;
+                    늑대는 무섭습니다. 무서운 맹수입니다 늑대는 사납습니다.
+                    늑대는 매우 위협적인 동물입니다. 만나면 도망가야 합니다.&lt;/p&gt;
+                &lt;a class="image__btn yellow" href="/" title="자세히 보기"&gt;자세히 보기&lt;/a&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+}
+</code></pre>
+            </div>
+            <hr> <!-- 구간나눔 -->
+            <h3 class="t_tit2">03. CSS</h3>
+            <p class="t_box">Figma에서 정해놓은 수치대로 CSS를 입혀줍니다.<br>
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">{
+    /* fonts */
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+    .nexon {
+        font-family: 'NexonLv1Gothic';
+        font-weight: 400;
+    }
+    /* reset */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    img {
+        width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+    }
+    /* common */
+    .container {
+        width: 1160px;
+        padding: 0 20px;
+        margin: 0 auto;
+        min-width: 1160px;
+    }
+    .section {
+        padding: 120px 0;
+    }
+    .section > h2 {
+        font-size: 50px;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .section > p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+    /* imageType */
+    .image__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    .image {
+        width: 49%;
+        height: 370px;
+        color: #fff;
+        padding: 200px 30px 30px 30px;
+        box-sizing: border-box;
+    }
+    .image.img1 {
+        background: url(img/image_bg01_01.jpg) no-repeat center;
+    }
+    .image.img2 {
+        background: url(img/image_bg01-02.jpg) no-repeat center;
+    }
+    .image__title {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+    .image__desc {
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 10px;
+        line-height: 1.5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .image__btn {
+        font-size: 16px;
+        color: #fff;
+        background-color: #B45A30;
+        padding: 10px 20px;
+        display: inline-block;
+    }
+    .image__btn.yellow {
+        background-color: #B59140;
+    }
+}
+</code></pre>
+            </div>
+
+            <hr> <!-- 구간나눔 -->
+
+            <h4 class="t_tit3">최종 결과</h4>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/site/imageType/imageType01.html"
+                    frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href=https://kimdaewonn.github.io/coding/site/imageType/imageType01.html>원본 사이트 보기</a>
+                <a href=https://github.com/kimdaewonn/coding/blob/main/site/imageType/imageType01.html>원본 소스 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

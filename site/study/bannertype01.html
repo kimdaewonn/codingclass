@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기 배너 유형</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <link rel="stylesheet" href="../assets/css/study_style.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기 : 배너 유형 01</h2>
+            <p class="t_desc2">
+                사이트를 만들기에 앞서 다양한 유형으로 나누어서 공부해보려고 합니다.<br>
+                이번 시간에 공부해 볼 유형은 배너 유형 입니다.<br>
+                피그마로 먼저 레이아웃을 잡아준 뒤에 수치대로 코딩합니다.<br>
+            </p>
+            <hr> <!-- 구간나눔 -->
+
+            <h3 class="t_tit2">01. Figma로 레이아웃 잡기</h3>
+            <div class="t_box">
+                <p>Figma로 전체적인 틀을 잡아줍니다.</p>
+            </div>
+            <div class="t_iframe">
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FoNKQOTi0hGT2rl7LwQTdYb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D1379%253A1819" allowfullscreen></iframe>
+            </div>
+            <hr> <!-- 구간나눔 -->
+            <h3 class="t_tit2">02. HTML</h3>
+            <div class="t_box">
+                <p> 피그마 구도에 맞게 틀을 잡아줍니다.
+                </p>
+            </div>
+            <div class="t_code">
+<pre><code class="language-html">{
+    &lt;body&gt;
+    &lt;section id="bannerType" class="banner__wrap nexon"&gt;
+        &lt;h2 class="blind"&gt;배너 영역&lt;/h2&gt;
+        &lt;div class="banner__inner"&gt;
+            &lt;h3 class="title"&gt;동물의 왕국&lt;/h3&gt;
+            &lt;p class="desc"&gt;
+                더 다양한 정보는 유튜브를 통해 제공하고잇습니다.
+                &lt;a href="/" title="유튜브페이지로이동"&gt;youtube.com&lt;/a&gt;
+            &lt;/p&gt;
+            &lt;span class="small"&gt;배너 유형01&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/section&gt; &lt;!-- //bannerType --&gt;
+  &lt;/body&gt;
+}
+</code></pre>
+            </div>
+            <hr> <!-- 구간나눔 -->
+            <h3 class="t_tit2">03. CSS</h3>
+            <p class="t_desc2">
+                맞춰놓은 틀에 CSS를 예쁘게 입혀줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">{
+    .banner__inner {
+        background-image: url(img/banner_bg01.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+        padding: 120px 0;
+        color: #fff;
+    }
+    .banner__inner .title {
+        font-size: 50px;
+        line-height: 1;
+        font-weight: 300;
+        margin-bottom: 40px;
+    }
+    .banner__inner .desc {
+        font-size: 24px;
+        line-height: 1.5;
+        font-weight: 300;
+        margin-bottom: 70px;
+    }
+    .banner__inner .desc a{
+        color: #fff;
+        display: block;
+    }
+    .banner__inner .desc a:hover{
+        text-decoration: underline;
+    }
+    .banner__inner .small {
+        font-size: 16px;
+        text-decoration: underline;
+    } 
+}
+</code></pre>
+            </div>
+
+            <hr> <!-- 구간나눔 -->
+
+            <h4 class="t_tit3">최종 결과</h4>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/site/bannerType/bannerType01.html"
+                    frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href=https://kimdaewonn.github.io/coding/site/bannerType/bannerType01.html>원본 사이트 보기</a>
+                <a href=https://github.com/kimdaewonn/coding/blob/main/site/bannerType/bannerType01.html>원본 소스 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

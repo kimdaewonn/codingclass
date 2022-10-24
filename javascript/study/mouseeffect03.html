@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 03</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">마우스 이펙트</h2>
+            <div class="t_desc2">
+                <p>
+                    마우스 이펙트 세번째 시간입니다.<br>
+                </p>
+            </div>
+            <hr>
+            <h3 class="t_tit2">마우스 이펙트 03</h3>
+            <p class="t_desc2">
+                마우스 커서를 따라서 비춰주는 조명효과를 주었습니다.
+            </p>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/javascript/effect/mouseEffect03.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href=https://kimdaewonn.github.io/coding/javascript/effect/mouseEffect03.html>원본 사이트 보기</a>
+                <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/mouseEffect03.html>원본 소스 보기</a>
+            </div>
+            <h3 class="t_tit2">01. HTML 코드</h3>
+            <div class="t_code">
+<pre><code class="language-html">{
+    &lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;p&gt;Resolve to &lt;span&gt;perform&lt;/span&gt; what your ought, &lt;span&gt;perform&lt;/span&gt; without fail &lt;span&gt;what you resolve&lt;/span&gt;&lt;/p&gt;
+            &lt;p&gt;해야할 일은 과감히 하라, &lt;span&gt;결심한 일은&lt;/span&gt; 반드시 &lt;span&gt;실행하라.&lt;/span&gt;&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+} 
+</code></pre>
+                </div>
+
+                <h3 class="t_tit2">02. CSS 코드</h3>
+                <p class="t_desc2">
+                    커서포인터의 배경이미지를 배경과 같은이미지로 해주고 중앙으로 맞춰줍니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">{
+    .mouse__wrap {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+        overflow: hidden;
+        cursor: none;
+    }
+    .mouse__wrap p {
+        font-size: 2vw;
+        line-height: 2;
+        font-weight: 300;
+    }
+    .mouse__wrap p:last-child {
+        font-size: 3vw;
+        font-weight: 400;
+    }
+    .mouse__wrap p span {
+        border-bottom: 0.15vw dashed orange;
+        color: orange;
+    }
+    @media (max-width: 800px){
+        .mouse__wrap p {
+            padding: 0 20px;
+            font-size: 24px;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 10px;
+    }
+        .mouse__wrap p:last-child {
+            font-size: 40px;
+            line-height: 1.5;
+            text-align: center;
+            word-break: keep-all;
+    }
+    }
+    .mouse__cursor {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 200px;
+        z-index: -1;
+        border-radius: 50%;
+        background: #fff;
+        background-image: url(../assets/img/effect_bg08@2x-min.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+        border: 5px solid #fff;
+    }
+}
+</code></pre>
+                </div>
+            <h3 class="t_tit2">03. script 코드</h3>
+            <p class="t_desc2">
+                먼저, getBoundingClientRect를 이용해서 커서 위치값을 객체 형태로 구해줍니다.<br>
+                좌표의 기준값을 중앙으로 잡기 위해서 left: e.pageX - circle.width/2, top: e.pageY - circle.height/2,로 맞춰줍니다.<br>
+                addEventListener를 통해 mousemove에 gsap효과를 넣어줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">{
+    const cursor = document.querySelector(".mouse__cursor");
+
+    // const circleW = cursor.offsetWidth;     //200
+    // const circleH = cursor.offsetHeight;     //200
+    // const circle2 = cursor.clientWidth;     //190 : 보더값 제외
+    
+    const circle = cursor.getBoundingClientRect();
+
+    console.log(circle);
+    // const DOMRect = {
+    //     x: 0,
+    //     y: 0,
+    //     bottom: 200,
+    //     height: 200,
+    //     left: 0,
+    //     right: 200,
+    //     top: 0
+    //     width: 200
+    // }
+
+
+    window.addEventListener("mousemove", (e) => {
+        gsap.to(cursor, {
+            duration: 0.5,
+            left: e.pageX - circle.width/2,
+            top: e.pageY - circle.height/2,
+        });
+    });
+}
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

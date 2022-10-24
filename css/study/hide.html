@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소 숨기기</title>
+    <link rel="stylesheet" href="../assets/css/study_style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+</head>
+<body>
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">요소 숨기기</h2>
+                    <p class="t_box">
+                        오늘은 요소 숨기기 방법에 대해 알아보겠습니다.
+                    </p>
+
+            <hr>
+
+                <h3 class="t_tit2">01. display: none</h3>
+                    <p class="t_desc2">
+                        display: none은 렌더링트리와 접근성 트리에서 사라지게 합니다.<br>
+                        애니메이션도 안되고 영역도 사라진다.
+                        <div class="t_code">
+<pre><code class="language-css">{
+    .button {
+        display: none;
+    }
+}
+</code></pre>
+                    </div>
+            <hr>
+
+                <h3 class="t_tit2">02. opacity: 0</h3>
+                    <p class="t_desc2">
+                        opacity: 0은 엘리먼트의 요소를 안보이게 하지만, 빈공간이 남아 있게 된다.<br>
+                        애니메이션이 되고 , 영역도 존재함
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-css">{
+    .button {
+        opacity: 0;
+    }
+}
+</code></pre>
+                    </div>
+            <hr>
+
+                <h3 class="t_tit2">03. visibility: hidden</h3>
+                <p class="t_desc2">
+                    visibility: hidden은 레이아웃에 영향을 미치지 않고 엘리먼트를 감춘다. 사라진 공간은 빈 공간으로 남으며, 리플로우가 일어나지 않는다. <br>
+                    애니메이션도 안되고 영역도 사라진다.
+                </p>
+                    <div class="t_code">
+<pre><code class="language-css">{
+    .button {
+        visibility: hidden;
+    }
+}
+</code></pre>
+                    </div>
+
+            <hr>
+
+                <h3 class="t_tit2">04. transform: scale(0)</h3>
+                <p class="t_desc2">
+                    시각적으로 엘리먼트를 감추지만, 빈공간이 남는다. 그러나 스크린 리더에서는 이 요소에 접근할 수가 있다.<br>
+                    애니메이션은 되지만 영역은 사라진다.
+                </p>
+                    <div class="t_code">
+<pre><code class="language-css">{
+    .button {
+        transform: scale(0);
+    }
+}
+</code></pre>
+                    </div>
+            <hr>
+
+                <h3 class="t_tit2">05. width: 0; height: 0</h3>
+                <p class="t_desc2">
+                    특정 요소의 너비와 높이를 0으로 설정하여 숨기는 방식으로,
+                    스크린리더 또한 이 엘리먼트가 접근 가능하지 않은 것으로 간주하고 건너뛴다.
+                    별로 좋지 못한 방법이다.<br>
+                    애니메이션도 안되고 영역도 사라진다.
+                </p>
+                    <div class="t_code">
+<pre><code class="language-css">{
+    .button {
+        width: 0;
+        height: 0;
+    }
+}
+</code></pre>
+                    </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

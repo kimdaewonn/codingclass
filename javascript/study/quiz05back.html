@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="fun_ction.html">함수</a></li>
+                <li><a href="area.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01~04.html">퀴즈</a></li>
+                <li><a href="study/element.html">요소선택</a></li>
+                <li><a href="join_pop_push.html">join()/pop()/push()</a></li>
+                <li><a href="inner_function.html">내장 함수</a></li>
+                <li><a href="regular_expression.html">정규식 표현</a></li>
+                <li><a href="slice_substring_substr.html">slice() / substring() / substr()</a></li>
+                <li><a href="indexOf.html">indexOf</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">퀴즈</h2>
+            <div class="t_desc2">
+                <p>웹디자인기능사 대비 퀴즈 프로그램을 만들어 풀어보려 합니다.<br>
+                    querySelector를 통해 저장된 값들을 불러오며, addEventListener 함수로 클릭 했을때 정답을 출력하도록 합니다.<br>
+                    여기에 if함수를 더해 정답과 오답에 대한 결과를 나눕니다.
+                </p>
+            </div>
+            <hr>
+            <h3 class="t_tit2">문제 05</h3>
+            <p class="t_box">
+                정답을 맞출 경우 강아지가 웃으며 정답입니다 문구가 나옵니다.<br>
+                오답의 경우 강아지가 울며 틀렸습니다 문구가 나오며 해설을 보여줍니다.<br>
+                맞출 경우 강아지가 웃습니다.
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/javascript/effect/quizEffect05.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href=https://kimdaewonn.github.io/coding/javascript/effect/quizEffect05.html>원본 사이트 보기</a>
+                <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/quizEffect05.html>원본 소스 보기</a>
+            </div>
+
+            <h3 class="t_tit2">Javascript 코드</h3>
+            <p class="t_box">선택자, 문제정보, 문제출력, 보기출력, 정답확인 및 맞춰보기 단계로 구성되어 있습니다.</p>
+
+            <div class="t_code">
+                <pre><code class="language-js">{
+    //선택자
+    const quizWrap = document.querySelector(".quiz__wrap");
+    function updateQuiz() {
+        const exam = [];
+        quizInfo.forEach((question, number) => {
+            exam.push(`
+                <div class="quiz">
+                    <span class="quiz__type">${question.answerType}</span>
+                    <h2 class="quiz__question">
+                        <span class="number">${question.answerNum}</span>
+                        <div class="ask">${question.answerAsk}</div>
+                    </h2>
+                    <div class="quiz__view">
+                        <div class="true">정답입니다!</div>
+                        <div class="false">틀렸습니다!</div>
+                        <div class="dog">
+                            <div class="head">
+                                <div class="ears"></div>
+                                <div class="face"></div>
+                                <div class="eyes">
+                                    <div class="teardrop"></div>
+                                </div>
+                                <div class="nose"></div>
+                                <div class="mouth">
+                                    <div class="tongue"></div>
+                                </div>
+                                <div class="chin"></div>
+                            </div>
+                            <div class="body">
+                                <div class="tail"></div>
+                                <div class="legs"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz__answer">
+                        <div class="quiz__selects">
+                            <label for="select1${number}">
+                                <input type="radio" id="select1${number}" class="select" name="select${number}" value="1">
+                                <span class="choice">${question.answerChoice[1]}</span>
+                            </label>
+                            <label for="select2${number}">
+                                <input type="radio" id="select2${number}" class="select" name="select${number}" value="2">
+                                <span class="choice">${question.answerChoice[2]}</span>
+                            </label>
+                            <label for="select3${number}">
+                                <input type="radio" id="select3${number}" class="select" name="select${number}" value="3">
+                                <span class="choice">${question.answerChoice[3]}</span>
+                            </label>
+                            <label for="select4${number}">
+                                <input type="radio" id="select4${number}" class="select" name="select${number}" value="4">
+                                <span class="choice">${question.answerChoice[4]}</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            `); //exam에 push
+        });
+        exam.push(`
+            <div class="quiz__confirm">
+                <button class="check">정답 확인하기</button>
+                <div class="ex"></div>    
+            </div>
+        `);
+
+        quizWrap.innerHTML = exam.join('');
+    }
+    updateQuiz();
+
+    //정답 확인
+    function answerQuiz(){
+        const quizSelects = document.querySelectorAll(".quiz__selects");    //보기
+        const quizView = document.querySelectorAll(".quiz__view");          //강아지
+        //사용자가 체크한 라디오 박스  == 문제 정답
+        quizInfo.forEach((question, number) => {
+            const quizSelectsWrap = quizSelects[number];                    //전체 보기 박스
+            const userSelector = `input[name=select${number}]:checked`;     //사용자가 클릭한 라디오 박스
+            const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value
+            const quizView = document.querySelectorAll(".quiz__view");
+            console.log(quizSelects)
+            if(userAnswer == question.answerResult){
+                console.log("정답")
+                quizView[number].classList.add("like");
+            } else {
+                console.log("오답")
+                quizView[number].classList.add("dislike");
+                const div = document.createElement("div");
+                quizSelectsWrap.appendChild(div).innerHTML = `<p class="result">${question.answerEx}</p>`;
+            }
+        });
+    }
+    document.querySelector(".quiz__confirm .check").addEventListener("click", answerQuiz);
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

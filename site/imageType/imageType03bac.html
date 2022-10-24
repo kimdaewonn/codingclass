@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형 02</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        .Nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+
+        /* common */
+        .container {
+            width: 1920px;
+            padding: 0 100px;
+            margin: 0 auto;
+            min-width: 1920px;  
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h1 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #666;
+        }
+        /* imageType */
+        .image__inner {
+            display: flex;
+        }
+        .image {
+            width: 48%;
+            position: relative;
+            overflow: hidden;
+        }
+        .image__box img {
+            transition: all 0.5s ease-in-out;
+        }
+        .image__desc1 {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            backdrop-filter: blur(16px);
+            background-color: #666;
+            color: #fff;
+        }
+        .image__desc2 {
+            position: absolute;
+            left: 1020px;
+            top : 465px;
+            width: 100%;
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .image__desc3 {
+            position: absolute;
+            left: 1500px;
+            top : 465px;
+            width: 100%;
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .top__container {
+            display: flex;
+        }
+        .bottom__container {
+            display: flex;
+        }
+        
+    </style>
+</head>
+<body>
+    <section id="imageType03" class="image__wrap Nexon section">
+        <h1>바다에 사는 동물들</h1>
+        <p>바다에 사는 귀엽고 귀여운 동물들 리스트 입니다.</p>
+        <div class="image__inner container">
+            <article class="image img1">
+                <figure class="image__box">
+                    <img src="img/image_bg03_01.jpg" alt="거북이">
+                </figure>
+                <div class="image__desc1">
+                    <h3>바다에 사는 동물들</h3>
+                    <p class="more">바다에 사는 귀엽고 귀여운 동물들 리스트 입니다.                   </p>
+                </div>
+            </article>
+        <div class="top__container">
+            <article class="img2">
+                <figure class="image__box">
+                    <img src="img/image_bg03_02.jpg" alt="상어">
+                </figure>
+                <div class="image__desc2">
+                    <h3>바다에 사는 동물들</h3>
+                    <p class="more">바다에 사는 귀엽고 귀여운 동물들 리스트 입니다.                   </p>
+                </div>
+            </article>
+            <article class="img3">
+                <figure class="image__box">
+                    <img src="img/image_bg03_03.jpg" alt="불가사리">
+                </figure>
+                <div class="image__desc3">
+                    <h3>바다에 사는 동물들</h3>
+                    <p class="more">바다에 사는 귀엽고 귀여운 동물들 리스트 입니다.                   </p>
+                </div>
+            </article>
+        </div>
+        </div>
+    </section>
+</body>
+</html>

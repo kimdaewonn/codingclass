@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="fun_ction.html">함수</a></li>
+                <li><a href="area.html">지역변수/전역변수</a></li>
+                <li><a href="study/element.html">요소선택</a></li>
+                <li><a href="quiz01~04.html">퀴즈</a></li>
+                <li><a href="join_pop_push.html">join()/pop()/push()</a></li>
+                <li><a href="inner_function.html">내장 함수</a></li>
+                <li><a href="regular_expression.html">정규식 표현</a></li>
+                <li><a href="slice_substring_substr.html">slice() / substring() / substr()</a></li>
+                <li><a href="indexOf.html">indexOf</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+        <h2 class="t_tit">제어문</h2>
+            <p class="t_desc">제어문이란 프로그램에서 필요한 결과 값을 도출하기 위해 
+                실행문의 순서를 제어하거나 반복시키는 문장을 말합니다.
+            </p>
+            <h3 class="t_tit2">if문</h3>
+                <p class="t_desc">if문은 조건식과 실행문으로 이루어지며 가장 많이 사용되는 제어문입니다.</p>
+                <div class="t_code">
+<pre><code class="language-js">{
+    var html = Number(prompt('html 점수입력', ''));
+    var css = Number(prompt('css 점수입력', ''));
+    var javascript = Number(prompt('javascript 점수입력', ''));
+    var avg = (html + css + javascript) / 3;
+    var comment;
+    if (avg >= 60) {
+        if(html &lt; 40) {
+            comment = 'HTML' + '40점 미만 불합격';
+        } else if (css &lt; 40){
+            comment = 'CSS' + '40점 미만 불합격';
+        } else if (javascript &lt; 40){
+            comment = 'JAVASCRIPT' + '40점 미만 불합격';  
+        } else {
+            comment = '평균' + avg + '점 합격';
+        } 
+    } else{   
+            comment = '평균' + avg + '점 불합격';
+        }
+            document.write(comment);
+}
+</code></pre>
+                 </div>
+    <div class="t_result">
+        <details>
+            <summary>결과 확인하기</summary>
+            <div class="result30">
+                <script>
+                    // var html = Number(prompt('html 점수입력', ''));
+                    // var css = Number(prompt('css 점수입력', ''));
+                    // var javascript = Number(prompt('javascript 점수입력', ''));
+                    var avg = (html + css + javascript) / 3;
+                    var comment;
+                    if (avg >= 60) {
+                    if(html < 40) {
+                        comment = 'HTML' + '40점 미만 불합격';
+                    } else if (css < 40){
+                        comment = 'CSS' + '40점 미만 불합격';
+                    } else if (javascript < 40){
+                        comment = 'JAVASCRIPT' + '40점 미만 불합격';  
+                    } else {
+                        comment = '평균' + avg + '점 합격';
+                    } 
+                    } else{   
+                        comment = '평균' + avg + '점 불합격';
+                    }
+                        document.write(comment);
+                        
+                </script>
+            </div>
+        </details>
+    </div>
+        <h2 class="t_tit2">switch문</h2>
+        
+            <p class="t_desc">switch문은 switch값과 case값들을 하나씩 비교하여 일치하는
+            case를 실행시켜 줍니다.<br> if문과 달리 스스로 {}를 빠져나가지 못하며, 이 때문에
+            break 명령어를 주어 빠져나가도록 해야 합니다.<br> default는 일치하는 값이 없을때 실행한다.
+            </p>
+            <div class="t_code"> 
+<pre><code class="language-js">
+    var classfication = prompt('아동, 청소년, 성인 중 선택 입력','');
+    switch (classfication) {
+        case '아동':
+        classfication += ': 입장료 무료';
+        break;
+        case '청소년':
+        classfication += ': 입장료 2,000원';
+        break;
+        case '성인' :
+        classfication += ': 입장료 5,000원';
+        break;
+        default:
+        classfication = '입력 값을 다시 확인하세요';
+    }
+    document.write(classfication);
+</code></pre>
+            </div> 
+        <div class="t_result">
+            <details>
+                <summary>결과 확인하기</summary>
+                <div class="result30">
+                    <script>
+                        switch (classfication) {
+                            case '아동':
+                            classfication += ': 입장료 무료';
+                            break;
+                            case '청소년':
+                            classfication += ': 입장료 2,000원';
+                            break;
+                            case '성인' :
+                            classfication += ': 입장료 5,000원';
+                            break;
+                            default:
+                            classfication = '입력 값을 다시 확인하세요';
+                        }
+                            document.write(classfication);
+                    </script>
+                </div>
+            </details>
+        </div>
+    </div>
+</main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

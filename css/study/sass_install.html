@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VScode SCSS 설치 방법 </title>
+    <link rel="stylesheet" href="../assets/css/study_style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+</head>
+<body>
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">VScode SCSS 설치 및 설정방법</h2>
+                    <p class="t_box">
+                        VScode SCSS 설치 및 설정방법에 대해 알아보겠습니다.
+                    </p>
+
+            <hr> <!-- 구간나눔 -->  
+
+                <h3 class="t_tit2">01. SASS 설치</h3>
+                    <p class="t_desc2">
+                    Extensions 탭에서 Sass를 검색해서 설치해줍니다.   
+                    </p>
+                <h3 class="t_tit2">02. Live Sass compiler 설치 </h3>
+                    <p  class="t_desc2">
+                        Live Sass compiler를 설치해줍니다.
+                    </p>
+
+                <h3 class="t_tit2">03. watch sass 확인 </h3>
+                <p  class="t_desc2">
+                    하단에 watch가 나오는지 확인해줍니다.
+                </p>
+                <h3 class="t_tit2">04.settings.json </h3>
+                <p  class="t_desc2">
+                    왼쪽 아래에 톱니바퀴 버튼을 클릭 -> setiings 클릭 -> 검색창에 json 입력 -> Edit in settings.json을 클릭 -> 입장해줍니다.
+                </p>
+
+                <h3 class="t_tit2">05. 코드 붙여넣기 </h3>
+                <p  class="t_desc2">
+                    04번에서 입장한 셋팅창에 아래의 코드를 붙여넣어주면 셋팅 완료입니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">{
+    "liveSassCompile.settings.generateMap": false,
+    "liveSassCompile.settings.formats": [
+      {
+        "format": "expanded",
+        "extensionName": ".css",
+        "savePath": "../css/"
+      },
+      {
+        "format": "compressed",
+        "extensionName": ".min.css",
+        "savePath": "~/../css/"
+      }
+    ]
+}
+</code></pre>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

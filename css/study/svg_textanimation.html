@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXT 애니메이션</title>
+    <link rel="stylesheet" href="../assets/css/study_style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+</head>
+<body>
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">SVG 텍스트 애니메이션</h2>
+                    <p class="t_desc2">
+                        SVG 텍스트에 stroke효과와 애니메이션 효과를 입혀서 예쁘게 만들어보겠습니다.
+                    </p>
+
+            <hr> <!-- 구간나눔 -->  
+            <h3 class="t_tit2">01. HTML</h3>
+                <div class="t_code">
+<pre><code class="language-html">{
+    &lt;svg viewBox="0 0 1320 300"&gt;
+    &lt;text x="50%" y="50%" dy="40px" text-anchor="middle"&gt;kimdaewonn&lt;/text&gt;
+  &lt;/svg&gt;
+}
+</code></pre>
+                </div>
+
+            <h3 class="t_tit2">02. CSS</h3>
+                <div class="t_code">
+<pre><code class="language-css">{
+    @font-face {
+        font-family: 'Tmon';
+        font-weight: normal;
+        font-style: normal;
+        src: url('https://cdn.jsdelivr.net/gh/webfontworld/tmon/Tmon.eot');
+        src: url('https://cdn.jsdelivr.net/gh/webfontworld/tmon/Tmon.eot?#iefix') format('embedded-opentype'),
+             url('https://cdn.jsdelivr.net/gh/webfontworld/tmon/Tmon.woff2') format('woff2'),
+             url('https://cdn.jsdelivr.net/gh/webfontworld/tmon/Tmon.woff') format('woff'),
+             url('https://cdn.jsdelivr.net/gh/webfontworld/tmon/Tmon.ttf') format("truetype");
+        font-display: swap;
+    } 
+    body {
+        background-color: #e3f2fd;
+    }
+    svg {
+        font-family: 'Tmon';
+        font-size: 140px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-transform: uppercase;
+        animation: stroke 5s 1 alternate;
+        fill: rgba(72,138,204,1);
+    }
+    @keyframes stroke {
+        0%   {
+            stroke-dashoffset: 25%;
+            stroke-dasharray: 0 50%;
+            fill: rgba(72,138,204,0);
+            stroke: rgba(54,95,160,1);
+            stroke-width: 2;
+        }
+        70%  {
+            fill: rgba(72,138,204,0);
+            stroke: rgba(54,95,160,1);
+        }
+        80%  {
+            fill: rgba(72,138,204,0);
+            stroke: rgba(54,95,160,1);
+        }
+        100% {
+            stroke-dashoffset: -25%;
+            stroke-dasharray: 50% 0;
+            fill: rgba(72,138,204,1);
+            stroke: rgba(54,95,160,0);
+            stroke-width: 0;
+        }
+    }
+}
+</code></pre>
+                </div>
+
+                <h3 class="t_tit2">03. 결과물</h3>
+
+                <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="ExLVWqZ" data-user="kimdaewonn" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kimdaewonn/pen/ExLVWqZ">
+                    Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+              
+                  
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                /* fonts */
+                @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+.gmark {
+    font-family: gmarketSans;
+    font-weight: 500;
+}
+ /* reset */
+ * {
+margin: 0;
+padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+img {
+    width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+/* common */
+.container {
+    width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+    min-width: 1160px;
+}
+.section {
+    padding: 120px 0;
+}
+.section > h2 {
+    font-size: 50px;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section > p {
+    font-size: 22px;
+    font-weight: 300;
+    color: #666;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.gray {
+    background-color: #f5f5f5;
+}
+
+/* ir 효과(이미지 대체 효과 alt) */
+.ir {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+/* card */
+.card__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card {
+    width: 24%;
+    position: relative;
+}
+.card__inner .card:first-child {
+            margin-bottom: 50px;
+        }
+.more {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background-image: url(img/arrow.svg);
+    top: 205px;
+    right: 0;
+    
+}
+.card__inner .card .tit {
+            font-size: 28px;
+            margin-bottom: 10px;
+            /* 1줄효과 */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 18px;
+            padding-top: 10px;
+
+        }
+        .card__inner .card .desc {
+            font-size: 18px;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.4;
+            /* 3줄효과 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; 
+            -webkit-box-orient: vertical;
+        }
+</style>
+</head>
+<body>
+    <section id="cardtype02" class="section score card__wrap">
+        <h2>해보셈 운동</h2>
+        <p>안녕하세요 ㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱ</p>
+        <div class="card__inner container">
+            <article class="card">
+                <a class="more" href="#"><span class="ir">더보기</span></a>
+                <img src="img/card_bg02_01.jpg" alt="걷기">
+                <h3 class="tit">걷기</h3>
+                <p class="desc">글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글</p>
+            </article>
+            <article class="card">
+                <a class="more" href="#"><span class="ir">더보기</span></a>
+                <img src="img/card_bg02_01.jpg" alt="걷기">
+                <h3 class="tit">걷기</h3>
+                <p class="desc">글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글</p>
+            </article>
+            <article class="card">
+                <a class="more" href="#"><span class="ir">더보기</span></a>
+                <img src="img/card_bg02_01.jpg" alt="걷기">
+                <h3 class="tit">걷기</h3>
+                <p class="desc">글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글</p>
+            </article>
+            <article class="card">
+                <a class="more" href="#"><span class="ir">더보기</span></a>
+                <img src="img/card_bg02_01.jpg" alt="걷기">
+                <h3 class="tit">걷기</h3>
+                <p class="desc">글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글</p>
+            </article>
+            <article class="card">
+                <a class="more" href="#"><span class="ir">더보기</span></a>
+                <img src="img/card_bg02_01.jpg" alt="걷기">
+                <h3 class="tit">걷기</h3>
+                <p class="desc">글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글</p>
+            </article>
+            <article class="card">
+                <a class="more" href="#"><span class="ir">더보기</span></a>
+                <img src="img/card_bg02_01.jpg" alt="걷기">
+                <h3 class="tit">걷기</h3>
+                <p class="desc">글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글</p>
+            </article>
+            <article class="card">
+                <a class="more" href="#"><span class="ir">더보기</span></a>
+                <img src="img/card_bg02_01.jpg" alt="걷기">
+                <h3 class="tit">걷기</h3>
+                <p class="desc">글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글</p>
+            </article>
+            <article class="card">
+                <a class="more" href="#"><span class="ir">더보기</span></a>
+                <img src="img/card_bg02_01.jpg" alt="걷기">
+                <h3 class="tit">걷기</h3>
+                <p class="desc">글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글글</p>
+            </article>
+
+
+        </div>
+    </section>
+</body>
+</html>

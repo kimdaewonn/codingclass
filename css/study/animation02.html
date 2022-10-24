@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 애니메이션</title>
+    <link rel="stylesheet" href="../assets/css/study_style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+</head>
+<body>
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">간단한 애니메이션 02</h2>
+                    <p class="t_desc2">
+                        간단한 애니메이션 만들기 두번째 시간입니다.<br>
+                        빙글빙글 돌아가는 조그만 두개의 공을 만들어보겠습니다.
+                    </p>
+
+            <hr> <!-- 구간나눔 -->
+
+            <h3 class="t_tit2">01. HTML</h3>
+                <div class="t_code">
+<pre><code class="language-html">{
+    &lt;div class="loading"&gt;
+    &lt;span class="circle1"&gt;&lt;/span&gt;
+    &lt;span class="circle2"&gt;&lt;/span&gt;
+  &lt;/div&gt;
+}
+</code></pre>
+                </div>
+                <hr> <!-- 구간나눔 --> 
+            <h3 class="t_tit2">02. CSS</h3>
+                <div class="t_code">
+<pre><code class="language-css">{
+    body {
+        height: 100vh;
+        background-image: linear-gradient(-60deg, #ff5850 0%, #f09819 100%)
+      }
+      .loading {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 20px;
+        height: 150px;
+        background: transparent;
+        animation: loading 1s ease infinite;
+      }
+      .loading .circle1 {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #fff;
+      }
+      .loading .circle2 {
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #fff;
+        margin-top: 110px; 
+      }
+      @keyframes loading {
+        0%{transform: translate(-50%, -50%) rotate(0deg)}
+        100%{
+          transform: translate(-50%, -50%) rotate(360deg)}
+      }
+}
+</code></pre>
+                </div> 
+                <hr> <!-- 구간나눔 -->  
+               
+                <h3 class="t_tit2">03. 결과물</h3>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kimdaewonn/embed/ExEBOzQ?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimdaewonn/pen/ExEBOzQ">
+                    Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

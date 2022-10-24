@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 레퍼런스 북</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dracular.css">
+    <!-- 구글 아이콘 -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <span>이름 : 웹쓰</span>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <header class="main_header">
+            <h2>HTML <em>레퍼런스 북</em></h2>
+        </header>
+        <nav class="main_menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초문법</a></li>
+                <li><a href="block_inline.html">블록구조/인라인구조</a></li>
+                <li><a href="web.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="markup.html">시멘틱 마크업</a></li>
+                <li><a href="seo.html">검색엔진시스템(SEO)</a></li>
+            </ul>
+            <ul>
+                <li><a href="layout01.html">레이아웃01</a></li>
+                <li class="active"><a href="layout02.html">레이아웃02</a></li>
+                <li><a href="layout03.html">레이아웃03</a></li>
+                <li><a href="layout04.html">레이아웃04</a></li>
+                <li><a href="layout05.html">레이아웃05</a></li>
+            </ul>
+        </nav>
+        <div class="main_refer">
+            <div class="document">
+                <h2 class="t_tit">레이아웃02</h2>
+                <p class="t_desc">
+                    두번째 유형으로 이번에도 단순한 구조입니다.
+                </p>
+                <div class="t_iframe">
+                    <iframe
+                        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F0YYqnffLYiG1s0EPnYjTlU%2F%25EB%25A0%2588%25EC%259D%25B4%25EC%2595%2584%25EC%259B%2583%3Fnode-id%3D43%253A38"
+                        allowfullscreen></iframe>
+                </div>
+                <h3 class="t_tit2">Float방식 레이아웃</h3>
+                <p class="t_desc2">
+                    float 방식 레이아웃은 구버전 익스플로어 등과의 호환을 위해 사용한다.<br>
+                    float는 속성이 상속되어 float 속성을 사용한 요소의 다음 요소에게 영향을 미치며,
+                    이전 요소를 밀고 올라오게 되는데 clear: both로 해결 가능하지만, 복잡한 구조의 경우 한계가 있기 때문에
+                    더 나은 방법으로 부모 요소에 overflow :hidden을 주는 방법이 있다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">{
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #E8F5E9 ;
+            }
+            /* 블록구조를 가운데정렬 할때 width값과 같이 margin 0 auto 주면됨. */
+            #wrap {
+                width: 1200px;
+                margin: 0 auto;             
+            }
+            #header {
+                width: 100%;
+                height: 100px;
+                background-color: #C8E6C9;
+            }
+            #nav {
+                width: 100%;
+                height: 100px;
+                background-color: #A5D6A7;
+            }
+            #main {
+                width: 100%;
+                overflow: hidden;
+            }
+            #aside {
+    
+                width: 30%;
+                height: 780px;
+                background-color: #81C784;
+                float: left;
+            }
+            #section{
+                width: 40%;
+                height: 780px;
+                background-color: #66BB6A;
+                float: left;
+            }
+            #article {
+                width: 30%;
+                height: 780px;
+                background-color: #4CAF50;
+                float: left;
+            }
+            #footer {
+                width: 100%;
+                height: 100px;
+                background-color: #43A047;
+                
+            }
+            /* 미디어 쿼리 */
+            /* 오류유형01 미디어 쿼리 할때 자식들도 퍼센트로 바꿔주기 */
+            @media(max-width : 1300px){
+                #wrap{
+                width: 96%;
+                }
+            }
+            @media(max-width : 768px){
+                #wrap{
+                width: 100%
+                }
+                #aside {
+                width: 30%;
+                height: 780px;
+                }
+                #section {
+                width: 70%;
+                height: 780px;
+                }
+                #article {
+                width: 100%;
+                height: 150px;
+                }
+            }
+            @media(max-width : 480px){
+                #wrap{
+                width: 100%
+                }
+                #aside{
+                width: 100%;
+                height: 200px;
+                }
+                #section {
+                width: 100%;
+                height: 430px;
+                }
+}
+</code></pre>
+                </div>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled"
+                    src="https://codepen.io/kimdaewonn/embed/ZExvJmB?default-tab=result" frameborder="no" loading="lazy"
+                    allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimdaewonn/pen/ZExvJmB">
+                        Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+                <h3 class="t_tit2">Flex방식 레이아웃</h3>
+                <p class="t_desc2">
+                    Flex 방식 레이아웃은 Flex는 레이아웃 배치 전용 기능으로 고안 되었다.<br>
+                    그래서 레이아웃을 만들 때 딱히 사용할게 없어서 쓰던 float나 inline-block 등을 이용한 기존 방식보다 훨씬 강력하고 편리한 기능들이 많은 편이다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">{
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #E8F5E9 ;
+        }
+        /* 블록구조를 가운데정렬 할때 width값과 같이 margin 0 auto 주면됨. */
+        /* flex시 랩은  width 값 px로냅둠 */
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;      
+        }
+        #header {
+            height: 100px;
+            background-color: #C8E6C9;
+        }
+        #nav {
+            height: 100px;
+            background-color: #A5D6A7;
+        }
+        #main {
+            display: flex;
+        }
+        #aside {
+            width: 30%;
+            height: 780px;
+            background-color: #81C784;
+        }
+        #section{
+            width: 40%;
+            height: 780px;
+            background-color: #66BB6A;
+        }
+        #article {
+            width: 30%;
+            height: 780px;
+            background-color: #4CAF50;
+        }
+        #footer {
+            height: 100px;
+            background-color: #43A047;
+
+        }
+        /* 미디어 쿼리 */
+        /* 오류유형01 미디어 쿼리 할때 자식들도 퍼센트로 바꿔주기 */
+        @media(max-width : 1300px){
+            #wrap{
+                width: 96%;
+
+            }
+        }
+        @media(max-width : 768px){
+            #wrap{
+                width: 100%;
+            }
+            /* flex-wrap 사이즈 맞춰서 정렬 */
+            #main{
+                flex-wrap: wrap;
+            }
+            #aside {     
+                width: 30%;
+                height: 630px;
+            }
+            #section {
+                width: 70%;
+                height: 630px;
+            }
+            #article {
+                width: 100%;
+                height: 150px;
+            }
+        }
+        @media(max-width : 480px){
+            #aside {     
+                width: 100%;
+                height: 200px;
+            }
+            #section {
+                width: 100%;
+                height: 430px;
+            }
+}
+</code></pre>
+                </div>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled"
+                    src="https://codepen.io/kimdaewonn/embed/OJvzjrY?default-tab=result" frameborder="no" loading="lazy"
+                    allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimdaewonn/pen/OJvzjrY">
+                        Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+                <h3 class="t_tit2">Grid방식 레이아웃</h3>
+                <p class="t_desc2">
+                    레이아웃을 구현할 때 Flex 방식을 사용하면 간단하게 일을 처리할 수 있지만, 복잡한 구조의 레이아웃을 짤때는 그리드방식 레이아웃이 좀 더 유리하다.
+                    <br>그리드 방식의 값들은 부모 요소에서 설정하면 자식요소에 적용된다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">{
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: #E8F5E9 ;
+            }
+            /* 블록구조를 가운데정렬 할때 width값과 같이 margin 0 auto 주면됨. */
+            /* flex시 랩은  width 값 px로냅둠 */
+            #wrap {
+                width: 1200px;
+                margin: 0 auto;      
+            }
+            #header {
+                height: 100px;
+                background-color: #C8E6C9;
+            }
+            #nav {
+                height: 100px;
+                background-color: #A5D6A7;
+            }
+            #main {
+                display: grid;
+                grid-template-columns: 30% 40% 30% ;
+                grid-template-rows: 780px;
+            }
+            #aside {
+                background-color: #81C784;
+            }
+            #section{
+                background-color: #66BB6A;
+            }
+            #article {
+                background-color: #4CAF50;
+            }
+            #footer {
+                height: 100px;
+                background-color: #43A047;
+                clear: both;
+            }
+            /* 미디어 쿼리 */
+            /* 오류유형01 미디어 쿼리 할때 자식들도 퍼센트로 바꿔주기 */
+            @media(max-width : 1300px){
+                #wrap {
+                width: 96%;
+                }
+            }
+            @media(max-width : 768px){
+                #wrap{
+                    width:100%;
+                }
+                /* display :grid는 안갖고와도됨 */
+                #main {
+                grid-template-areas: 
+                "aside section"
+                "article article";
+                grid-template-columns: 30% 70% ;
+                grid-template-rows: 630px 150px;
+                }
+                #aside {
+                grid-area: aside;
+                }
+                #section{
+                grid-area: section;
+                }
+                #article {
+                grid-area: article ;
+                }
+    
+                }
+            @media(max-width : 480px){
+                #main {
+                grid-template-areas: 
+                "aside"
+                "section"
+                "article";
+                grid-template-columns: 100%;
+                grid-template-rows: 200px 430px 150px;
+                }
+                #aside {
+                grid-area: aside;
+                }
+                #section{
+                grid-area: section;
+                }
+                #article {
+                grid-area: article ;
+                }
+}
+              </code></pre>
+                </div>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled"
+                    src="https://codepen.io/kimdaewonn/embed/vYRpJPQ?default-tab=result" frameborder="no" loading="lazy"
+                    allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimdaewonn/pen/vYRpJPQ">
+                        Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                </iframe>
+            </div>
+        </div>
+    </main>
+    <!-- //header -->
+
+    <footer id="footer">
+        <a href="mailto:eodnjs9605@gmail.com">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

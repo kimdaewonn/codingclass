@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 객체</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="fun_ction.html">함수</a></li>
+                <li><a href="area.html">지역변수/전역변수</a></li>
+                <li><a href="study/element.html">요소선택</a></li>
+                <li><a href="quiz01~04.html">퀴즈</a></li>
+                <li><a href="join_pop_push.html">join()/pop()/push()</a></li>
+                <li><a href="inner_function.html">내장 함수</a></li>
+                <li><a href="regular_expression.html">정규식 표현</a></li>
+                <li><a href="slice_substring_substr.html">slice() / substring() / substr()</a></li>
+                <li><a href="indexOf.html">indexOf</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">문자열 객체</h2>
+                <p class="t_box">
+                    문자열 객체에서 사용하는 메서드 중 <i>slice() / substring() / substr()</i>에 대해
+                    알아보는 시간을 가지도록 하겠습니다.
+                </p>
+
+                <hr> <!-- 구간나눔 -->
+
+                <h3 class="t_tit2">01. 문자열 메서드 : 변경 : slice() : 문자열에서 원하는 값을 추출(문자열)★★</h3>
+                <p class="t_desc2">
+                    셋 중 가장 많이 사용하며, <i>시작위치는 끝나는 위치보다 작아야합니다.</i><br>
+                    slice(시작위치), lice(시작위치,끝나는 위치) 형태로 사용합니다.
+                </p>
+                
+                <!-- 티코드 드라큘라 -->
+                <br>
+                <div class="t_code">
+<pre><code class="language-js">{
+    //slice(시작위치)
+    //slice(시작위치, 끝나는위치)
+    //시작위치 &lt; 끝나는위치
+    const str1 = "javascript reference";
+    const currentStr1 = str1.slice(0);  //javascript reference
+    const currentStr2 = str1.slice(1);  //avascript reference
+    const currentStr3 = str1.slice(2);  //vascript reference
+    const currentStr4 = str1.slice(0, 1);  //j
+    const currentStr5 = str1.slice(0, 2);  //ja
+    const currentStr6 = str1.slice(0, 3);  //jav
+    const currentStr7 = str1.slice(1, 2);  //a
+    const currentStr8 = str1.slice(1, 3);  //av
+    const currentStr9 = str1.slice(1, 4);  //avs
+    const currentStr10 = str1.slice(-1);   //e
+    const currentStr11 = str1.slice(-2);   //ce
+    const currentStr12 = str1.slice(-3);   //nce
+    const currentStr13 = str1.slice(-3, -1);   //nc
+    const currentStr14 = str1.slice(-3, -2);   //n
+    const currentStr15 = str1.slice(-3, -3);   //
+    const currentStr16 = str1.slice(1, 4);  //ava
+    const currentStr17 = str1.slice(4, 1);  //''
+}
+</code></pre>
+                </div>
+
+            <hr> <!-- 구간나눔 -->
+                <h3 class="t_tit2">02. 문자열 메서드 : 변경 : substring() : 문자열에서 원하는 값을 추출(문자열)</h3>
+                <p class="t_desc2">
+                    시작값이 끝나는 값보다 클 경우 두 값을 바꿔서 처리함으로써 에러를 방지 해줍니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">{
+    const currentStr18 = str1.substring(1, 4);  //ava
+    const currentStr19 = str1.substring(4, 1);  //ava           
+}
+</code></pre>
+                </div>
+            <hr>
+                <h3 class="t_tit2">03. 문자열 메서드 : 변경 : substr() : 문자열에서 원하는 값을 추출(문자열)</h3>
+                <p class="t_desc2">
+                    substr(시작위치), substr(시작위치, 길이) 형태로 사용합니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-js">{
+    //substr(시작위치)
+    //substr(시작위치, 길이)
+    const currentStr20 = str1.substr(0);  //javascript reference
+    const currentStr21 = str1.substr(1);  //avascript reference
+    const currentStr22 = str1.substr(2);  //vascript reference
+    const currentStr23 = str1.substr(0, 1);  //j
+    const currentStr24 = str1.substr(0, 2);  //ja
+    const currentStr25 = str1.substr(0, 3);  //jav
+    const currentStr26 = str1.substr(1, 2);  //av
+    const currentStr27 = str1.substr(1, 3);  //ava
+    const currentStr28 = str1.substr(1, 4);  //avas
+    const currentStr29 = str1.substr(-1);  //e
+    const currentStr30 = str1.substr(-2);  //ce
+    const currentStr31 = str1.substr(-3);  //nce
+    const currentStr32 = str1.substr(-1, 1);  //e
+    const currentStr33 = str1.substr(-2, 2);  //ce
+    const currentStr34 = str1.substr(-3, 3);  //nce
+}
+</code></pre>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

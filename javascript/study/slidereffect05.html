@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 05</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">슬라이드 이펙트</h2>
+            <div class="t_desc2">
+                <p>
+                    이번 시간에는 슬라이드 이펙트 - 이미지 슬라이드(버튼, 닷메뉴) 효과에 대해 알아보겠습니다.
+                </p>
+            </div>
+            <hr>
+            <h3 class="t_tit2">슬라이드 05</h3>
+            <p class="t_desc2">
+                버튼을 통해서 좌우로 이동 가능하고, 닷메뉴를 통해서 원하는 번호의 이미지로 이동가능합니다.
+            </p>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/javascript/effect/sliderEffect05.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href=https://kimdaewonn.github.io/coding/javascript/effect/sliderEffect05.html>원본 사이트 보기</a>
+                <a href=https://github.com/kimdaewonn/coding/blob/main/javascript/effect/sliderEffect05.html>원본 소스 보기</a>
+            </div>
+            <h3 class="t_tit2">01. HTML 코드</h3>
+            <p class="t_desc2">
+                닷메뉴를 추가해줬습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-html">{
+    &lt;main id="main"&gt;
+    &lt;section id="sliderType05"&gt;
+        &lt;div class="slider__wrap"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="slider__inner"&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg03-min.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg04-min.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg05-min.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg06-min.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg07-min.jpg" alt="이미지5"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__btn"&gt;
+                &lt;a href="#" class="prev"&gt;prev&lt;/a&gt;
+                &lt;a href="#" class="next"&gt;next&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__dot"&gt;
+                &lt;!-- &lt;a href="#" class="dot active"&gt;이미지1&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지2&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지3&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지4&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지5&lt;/a&gt; --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+&lt;!-- //main --&gt;
+} 
+</code></pre>
+                </div>
+
+                <h3 class="t_tit2">02. CSS 코드</h3>
+                <p class="t_desc2">
+                    닷메뉴에 대한 css를 추가했습니다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">{
+    .slider__wrap {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .slider__img {      /* 이미지 보이는 영역 */
+        position: relative;
+        width: 800px;
+        height: 450px;
+        overflow: hidden;
+    }
+    .slider__inner {        /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+        display: flex;
+        flex-wrap: wrap;
+        width: 4800px;      /* 총 이미지 6개 */
+        height: 450px;
+    }
+    .slider {           /* 개별적인 이미지 */
+        position: relative;
+        width: 800px;
+        height: 450px;
+    }
+    .slider::before {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        background: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 5px 10px;
+    }
+    .slider:nth-child(1)::before {content: '이미지1';}
+    .slider:nth-child(2)::before {content: '이미지2';}
+    .slider:nth-child(3)::before {content: '이미지3';}
+    .slider:nth-child(4)::before {content: '이미지4';}
+    .slider:nth-child(5)::before {content: '이미지5';}
+    .slider:nth-child(6)::before {content: '이미지1';}
+
+    @media (max-width: 800px){
+        .slider__img {
+            width: 400px;
+            height: 225px;
+        }
+    }
+    .slider__btn a {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        background: rgba(0,0,0,0.4);
+        text-align: center;
+        line-height: 50px;
+        transition: all 0.2s;
+        color: #fff;
+    }
+    .slider__btn a:hover {
+        border-radius: 50%;
+        background: rgb(50, 109, 227);
+    }
+    .slider__btn a.prev {
+        left: 0;
+    }
+    .slider__btn a.next {
+        right: 0;
+    }
+    .slider__dot {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+    }
+    .slider__dot .dot {
+        width: 20px;
+        height: 20px;
+        background: rgba(0,0,0,0.4);
+        display: inline-block;
+        border-radius: 50%;
+        text-indent: -9999px;
+        transition: all 0.3s;
+        margin: 2px;
+    }
+    .slider__dot .dot.active {
+        background: rgba(255,255,255,0.9);
+    }
+}
+</code></pre>
+                </div>
+            <h3 class="t_tit2">03. script 코드</h3>
+            <p class="t_desc2">
+               1. 필요없는 선택자들을 제거해주고,닷메뉴를 잡아 추가해줬습니다.<br>
+               2. init 함수를 만들어서 이미지 수만큼 dotIndex 숫자를 늘려줍니다. + 기본상태 첫번째닷에 active를 걸어줍니다.<br>
+               3. gotoSlider 함수를 만들어 이미지 이동에 대해 정의해줍니다.<br>
+               4. 닷 메뉴 클래스를 모두 제거해주고 해당 닷메뉴에 클래스를 추가해줍니다.<br>
+               5. 버튼을 클릭했을때 좌우로 한칸씩 움직이게 해주고 , 닷버튼 클릭시 해당 번째 이미지로 이동하게 addEventListener를 걸어줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">{
+    const sliderWrap = document.querySelector(".slider__wrap")
+    const sliderImg = document.querySelector(".slider__img")     //보여지는 영역
+    const sliderInner = document.querySelector(".slider__inner") //움직이는 영역
+    const slider = document.querySelectorAll(".slider")
+    const sliderDot = document.querySelector(".slider__dot")  //슬라이더 닷
+
+    let currentIndex = 0;                       //현재 이미지
+    let sliderCount = slider.length;            //이미지 갯수
+    let sliderWidth = sliderImg.offsetWidth;    //이미지 가로값
+    let dotIndex = "";                          // 이미지에 따른 닷 갯수
+    function init(){
+        // &lt;a href="#" class="dot active">이미지1&lt;/a&gt;
+        slider.forEach(()=>{
+            dotIndex += "&lt;a href='#' class='dot'>이미지1&lt;/a&gt;"
+        })
+        sliderDot.innerHTML = dotIndex;
+        //첫번째 닷 버튼한테 활성화 표시(active)
+        sliderDot.firstChild.classList.add("active");
+    }
+    init();
+
+     //이미지 이동
+     function gotoSlider(num){
+        sliderInner.style.transition = "all 400ms";
+        sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
+        currentIndex = num;
+
+        //두번째 이미지 ===> 두번째 닷 클래스 추가
+        // 1. 닷 메뉴 클래스 모두 삭제
+        // 2. 해당 닷 메뉴한테 클래스 추가
+
+        let dotActive = document.querySelectorAll(".slider__dot .dot");
+        dotActive.forEach(el => el.classList.remove("active"));
+        dotActive[num].classList.add("active");
+    }
+
+    //버튼 클릭했을 때
+    document.querySelectorAll(".slider__btn a").forEach((btn, index)=>{
+        btn.addEventListener("click", ()=>{
+            let prevIndex = (currentIndex + (sliderCount - 1))  % sliderCount;
+            let nextIndex = (currentIndex + 1)  % sliderCount;
+            if(btn.classList.contains("prev")){
+                gotoSlider(prevIndex);
+            }else{
+                gotoSlider(nextIndex);
+            }
+        });
+    })
+
+    //닷 버튼 클릭했을 때 움직임
+    document.querySelectorAll(".slider__dot .dot").forEach((dot, index)=> {
+        dot.addEventListener("click", ()=>{
+            gotoSlider(index);
+        });
+    });
+}
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

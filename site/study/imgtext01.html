@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기 이미지/텍스트 유형</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <link rel="stylesheet" href="../assets/css/study_style.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기 : 이미지 / 텍스트 유형</h2>
+            <p class="t_desc2">
+                사이트를 만들기에 앞서 다양한 유형으로 나누어서 공부해보려고 합니다.<br>
+                이미지 / 텍스트 유형 만들기 첫번째 시간입니다.<br>
+                피그마로 먼저 레이아웃을 잡아준 뒤에 수치대로 코딩합니다.
+            </p>
+
+            <hr> <!-- 구간나눔 -->
+
+            <h3 class="t_tit2">01. Figma로 레이아웃 잡기</h3>
+            <div class="t_box">
+                <p>Figma로 전체적인 틀을 잡아줍니다.</p>
+            </div>
+            <div class="t_iframe">
+                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FoNKQOTi0hGT2rl7LwQTdYb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D1274%253A1829" allowfullscreen></iframe>
+            </div>
+            <hr> <!-- 구간나눔 -->
+            <h3 class="t_tit2">02. HTML</h3>
+            <div class="t_box">
+                <p> 피그마 구도에 맞게 틀을 잡아줍니다.
+                </p>
+            </div>
+            <div class="t_code">
+<pre><code class="language-html">{
+    &lt;body&gt;
+    &lt;section id="imgTextType" class="imgText__wrap nexon section gray"&gt;
+        &lt;h2 class="blind"&gt;유용한 사이트 살펴보기&lt;/h2&gt;
+        &lt;div class="imgText__inner container"&gt;
+            &lt;div class="imgText__txt"&gt;
+                &lt;span&gt;이미지 텍스트 유형01&lt;/span&gt;
+                &lt;h3&gt;유용한 사이트 살펴보기&lt;/h3&gt;
+                &lt;p&gt;웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 유요한 사이트입니다.&lt;/p&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;&lt;/a&gt;튜토리얼 사이트&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;&lt;/a&gt;레퍼런스 사이트&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;&lt;/a&gt;웹폰트 사이트&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;&lt;/a&gt;CSS 사이트&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;&lt;/a&gt;WebGL 사이트&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;&lt;/a&gt;Youtube 사이트&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="imgText__img img1"&gt;
+                &lt;a href="/"&gt;레퍼런스 사이트&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="imgText__img img2"&gt;
+                &lt;a class="blue" href="/"&gt;튜토리얼 사이트&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+}
+</code></pre>
+            </div>
+            <hr> <!-- 구간나눔 -->
+            <h3 class="t_tit2">03. CSS</h3>
+            <p class="t_desc2">
+                피그마 수치대로 CSS를 입혀줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-css">{
+    /* fonts */
+    @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+     .nexon {
+         font-family: 'NexonLv1Gothic';
+         font-weight: 400;
+     }
+     /* reset */
+     * {
+         margin: 0;
+         padding: 0;
+     }
+     a {
+         text-decoration: none;
+         color: #000;
+     }
+     img {
+         width: 100%;
+     }
+     h1, h2, h3, h4, h5, h6 {
+         font-weight: normal;
+     }
+     /* 블라인드 효과 */
+     .blind{
+         position:absolute;
+         clip:rect(0 0 0 0);
+         width:1px;
+         height:1px;
+         margin:-1px;
+         overflow:hidden;
+     }
+     li {
+         list-style: none;
+     }
+     /* common */
+     .container {
+         width: 1160px;
+         padding: 0 20px;
+         margin: 0 auto;
+         min-width: 1160px;
+     }
+     .section {
+         padding: 120px 0;
+     }
+     .section > h2 {
+         font-size: 50px;
+         line-height: 1;
+         text-align: center;
+         margin-bottom: 20px;
+     }
+     .section > p {
+         font-size: 22px;
+         font-weight: 300;
+         color: #666;
+         text-align: center;
+         margin-bottom: 70px;
+     }
+     .gray {
+         background-color: #f5f5f5;
+     }
+     .section > span {
+         display: block;
+         text-align: center;
+         font-size: 16px;
+         text-decoration: underline;
+         margin-bottom: 20px;
+     }
+     .mb70 {
+         margin-bottom: 70px !important;
+     }
+    /* imgTextType */
+    .imgText__inner {
+     display: flex;
+     justify-content: space-between;
+    }
+    .imgText__inner > div {
+     width: 32%;
+     height: 500px;
+    }
+    .imgText__txt {}
+    .imgText__txt span {
+     font-size: 16px;
+     color: #666;
+     text-decoration: underline;
+     text-underline-position: under;
+     margin-bottom: 20px;
+    }
+    .imgText__txt h3 {
+     font-size: 50px;
+     font-weight: 300;
+     word-break: keep-all;
+     line-height: 1.4;
+     margin-bottom: 20px;
+     margin-top: 20px;
+    }
+    .imgText__txt p {
+     font-size: 18px;
+     font-weight: 300;
+     line-height: 1.5;
+     color: #666;
+     margin-bottom: 10px;
+    }
+    .imgText__txt ul {
+     font-size: 18px;
+     width: 300px;
+     line-height: 1.6;
+    }
+    .imgText__txt ul li {
+     position: relative;
+     padding-left: 20px;
+    }
+    .imgText__txt ul li a {
+     color: #666;
+    }
+    .imgText__txt ul li::before {
+     content: '';
+     width: 5px;
+     height: 5px;
+     border-radius: 50%;
+     position: absolute;
+     left: 5px;
+     top: 9px;
+     background: #666;
+    }
+    .imgText__img {
+     border-radius: 10px;
+     position: relative;
+    }
+    .imgText__img a {
+     position: absolute;
+     left: 30px;
+     bottom: 30px;
+     background-color: #7c2b39;
+     color: #fff;
+     font-size: 18px;
+     padding: 10px 30px;
+     border-radius: 30px;
+     display: inline-block;
+    }
+    .imgText__img a.blue {
+     background: #2b387c;
+    }
+    .imgText__img.img1 {
+     background: url(img/imgText_bg01.jpg) no-repeat center / cover;
+    }
+    .imgText__img.img2 {
+     background: url(img/imgText_bg02.jpg) no-repeat center / cover;
+    }
+
+}
+</code></pre>
+            </div>
+
+            <hr> <!-- 구간나눔 -->
+
+            <h4 class="t_tit3">최종 결과</h4>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/site/imgTextType/imgText01.html"
+                    frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href=https://kimdaewonn.github.io/coding/site/imgTextType/imgText01.html>원본 사이트 보기</a>
+                <a href=https://github.com/kimdaewonn/coding/blob/main/site/imgTextType/imgText01.html>원본 소스 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

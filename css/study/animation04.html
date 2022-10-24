@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 애니메이션</title>
+    <link rel="stylesheet" href="../assets/css/study_style.css">
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+</head>
+<body>
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">간단한 애니메이션 04</h2>
+                    <p class="t_desc2">
+                        간단한 애니메이션 만들기 네번째 시간입니다.<br>
+                        웨이브 애니메이션을 만들어보겠습니다.
+                    </p>
+
+            <hr> <!-- 구간나눔 -->
+
+            <h3 class="t_tit2">01. HTML</h3>
+            <p class="t_desc2">Pug를 컴파일시켰습니다. 너무 길어서 접어놓겠습니다.</p>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample_result">
+                        <div class="t_code">
+<pre><code class="language-html">{
+    &lt;div class="circle-wrap"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+      &lt;div class="circle"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+}
+</code></pre>
+                </div>
+                    </div>
+                </details>
+            </div>
+
+                <hr> <!-- 구간나눔 --> 
+
+            <h3 class="t_tit2">02. CSS</h3>
+            <p class="t_desc2">
+                SCSS를 컴파일 시켰습니다.
+            </p>
+                <div class="t_code">
+<pre><code class="language-css">{
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-image: linear-gradient(45deg, #00DBDE 0%, #FC00FF 100%);
+      }
+      
+      .row {
+        display: flex;
+      }
+      .row .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin: 5px 10px;
+        background: #fff;
+        transform-origin: top center;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: scale(1.1) rotate(0deg);
+        }
+        50% {
+          transform: scale(0.2) rotate(180deg);
+        }
+        100% {
+          transform: scale(1.1) rotate(360deg);
+        }
+      }
+      
+      .row:nth-child(1) .circle {
+        animation-delay: 100ms;
+      }
+      
+      .row:nth-child(2) .circle {
+        animation-delay: 200ms;
+      }
+      
+      .row:nth-child(3) .circle {
+        animation-delay: 300ms;
+      }
+      
+      .row:nth-child(4) .circle {
+        animation-delay: 400ms;
+      }
+      
+      .row:nth-child(5) .circle {
+        animation-delay: 500ms;
+      }
+      
+      .row:nth-child(6) .circle {
+        animation-delay: 600ms;
+      }
+      
+      .row:nth-child(7) .circle {
+        animation-delay: 700ms;
+      }
+      
+      .row:nth-child(8) .circle {
+        animation-delay: 800ms;
+      }
+      
+      .row:nth-child(9) .circle {
+        animation-delay: 900ms;
+      }
+      
+      .row:nth-child(10) .circle {
+        animation-delay: 1000ms;
+      }
+      
+      .row:nth-child(11) .circle {
+        animation-delay: 1100ms;
+      }
+      
+      .row:nth-child(12) .circle {
+        animation-delay: 1200ms;
+      }
+}
+</code></pre>
+                </div> 
+                <hr> <!-- 구간나눔 -->  
+               
+                <h3 class="t_tit2">03. 결과물</h3>
+                <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/kimdaewonn/embed/dyeWZKG?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                    See the Pen <a href="https://codepen.io/kimdaewonn/pen/dyeWZKG">
+                    Untitled</a> by kimdaewonn (<a href="https://codepen.io/kimdaewonn">@kimdaewonn</a>)
+                    on <a href="https://codepen.io">CodePen</a>.
+                  </iframe>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

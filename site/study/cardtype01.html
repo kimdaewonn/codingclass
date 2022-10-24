@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기 카드유형</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <link rel="stylesheet" href="../assets/css/study_style.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기 : 카드 유형 01</h2>
+            <p class="t_desc2">
+                사이트를 만들기에 앞서 다양한 유형으로 나누어서 공부해보려고 합니다.<br>
+                가장 먼저 공부해 볼 유형은 카드유형 입니다.<br>
+                피그마로 먼저 레이아웃을 잡아준 뒤에 수치대로 코딩합니다.
+            </p>
+
+            <hr> <!-- 구간나눔 -->
+
+            <h3 class="t_tit2">01. Figma로 레이아웃 잡기</h3>
+            <div class="t_box">
+                <p>Figma로 전체적인 틀을 잡아줍니다.</p>
+            </div>
+            <div class="t_iframe">
+                <iframe
+                    src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FoNKQOTi0hGT2rl7LwQTdYb%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D7%253A65"
+                    allowfullscreen></iframe>
+            </div>
+            <hr> <!-- 구간나눔 -->
+            <h3 class="t_tit2">02. HTML</h3>
+            <div class="t_box">
+                <p>웹 표준을 준수하기 위해 시맨틱 태그를 사용합니다. 시맨틱 태그를 사용한 후에는 제목태그를 사용해야 합니다.</p>
+            </div>
+            <div class="t_code">
+                <pre><code class="language-html">{
+    &lt;body&gt;
+    &lt;section id="cardType01"class="card__wrap nexon section"&gt;
+        &lt;h2&gt;닭의 쓰임새&lt;/h2&gt;
+        &lt;p&gt;닭은 많은것을 나눠주는 유익한 생물 입니다.&lt;/p&gt;
+        &lt;div class="card__inner container"&gt;
+            &lt;article class="card"&gt;
+                &lt;figure class="card__header"&gt;
+                    &lt;img src="img/card_bg01_01.jpg" alt="치킨"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;치킨&lt;/h3&gt;
+                    &lt;p class="desc"&gt;일반적인 닭튀김을 말하며 닭을 잘라 구운 것도 치킨이라고는 한다. 치킨 반죽을 어떻게 만들고 닭을 어떻게 튀기느냐에 따라서 맛의 차이가 상당하다. &lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;
+                        더 자세히 보기
+                        &lt;span aria-hidden="true"&gt;                           
+                            &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/&gt;
+                                &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure&gt;
+                    &lt;img src="img/card_bg01_02.jpg" alt="달걀"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;달걀&lt;/h3&gt;
+                    &lt;p class="desc"&gt;조리법에 따라 그 형태와 식감 등이 달라지기 때문에 특유의 약한 맛과 다양하게 뽑아낼 수 있는 비주얼이 여러 요리에 잘 어우러져 다양한 요리에 들어간다.&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;
+                        더 자세히 보기
+                        &lt;!-- 읽지않고 넘어감 --&gt;
+                        &lt;span aria-hidden="true"&gt;                           
+                            &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/&gt;
+                                &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article class="card"&gt;
+                &lt;figure&gt;
+                    &lt;img src="img/card_bg01_03.jpg" alt="삼계탕"&gt;
+                &lt;/figure&gt;
+                &lt;div class="card__body"&gt;
+                    &lt;h3 class="tit"&gt;삼계탕&lt;/h3&gt;
+                    &lt;p class="desc"&gt;삼계탕은 어린 닭에다가 찹쌀, 인삼, 대추, 밤, 황기 등을 넣고 푹 고아서 만든 닭 요리다. 한국의 대표적인 보양식으로 유명하며, 특히 복날에 주로 먹는 여름 보양식이다.&lt;/p&gt;
+                    &lt;a class="btn" href="/"&gt;
+                        더 자세히 보기
+                        &lt;span aria-hidden="true"&gt;                           
+                            &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/&gt;
+                                &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;           
+}
+</code></pre>
+            </div>
+            <hr> <!-- 구간나눔 -->
+
+            <h3 class="t_tit2">03. CSS</h3>
+            <p class="t_box">Figma에서 정해놓은 수치대로 CSS를 넣어 줍니다.</p>
+            <div class="t_code">
+<pre><code class="language-js">{
+            /* fonts */
+            @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+    
+            .nexon {
+                font-family: 'NexonLv1Gothic';
+                font-weight: 400;
+            }
+    
+            /* reset */
+            * {
+            margin: 0;
+            padding: 0;
+            }
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+            img {
+                width: 100%;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-weight: normal;
+            }
+            /* common */
+            .container {
+                width: 1160px;
+                padding: 0 20px;
+                margin: 0 auto;
+                min-width: 1160px;
+            }
+            .section {
+                padding: 120px 0;
+            }
+            .section > h2 {
+                font-size: 50px;
+                line-height: 1;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .section > p {
+                font-size: 22px;
+                font-weight: 300;
+                color: #666;
+                text-align: center;
+                margin-bottom: 70px;
+            }
+    
+            /* cardType */
+            .card__inner {
+                display: flex;
+                justify-content: space-between;
+            }
+            .card {
+                width: 32%;
+                background-color: #f5f5f5;
+            }
+            .card__body {
+                padding: 24px;
+            }
+            .card__body .tit {
+                font-size: 24px;
+                margin-bottom: 10px;
+            /* 1줄효과 */
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .card__body .desc {
+                font-size: 18px;
+                line-height: 1.4;
+                color: #666;
+                margin-bottom: 20px;
+                font-weight: 300;
+            /* 4줄효과 */
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 4; 
+                -webkit-box-orient: vertical;
+            }
+}
+</code></pre>
+            </div>
+            <hr> <!-- 구간나눔 -->
+            <h4 class="t_tit3">최종 결과</h4>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimdaewonn.github.io/coding/site/cardType/cardType01.html"
+                    frameborder="0"></iframe>
+            </div>
+            <div class="t_link">
+                <a href=https://kimdaewonn.github.io/coding/site/cardType/cardType01.html>원본 사이트 보기</a>
+            </div>
+            <div class="t_link">
+                <a href=https://github.com/kimdaewonn/coding/blob/main/site/cardType/cardType01.html>원본 소스 보기</a>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
