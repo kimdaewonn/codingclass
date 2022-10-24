@@ -1,8 +1,7 @@
 # codingclass   
 
-    
 ## 메인
-https://github.com/kimdaewonn/codingclass.git
+https://github.com/kimdaewonn/codingclass.git   
 
 ## 자바스크립트
 https://kimdaewonn.github.io/codingclass/javascript/index.html   
