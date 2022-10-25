@@ -8,7 +8,7 @@ body {
     overflow-y:auto;
 }
 .container {
-    width: 1160px;
+    /* width: 1160px; */
     margin: 0 auto;
 }
 body {
@@ -184,16 +184,15 @@ body {
     } */
     .dung1 {
         position: absolute;
-        left: 5%;
-
+        left: 10%;
     }
     .dung2 {
         position: absolute;
-        left: 23%;
+        left: 30%;
     }
     .dung3 {
         position: absolute;
-        left: 40%;
+        left: 50%;
     }
     .rank_cont_small {
         margin-top: 170px;
