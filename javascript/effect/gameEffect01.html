@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="../assets/css/music.css">
     <link rel="stylesheet" href="../assets/css/search2.css">
     <link rel="stylesheet" href="../assets/css/search_ani.css">
+    <link rel="stylesheet" href="../assets/css/memory.css">
 
-    <link href="https://webfontworld.github.io/fontlab/LABDigital.css" rel="stylesheet">
+    <!-- <link href="https://webfontworld.github.io/fontlab/LABDigital.css" rel="stylesheet"> -->
+    
     <style>
         .search__answers, .search__missAnswers {
             display: none;
@@ -21,6 +23,17 @@
             top: 150px;
             left: 350px;
             display: none;
+        }
+        @font-face {
+            font-family: 'LABDigital';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf') format("truetype");
+            font-display: swap;
         }
 
     </style>
@@ -65,7 +78,9 @@
     </footer>
     <!-- //footer -->
     <!-- 뮤직 플레이어 -->
-    <div class="music__wrap">
+
+    <div class="game__box">
+      <div class="music__wrap">
         <div class="music__inner">
             <div class="music__header">
                 <div>***</div>
@@ -122,6 +137,144 @@
         </div>
     </div>
     <!-- //뮤직 플레이어 -->
+      <div class="memory__wrap">
+        <div class="memory__inner">
+          <div class="memory__card">
+            <ul class="cards">
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img2.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img3.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img4.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img5.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img6.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img7.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img8.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img2.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img3.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img4.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img5.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img6.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img7.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img8.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img9.png" alt="">
+                </div>
+              </li>
+              <li>
+                <div class="view front">
+                    <img src="../assets/img/img1.png" alt="">
+                </div>
+                <div class="view back">
+                    <img src="../assets/img/img9.png" alt="">
+                </div>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <!-- 서치 게임 -->
@@ -363,10 +516,11 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="../assets/js/gsap.min.js"></script>
     <script src="../assets/js/music.js"></script>
+    <script src="../assets/js/memory.js"></script>
     <script src="../assets/js/searchgame.js"></script>
 
     <script>
-        $(".music__wrap").draggable();
+        $(".music__wrap .memory__wrap").draggable();
         $(".icon1").draggable({
             drag: function() {
                 $(".mouse__cursor img").attr("src", "../assets/img/cursor.red.png")
