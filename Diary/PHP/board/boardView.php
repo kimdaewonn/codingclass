@@ -17,6 +17,15 @@
     <title>공지사항</title>
     <link rel="stylesheet" href="../../assets/css/board.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+        .view-imge {
+            width: 500px;
+            height: 500px;
+            border-radius: 25px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
     <div style="display:none" class="scroll">
@@ -29,11 +38,12 @@
 
             <div class="board">
                 <div class="board_info">
-                    <img src="../../assets/img/board_header_01.png" class="header_icon_01" alt="">
-                    <img src="../../assets/img/board_header_02.png" class="header_icon_02" alt="">
-                    <img src="../../assets/img/board_header_03.png" class="header_icon_03" alt="">
-                    <img src="../../assets/img/board_header_04.png" class="header_icon_04" alt="">
-                    <img src="../../assets/img/board_header_05.png" class="header_icon_05" alt="">
+                    <img src="../../assets/img/site_main_notice.png" class="header_icon_main" alt="">
+                    <img src="../../assets/img/site_main_notice_heart.png" class="header_icon_01" alt="">
+                    <img src="../../assets/img/site_main_notice_heart.png" class="header_icon_02" alt="">
+                    <img src="../../assets/img/site_main_notice_heart.png" class="header_icon_03" alt="">
+                    <img src="../../assets/img/site_main_notice_heart.png" class="header_icon_04" alt="">
+                    <img src="../../assets/img/site_main_notice_heart.png" class="header_icon_05" alt="">
                     
                     <h2>NOTICE</h2>
                     <p>게시물 내용을 확인해주세요!</p>
@@ -65,7 +75,6 @@
                         <a class="write_btn" href="boardWrite.php">글쓰기</a>
                     </div>
                 </div>
-                <hr>
                 <div class="board__view">   
 <?php
     $myBoardID = $_GET['myBoardID'];
@@ -102,7 +111,7 @@
     $connect -> query($sql);
     
     // echo $myBoardID;
-    $sql = "SELECT b.boardTitle, b.boardSection, m.youImageFile, b.regTime, b.boardView, b.boardContents FROM myBoard b JOIN myMember m ON(m.myMemberID = b.myMemberID) WHERE b.myBoardID = {$myBoardID}";
+    $sql = "SELECT b.boardTitle, b.boardSection, m.youImageFile, b.regTime, b.boardView, b.boardImgFile, b.boardContents FROM myBoard b JOIN myMember m ON(m.myMemberID = b.myMemberID) WHERE b.myBoardID = {$myBoardID}";
     $result = $connect -> query($sql);
     // var_dump ($result);
 
@@ -116,7 +125,7 @@
         echo "<p class='view-num'> 조회수 ".$info['boardView']." </p>";
         // echo "<p class='view-like' style='margin-left:10px'>♥️".$info['boardLikesCount']."</p>";
         echo "</div>";
-        echo "<div class='view-cont'>".$info['boardContents']."</div>";
+        echo "<div class='view-cont'>".$info['boardContents']."<div class='view-imge' style='background-image:url(../../assets/img/blog_board/".$info['boardImgFile']."'></div></div>";
 
         echo "<div class='prev-next-cont'>";
         if($myBoardID <=1){
@@ -225,7 +234,6 @@
     // 댓글 삭제버튼
     $(".comment__del__del").click(function(e){
         e.preventDefault();
-        
 
         $(".comment__delete").fadeIn();
         
@@ -316,11 +324,11 @@
                     location.reload();
                 },
                 // 오류시 3가지 값을 알려줍니다
-                error: function(request, status, error){
-                    console.log("request" + request);
-                    console.log("status" + status);
-                    console.log("error" + error);
-                }
+                // error: function(request, status, error){
+                //     console.log("request" + request);
+                //     console.log("status" + status);
+                //     console.log("error" + error);
+                // }
             })
         }
     })

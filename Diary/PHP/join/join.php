@@ -28,9 +28,9 @@
                         <legend class="ir">회원가입을 위한 정보 입력영역</legend>
                         <section class="joinAgree">
                             <div class="Profile_choose">
-                                <label class="file_choose"for="youImage">파일선택!</label>
+                                <label class="file_choose"for="youImage">파일선택 : </label>
                                 <!-- <label for="youImage">Browse...</label> -->
-                                <input type="file" name="youImage" id="youImage" style="display:none;" accept=".jpg, .jpeg, .png, .gif" placeholder="jpg, gif, png 파일만 넣어주세요!">
+                                <input type="file" name="youImage" id="youImage" accept=".jpg, .jpeg, .png, .gif" placeholder="jpg, gif, png 파일만 넣어주세요!">
                             </div>
                             <div class="Email overlap">
                                 <label for="youEmail" class="ir">이메일</label>

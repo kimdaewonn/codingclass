@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 꾸다 - 인덱스 </title>
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/main.css">
     <!-- <link rel="stylesheet" href="../../assets/css/board.css"> -->
 
 </head>
@@ -172,8 +173,8 @@
                     </div>
                 </div>
 
-            <!-- 아티스트 -->
-            <div class="artist section_ctrl">
+                <!-- 아티스트 -->
+                <div class="artist section_ctrl">
                     <h2>ARTIST</h2>
                     <p>다른 작가들의 소식을 빠르게 확인해보자!</p>
                     <img class="artist_cross" src="../../assets/img/site_main_cross.png" alt="x">
@@ -231,36 +232,6 @@
                         d
                     </div>
                 </div>
-
-                <!-- RANK -->
-                <!-- <div class="rank section_ctrl">
-                    <h2>RANKING</h2>
-                    <p>랭킹을 모아봤어요!</p>
-                    <img class="cross" src="../../assets/img/site_main_cross.png" alt="">
-                    <div class="rank_cont">
-                        <div class="rank_cont_inner">
-                            <div class="rank_item">
-                                <p>"이솔 스티커"</p>
-                                <div class="rank_item_03">
-                                    <p>3등</p>
-                                </div>
-                            </div>
-                            <div class="rank_item">
-                                <p>"이솔 스티커"</p>
-                                <div class="rank_item_01">
-                                    <img src="../../assets/img/site_main_rank.png" alt="">
-                                    <p>1등</p>
-                                </div>
-                            </div>
-                            <div class="rank_item">
-                                <p>"사"</p>
-                                <div class="rank_item_02">
-                                    <p>2등</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
 
                 <!-- RANK -->
                 <div class="rank section_ctrl">

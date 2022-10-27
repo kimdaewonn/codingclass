@@ -25,11 +25,12 @@
             <?php include "../include/header.php" ?>
             <div class="board">
                 <div class="board_info">
-                    <img src="../../assets/img/board_header_01.png" class="header_icon_01" alt="">
-                    <img src="../../assets/img/board_header_02.png" class="header_icon_02" alt="">
-                    <img src="../../assets/img/board_header_03.png" class="header_icon_03" alt="">
-                    <img src="../../assets/img/board_header_04.png" class="header_icon_04" alt="">
-                    <img src="../../assets/img/board_header_05.png" class="header_icon_05" alt="">
+                <img src="../../assets/img/site_main_faq.png" class="header_icon_main" alt="">
+                    <img src="../../assets/img/site_main_faq_heart.png" class="header_icon_01" alt="">
+                    <img src="../../assets/img/site_main_faq_heart.png" class="header_icon_02" alt="">
+                    <img src="../../assets/img/site_main_faq_heart.png" class="header_icon_03" alt="">
+                    <img src="../../assets/img/site_main_faq_heart.png" class="header_icon_04" alt="">
+                    <img src="../../assets/img/site_main_faq_heart.png" class="header_icon_05" alt="">
                     <h2>FAQ</h2>
                     <img src="../../assets/img/site_board_notice_cross.png" alt="">
                     <p>궁금하신 부분들에 대해 정리해봤어요!</p>

@@ -2,10 +2,9 @@
     <img class="header_menu_close" src="../../assets/img/login_cross.png" alt="">
     <a href="../board/board.php">공지사항</a>
     <a href="../event/event.php">이벤트</a>
-    <a href="../board/board.php">이달의 순위</a>
-    <a href="../board/board.php">일기쓰기</a>
-    <a href="../board/board.php">꾸미기</a>
-    <a href="../board/board.php">정보</a>
+    <a href="../rank/rank.php">이달의 순위</a>
+    <a href="../deco/decoDiary.php">다꾸하기</a>
+    <a href="../info/info.php">정보</a>
     <a href="../faq/faq.php">FAQ</a>
 </div>
 <div class="header">
@@ -14,10 +13,9 @@
         <img class="hamburger_menu_open" src="../../assets/img/hamburger_btn.png" alt="">
         <a href="../board/board.php">공지사항</a>
         <a href="../event/event.php">이벤트</a>
-        <a href="../board/board.php">이달의 순위</a>
-        <a href="../board/board.php">일기쓰기</a>
-        <a href="../board/board.php">꾸미기</a>
-        <a href="../board/board.php">정보</a>
+        <a href="../rank/rank.php">이달의 순위</a>
+        <a href="../deco/decoDiary.php">다꾸하기</a>
+        <a href="../info/info.php">정보</a>
         <a href="../faq/faq.php">FAQ</a>
     </div>
 </div>
@@ -28,7 +26,7 @@
         <?php echo "<img src='../../assets/img/blog/".$_SESSION['youImageFile']."' alt='프로필 이미지' class='profile_image'>"; ?>
         <?php
             echo "<p>";
-            echo "안녕하세요 <em>".$_SESSION['youName']."님!</em>";
+            echo "<a href='../mypage/myPage.php' class='mypage__btn'></a>안녕하세요 <em>".$_SESSION['youName']."님!</em>";
             echo "</p>";
             ?>
             <span class="btn_scroll_top">
@@ -37,7 +35,7 @@
     <?php } else { ?>
         <a style="display:none" href="../login/logout.php" class="profile_cont_close"><img src="../../assets/img/login_cross.png" alt="로그아웃"></a>
         <img src="../../assets/img/site_header_profile_no.png" class="loginplz" alt="logo">
-        <p>여기를 눌러 로그인!</p>
+        <p style="margin-left:0">여기를 눌러 로그인!</p>
         <span class="btn_scroll_top">
             <a href="#">^</a>
         </span>

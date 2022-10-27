@@ -28,11 +28,13 @@
             <?php include "../include/header.php" ?>
             <div class="board">
                 <div class="board_info">
-                    <img src="../../assets/img/board_header_01.png" class="header_icon_01" alt="">
-                    <img src="../../assets/img/board_header_02.png" class="header_icon_02" alt="">
-                    <img src="../../assets/img/board_header_03.png" class="header_icon_03" alt="">
-                    <img src="../../assets/img/board_header_04.png" class="header_icon_04" alt="">
-                    <img src="../../assets/img/board_header_05.png" class="header_icon_05" alt="">
+                    <img src="../../assets/img/site_main_notice.png" class="header_icon_main" alt="">
+                    <img src="../../assets/img/site_main_notice_heart.png" class="header_icon_01" alt="">
+                    <img src="../../assets/img/site_main_notice_heart.png" class="header_icon_02" alt="">
+                    <img src="../../assets/img/site_main_notice_heart.png" class="header_icon_03" alt="">
+                    <img src="../../assets/img/site_main_notice_heart.png" class="header_icon_04" alt="">
+                    <img src="../../assets/img/site_main_notice_heart.png" class="header_icon_05" alt="">
+                    
                     <h2>NOTICE</h2>
                     <?php
     if(isset($_GET['page'])){
