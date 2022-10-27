@@ -111,3 +111,4 @@ shuffledCard();
 memoryCards.forEach(card =>{
     card.addEventListener("click", flipCard);
 })
+
