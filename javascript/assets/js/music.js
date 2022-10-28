@@ -312,17 +312,7 @@ icon1Btn.addEventListener("click", ()=>{
     }
 });
 
-// 서치게임 버튼
-const icon2Btn = document.querySelector(".icon2");
-const searchWrap = document.querySelector(".search__wrap");
 
-icon2Btn.addEventListener("click",()=>{
-    if(searchWrap.style.display=="block"){
-        searchWrap.style.display="none"
-    } else {
-        searchWrap.style.display="block"
-    }
-});
 
 
 

@@ -398,7 +398,7 @@ const searchResult = document.querySelector(".search__result .result");
 const searchResultWrap = document.querySelector(".search__result");
 const searchRestart = document.querySelector(".search__result .restart");
 
-let timeReamining = 5,      //남은 시간
+let timeReamining = 120,      //남은 시간
     timeInterval = "",
     score = 0,              //점수
     answers = {};           //새로운 정답
@@ -421,7 +421,7 @@ function startQuiz(){
     timeInterval = setInterval(reduceTime, 1000);
     // 뮤직 추가하기
     searchAudioBtn.classList.add("playing");
-    audio();
+    audioo();
     // 점수 계산
     searchScoreTotal.innerText = cssProperty.length;
     // 정답 체크
@@ -429,7 +429,7 @@ function startQuiz(){
 }
 
 // 음악 설정
-function audio(){
+function audioo(){
     searchAudioBtn.addEventListener("click", () => {
         searchAudioBtn.classList.toggle("playing");
         if(searchAudioBtn.classList.contains("playing")){
@@ -533,4 +533,14 @@ searchInput.addEventListener("input", checkInput);
 searchRestart.addEventListener("click", restart);
 
 
+// 서치게임 버튼
+const icon2Btn = document.querySelector(".icon2");
+const searchWrap = document.querySelector(".search__wrap");
 
+icon2Btn.addEventListener("click",()=>{
+    if(searchWrap.style.display=="block"){
+        searchWrap.style.display="none"
+    } else {
+        searchWrap.style.display="block"
+    }
+});

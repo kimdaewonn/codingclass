@@ -134,3 +134,13 @@
     -webkit-animation-name: shakeY;
     animation-name: shakeY;
   }
+  .memory__wrap {
+    display: none;
+  }
+  .memory__wrap.show{
+    display: block;
+  }
+  .memory__wrap.hide{
+    display: none;
+  }
+  

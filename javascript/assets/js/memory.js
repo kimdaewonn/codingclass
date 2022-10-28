@@ -10,9 +10,9 @@ let disableDeck = false;
 let matchedCard = 0;
 
 let sound = [
-    "..assets/audio/match.mp3",
-    "..assets/audio/unmatch.mp3",
-    "..assets/audio/sucess.mp3"
+    "../assets/audio/match.mp3",
+    "../assets/audio/unmatch.mp3",
+    "../assets/audio/sucess.mp3"
 ]
 let soundMatch = new Audio(sound[0]);
 let soundUnMatch = new Audio(sound[1]);
@@ -112,3 +112,27 @@ memoryCards.forEach(card =>{
     card.addEventListener("click", flipCard);
 })
 
+
+// 숨기기
+const icon3Btn = document.querySelector(".icon3");
+icon3Btn.addEventListener("click",()=>{
+    if(memoryWrap.style.display=="none"){
+        memoryWrap.style.display ="block";
+    } else {
+        memoryWrap.style.display ="none";
+    }
+    
+});
+
+
+
+// 왜안됨?
+// const memory__wrap = document.querySelector(".memory__wrap")
+
+// icon3Btn.addEventListener("click",()=>{
+//     if(memoryWrap.style.display=="none"){
+//         memoryWrap.classList.add("show")
+//     } else {
+//         memoryWrap.classList.remove("show")
+//     }
+// });

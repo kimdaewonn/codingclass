@@ -2,7 +2,7 @@
 /* .music__wrap {} */
 .music__inner {
     width: 450px;
-    background: #000;
+    background: #111;
     position: absolute;
     right: 100px;
     top: 100px;
@@ -228,10 +228,12 @@
 .music__list li:hover {
     background: rgba(67, 50, 221, 0.952);
     transform: translateY(5px);
-    transition: all 0.3s;
-    color: #fff;
+    transition: all 0.8s;
 }
 .music__list li.playing {
+    color: #8d3beb;
+}
+span#music_audio01 {
     color: #8d3beb;
 }
 .music__list li strong {
@@ -239,6 +241,13 @@
     font-size: 20px;
     margin-bottom: 4px;
 }
+.music__list li:hover strong {
+    color: #fff;
+}
+.music__list li:hover em {
+    color: #fff;
+}
+
 .music__list li em {
     font-style: normal;
 }
