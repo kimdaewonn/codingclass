@@ -1,0 +1,379 @@
+<?php 
+    include "../../connect/connect.php";
+    include "../../connect/session.php";
+    // include "../../connect/sessionCheck.php";
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다이어리 꾸미기</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/board.css">
+</head>
+<body>
+    <div style="display:none" class="scroll">
+        <p>아래로 스크롤 해주세요.</p>
+        <img src="../../assets/img/site_intro_scroll.png" alt="">
+    </div>
+    <div class="wrap">
+        <div class="deco__Diary">
+            <div class="diary__inner__black">
+                
+                <div class="edit_function" alt="편집기능 이미지">
+                    <button id="btn-bold">
+                        <b>가</b>
+                    </button>
+                    <button id="btn-italic">
+                        <i>가</i>
+                    </button>
+                    <button id="btn-underline">
+                        <u>가</u>
+                    </button>
+                    <button id="btn-strike">
+                        <s>가</s>
+                    </button>
+                    <button id="btn-ordered-list">
+                        1.
+                    </button>
+                    <button id="btn-unordered-list">
+                        •.
+                    </button>
+                    <button id="btn-image">
+                        이미지
+                    </button>
+                    <input type="file" name="uploadfile" id="img-selector" accept="image/*" style="display:none;"/>
+                </div>
+                <!-- <div class="edit_stiker" alt="스티커 붙이기">
+                    <button id="btn-stk01">
+                        <div><img src="../../assers/img/function_edit_sticker_01.png" alt=""></div>
+                    </button>
+                    <button id="btn-stk02">
+                        <div><img src="../../assers/img/function_edit_sticker_02.png" alt=""></div>
+                    </button>
+                    <button id="btn-stk03">
+                        <div><img src="../../assers/img/function_edit_sticker_03.png" alt=""></div>
+                    </button>
+                    <button id="btn-stk04">
+                        <div><img src="../../assers/img/function_edit_sticker_04.png" alt=""></div>
+                    </button>
+                    <button id="btn-stk05">
+                        <div><img src="../../assers/img/function_edit_sticker_05.png" alt=""></div>
+                    </button>
+                </div> -->
+                
+                <div class="diaryDesc">
+                    <label for="diaryContents" class="ir">내용</label>
+                    <div class="intro_input" id="editor" contenteditable="true" placeholder="여기에 입력해주세요" ></div>
+
+                    <!-- <textarea name="diaryBox" id="diaryBox" placeholder="일기를 써주세요 :3" cols="20" rows="3" class="diaryBox" required></textarea> -->
+                </div>
+                <div class="edit_sticker">
+                    <p>원하는 스티커를 본문에 드래그 해보세요!</p>
+                    <div style="display:flex">
+                        <img class="sticker" src="../../assets/img/function_edit_sticker_01.png" alt="얉게">
+                        <img class="sticker" src="../../assets/img/function_edit_sticker_02.png" alt="얉게">
+                        <img class="sticker" src="../../assets/img/function_edit_sticker_03.png" alt="얉게">
+                        <img class="sticker" src="../../assets/img/function_edit_sticker_04.png" alt="얉게">
+                        <img class="sticker" src="../../assets/img/function_edit_sticker_05.png" alt="얉게">
+                    </div>
+                </div>
+                <button type="submit" class="diary__btn">완료</button>
+
+
+                <!-- 스크린캡처 테스트 -->
+                <p>---------------스크린 캡처 테스트---------------</p>
+                <!-- 전체 부분-->
+                <button onclick=bodyShot()>bodyShot</button>
+                <!-- 일부분 부분-->
+                <button onclick=partShot()>partShot</button>
+
+                <div class="container" id='container'>
+                <!-- 로컬에서 불러온 파일 -->
+                <!-- <img src="img/1534347627.jpg"> -->
+                <!-- 웹에서 불러온 파일 -->
+                <!-- <img src="https://www.w3schools.com/html/img_girl.jpg"> -->
+                <!-- <img src="https://source.unsplash.com/user/erondu/400x400"> -->
+                </div>
+                <!-- 결과화면을 그려줄 canvas -->
+                <canvas id="canvas" width="1160px" height="600px"
+                style="border:1px solid #d3d3d3;"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../../assets/javascript/board.js"></script>
+<!-- <script src="../../assets/javascript/search.js"></script> -->
+<script src="../../assets/javascript/common.js"></script>
+<script src="../../assets/javascript/html2canvas.js"></script>
+<script>
+
+    function bodyShot() {
+    //전체 스크린 샷하기
+    html2canvas(document.body)
+    //document에서 body 부분을 스크린샷을 함.
+    .then(
+    function (canvas) {
+    //canvas 결과값을 drawImg 함수를 통해서
+    //결과를 canvas 넘어줌.
+    //png의 결과 값
+    drawImg(canvas.toDataURL('image/png'));
+
+    //appendchild 부분을 주석을 풀게 되면 body
+    //document.body.appendChild(canvas);
+
+    //특별부록 파일 저장하기 위한 부분.
+    saveAs(canvas.toDataURL(), 'file-name.png');
+    }).catch(function (err) {
+    console.log(err);
+    });
+    }
+
+    function partShot() {
+    //특정부분 스크린샷
+    html2canvas(document.getElementById("container"))
+    //id container 부분만 스크린샷
+    .then(function (canvas) {
+    //jpg 결과값
+    drawImg(canvas.toDataURL('image/jpeg'));
+    //이미지 저장
+    saveAs(canvas.toDataURL(), 'file-name.jpg');
+    }).catch(function (err) {
+    console.log(err);
+    });
+    }
+
+    function drawImg(imgData) {
+    console.log(imgData);
+    //imgData의 결과값을 console 로그롤 보실 수 있습니다.
+    return new Promise(function reslove() {
+    //내가 결과 값을 그릴 canvas 부분 설정
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    //canvas의 뿌려진 부분 초기화
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    var imageObj = new Image();
+    imageObj.onload = function () {
+    ctx.drawImage(imageObj, 10, 10);
+    //canvas img를 그리겠다.
+    };
+    imageObj.src = imgData;
+    //그릴 image데이터를 넣어준다.
+
+    }, function reject() { });
+
+    }
+    function saveAs(uri, filename) {
+    var link = document.createElement('a');
+    if (typeof link.download === 'string') {
+    link.href = uri;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    } else {
+    window.open(uri);
+    }
+    }
+</script>
+
+<script>
+    // 스티커 선택
+    const stickerAll = document.querySelectorAll(".sticker")
+    const size = document.querySelectorAll(".size")
+
+    
+    
+    stickerAll.forEach((item,where)=>{
+        item.onmousedown = function (event) {
+            // size.forEach((e,i)=>{
+            //     e.addEventListener("click", ()=>{
+            //         let sizeInfo = i+1;
+            //         console.log(sizeInfo)
+            //     })
+            // })
+            let shiftX = event.clientX - item.getBoundingClientRect().left;
+            let shiftY = event.clientY - item.getBoundingClientRect().top;
+    
+            item.style.position = 'absolute';
+            item.style.border = '1px dashed #721aff';
+            item.style.borderRadius = '15px';
+            item.style.zIndex = 100;
+            document.body.append(item);
+    
+            moveAt(event.pageX, event.pageY);
+    
+            // 초기 이동을 고려한 좌표 (pageX, pageY)에서
+            // 공을 이동합니다.
+            function moveAt(pageX, pageY) {
+                item.style.left = pageX - shiftX + 'px';
+                item.style.top = pageY - shiftY + 'px';
+            }
+    
+            function onMouseMove(event) {
+                moveAt(event.pageX, event.pageY);
+            }
+    
+            // mousemove로 공을 움직입니다.
+            document.addEventListener('mousemove', onMouseMove);
+    
+            // 공을 드롭하고, 불필요한 핸들러를 제거합니다.
+            item.onmouseup = function () {
+                document.removeEventListener('mousemove', onMouseMove);
+                item.style.border = '1px solid rgba(255, 255, 255, 0)';
+                item.onmouseup = null;
+            };
+    
+        };
+    
+        item.ondragstart = function () {
+            return false;
+        };
+    })
+
+
+
+
+    //텍스트 에디터
+    const editor = document.getElementById('editor');
+    const btnBold = document.getElementById('btn-bold');
+    const btnItalic = document.getElementById('btn-italic');
+    const btnUnderline = document.getElementById('btn-underline');
+    const btnStrike = document.getElementById('btn-strike');
+    const btnOrderedList = document.getElementById('btn-ordered-list');
+    const btnUnorderedList = document.getElementById('btn-unordered-list');
+
+    const btnImage = document.getElementById('btn-image');
+    const imageSelector = document.getElementById('img-selector');
+
+    btnBold.addEventListener('click', function () {
+        setStyle('bold');
+    });
+
+    btnItalic.addEventListener('click', function () {
+        setStyle('italic');
+    });
+
+    btnUnderline.addEventListener('click', function () {
+        setStyle('underline');
+    });
+
+    btnStrike.addEventListener('click', function () {
+        setStyle('strikeThrough')
+    });
+
+    btnOrderedList.addEventListener('click', function () {
+        setStyle('insertOrderedList');
+    });
+
+    btnUnorderedList.addEventListener('click', function () {
+        setStyle('insertUnorderedList');
+    });
+
+    btnImage.addEventListener('click', function () {
+        imageSelector.click();
+    });
+
+    imageSelector.addEventListener('change', function (e) {
+        const files = e.target.files;
+        if (!!files) {
+            insertImageDate(files[0]);
+        }
+    });
+
+    editor.addEventListener('keydown', function () {
+        checkStyle();
+    });
+
+    editor.addEventListener('mousedown', function () {
+        checkStyle();
+    });
+    
+    
+    function setStyle(style) {
+        document.execCommand(style);
+        focusEditor();
+        checkStyle();
+    }
+    
+    function insertImageDate(file) {
+        const reader = new FileReader();
+        reader.addEventListener('load', function (e) {
+            focusEditor();
+            document.execCommand('insertImage', false, `${reader.result}`);
+        });
+        reader.readAsDataURL(file);
+    }
+
+    function checkStyle() {
+        if (isStyle('bold')) {
+            btnBold.classList.add('active');
+        } else {
+            btnBold.classList.remove('active');
+        }
+        if (isStyle('italic')) {
+            btnItalic.classList.add('active');
+        } else {
+            btnItalic.classList.remove('active');
+        }
+        if (isStyle('underline')) {
+            btnUnderline.classList.add('active');
+        } else {
+            btnUnderline.classList.remove('active');
+        }
+        if (isStyle('strikeThrough')) {
+            btnStrike.classList.add('active');
+        } else {
+            btnStrike.classList.remove('active');
+        }
+        if (isStyle('insertOrderedList')) {
+            btnOrderedList.classList.add('active');
+        } else {
+            btnOrderedList.classList.remove('active');
+        }
+        if (isStyle('insertUnorderedList')) {
+            btnUnorderedList.classList.add('active');
+        } else {
+            btnUnorderedList.classList.remove('active');
+        }
+    }
+
+    function isStyle(style) {
+        return document.queryCommandState(style);
+    }
+
+    function setStyle(style) {
+        document.execCommand(style);
+        focusEditor();
+    }
+
+    // 버튼 클릭 시 에디터가 포커스를 잃기 때문에 다시 에디터에 포커스를 해줌
+    function focusEditor() {
+        editor.focus({preventScroll: true});
+    }
+
+    // 마우스를 트래킹하는 파티클
+    // document.querySelector(".wrap").addEventListener("mousemove", (e) => {
+    //         //마우스 좌표 값
+    //         let mousePageX = e.pageX;
+    //         let mousePageY = e.pageY;
+
+    //         // 전체 가로
+    //         let centerPageX = window.innerWidth/2 - mousePageX;
+    //         let centerPageY = window.innerHeight/2 - mousePageY;
+
+
+    //         //포스트 커버 썸내일 움직이기
+    //         for(let q=1; q<=4; q++){
+    //             document.querySelectorAll(".particle").forEach((e,i)=>{
+    //                 e.style.transform = "translate("+ -centerPageX/(q*4)+"px, "+ -centerPageY/(q*4)+"px)";
+    //             })
+    //         }
+    //     }) 
+</script>
+</script>
+</html>

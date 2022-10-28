@@ -234,6 +234,7 @@
     // 댓글 삭제버튼
     $(".comment__del__del").click(function(e){
         e.preventDefault();
+        
 
         $(".comment__delete").fadeIn();
         
@@ -269,9 +270,17 @@
                 },
                 // 성공했을때
                 success : function(data){
-                    console.log(data);
-                    location.reload();
-                },
+                        if(data.result === "good"){
+                            location.reload();
+                        }else{
+                            alert('실패');
+                        }
+                    },
+                // // 성공했을때
+                // success : function(data){
+                //     console.log(data);
+                //     location.reload();
+                // },
                 // 오류시 3가지 값을 알려줍니다
                 error: function(request, status, error){
                     console.log("request" + request);
@@ -320,15 +329,18 @@
                 },
                 // 성공했을때
                 success : function(data){
-                    console.log(data);
-                    location.reload();
+                    if(data.result === "good"){
+                        location.reload();
+                    }else{
+                        alert('실패');
+                    }
                 },
                 // 오류시 3가지 값을 알려줍니다
-                // error: function(request, status, error){
-                //     console.log("request" + request);
-                //     console.log("status" + status);
-                //     console.log("error" + error);
-                // }
+                error: function(request, status, error){
+                    console.log("request" + request);
+                    console.log("status" + status);
+                    console.log("error" + error);
+                }
             })
         }
     })
