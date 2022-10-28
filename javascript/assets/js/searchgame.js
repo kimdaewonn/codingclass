@@ -398,6 +398,18 @@ const searchResult = document.querySelector(".search__result .result");
 const searchResultWrap = document.querySelector(".search__result");
 const searchRestart = document.querySelector(".search__result .restart");
 
+
+let soundd = [
+    "../assets/audio/match.mp3",
+    "../assets/audio/unmatch.mp3",
+    "../assets/audio/sucess.mp3"
+]
+let soundMatchh = new Audio(soundd[0]);
+let soundUnMatchh = new Audio(soundd[1]);
+let soundUnSuccesss = new Audio(soundd[2]);
+
+
+
 let timeReamining = 120,      //남은 시간
     timeInterval = "",
     score = 0,              //점수
@@ -446,6 +458,7 @@ function checkInput(){
     let input = event.currentTarget.value.trim().toLowerCase();
     if(answers.hasOwnProperty(input) && !answers[input]){
         answers[input] = true;
+        soundMatch.play()
         //정답 표시
         searchAnswers.style.display = "block";
         searchAnswers.innerHTML += `<span>${input}</span>`;
@@ -531,6 +544,7 @@ function restart(){
 searchStart.addEventListener("click", startQuiz);
 searchInput.addEventListener("input", checkInput);
 searchRestart.addEventListener("click", restart);
+
 
 
 // 서치게임 버튼

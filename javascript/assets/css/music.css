@@ -180,6 +180,7 @@
 .music__list {
     padding: 20px;
     position: relative;
+    display: none;
 }
 .music__list h3 {
     font-size: 24px;
@@ -233,9 +234,9 @@
 .music__list li.playing {
     color: #8d3beb;
 }
-span#music_audio01 {
-    color: #8d3beb;
-}
+/* .audio-duration {
+    color: rgb(4, 61, 61);
+} */
 .music__list li strong {
     display: block;
     font-size: 20px;

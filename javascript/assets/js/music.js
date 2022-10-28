@@ -268,6 +268,9 @@ function playListMusic(){
         if(musicListAll[i].getAttribute("data-index") == musicIndex){   //현재 뮤직 인덱스랑 리스트 인덱스 값이 같으면
             musicListAll[i].classList.add("playing");                   // 클래스 playing 추가
             audioTag.innerText = "재생중";                              // 재생중일 경우 재생중 멘트 추가
+            audioTag.style.color="#2c46fb";
+        } else {
+            audioTag.style.color="#223547";
         }
 
         musicListAll[i].setAttribute("onclick", "clicked(this)");
@@ -311,6 +314,11 @@ icon1Btn.addEventListener("click", ()=>{
         musicInner.style.display="block"
     }
 });
+
+icon1Btn.addEventListener("click",()=>{
+    document.querySelector(".bolum_king").style.top="200px";
+  
+})
 
 
 
