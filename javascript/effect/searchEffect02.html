@@ -497,40 +497,41 @@
                 </div>
                 <div class="cont">
                     <div class="active">
-<pre><code class="language-js">
-//선택자
-const searchBox = document.querySelector(".search__box input");         //검색 영역
- const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
- const searchInfo = document.querySelector(".search__info .num");        //전체 갯수
- const searchInfo2 = document.querySelector(".search__info .num2");      //찾은 갯수          
+<pre><code class="language-js">{
+    //선택자
+    const searchBox = document.querySelector(".search__box input");         //검색 영역
+    const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
+    const searchInfo = document.querySelector(".search__info .num");        //전체 갯수
+    const searchInfo2 = document.querySelector(".search__info .num2");      //찾은 갯수          
 
- //전체 갯수 구하기
- searchInfo.textContent = searchList.length;
- 
+    //전체 갯수 구하기
+    searchInfo.textContent = searchList.length;
+    
 
- //검색 영역
- searchBox.addEventListener("keyup", () => {
-     const searchWord = searchBox.value;     //사용자가 입력한 키워드
+    //검색 영역
+    searchBox.addEventListener("keyup", () => {
+        const searchWord = searchBox.value;     //사용자가 입력한 키워드
 
-     searchList.forEach(el => {
-         const cssType = el.dataset.type;                         //CSS 유형 모든 값
-         const cssName = el.querySelector("strong").innerText;    //CSS 속성 모든 값
+        searchList.forEach(el => {
+            const cssType = el.dataset.type;                         //CSS 유형 모든 값
+            const cssName = el.querySelector("strong").innerText;    //CSS 속성 모든 값
 
-         if(cssName.includes(searchWord) || cssType.includes(searchWord)){
-             el.classList.remove("hide");
-         } else {
-             el.classList.add("hide");
-         }
-     });
+            if(cssName.includes(searchWord) || cssType.includes(searchWord)){
+                el.classList.remove("hide");
+            } else {
+                el.classList.add("hide");
+            }
+        });
 
-     const hidingNum = document.querySelectorAll(".search__list ul li.hide");
-     searchInfo2.textContent = searchList.length - hidingNum.length;
+        const hidingNum = document.querySelectorAll(".search__list ul li.hide");
+        searchInfo2.textContent = searchList.length - hidingNum.length;
 
- });  
+    });
+}
 </code></pre>
                     </div>
 <div>
-<pre><code class="language-html">
+<pre><code class="language-html">{
 &lt;main id="main"&gt;
 &lt;div class="search__wrap"&gt;
     &lt;span&gt;includes()를 이용하여 검색하기&lt;/span&gt;
@@ -935,189 +936,191 @@ const searchBox = document.querySelector(".search__box input");         //검색
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;/main&gt;
+}
 </code></pre>
                 </div>
             <div>
-<pre><code class="language-css">
-:root {
-    --htmlColor : #223547;
-    --cssColor : #472222;
-    --javscriptColor : #224736;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'NexonLv1Gothic';
-    color: #223547;
-}
-*, *:before, *:after {
-    box-sizing:border-box;
-}
-a {
-    color: #223547;
-    text-decoration: none;
-}
-li {
-    list-style: none;
-}
+<pre><code class="language-css">{
+    :root {
+        --htmlColor : #223547;
+        --cssColor : #472222;
+        --javscriptColor : #224736;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'NexonLv1Gothic';
+        color: #223547;
+    }
+    *, *:before, *:after {
+        box-sizing:border-box;
+    }
+    a {
+        color: #223547;
+        text-decoration: none;
+    }
+    li {
+        list-style: none;
+    }
 
-/* header */
-#header {
-    display: flex;
-    justify-content: space-between;
-}
-#header h1 {
-    margin: 10px;
-    font-family: 'Tmon';
-    font-size: 40px;
-}
-#header nav {
-    margin: 10px;
-}
-#header nav li {
-    position: relative;
-    display: inline;
+    /* header */
+    #header {
+        display: flex;
+        justify-content: space-between;
+    }
+    #header h1 {
+        margin: 10px;
+        font-family: 'Tmon';
+        font-size: 40px;
+    }
+    #header nav {
+        margin: 10px;
+    }
+    #header nav li {
+        position: relative;
+        display: inline;
 
-}
-#header nav li a {
-    width: 30px;
-    height: 30px;
-    border: 1px solid var(--htmlColor);
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    line-height: 30px;
-    font-family: 'NexonLv1Gothic';
-}
-#header nav li.active a {
-    background-color: #223547;
-    color: #fff;
-}
-#header nav li .sub {
-    position: absolute;
-    left: 0;
-    top: 35px;
-    width: 400px;
-}
-#header nav li .sub a {
-    width: auto;
-    background-color: transparent;
-    color: #223547;
-    border: 0;
-    text-align: left;
-    line-height: 1.2;
-}
-#header nav li .sub li.active a {
-    text-decoration: underline;
-} 
-/* main */
-#main {
-    margin: 50px 10px;
-}
-.search__wrap {
-    max-width: 1400px;
-    margin: 0 auto;
-    border: 3px solid #223547;
-    border-radius: 20px;
-    background-color: #F1F3F6;
-    padding: 30px;
-    text-align: center;
-}
-.search__wrap > span {
-    font-size: 20px;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-.search__wrap > h1 {
-    font-family: 'Tmon';
-    color: #223547;
-    font-size: 6vw;
-    margin-bottom: 10px;
-}
-.search__box {
-    margin-bottom: 40px;
-}
-.search__box label {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-}
-.search__box input {
-    border: 2px solid #223547;
-    padding: 15px 40px;
-    width: 70%;
-    border-radius: 50px;
-    font-size: 20px;
-}
-
-.search__list li {
-    text-align: left;
-    line-height: 1.7;
-}
-.search__list li.hide {
-    display: none;
-}
-.search__list li.show {
-    display: block;
-}
-.search__info {
-    text-align: right;
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed var(--htmlColor);
-}
-.search__info .type {
-    text-align: center;
-    margin-bottom: 10px;
-}
-.search__info  .keyword {
-    text-align: center;
-    margin-bottom: 10px;
-}
-.search__info  .keyword span {
-    border: 2px solid var(--htmlColor);
-    border-radius: 50px;
-    padding: 10px;
-    display: inline-block;
-    margin-bottom: 4px;
-}
-.search__info  .keyword span:hover {
-    background-color: var(--htmlColor);
-    color: #fff;
-    cursor:pointer;
-}
-
-@media (max-width: 600px){
+    }
+    #header nav li a {
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--htmlColor);
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        line-height: 30px;
+        font-family: 'NexonLv1Gothic';
+    }
+    #header nav li.active a {
+        background-color: #223547;
+        color: #fff;
+    }
+    #header nav li .sub {
+        position: absolute;
+        left: 0;
+        top: 35px;
+        width: 400px;
+    }
+    #header nav li .sub a {
+        width: auto;
+        background-color: transparent;
+        color: #223547;
+        border: 0;
+        text-align: left;
+        line-height: 1.2;
+    }
+    #header nav li .sub li.active a {
+        text-decoration: underline;
+    } 
+    /* main */
+    #main {
+        margin: 50px 10px;
+    }
     .search__wrap {
-        padding: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+        border: 3px solid #223547;
+        border-radius: 20px;
+        background-color: #F1F3F6;
+        padding: 30px;
+        text-align: center;
     }
     .search__wrap > span {
-        font-size: 16px;
-        margin-bottom: 10px;
+        font-size: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
     }
     .search__wrap > h1 {
-        font-size: 44px;
+        font-family: 'Tmon';
+        color: #223547;
+        font-size: 6vw;
+        margin-bottom: 10px;
+    }
+    .search__box {
+        margin-bottom: 40px;
+    }
+    .search__box label {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
     }
     .search__box input {
-        font-size: 16px;
-        padding: 12px 30px;
+        border: 2px solid #223547;
+        padding: 15px 40px;
+        width: 70%;
+        border-radius: 50px;
+        font-size: 20px;
     }
-}
-/* footer */
-#footer {
-    text-align: center;
-}
-#footer a {
-    color: #000;
-    font-family: 'NexonLv1Gothic';
-    padding-bottom: 50px;
-}
-#footer a:hover {
-    text-decoration: underline;
+
+    .search__list li {
+        text-align: left;
+        line-height: 1.7;
+    }
+    .search__list li.hide {
+        display: none;
+    }
+    .search__list li.show {
+        display: block;
+    }
+    .search__info {
+        text-align: right;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed var(--htmlColor);
+    }
+    .search__info .type {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .search__info  .keyword {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .search__info  .keyword span {
+        border: 2px solid var(--htmlColor);
+        border-radius: 50px;
+        padding: 10px;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+    .search__info  .keyword span:hover {
+        background-color: var(--htmlColor);
+        color: #fff;
+        cursor:pointer;
+    }
+
+    @media (max-width: 600px){
+        .search__wrap {
+            padding: 20px;
+        }
+        .search__wrap > span {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .search__wrap > h1 {
+            font-size: 44px;
+        }
+        .search__box input {
+            font-size: 16px;
+            padding: 12px 30px;
+        }
+    }
+    /* footer */
+    #footer {
+        text-align: center;
+    }
+    #footer a {
+        color: #000;
+        font-family: 'NexonLv1Gothic';
+        padding-bottom: 50px;
+    }
+    #footer a:hover {
+        text-decoration: underline;
+    }
 }
 </code></pre>
                     </div>

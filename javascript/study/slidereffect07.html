@@ -62,7 +62,7 @@
             </div>
             <h3 class="t_tit2">01. HTML 코드</h3>
             <div class="t_code">
-<pre><code class="language-html">
+<pre><code class="language-html">{
     &lt;main id="main"&gt;
     &lt;section id="sliderType07"&gt;
         &lt;div class="slider__wrap"&gt;
@@ -90,12 +90,13 @@
         &lt;/div&gt;
     &lt;/section&gt;
   &lt;/main&gt;
+}
 </code></pre>
                 </div>
 
                 <h3 class="t_tit2">02. CSS 코드</h3>
                 <div class="t_code">
-<pre><code class="language-css">
+<pre><code class="language-css">{
     @import url('https://webfontworld.github.io/NanumBarunGothic/NanumBarunGothic.css');
         
     .slider__wrap {
@@ -240,7 +241,8 @@
         position: absolute;
         right: 0;
         top: 0;
-    } 
+    }
+} 
 </code></pre>
                 </div>
             <h3 class="t_tit2">03. JS 코드</h3>
@@ -249,7 +251,7 @@
                 autoPlay 등 자동플레이에 필요한 함수가 좀 더 추가되고, 닷메뉴와 마우스 반응 관련해서 함수를 좀 더 추가했습니다.
             </p>
             <div class="t_code">
-<pre><code class="language-js">
+<pre><code class="language-js">{
     const sliderWrap = document.querySelector(".slider__wrap");              //전체 영역
     const sliderImg = document.querySelector(".slider__img");                //보여지는 영역
     const sliderInner = document.querySelector(".slider__inner");            //움직이는 영역 
@@ -410,6 +412,7 @@
     // sliderInner.addEventListener("mouseenter", stopPlay);
     // sliderInner.addEventListener("mouseleave", autoPlay);
     sliderInner.addEventListener("transitionend", checkIndex);
+}
 </code></pre>
             </div>
 

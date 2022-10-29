@@ -409,7 +409,7 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
+<pre><code class="language-js">{
     window.addEventListener("scroll", () => {
         let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //다써줌 브라우저 호환문제
 
@@ -466,10 +466,11 @@
       }
 
       window.addEventListener("scroll", scrollProgress);
+}
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-html">
+<pre><code class="language-html">{
     &lt;nav id="parallax__nav"&gt;
     &lt;ul&gt;
         &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
@@ -482,14 +483,14 @@
         &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
-  &lt;/nav&gt;
-  &lt;!--// parallax__nav --&gt;
-  &lt;div id="parallax__top"&gt;
+&lt;/nav&gt;
+&lt;!--// parallax__nav --&gt;
+&lt;div id="parallax__top"&gt;
     Top
-  &lt;/div&gt;
-  &lt;!--// parallax__top --&gt;
-  
-  &lt;main id="parallax__cont"&gt;
+&lt;/div&gt;
+&lt;!--// parallax__top --&gt;
+
+&lt;main id="parallax__cont"&gt;
     &lt;div id="contents"&gt;
         &lt;section id="section1" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;01&lt;/span&gt;
@@ -573,16 +574,18 @@
         &lt;/section&gt;
         &lt;!-- //section9 --&gt;
     &lt;/div&gt;
-  &lt;/main&gt;
-  &lt;!-- //main --&gt;
-  
-  &lt;aside id="parallax__info"&gt;
+&lt;/main&gt;
+&lt;!-- //main --&gt;
+
+&lt;aside id="parallax__info"&gt;
     &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
-  &lt;/aside&gt;
+&lt;/aside&gt;
+&lt;!-- parallax__info --&gt;
+}
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-css">
+<pre><code class="language-css">{
     #parallax__nav {
         position:fixed;
         right: 20px;
@@ -785,6 +788,7 @@
         background: #fff;
         color: #000;
     }
+}
 </code></pre>
                         </div>
                     </div>

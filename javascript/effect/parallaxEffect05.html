@@ -367,7 +367,7 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
+<pre><code class="language-js">{
     function scroll(){
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -393,10 +393,11 @@
         requestAnimationFrame(scroll);
       }
       scroll();
+}
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-html">
+<pre><code class="language-html">{
     &lt;main id="parallax__cont"&gt;
     &lt;div id="contents"&gt;
         &lt;section id="section1" class="content__item"&gt;
@@ -485,11 +486,12 @@
 &lt;!-- //main --&gt;
 &lt;aside id="parallax__info"&gt;
     &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
-&lt;/aside&gt;   
+&lt;/aside&gt;
+}
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-css">
+<pre><code class="language-css">{
     #parallax__nav {
         position:fixed;
         right: 20px;
@@ -665,6 +667,7 @@
     #parallax__info li, .scrollTop {
         line-height: 1.4;
     }
+}
 </code></pre>
                         </div>
                     </div>

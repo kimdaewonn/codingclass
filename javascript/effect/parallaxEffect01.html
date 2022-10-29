@@ -388,7 +388,7 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
+<pre><code class="language-js">{
     const scroll = document.querySelector("#parallax__info .scroll span");
 
     window.addEventListener("scroll", () => {
@@ -397,9 +397,10 @@
     // let scrollTop = window.scrollY;
     // let scrollTop = document.documentElement.scrollTop;
 
-    // 3가지를 다 써도 상관없음
+    // 3가지 모두 사용가능
     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
+    // 노가다 방식
     // if(scrollTop >= document.getElementById("section1").offsetTop){
     //     document.querySelectorAll("#parallax__nav li").forEach(li => {
     //         li.classList.remove("active");
@@ -465,9 +466,9 @@
     //     }
     // }
 
-    // forEach
+    // forEach문
     document.querySelectorAll(".content__item").forEach((element, index) => {
-        if(scrollTop >= element.offsetTop -window.innerHeight/2){
+        if(scrollTop >= element.offsetTop -2){
             document.querySelectorAll("#parallax__nav li").forEach(li => {
                 li.classList.remove("active");
             });
@@ -499,135 +500,154 @@ document.querySelectorAll("#parallax__nav li a").forEach(li => {
     li.addEventListener("click", (e) => {
         e.preventDefault();
         document.querySelector(li.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"  // 이동 부드럽게
+            behavior: "smooth" //부드럽게
         });
     });
 });
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-html">
-    &lt;nav id="parallax__nav"&gt;
-    &lt;ul&gt;
-        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/nav&gt;
-  
-  &lt;main id="parallax__cont"&gt;
-    &lt;div id="contents"&gt;
-        &lt;section id="section1" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section1 --&gt;
-        &lt;section id="section2" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;피할수 없으면 즐겨라&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section2 --&gt;
-        &lt;section id="section3" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;승리하면 조금 배울 수 있고 패배하면 모든 것을 배울 수 있다&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section3 --&gt;
-        &lt;section id="section4" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;과거를 지배하는 자가 마래를 지배하며 현재를 지배하는 자가 과거를 지배한다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section4 --&gt;
-        &lt;section id="section5" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;세상은 고통으로 가득하지만 한편 그것을 이겨내는 일로도 가득차 있다&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section5 --&gt;
-        &lt;section id="section6" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;가장 하기 힘든 일은 아무 일도 안하는 것이다&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section6 --&gt;
-        &lt;section id="section7" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;말을 많이 하는 것과 말을 잘하는 것은 다르다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section7 --&gt;
-        &lt;section id="section8" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;오늘 할 수 있는 일에 전력을 다하라, 그러면 내일에는 한 걸음 더 진보한다. &lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section8 --&gt;
-        &lt;section id="section9" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;끝을 맺기를 처음과 같이 하면 실패가 없다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section9 --&gt;
-    &lt;/div&gt;
-  &lt;/main&gt;
-  &lt;!-- //main --&gt;
-  
-  &lt;aside id="parallax__info"&gt;
-    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
-    &lt;div class="infoTop"&gt;
+<pre><code class="language-html">{
+    &lt;body class="img10"&gt;
+    &lt;header id="header"&gt;
+        &lt;h1&gt;Javascript  parallax Effect01&lt;/h1&gt;
+        &lt;p&gt;패럴렉스 이펙트&lt;/p&gt;
         &lt;ul&gt;
-            &lt;li&gt;#section1 offset() : &lt;span class="offset1"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section2 offset() : &lt;span class="offset2"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section3 offset() : &lt;span class="offset3"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section4 offset() : &lt;span class="offset4"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section5 offset() : &lt;span class="offset5"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section6 offset() : &lt;span class="offset6"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section7 offset() : &lt;span class="offset7"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section8 offset() : &lt;span class="offset8"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section9 offset() : &lt;span class="offset9"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="mouseEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="mouseEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="mouseEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="mouseEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="mouseEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="mouseEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="mouseEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/aside&gt;
+    &lt;/header&gt;
+    &lt;!-- //header --&gt;
+
+    &lt;nav id="parallax__nav"&gt;
+        &lt;ul&gt;
+            &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+
+    &lt;main id="parallax__cont"&gt;
+        &lt;div id="contents"&gt;
+            &lt;section id="section1" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section1 --&gt;
+            &lt;section id="section2" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;피할수 없으면 즐겨라&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section2 --&gt;
+            &lt;section id="section3" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;승리하면 조금 배울 수 있고 패배하면 모든 것을 배울 수 있다&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section3 --&gt;
+            &lt;section id="section4" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;과거를 지배하는 자가 마래를 지배하며 현재를 지배하는 자가 과거를 지배한다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section4 --&gt;
+            &lt;section id="section5" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;세상은 고통으로 가득하지만 한편 그것을 이겨내는 일로도 가득차 있다&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section5 --&gt;
+            &lt;section id="section6" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;가장 하기 힘든 일은 아무 일도 안하는 것이다&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section6 --&gt;
+            &lt;section id="section7" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;말을 많이 하는 것과 말을 잘하는 것은 다르다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section7 --&gt;
+            &lt;section id="section8" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;오늘 할 수 있는 일에 전력을 다하라, 그러면 내일에는 한 걸음 더 진보한다. &lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section8 --&gt;
+            &lt;section id="section9" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;끝을 맺기를 처음과 같이 하면 실패가 없다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section9 --&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+    &lt;!-- //main --&gt;
+
+    &lt;aside id="parallax__info"&gt;
+        &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
+        &lt;div class="infoTop"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;#section1 offset() : &lt;span class="offset1"&gt;0&lt;/span&gt;px&lt;/li&gt;
+                &lt;li&gt;#section2 offset() : &lt;span class="offset2"&gt;0&lt;/span&gt;px&lt;/li&gt;
+                &lt;li&gt;#section3 offset() : &lt;span class="offset3"&gt;0&lt;/span&gt;px&lt;/li&gt;
+                &lt;li&gt;#section4 offset() : &lt;span class="offset4"&gt;0&lt;/span&gt;px&lt;/li&gt;
+                &lt;li&gt;#section5 offset() : &lt;span class="offset5"&gt;0&lt;/span&gt;px&lt;/li&gt;
+                &lt;li&gt;#section6 offset() : &lt;span class="offset6"&gt;0&lt;/span&gt;px&lt;/li&gt;
+                &lt;li&gt;#section7 offset() : &lt;span class="offset7"&gt;0&lt;/span&gt;px&lt;/li&gt;
+                &lt;li&gt;#section8 offset() : &lt;span class="offset8"&gt;0&lt;/span&gt;px&lt;/li&gt;
+                &lt;li&gt;#section9 offset() : &lt;span class="offset9"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/aside&gt;
+    &lt;!-- parallax__info --&gt;
+}
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-css">
+<pre><code class="language-css">{
+    /* parallax__nav */
     #parallax__nav {
         position:fixed;
         right: 20px;
@@ -801,6 +821,7 @@ document.querySelectorAll("#parallax__nav li a").forEach(li => {
             bottom: 10px;
         }
     }
+}
 </code></pre>
                         </div>
                     </div>

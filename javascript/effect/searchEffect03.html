@@ -520,39 +520,40 @@
                 </div>
                 <div class="cont">
                     <div class="active">
-<pre><code class="language-js">
-//선택자
-const searchKeyword = document.querySelectorAll(".search__info .keyword span");        //알파벳
-const searchList = document.querySelectorAll(".search__list ul li");                //목록 리스트
-const searchInfo = document.querySelector(".search__info .num");                    //전체 갯수
-const searchInfo2 = document.querySelector(".search__info .num2");                  //찾은 갯수
-//전체 갯수 구하기
-searchInfo.textContent = searchList.length;
+<pre><code class="language-js">{
+    //선택자
+    const searchKeyword = document.querySelectorAll(".search__info .keyword span");        //알파벳
+    const searchList = document.querySelectorAll(".search__list ul li");                //목록 리스트
+    const searchInfo = document.querySelector(".search__info .num");                    //전체 갯수
+    const searchInfo2 = document.querySelector(".search__info .num2");                  //찾은 갯수
+    //전체 갯수 구하기
+    searchInfo.textContent = searchList.length;
 
-searchKeyword.forEach(el => {
-    el.addEventListener("click", () => {
-        const searchWord = el.innerText;        //사용자가 클릭한 알파벳
-        //console.log(searchWord);
+    searchKeyword.forEach(el => {
+        el.addEventListener("click", () => {
+            const searchWord = el.innerText;        //사용자가 클릭한 알파벳
+            //console.log(searchWord);
 
-        searchList.forEach(el => {
-            const cssName = el.querySelector("strong").innerText;       //CSS 속성 텍스트
-            // console.log(cssName)
+            searchList.forEach(el => {
+                const cssName = el.querySelector("strong").innerText;       //CSS 속성 텍스트
+                // console.log(cssName)
 
-            //알파벳 첫글자 == CSS 속성의 첫글자
-            if(searchWord.charAt(0) === cssName.charAt(0)){
-                el.classList.remove("hide");
-            } else {
-                el.classList.add("hide");
-            }
-        })
-        const hidingNum = document.querySelectorAll(".search__list ul li.hide");
-        searchInfo2.textContent = searchList.length - hidingNum.length;
+                //알파벳 첫글자 == CSS 속성의 첫글자
+                if(searchWord.charAt(0) === cssName.charAt(0)){
+                    el.classList.remove("hide");
+                } else {
+                    el.classList.add("hide");
+                }
+            })
+            const hidingNum = document.querySelectorAll(".search__list ul li.hide");
+            searchInfo2.textContent = searchList.length - hidingNum.length;
+        });
     });
-});
+}
 </code></pre>
                     </div>
 <div>
-<pre><code class="language-html">
+<pre><code class="language-html">{
 &lt;main id="main"&gt;
 &lt;div class="search__wrap"&gt;
     &lt;span&gt;charAt()를 이용하여 검색하기&lt;/span&gt;
@@ -980,10 +981,11 @@ searchKeyword.forEach(el => {
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;/main&gt;
+}
 </code></pre>
                 </div>
             <div>
-<pre><code class="language-css">
+<pre><code class="language-css">{
     :root {
         --htmlColor : #223547;
         --cssColor : #472222;
@@ -1164,6 +1166,7 @@ searchKeyword.forEach(el => {
     #footer a:hover {
         text-decoration: underline;
     }
+}
 </code></pre>
                     </div>
                 </div>

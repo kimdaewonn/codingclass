@@ -492,68 +492,61 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
-    //글씨 쪼개기 
-    // let text = document.querySelector("#section1 .content__item__desc");
-    // let soplitText = text.innerText;
-    // let soplitWrap = soplitText.split(' ').join('</span><span>')
+<pre><code class="language-js">{
+    //글씨 쪼개기
+    // let text = document.querySelector("#section01 .content__item__desc");
+    // let splitText = text.innerText;
 
-    // text.innerHTML = soplitWrap = "<span>" + soplitWrap + "</span>"
+    // let splitWrap = splitText.split('').join('&lt;/span&gt;&lt;span&gt;');
 
-    let descAll = document.querySelectorAll("#contents .content__item__desc.split");
+    // text.innerHTML = splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;";
 
-    //글씨 쪼개기(다중)
-    descAll.forEach( desc => {
-        let splitText = desc.innerText;
-        let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
+    //글씨 쪼개기(다중이)
 
-        desc.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
-        desc.setAttribute("aria-label",splitText);
+    document.querySelectorAll(".split").forEach(text =&gt; {
+        let splitText = text.innerText;
+        let splitWrap = splitText.split('').join("&lt;/span&gt;&lt;span aria-hidden='true'&gt;");
+        splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;";
+        text.innerHTML = splitWrap;
+        text.setAttribute("aria-label", splitText);
+    });
 
-    }); 
-
-    //스크롤
     function scroll(){
-        let scrollTop = window.scrollY 
+        let scrollTop = window.scrollY;
         document.querySelector("#parallax__info .scroll").innerText = Math.round(scrollTop);
 
-        //css 클래스 추가(노가다)
-        // document.querySelectorAll(".content__item").forEach(item => {
-        //     if(scrollTop >= item.offsetTop ){
-        //         item.querySelector(".split").classList.add("show")
+        // CSS 클래스 추가 (노가다)
+        // document.querySelectorAll(".content__item").forEach(item =&gt; {
+        //     if(scrollTop &gt;= item.offsetTop){
+        //         item.querySelector(".split").classList.add("show");
         //     }
         // })
 
-        // document.querySelectorAll(".content__item").forEach(item => {
-        //     if(scrollTop >= item.offsetTop){
-        //         item.querySelectorAll(".split span").forEach((span, index)=> {
-        //             span.classList.add("show")
-        //             span.style.transitionDelay = `${index * 100}ms`
-        //         })
-        //     }
-        // })
-
-        document.querySelectorAll(".content__item").forEach(item => {
-            if(scrollTop >= item.offsetTop){
-                item.querySelectorAll(".split span").forEach((span, index)=> {
-                    setTimeout(()=>{
-                        span.classList.add("show");
-                    }, 50 * index );
-                })
+        document.querySelectorAll(".content__item").forEach(item =&gt; {
+            if(scrollTop &gt;= item.offsetTop){
+                item.querySelectorAll(".split span").forEach((span, index) =&gt; {
+                    span.classList.add("show");
+                    span.style.transitionDelay = `${index * 50}ms`
+                });
             }
         })
 
+        requestAnimationFrame(scroll);
 
-        requestAnimationFrame(scroll)
-
-        //첫번째 span --> 0.01s
-        //두번째 span --> 0.02s
+        //첫번째 span ---&gt; 0.01
+        //두번째 span ---&gt; 0.02
+        //세번째 span ---&gt; 0.03
+        //네번째 span ---&gt; 0.04
+        //다섯번째 span ---&gt; 0.05
+        //여섯번째 span ---&gt; 0.06
+        //...
     }
     scroll();
+}
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-html">
+<pre><code class="language-html">{
     &lt;main id="parallax__cont"&gt;
     &lt;div id="contents"&gt;
         &lt;section id="section1" class="content__item"&gt;
@@ -562,7 +555,7 @@
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split style1"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section1 --&gt;
         &lt;section id="section2" class="content__item"&gt;
@@ -571,7 +564,7 @@
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split style2"&gt;피할수 없으면 즐겨라&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;피할수 없으면 즐겨라&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section2 --&gt;
         &lt;section id="section3" class="content__item"&gt;
@@ -580,7 +573,7 @@
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split style3"&gt;승리하면 조금 배울 수 있고 패배하면 모든 것을 배울 수 있다&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;승리하면 조금 배울 수 있고 패배하면 모든 것을 배울 수 있다&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section3 --&gt;
         &lt;section id="section4" class="content__item"&gt;
@@ -589,7 +582,7 @@
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split style4"&gt;과거를 지배하는 자가 마래를 지배하며 현재를 지배하는 자가 과거를 지배한다.&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;과거를 지배하는 자가 마래를 지배하며 현재를 지배하는 자가 과거를 지배한다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section4 --&gt;
         &lt;section id="section5" class="content__item"&gt;
@@ -598,7 +591,7 @@
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split style5"&gt;세상은 고통으로 가득하지만 한편 그것을 이겨내는 일로도 가득차 있다&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;세상은 고통으로 가득하지만 한편 그것을 이겨내는 일로도 가득차 있다&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section5 --&gt;
         &lt;section id="section6" class="content__item"&gt;
@@ -607,7 +600,7 @@
             &lt;figure class="content__item__imgWrap"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc split style6"&gt;가장 하기 힘든 일은 아무 일도 안하는 것이다&lt;/p&gt;
+            &lt;p class="content__item__desc split"&gt;가장 하기 힘든 일은 아무 일도 안하는 것이다&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- //section6 --&gt;
         &lt;section id="section7" class="content__item"&gt;
@@ -639,10 +632,15 @@
         &lt;!-- //section9 --&gt;
     &lt;/div&gt;
 &lt;/main&gt;
+&lt;!-- //main --&gt;
+&lt;aside id="parallax__info"&gt;
+    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
+&lt;/aside&gt;
+}
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-css">
+<pre><code class="language-css">{
     #parallax__nav {
         position:fixed;
         right: 20px;
@@ -815,137 +813,110 @@
         padding: 20px;
         border-radius: 10px;
     }
-    
-        /* .split span {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.65);
-            display: inline-block;
-            min-width: 1vw;
-        }
-        .split span.show {
-            opacity: 1;
-            transform: translateY(0);
-        } */
-
-        .style1.split span {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.65);
-            display: inline-block;
-            min-width: 1vw;
-        }
-        .style1.split span.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .style2.split span {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.65);
-            display: inline-block;
-            min-width: 1vw;
-        }
-        .style2.split span.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .style3.split span {
-            opacity: 0;
-            transform:  translateX(50px) translateY(50px) rotate(360deg);
-            transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.65);
-            display: inline-block;
-            min-width: 1vw;
-        }
-        .style3.split span.show {
-            opacity: 1;
-            transform: translateX(0) translateY(0) rotate(0);
-        }
-
-        .style4.split span {
-           
-            display: inline-block;
-            min-width: 1vw;
-        }
-        .style4.split span.show {
-           
-            animation: wobble 1s 1 ease-in forwards;
-        }
-        
-
-        @keyframes wobble {
-         0%     {transform: translate3d(0, 0, 0);  opacity: 0;}
-         15%    {transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);}
-         30%    {transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);}
-         45%    {transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);}
-         60%    {transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);}
-         75%    {transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);}
-         100%   {transform: translate3d(0, 0, 0);  opacity: 1;}
-        }
-
-        .style5.split span {
-           display: inline-block;
-           min-width: 1vw;
-        }
-        .style5.split span.show {
-            animation: jello 1s 1 ease-in forwards;
-        }
-
-        @keyframes jello {
-            0% ,11.1%, 100% {transform: translate3d(0, 0, 0);}
-            22.2% {transform: skewX(-12.5deg) skewY(-12.5deg);}
-            33.3% {transform: skewX(6.25deg) skewY(6.25deg);}
-            44.4% {transform: skewX(-3.125deg) skewY(-3.125deg);}
-            55.5% {transform: skewX(1.5625deg) skewY(1.5625deg);}
-            66.6% {transform: skewX(-0.78125deg) skewY(-0.78125deg);}
-            77.7% {transform: skewX(0.390625deg) skewY(0.390625deg);}
-            88.8% {transform: skewX(-0.1953125deg) skewY(-0.1953125deg);}
-        }
-
-        .style6.split span {
-           display: inline-block;
-           min-width: 1vw;
-        }
-        .style6.split span.show {
-            animation: headShake 1s 1 ease-in forwards;
-        }
-
-        .animate__headShake {
-            animation-timing-function: ease-in-out;
-            animation-name: headShake;
-        }
-        @keyframes headShake {
-            0% {transform: translateX(0);}
-            6.5% {transform: translateX(-6px) rotateY(-9deg);}
-            18.5% {transform: translateX(5px) rotateY(7deg);}
-            31.5% {transform: translateX(-3px) rotateY(-5deg);}
-            43.5% {transform: translateX(2px) rotateY(3deg);}
-            50% {transform: translateX(0);}
-        }
-   
-        /* .split.show span:nth-child(1){transition-delay: 100ms }
-        .split.show span:nth-child(2){transition-delay: 150ms }
-        .split.show span:nth-child(3){transition-delay: 200ms }
-        .split.show span:nth-child(4){transition-delay: 250ms }
-        .split.show span:nth-child(5){transition-delay: 300ms }
-        .split.show span:nth-child(6){transition-delay: 350ms }
-        .split.show span:nth-child(7){transition-delay:  400ms }
-        .split.show span:nth-child(8){transition-delay:  450ms }
-        .split.show span:nth-child(9){transition-delay:  500ms }
-        .split.show span:nth-child(10){transition-delay: 550ms}
-        .split.show span:nth-child(11){transition-delay: 600ms}
-        .split.show span:nth-child(12){transition-delay: 650ms}
-        .split.show span:nth-child(13){transition-delay: 700ms}
-        .split.show span:nth-child(14){transition-delay: 750ms}
-        .split.show span:nth-child(15){transition-delay: 800ms}
-        .split.show span:nth-child(16){transition-delay: 850ms}
-        .split.show span:nth-child(17){transition-delay: 900ms}
-        .split.show span:nth-child(18){transition-delay: 950ms}
-        .split.show span:nth-child(19){transition-delay: 1000ms}
-                            ...
-        .split.show span:nth-child(55){transition-delay: 2800ms } */
+    /* option */
+    .split span {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.6s cubic-bezier(0, 0.71, 0.11, 1.66);
+        display: inline-block;
+        min-width: 1vw;
+        min-height: 1vw;
+    }
+    .split span.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+     /* .split span:nth-child(1) {
+        transition-delay: 100ms;
+     }
+     .split span:nth-child(2) {
+        transition-delay: 150ms;
+     }
+     .split span:nth-child(3) {
+        transition-delay: 200ms;
+     }
+     .split span:nth-child(4) {
+        transition-delay: 250ms;
+     }
+     .split span:nth-child(5) {
+        transition-delay: 300ms;
+     }
+     .split span:nth-child(6) {
+        transition-delay: 350ms;
+     }
+     .split span:nth-child(7) {
+        transition-delay: 400ms;
+     }
+     .split span:nth-child(8) {
+        transition-delay: 450ms;
+     }
+     .split span:nth-child(9) {
+        transition-delay: 500ms;
+     }
+     .split span:nth-child(10) {
+        transition-delay: 550ms;
+     }
+     .split span:nth-child(11) {
+        transition-delay: 600ms;
+     }
+     .split span:nth-child(12) {
+        transition-delay: 650ms;
+     }
+     .split span:nth-child(13) {
+        transition-delay: 700ms;
+     }
+     .split span:nth-child(14) {
+        transition-delay: 750ms;
+     }
+     .split span:nth-child(15) {
+        transition-delay: 800ms;
+     }
+     .split span:nth-child(16) {
+        transition-delay: 850ms;
+     }
+     .split span:nth-child(17) {
+        transition-delay: 900ms;
+     }
+     .split span:nth-child(18) {
+        transition-delay: 950ms;
+     }
+     .split span:nth-child(19) {
+        transition-delay: 1000ms;
+     }
+     .split span:nth-child(20) {
+        transition-delay: 1050ms;
+     }
+     .split span:nth-child(21) {
+        transition-delay: 1100ms;
+     }
+     .split span:nth-child(22) {
+        transition-delay: 1150ms;
+     }
+     .split span:nth-child(23) {
+        transition-delay: 1200ms;
+     }
+     .split span:nth-child(24) {
+        transition-delay: 1250ms;
+     }
+     .split span:nth-child(25) {
+        transition-delay: 1300ms;
+     }
+     .split span:nth-child(26) {
+        transition-delay: 1350ms;
+     }
+     .split span:nth-child(27) {
+        transition-delay: 1400ms;
+     }
+     .split span:nth-child(28) {
+        transition-delay: 1450ms;
+     }
+     .split span:nth-child(29) {
+        transition-delay: 1500ms;
+     }
+     .split span:nth-child(30) {
+        transition-delay: 1550ms;
+     } */
+}
 </code></pre>
                         </div>
                     </div>

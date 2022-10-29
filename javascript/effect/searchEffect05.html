@@ -126,70 +126,99 @@
                 </div>
                 <div class="cont">
                     <div class="active">
-<pre><code class="language-js">
-    const cssProperty = [너무많아...];
-    // 선택자
-        const searchList = document.querySelector(".search__list");
-        const searchNum = document.querySelector(".search__info .num");
-        const searchBox = document.querySelector(".search__box input");
-        const searchDesc = document.querySelector(".search__desc");
+<pre><code class="language-js">{
+    const cssProperty = [너무많아요 생략...];
+    //선택자
+    const searchList = document.querySelector(".search__list ul");
+    const searchClick = document.querySelectorAll(".search__click ul li");
 
-        // 출력하기
-        cssProperty.map((element, index) => {
-            searchNum.innerText = index + 1;
-            searchList.innerHTML += `&lt;span&gt;${element.name}&lt;/span&gt;`;
-        });
+    //출력하기 (매개변수 사용)
+    function updateList(list){
+    listCSS = "";
 
-        // 입력하기
-        searchBox.addEventListener("keyup", ()=>{
-            const searchWord = searchBox.value;
-            // console.log(searchWord);
-            findProperty(searchWord);
-        });
+    for(const data of list){
+        switch(data.star){
+            case 0:
+            listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;☆☆☆☆☆&lt;/em&gt;&lt;/li&gt;`;
+            break;
+            case 1:
+            listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;★☆☆☆☆&lt;/em&gt;&lt;/li&gt;`;
+            break;
+            case 2:
+            listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;★★☆☆☆&lt;/em&gt;&lt;/li&gt;`;
+            break;
+            case 3:
+            listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;★★★☆☆&lt;/em&gt;&lt;/li&gt;`;
+            break;
+            case 4:
+            listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;★★★★☆&lt;/em&gt;&lt;/li&gt;`;
+            break;
+            case 5:
+            listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;★★★★★&lt;/em&gt;&lt;/li&gt;`;
+            break;
+            default:
+            listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;값이 없음&lt;/em&gt;&lt;/li&gt;`;
+            break;
+        }
+    }
 
-        // 속성 찾기
-        function findProperty(searchData){
-           const targetData = cssProperty.find((data) => data.name === searchData);
+    searchList.innerHTML = listCSS;
 
-            if(targetData == null){
-                searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요!"
-                return;
-            }
-           searchDesc.textContent = targetData.desc;           
-        };
+    const searchList2 = document.querySelectorAll(".search__list ul li");
+    document.querySelector(".num").textContent=searchList2.length;
+    }
+    updateList(cssProperty);
 
-        // 미션(클릭시 설명 나오게)
-        const searchListspan = document.querySelectorAll(".search__list span");
-        searchListspan.forEach((e, i) => {
-            e.addEventListener("click", () => {
-                searchDesc.textContent = cssProperty[i].desc;
-            });
-        });
-
-
+    //클릭하기
+    searchClick.forEach((star) => {
+    star.addEventListener("click",()=>{
+        const target = star.dataset.star;
+        const target2 = star.dataset.num;
+        const filterList = cssProperty.filter(data => data.star == target || data.star >= target2 );
+        
+        
+        updateList(filterList);
+    });
+    })
+}
 </code></pre>
                     </div>
-<div>
+                <div>
 <pre><code class="language-html">{
     &lt;main id="main"&gt;
     &lt;div class="search__wrap"&gt;
-        &lt;span&gt;find()를 이용하여 속성을 검색하면 설명 보여주기&lt;/span&gt;
+        &lt;span&gt;filter()를 이용하여 속성의 중요도 보여주기&lt;/span&gt;
         &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
-    &lt;div class="search__box"&gt;
-        &lt;label for="search"&gt;검색하기&lt;/label&gt;
-        &lt;input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!"&gt;
-    &lt;/div&gt;
-
-    &lt;div class="search__desc"&gt;
-            속성을 검색하시면 화면이 표시됩니다!!!
-    &lt;/div&gt;
-    &lt;div class="search__info"&gt;
-        &lt;div&gt;전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="search__list"&gt;
-        
-    &lt;/div&gt;
-&lt;/main&gt;
+      
+        &lt;div class="search__click"&gt;
+            &lt;ul&gt;
+                &lt;li data-star="0"&gt;&lt;a href="#"&gt;☆☆☆☆☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="1"&gt;&lt;a href="#"&gt;★☆☆☆☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="2"&gt;&lt;a href="#"&gt;★★☆☆☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="3"&gt;&lt;a href="#"&gt;★★★☆☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="4"&gt;&lt;a href="#"&gt;★★★★☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="5"&gt;&lt;a href="#"&gt;★★★★★&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul&gt;
+                &lt;li data-num="1"&gt;&lt;a href="#"&gt;1개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-num="2"&gt;&lt;a href="#"&gt;2개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-num="3"&gt;&lt;a href="#"&gt;3개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-num="4"&gt;&lt;a href="#"&gt;4개 이상&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+      
+        &lt;div class="search__info"&gt;
+            &lt;div&gt;찾은 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      
+        &lt;div class="search__list"&gt;
+            &lt;ul class="line"&gt;
+      
+            &lt;/ul&gt;
+        &lt;/div&gt;
+      
+      &lt;/div&gt;
+    &lt;/main&gt;
 }
 </code></pre>
                 </div>
@@ -262,6 +291,23 @@
         background-color: var(--htmlColor);
         color: #fff;
     }
+    .search__list em {
+        float: right;
+        font-style: normal;
+    }
+    .search__list .line {
+        margin-top: 50px 0;
+    }
+    .search__list .line li {
+        background: #e3eaf5;
+        padding: 10px 30px;
+        margin-bottom: 5px;
+        border-radius: 50px;
+    }
+    .search__list .line li:hover {
+        background: #d3e2fa;
+        cursor: pointer;
+    }
     .search__info {
         text-align: right;
         margin-bottom: 30px;
@@ -299,6 +345,25 @@
         background-repeat: no-repeat;
         background-position: 22px 17px;
     }
+    .search__click {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    .search__click li {
+        display: inline;
+        margin: 5px;
+    }
+    .search__click li a {
+        display: inline-block;
+        border: 1px solid var(--htmlColor);
+        border-radius: 50px;
+        padding: 10px 20px;
+        margin: 5px 0;
+    }
+    .search__click li a:hover {
+        background-color: var(--htmlColor);
+        color: #fff;
+    } 
 }
 </code></pre>
                     </div>

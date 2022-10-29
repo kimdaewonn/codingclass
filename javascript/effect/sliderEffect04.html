@@ -185,7 +185,7 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
+<pre><code class="language-js">{
     const sliderWrap = document.querySelector(".slider__wrap");
     const sliderImg = document.querySelector(".slider__img");       //보여지는 영역
     const sliderInner = document.querySelector(".slider__inner");   //움직이는 영역
@@ -215,10 +215,11 @@
         gotoSlider(nextIndex);
         // 0 1 2 3 4
     });
+}
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-html">
+<pre><code class="language-html">{
     &lt;main id="main"&gt;
     &lt;section id="sliderType01"&gt;
         &lt;div class="slider__wrap"&gt;
@@ -238,10 +239,12 @@
         &lt;/div&gt;
     &lt;/section&gt;
 &lt;/main&gt;
+} 
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-css">
+<pre><code class="language-css">{
+    /* slider */
     .slider__wrap {
         width: 100%;
         height: 100vh;
@@ -310,6 +313,7 @@
     .slider__btn a.next {
         right: 0;
     }
+}
 </code></pre>
                         </div>
                     </div>

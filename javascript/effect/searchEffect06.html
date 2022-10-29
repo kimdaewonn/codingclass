@@ -114,17 +114,278 @@
                 </div>
                 <div class="cont">
                     <div class="active">
-<pre><code class="language-js">
-
+<pre><code class="language-js">{
+    const cssProperty = [
+    { num: 1, name: "accent-color", desc: "특정 요소에 색상을 지정할 때 사용됩니다." },
+    { num: 2, name: "align-content", desc: "콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다." },
+    { num: 3, name: "align-items", desc: "콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다." },
+    { num: 4, name: "align-self", desc: "개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다." },
+    { num: 5, name: "all", desc: "요소의 속성을 초기화 또는 상속을 설정합니다." },
+    { num: 6, name: "animation", desc: "애니메이션과 관련된 속성을 일괄적으로 설정합니다." },
+    { num: 7, name: "animation-delay", desc: "애니메이션 지연 시간을 설정합니다." },
+    { num: 8, name: "animation-direction", desc: "애니메이션 움직임 방향을 설정합니다." },
+    { num: 9, name: "animation-duration", desc: "애니메이션 움직임 시간을 설정합니다." },
+    { num: 10, name: "animation-fill-mode", desc: "애니메이션이 끝난 후의 상태를 설정합니다." },
+    { num: 11, name: "animation-iteration-count", desc: "애니메이션의 반복 횟수를 설정합니다." },
+    { num: 12, name: "animation-name", desc: "애니메이션 keyframe 이름을 설정합니다." },
+    { num: 13, name: "animation-play-state", desc: "애니메이션 진행상태를 설정 합니다." },
+    { num: 14, name: "animation-timeline", desc: "x" },
+    { num: 15, name: "animation-timing-function", desc: "애니메이션 움직임의 속도를 설정 합니다." },
+    { num: 16, name: "appearance", desc: "운영체제 및 브라우저에 기본적으로 설정되어 있는 테마를 기반으로 요소를 표현합니다." },
+    { num: 17, name: "aspect-ratio", desc: "요소의 크기를 비율대로 조정할 수 있게 합니다." },
+    { num: 18, name: "backdrop-filter", desc: "요소 뒤 영역에 흐림이나 색상 시프트 등 그래픽 효과를 적용할 수 있는 속성입니다." },
+    { num: 19, name: "backface-visibility", desc: "입체적인 모습의 뒷면의 가시성을 결정하는 속성이다." },
+    { num: 20, name: "background", desc: "백그라운드 속성을 일괄적으로 설정 합니다." },
+    { num: 21, name: "background-attachment", desc: "배경 이미지의 고정 여부를 설정 합니다." },
+    { num: 22, name: "background-blend-mode", desc: "배경을 혼합했을 때 그래픽 효과를 설정 합니다." },
+    { num: 23, name: "background-clip", desc: "백그라운드 이미지의 위치 기준점을 설정 합니다." },
+    { num: 25, name: "background-color", desc: "백그라운드 색을 설정 합니다." },
+    { num: 26, name: "background-image", desc: "백그라운드 이미지 속성을 설정 합니다." },
+    { num: 5, name: "background-origin", desc: "백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다." },
+    { num: 5, name: "background-position", desc: "백그라운드 이미지의 위치 영역을 설정 합니다." },
+    { num: 5, name: "background-position-x", desc: "백그라운드 이미지의 x축 위치 영역을 설정 합니다." },
+    { num: 5, name: "background-position-y", desc: "백그라운드 이미지의 y축 위치 영역을 설정 합니다." },
+    { num: 5, name: "background-repeat", desc: "백그라운드 이미지 반복 여부를 설정 합니다." },
+    { num: 5, name: "background-size", desc: "백그라운드 이미지 사이즈를 설정 합니다." },
+    { num: 5, name: "block-size", desc: "기록 모드에 따라서, 요소의 블록의 수평과 수직 크기를 정의합니다." },
+    { num: 5, name: "border", desc: "테두리 속성을 일괄적으로 설정 합니다." },
+                                        ...너무 많아서 생략
+    ];
+    const cssList = document.querySelector(".search__list .line");
+        // 데이터 출력하기
+        const updateList = () => {
+            let listCSS = "";
+            cssProperty.forEach((data, index) => {
+                listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc}&lt;/li&gt;`;
+            });
+            cssList.innerHTML = listCSS;
+        }
+        updateList();
+        // 반대로 정렬 클릭
+        document.querySelector(".btn1").addEventListener("click", (e) => {
+            e.preventDefault();
+            cssProperty.reverse();
+            updateList();
+        });
+        // 오름차순 정렬 클릭
+        document.querySelector(".btn2").addEventListener("click", (e) => {
+            e.preventDefault();
+            cssProperty.sort((a,b) => {
+                return a.num - b.num;
+            });
+            updateList();
+        });
+        // 내림차순 정렬 클릭
+        document.querySelector(".btn3").addEventListener("click", (e) => {
+            e.preventDefault();
+            cssProperty.sort((a,b) => {
+                return b.num - a.num;
+            });
+            updateList();
+        });
+        // 알파벳 정렬(a~z) 클릭
+        document.querySelector(".btn4").addEventListener("click", (e) => {
+            e.preventDefault();
+            cssProperty.sort((a, b) => {
+                let x = a.name;
+                let y = b.name;
+                return x.localeCompare(y);
+            });
+            updateList();
+        });
+        // 알파벳 정렬(z~a) 클릭
+        document.querySelector(".btn5").addEventListener("click", (e) => {
+            e.preventDefault();
+            cssProperty.sort((a, b) => {
+                let x = a.name;
+                let y = b.name;
+                return y.localeCompare(x);
+            });
+            updateList();
+        });
+        // 랜덤 정렬
+        document.querySelector(".btn6").addEventListener("click", (e) => {
+            e.preventDefault();
+            for(let i=cssProperty.length-1; i>=0; i--){
+                const randomIndex = Math.floor(Math.random() * (i+1));      //난수 생성
+                [cssProperty[i], cssProperty[randomIndex]] = [cssProperty[randomIndex], cssProperty[i]];    // 중복 제거
+                cssProperty.innerHTML += cssProperty[i]
+            }
+            updateList();
+        });
+}
 </code></pre>
                     </div>
 <div>
 <pre><code class="language-html">{
-  
+    &lt;main id="main"&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;span&gt;sort(), reverse()를 이용하여 정렬하기&lt;/span&gt;
+        &lt;h1&gt;&lt;a href="searchEffect.html"&gt;CSS 속성 정렬하기&lt;/a&gt;&lt;/h1&gt;
+    &lt;div class="search__click"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#" class="btn1"&gt;반대로 정렬하기&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="btn2"&gt;오름차순 정렬하기&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="btn3"&gt;내림차순 정렬하기&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="btn4"&gt;알파벳순(a~z)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="btn5"&gt;알파벳순(z~a)&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#" class="btn6"&gt;랜덤정렬&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+        &lt;div class="search__info"&gt;
+            &lt;div&gt;찾은 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="search__list"&gt;
+            &lt;ul class="line"&gt;&lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+&lt;/main&gt;
+}
 </code></pre>
                 </div>
             <div>
 <pre><code class="language-css">{
+    /* main */
+    #main {
+        margin: 50px 10px;
+    }
+    .search__wrap {
+        max-width: 1400px;
+        margin: 0 auto;
+        border: 3px solid #223547;
+        border-radius: 20px;
+        background-color: #F1F3F6;
+        padding: 30px;
+        text-align: center;
+    }
+    .search__wrap > span {
+        font-size: 20px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+    .search__wrap > h1 {
+        font-family: 'Tmon';
+        color: #223547;
+        font-size: 6vw;
+        margin-bottom: 10px;
+    }
+    .search__box {
+        margin-bottom: 40px;
+    }
+    .search__box label {
+        position: absolute;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+    }
+    .search__box input {
+        border: 2px solid #223547;
+        padding: 15px 40px;
+        width: 70%;
+        border-radius: 50px;
+        font-size: 20px;
+    }
+    
+    .search__list li {
+        text-align: left;
+        line-height: 1.7;
+    }
+    .search__list li.hide {
+        display: none;
+    }
+    .search__list li.show {
+        display: block;
+    }
+    .search__list span {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid var(--htmlColor);
+        border-radius: 50px;
+        margin-bottom: 5px;
+        text-align: left;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+    .search__list span:hover {
+        background-color: var(--htmlColor);
+        color: #fff;
+    }
+    .search__list em {
+        float: right;
+        font-style: normal;
+    }
+    .search__list .line {
+        margin-top: 50px 0;
+    }
+    .search__list .line li {
+        background: #e3eaf5;
+        padding: 10px 30px;
+        margin-bottom: 5px;
+        border-radius: 50px;
+    }
+    .search__list .line li:hover {
+        background: #d3e2fa;
+        cursor: pointer;
+    }
+    .search__info {
+        text-align: right;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 1px dashed var(--htmlColor);
+    }
+    .search__info .type {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .search__info  .keyword {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .search__info  .keyword span {
+        border: 2px solid var(--htmlColor);
+        border-radius: 50px;
+        padding: 10px;
+        display: inline-block;
+        margin-bottom: 4px;
+    }
+    .search__info  .keyword span:hover {
+        background-color: var(--htmlColor);
+        color: #fff;
+        cursor:pointer;
+    }
+    .search__desc {
+        padding: 20px 40px 20px 60px;
+        margin-bottom: 50px;
+        border-radius: 50px;
+        display: inline-block;
+        background: var(--htmlColor);
+        color: #fff;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: 22px 17px;
+    }
+    .search__click {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    .search__click li {
+        display: inline;
+        margin: 5px;
+    }
+    .search__click li a {
+        display: inline-block;
+        border: 1px solid var(--htmlColor);
+        border-radius: 50px;
+        padding: 10px 20px;
+        margin: 5px 0;
+    }
+    .search__click li a:hover {
+        background-color: var(--htmlColor);
+        color: #fff;
+    }
+}
    
 </code></pre>
                     </div>

@@ -409,7 +409,7 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
+<pre><code class="language-js">{
     function scroll(){
         let scrollTop = window.pageYOffset ||document.documentElement.scrollTop || window.scrollY;
 
@@ -422,10 +422,11 @@
         requestAnimationFrame(scroll);
     }
     scroll();
+}
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-html">
+<pre><code class="language-html">{
     &lt;main id="parallax__cont"&gt;
     &lt;div id="contents"&gt;
         &lt;section id="section1" class="content__item"&gt;
@@ -510,11 +511,12 @@
         &lt;/section&gt;
         &lt;!-- //section9 --&gt;
     &lt;/div&gt;
-  &lt;/main&gt;
+&lt;/main&gt;
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-css">
+<pre><code class="language-css">{
+    /* parallax__nav */
     #parallax__nav {
         position:fixed;
         right: 20px;
@@ -738,6 +740,7 @@
     #contents > section:nth-child(even).show .content__item__desc {
         transform: translateX(0);
     }
+}
 </code></pre>
                         </div>
                     </div>

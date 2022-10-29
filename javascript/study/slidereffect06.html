@@ -61,7 +61,7 @@
             </div>
             <h3 class="t_tit2">01. HTML 코드</h3>
             <div class="t_code">
-<pre><code class="language-html">
+<pre><code class="language-html">{
     &lt;main id="main"&gt;
     &lt;section id="sliderType06"&gt;
         &lt;div class="slider__wrap"&gt;
@@ -88,12 +88,13 @@
         &lt;/div&gt;
     &lt;/section&gt;
 &lt;/main&gt;
+}
 </code></pre>
                 </div>
 
                 <h3 class="t_tit2">02. CSS 코드</h3>
                 <div class="t_code">
-<pre><code class="language-css">
+<pre><code class="language-css">{
     .slider__wrap {
         width: 100%;
         height: 100vh;
@@ -194,6 +195,7 @@
     .slider__dot .dot.active {
         background: rgba(255,255,255,0.9);
     }
+}
 </code></pre>
                 </div>
             <h3 class="t_tit2">03. JS 코드</h3>
@@ -202,7 +204,7 @@
                 첫번째 이미지와 마지막 이미지를 복사해서 넣고 이동시킴으로써 자연스럽게 무한히 이동하는것처럼 보이게 해주는 순간이동 효과를 줍니다. 
             </p>
             <div class="t_code">
-<pre><code class="language-js">
+<pre><code class="language-js">{
     const sliderWrap = document.querySelector(".slider__wrap")
     const sliderImg = document.querySelector(".slider__img")                // 보여지는 영역
     const sliderInner = document.querySelector(".slider__inner")            // 움직이는 영역
@@ -294,6 +296,7 @@
         currentIndex = index;
         });
     });
+}
 </code></pre>
             </div>
 

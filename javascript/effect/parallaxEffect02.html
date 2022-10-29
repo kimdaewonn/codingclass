@@ -418,7 +418,7 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
+<pre><code class="language-js">{
     document.querySelectorAll("#parallax__dot a").forEach(el => {
         el.addEventListener("click", e => {
             e.preventDefault();
@@ -435,7 +435,7 @@
             // 소수점 제거
         document.querySelectorAll(".content__item").forEach((e,i)=>{
             if(scrollTop >= e.offsetTop - 10){
-                // 오차 고려
+                //-10 이유 : 오차 고려
                 document.querySelectorAll("#parallax__dot li").forEach(li => {
                     li.classList.remove("active")
                 });
@@ -455,10 +455,11 @@
             // window.scrollBy(0, 1000);
             // window.scrollBy({left: 0, top: 2000});
             // window.scrollBy({left: 0, top: 2000, behavior:"smooth"});
+}
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-html">
+<pre><code class="language-html">{
     &lt;nav id="parallax__dot"&gt;
     &lt;ul&gt;
         &lt;li class="active"&gt;&lt;a href="#section1"&gt;&lt;span&gt;메뉴1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
@@ -565,10 +566,12 @@
     &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
   
   &lt;/aside&gt;
+  &lt;!-- parallax__info --&gt;
+}
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-css">
+<pre><code class="language-css">{
     #parallax__nav {
         position:fixed;
         right: 20px;
@@ -783,6 +786,7 @@
     #parallax__dot li span{
         display: none;
     }
+}
 </code></pre>
                         </div>
                     </div>

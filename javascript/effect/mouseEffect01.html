@@ -212,7 +212,7 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
+<pre><code class="language-js">{
     // 마우스 좌표
     window.addEventListener("mousemove", (event) => {
         document.querySelector(".clientX").innerText = event.clientX;
@@ -226,7 +226,6 @@
     });
     // 따라다니게 하기
     const cursor = document.querySelector(".mouse__cursor");
-
     window.addEventListener("mousemove", (e) => {
         
         cursor.style.left = e.clientX - 25 + "px";
@@ -299,7 +298,7 @@
     //     });
     //   });
 
-    // getAtrribute()
+    // getAtrribute() 가장 추천하는 방법
 
         document.querySelectorAll(".mouse__wrap span").forEach((span) => {
         let attr = span.getAttribute("class");
@@ -311,6 +310,8 @@
         cursor.classList.remove(attr);
         });
     });
+}
+
 </code></pre>
                         </div>
                         <div>
@@ -323,7 +324,7 @@
             &lt;p&gt;내 &lt;span class="style4"&gt;미래는&lt;/span&gt; 전적으로 &lt;span class="style5"&gt;나&lt;/span&gt; 스스로 &lt;span class="style6"&gt;만든다.&lt;/span&gt;&lt;/p&gt;
         &lt;/div&gt;
     &lt;/section&gt;
-  
+
     &lt;div class="mouse__info"&gt;
         &lt;ul&gt;
             &lt;li&gt;clientX : &lt;span class="clientX"&gt;0px&lt;/span&gt;&lt;span&gt;px&lt;/span&gt;&lt;/li&gt;
@@ -336,11 +337,11 @@
             &lt;li&gt;screenY : &lt;span class="screenY"&gt;0px&lt;/span&gt;&lt;span&gt;px&lt;/span&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/div&gt;
-  &lt;/main&gt;
+&lt;/main&gt;
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-css">
+<pre><code class="language-css">{
     .mouse__wrap {
         width: 100%;
         height: 100vh;
@@ -437,6 +438,7 @@
         line-height: 1.6;
         color: #fff;
     }
+}
 </code></pre>
                         </div>
                     </div>

@@ -211,42 +211,69 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
-    const sliderWrap = document.querySelector(".slider__wrap");
-    const sliderImg = document.querySelector(".slider__img");       //보여지는 영역
-    const sliderInner = document.querySelector(".slider__inner");   //움직이는 영역
-    const slider = document.querySelectorAll(".slider");            //각각 이미지
-    const sliderBtn = document.querySelector(".slider__btn");            //버튼
-    const sliderBtnPrev = sliderBtn.querySelector(".prev");            //왼쪽버튼
-    const sliderBtnNext = sliderBtn.querySelector(".next");            //오른쪽버튼
-    
-    let currentIndex = 0;                       //현재이미지
-    let sliderCount = slider.length;            // 이미지 갯수
-    let sliderWidth = sliderImg.offsetWidth;    //이미지 가로값
+<pre><code class="language-js">{
+    const sliderWrap = document.querySelector(".slider__wrap")
+    const sliderImg = document.querySelector(".slider__img")     //보여지는 영역
+    const sliderInner = document.querySelector(".slider__inner") //움직이는 영역
+    const slider = document.querySelectorAll(".slider")
+    const sliderDot = document.querySelector(".slider__dot")  //슬라이더 닷
 
-    //이미지 움직이는 영역
-    function gotoSlider(num){
+    let currentIndex = 0;                       //현재 이미지
+    let sliderCount = slider.length;            //이미지 갯수
+    let sliderWidth = sliderImg.offsetWidth;    //이미지 가로값
+    let dotIndex = "";                          // 이미지에 따른 닷 갯수
+    function init(){
+        // &lt;a href="#" class="dot active">이미지1&lt;/a&gt;
+        slider.forEach(()=>{
+            dotIndex += "&lt;a href='#' class='dot'>이미지1&lt;/a&gt;"
+        })
+        sliderDot.innerHTML = dotIndex;
+        //첫번째 닷 버튼한테 활성화 표시(active)
+        sliderDot.firstChild.classList.add("active");
+    }
+    init();
+
+     //이미지 이동
+     function gotoSlider(num){
         sliderInner.style.transition = "all 400ms";
         sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
         currentIndex = num;
+
+        //두번째 이미지 ===> 두번째 닷 클래스 추가
+        // 1. 닷 메뉴 클래스 모두 삭제
+        // 2. 해당 닷 메뉴한테 클래스 추가
+
+        let dotActive = document.querySelectorAll(".slider__dot .dot");
+        dotActive.forEach(el => el.classList.remove("active"));
+        dotActive[num].classList.add("active");
     }
-    // 왼쪽 버튼 클릭
-    sliderBtnPrev.addEventListener("click", ()=>{
-        let prevIndex = (currentIndex + sliderCount -1) % sliderCount;
-        gotoSlider(prevIndex);
+
+    //버튼 클릭했을 때
+    document.querySelectorAll(".slider__btn a").forEach((btn, index)=>{
+        btn.addEventListener("click", ()=>{
+            let prevIndex = (currentIndex + (sliderCount - 1))  % sliderCount;
+            let nextIndex = (currentIndex + 1)  % sliderCount;
+            if(btn.classList.contains("prev")){
+                gotoSlider(prevIndex);
+            }else{
+                gotoSlider(nextIndex);
+            }
+        });
+    })
+
+    //닷 버튼 클릭했을 때 움직임
+    document.querySelectorAll(".slider__dot .dot").forEach((dot, index)=> {
+        dot.addEventListener("click", ()=>{
+            gotoSlider(index);
+        });
     });
-    //오른쪽 버튼 클릭
-    sliderBtnNext.addEventListener("click", () => {
-        let nextIndex = (currentIndex + 1) % sliderCount
-        gotoSlider(nextIndex);
-        // 0 1 2 3 4
-    });
+}
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-html">
+<pre><code class="language-html">{
     &lt;main id="main"&gt;
-    &lt;section id="sliderType01"&gt;
+    &lt;section id="sliderType05"&gt;
         &lt;div class="slider__wrap"&gt;
             &lt;div class="slider__img"&gt;
                 &lt;div class="slider__inner"&gt;
@@ -261,13 +288,22 @@
                 &lt;a href="#" class="prev"&gt;prev&lt;/a&gt;
                 &lt;a href="#" class="next"&gt;next&lt;/a&gt;
             &lt;/div&gt;
+            &lt;div class="slider__dot"&gt;
+                &lt;!-- &lt;a href="#" class="dot active"&gt;이미지1&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지2&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지3&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지4&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지5&lt;/a&gt; --&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
     &lt;/section&gt;
 &lt;/main&gt;
+&lt;!-- //main --&gt;
+} 
 </code></pre>
                         </div>
                         <div>
-<pre><code class="language-css">
+<pre><code class="language-css">{
     .slider__wrap {
         width: 100%;
         height: 100vh;
@@ -313,7 +349,6 @@
             height: 225px;
         }
     }
-
     .slider__btn a {
         position: absolute;
         top: 50%;
@@ -336,6 +371,26 @@
     .slider__btn a.next {
         right: 0;
     }
+    .slider__dot {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+    }
+    .slider__dot .dot {
+        width: 20px;
+        height: 20px;
+        background: rgba(0,0,0,0.4);
+        display: inline-block;
+        border-radius: 50%;
+        text-indent: -9999px;
+        transition: all 0.3s;
+        margin: 2px;
+    }
+    .slider__dot .dot.active {
+        background: rgba(255,255,255,0.9);
+    }
+}
 </code></pre>
                         </div>
                     </div>
