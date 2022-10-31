@@ -1,7 +1,13 @@
 <?php 
     include "../../connect/connect.php";
     include "../../connect/session.php";
-    // include "../../connect/sessionCheck.php";
+    include "../../connect/sessionCheck.php";
+
+    $myMemberID = $_SESSION['myMemberID'];
+
+    echo "<pre style='position:absolute; top:200px; left: 50px;'>";
+    var_dump($_SESSION);
+    echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +19,7 @@
     <title>공지사항</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/board.css">
-    <link rel="stylesheet" href="../../assets/css/faq.css">
+    <link rel="stylesheet" href="../../assets/css/deco.css">
 </head>
 <body>
     <div style="display:none" class="scroll">
@@ -94,7 +100,41 @@
 
             <div class="board">
                 <div class="board_info">
-                <img src="../../assets/img/site_main_faq.png" class="header_icon_main" alt="">
+<?php
+    $sql = "SELECT m.youName, m.youImageFile, t.myMemberID, m.regTime, t.color, t.testImageFile FROM test t JOIN myMember m ON(t.myMemberID = m.myMemberID) WHERE t.myMemberID = {$myMemberID}";
+    $result = $connect -> query($sql);
+    $info = $result -> fetch_array(MYSQLI_ASSOC);
+
+    if(!isset($info['myMemberID'])){
+        echo "<img src='../../assets/img/site_main_faq.png' class='header_icon_main' alt=''>";
+
+        } else {
+        echo "<style>";
+        echo ".board_info{";
+        echo "    margin-top: 200px !important;";
+        echo "}";
+        echo ".board_info h2{";
+        echo "    margin-top: 0px !important;";
+        echo "}";
+        echo "</style>";
+
+        echo "<div class='deco_book'>";
+        echo "<div class='deco_book_inner'>";
+        echo "<div class='book_item'>";
+        echo "<div class='book_item_img_cont'>";
+        echo "<img src='../../assets/img/testImg/".$info['testImageFile']."' alt='표지 이미지'>";
+        echo "</div>";
+        echo "<div class='book_desc'>";
+        echo "<p>".$info['color']."</p>";
+        echo "<p>".$info['youName']."</p>";
+        echo "</div>";
+        echo "<div class='book_front ".$info['color']."_front'></div>";
+        echo "<div class='book_back'></div>";
+        echo "</div>";
+        echo "</div>";
+        echo "</div>";
+    }
+?>
                     <img src="../../assets/img/site_main_faq_heart.png" class="header_icon_01" alt="">
                     <img src="../../assets/img/site_main_faq_heart.png" class="header_icon_02" alt="">
                     <img src="../../assets/img/site_main_faq_heart.png" class="header_icon_03" alt="">
@@ -104,72 +144,47 @@
                     <img src="../../assets/img/site_board_notice_cross.png" alt="">
                     <p>궁금하신 부분들에 대해 정리해봤어요!</p>
                 </div>
-                <style>
-.deco_list{
-    width: 100%;
-}
-.deco_list_inner{
-    max-width: 1160px;
-    margin: 0 auto;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 500px;
-    margin-bottom: 30px;
-}
-.deco_list_inner a{
-    background: #ffffff36;
-    width: 32%;
-    height: 100%;
-    border-radius: 25px;
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid #e9ebed;
-    transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.deco_list_inner a:hover{
-    transform: translateY(-33px);
-    box-shadow: 0px 50px 50px -30px #783d2a52;
-    background: linear-gradient(0deg, #ff987e45 0%, transparent 5%);
-}
-.deco_list_inner a:not(:hover){
-    transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
-}
-.deco_list_inner a img{
-    width: 160px;
-    margin-bottom: 20px;
-}
-.deco_list_inner a p{
-    font-size: 30px;
-    font-weight: bold;
-    font-family: 'EliceDigitalBaeum';
-    margin-bottom: 10px;
-}
-.deco_list_inner a span{
-    font-size: 22px;
-    color: rgba(0, 0, 0, 0.446);
-}
-                </style>
                 <div class="deco_list">
-                    <div class="deco_list_inner">
+                    <div class="deco_list_inner" style="height:500px; margin-bottom:60px">
                         
                         <a href="decoDiary.php" class="decoDiary">
                             <img src="../../assets/img/site_main_deco_btn1.png" alt="">
                             <p>다이어리 만들기</p>
                             <span>내 다이어리를 만들어봐요!</span>
                         </a>
-                        <a href="decoSticker.php" class="decoSticker">
+<?php
+    // $sql = "SELECT m.youName, m.youImageFile, t.myMemberID, m.regTime, t.color, t.testImageFile FROM test t JOIN myMember m ON(t.myMemberID = m.myMemberID) WHERE t.myMemberID = {$myMemberID}";
+    // $result = $connect -> query($sql);
+    // $info = $result -> fetch_array(MYSQLI_ASSOC);
+
+    if(!isset($info['myMemberID'])){
+        echo "<a href='decoDiary.php' class='decoSticker'>";
+    } else {
+        echo "<a href='decoSticker_".$info['color'].".php' class='decoSticker'>";
+    }
+    echo "<img src='../../assets/img/site_main_deco_btn2.png' alt=''>";
+    echo "<p>스티커 꾸미기</p>";
+    echo "<span>나만의 스티커 꾸미기~</span>";
+    if(!isset($info['myMemberID'])){
+        echo "<p class='nothing' style='margin-top:10px; position:absolute; top:50px; font-size: 14px;'>아직 다이어리를 만들지 않았습니다.</p>";
+    } else {
+        echo "<p class='".$info['color']."' style='margin-top:10px; position:absolute; top:50px; font-size: 14px;'>현재 ".$info['color']." 색상이 생성되어져 있습니다.</p>";
+    }
+    // if($info['myMemberID']===$myMemberID){
+    //     echo "<p class='".$info['color']."'style='font-size:14px; color: #000'>현재 ".$info['color']." 색상이 생성되어져 있습니다.</p>";
+    // } else {
+    //     echo "<p>아직 다이어리를 만들지 않았습니다.</p>";
+    // }
+    echo "</a>";
+
+    // echo "<a href='decoSticker_".$info['color'].".php' class='input__Btn'>".'다꾸하러가기'."</a>";
+?>
+                        <!-- <a href="decoSticker_.php" class="decoSticker">
                             <img src="../../assets/img/site_main_deco_btn2.png" alt="">
                             <p>스티커 꾸미기</p>
                             <span>나만의 스티커 꾸미기~</span>
-                        </a>
-                        <a href="viewSticker.php" class="viewSticker">
+                        </a> -->
+                        <a href="decoBoard.php" class="viewSticker">
                             <img src="../../assets/img/site_main_deco_btn3.png" alt="">
                             <p>다른 작품 보러가기</p>
                             <span>다른 사람들은 무엇을 만들었을까요?</span>
@@ -200,4 +215,5 @@
 <script src="../../assets/javascript/board.js"></script>
 <!-- <script src="../../assets/javascript/search.js"></script> -->
 <script src="../../assets/javascript/common.js"></script>
+<script>document.querySelector(".header_inner a:nth-child(6)").classList.add("actived")</script>
 </html>

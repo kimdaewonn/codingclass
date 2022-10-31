@@ -180,4 +180,5 @@
 <script src="../../assets/javascript/board.js"></script>
 <!-- <script src="../../assets/javascript/search.js"></script> -->
 <script src="../../assets/javascript/common.js"></script>
+<script>document.querySelector(".header_inner a:nth-child(7)").classList.add("actived")</script>
 </html>

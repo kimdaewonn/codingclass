@@ -6,6 +6,61 @@
 @import url('https://webfontworld.github.io/elice/EliceDigitalBaeum.css');
 @import url('https://webfontworld.github.io/dgb/IMHyemin.css');
 
+@font-face {
+    font-family: Pretendard;
+    font-weight: 100;
+    src: url(/static/media/Pretendard-Thin.41861ab4e67767c4c6ed.woff2)
+      format("truetype");
+  }
+  @font-face {
+    font-family: Pretendard;
+    font-weight: 200;
+    src: url(/static/media/Pretendard-ExtraLight.1a26bede4e9bc7d2e9c0.woff2)
+      format("truetype");
+  }
+  @font-face {
+    font-family: Pretendard;
+    font-weight: 300;
+    src: url(/static/media/Pretendard-Light.27c9a07cbc308ce88d1a.woff2)
+      format("truetype");
+  }
+  @font-face {
+    font-family: Pretendard;
+    font-weight: 400;
+    src: url(/static/media/Pretendard-Regular.6090e6b5524796768e78.woff2)
+      format("truetype");
+  }
+  @font-face {
+    font-family: Pretendard;
+    font-weight: 500;
+    src: url(/static/media/Pretendard-Medium.ea235f1edb8815831a25.woff2)
+      format("truetype");
+  }
+  @font-face {
+    font-family: Pretendard;
+    font-weight: 600;
+    src: url(/static/media/Pretendard-SemiBold.7e5eaaf650b9e7389913.woff2)
+      format("truetype");
+  }
+  @font-face {
+    font-family: Pretendard;
+    font-weight: 700;
+    src: url(/static/media/Pretendard-Bold.0676c8838a37a3b770d8.woff2)
+      format("truetype");
+  }
+  @font-face {
+    font-family: Pretendard;
+    font-weight: 800;
+    src: url(/static/media/Pretendard-ExtraBold.55bef92e8f01b6b6ef2f.woff2)
+      format("truetype");
+  }
+  @font-face {
+    font-family: Pretendard;
+    font-weight: 900;
+    src: url(/static/media/Pretendard-Black.14a71ec59ff2b3bc6933.woff2)
+      format("truetype");
+  }
+
 /* 여백 초기화 */
 body,
 div,
@@ -61,8 +116,10 @@ select,
 table,
 textarea {
     color: #000;
-    font-family: "GmarketSans", "AppleSDGothicNeo-Regular", "Malgun Gothic",
-        "맑은 고딕", dotum, 돋움;
+    -webkit-font-smoothing:antialiased;
+    font-family: 'Pretendard',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    /* font-family: "GmarketSans", "AppleSDGothicNeo-Regular", "Malgun Gothic",
+        "맑은 고딕", dotum, 돋움; */
 }
 tr th {
     font-weight: normal;
@@ -149,11 +206,12 @@ button {
 body {
     overflow: overlay;
     margin: 0 auto;
-    font-family: '-apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif';
+    font-family: 'Pretendard',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;;
+    /* font-family: '-apple-system,BlinkMacSystemFont,"Malgun Gothic","맑은 고딕",helvetica,"Apple SD Gothic Neo",sans-serif'; */
     font-weight: normal;
     font-size: 18px;
     color: #292F34;
-    /* background-image: url(../img/BG.jpg) ; */
+    background-image: url(../img/BG.jpg) ;
     background-size: cover;
 }
 
@@ -402,6 +460,7 @@ fieldset{
     width: 40px;
     height: 40px;
     border: none;
+    cursor: pointer;
 }
 .login__cont .btom-btn a{
     font-size: 16px;
@@ -435,6 +494,7 @@ fieldset{
     font-size: 16px;
     border: none;
     display: block;
+    cursor: pointer;
 }
 
 .input__Btn.white {
@@ -643,7 +703,7 @@ fieldset{
     border-bottom: 1px solid #ededed;
     /* box-shadow: 0px 20px 55px -30px #0000002e; */
     padding: 10px 0;
-    background: #ffffffa8;
+    background: #ffffff00;
     position: fixed;
     width: 100%;
     z-index: 1000;
@@ -667,12 +727,37 @@ fieldset{
 }
 
 .header_inner a {
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: normal;
     padding: 0 30px;
     color: #000000;
+    position: relative;
+    transition: transform 0.25s, color 0.25s;
 }
+.header_inner a::before{
+    content: '';
+    background: #4c34aa;
+    border-radius: 100%;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-100px);
+    transition: transform 0.25s, color 0.25s;
+}
+.header_inner a:hover{
+    color: #4c34aa;
+    transition: transform 0.25s, color 0.25s;
+    transform: scale(1.1);
+}
+.header_inner a:not(:hover){
+    transition: transform 0.25s, color 0.25s;
 
+}
+.header_inner a:hover::before{
+    transform: translate(-50%,-10px);
+}
 .header_menu_close{
     padding: 10px;
     border: 1px solid #000;
@@ -757,7 +842,7 @@ fieldset{
     display: block;
     font-size: 18px;
     font-weight: bold;
-    color: #3512a7;
+    color: #433382;
 }
 
 .profile_cont_close img{
@@ -929,7 +1014,7 @@ fieldset{
 
 .prev__view:hover,
 .next__view:hover{
-    background: #562ff3;
+    background: #433382;
     transition: all 0.25s;
     color: #fff !important;
 }
@@ -976,8 +1061,8 @@ fieldset{
 .cover:nth-child(1) {
     transform: rotate(-2deg);
     color: #fff;
-    border-top: 1px solid #632BBF;
-    border-bottom: 1px solid #632BBF;
+    border-top: 1px solid #433382;
+    border-bottom: 1px solid #433382;
     padding: 3px;
 
 }
@@ -985,8 +1070,8 @@ fieldset{
 .cover:nth-child(2) {
     transform: rotate(2deg);
     justify-content: flex-end;
-    border-top: 1px solid #413572;
-    border-bottom: 1px solid #413572;
+    border-top: 1px solid #433382;
+    border-bottom: 1px solid #433382;
     padding: 3px;
 }
 
@@ -1042,7 +1127,7 @@ fieldset{
 
 .btn_scroll_top {
     border-radius: 50px;
-    /* background: #413572; */
+    /* background: #433382; */
     box-sizing: border-box;
     cursor: pointer;
     text-align: center;
@@ -1054,7 +1139,7 @@ fieldset{
 }
 
 .btn_scroll_top a {
-    color: #413572;
+    color: #433382;
     font-family: 'EliceDigitalBaeum';
     font-size: 22px;
     height: 8px;
@@ -1074,7 +1159,7 @@ fieldset{
     font-family: 'IMHyemin';
     text-align: center;
     border-radius: 15px;
-    border: 1px solid #721aff72;
+    border: 1px solid #43338272;
     width: 700px;
     min-height: 252px;
     font-size: 20px;
@@ -1091,7 +1176,7 @@ fieldset{
     margin-left: 30px;
 }
 .intro_input:focus{
-    outline: 1px solid #721aff;
+    outline: 1px solid #433382;
 }
 
 /* 편집기능 */
@@ -1127,7 +1212,7 @@ fieldset{
     transition: 0.25s;
 }
 .edit_function button.active {
-    background-color: purple;
+    background-color: #433382;
     color: #FFF;
 }
 
@@ -1210,7 +1295,7 @@ fieldset{
 }
 .youtube_item{
     margin: 0 50px;
-    box-shadow: 0px 10px 20px #363a6c73;
+    box-shadow: 0px 10px 20px #433382;
     height: 313px;
     border-radius: 15px;
     scroll-snap-align: center;
@@ -1279,7 +1364,7 @@ fieldset{
 }
 
 .notice_quick_cont{
-    background: #632bbf;
+    background: #433382;
     border-radius: 25px;
     width: 30%;
     color: #fff;
@@ -1440,7 +1525,7 @@ fieldset{
     color: #000;
 }
 .rank_item_01{
-    background: #632BBF;
+    background: #433382;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1482,7 +1567,14 @@ fieldset{
 .footer_inner img{
     margin-bottom: 20px;
 }
-
+.comment__write__msg{
+    position: relative;
+}
+.actived{
+    color: #4c34aa !important;
+    transition: transform 0.25s, color 0.25s !important;
+    transform: scale(1.1) !important;
+}
 
 
 
@@ -1555,6 +1647,16 @@ fieldset{
     100% {
         -webkit-transform: translate(-50%,-5px);
         transform: translate(-50%,-5px);
+    }
+}
+@keyframes updown4 {
+    0% {
+        -webkit-transform: translate(-50%, -50px);
+        transform: translate(-50%, -50px);
+    }
+    100% {
+        -webkit-transform: translate(-50%, -60px);
+        transform: translate(-50%, -60px);
     }
 }
 

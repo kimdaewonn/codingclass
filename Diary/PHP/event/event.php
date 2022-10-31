@@ -35,7 +35,7 @@
                     <img src="../../assets/img/site_main_notice_heart.png" class="header_icon_04" alt="">
                     <img src="../../assets/img/site_main_notice_heart.png" class="header_icon_05" alt="">
                     
-                    <h2>EVENY</h2>
+                    <h2>EVENT</h2>
                     <?php
     if(isset($_GET['page'])){
         $page = (int) $_GET['page'];
@@ -180,4 +180,5 @@
 <script src="../../assets/javascript/board.js"></script>
 <!-- <script src="../../assets/javascript/search.js"></script> -->
 <script src="../../assets/javascript/common.js"></script>
+<script>document.querySelector(".header_inner a:nth-child(4)").classList.add("actived")</script>
 </html>

@@ -93,4 +93,5 @@
         <?php include "../include/footer.php" ?>
     </div>
 </body>
+<script>document.querySelector(".header_inner a:nth-child(5)").classList.add("actived")</script>
 </html>

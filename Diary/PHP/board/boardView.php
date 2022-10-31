@@ -212,7 +212,9 @@
                             <div class="comment__write__msg">
                                 <label for="commentWrite" class="ir">댓글</label>
                                 <input type="text" id="commentWrite" name="commentWrite" placeholder="댓글을 써주세요">
-                                <button type="submit" id="commentBtn">댓글쓰기</button>
+                                <button type="submit" id="commentBtn">
+                                    <img src="../../" alt="">
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -270,17 +272,9 @@
                 },
                 // 성공했을때
                 success : function(data){
-                        if(data.result === "good"){
-                            location.reload();
-                        }else{
-                            alert('실패');
-                        }
-                    },
-                // // 성공했을때
-                // success : function(data){
-                //     console.log(data);
-                //     location.reload();
-                // },
+                    console.log(data);
+                    location.reload();
+                },
                 // 오류시 3가지 값을 알려줍니다
                 error: function(request, status, error){
                     console.log("request" + request);
@@ -329,11 +323,8 @@
                 },
                 // 성공했을때
                 success : function(data){
-                    if(data.result === "good"){
-                        location.reload();
-                    }else{
-                        alert('실패');
-                    }
+                    console.log(data);
+                    location.reload();
                 },
                 // 오류시 3가지 값을 알려줍니다
                 error: function(request, status, error){

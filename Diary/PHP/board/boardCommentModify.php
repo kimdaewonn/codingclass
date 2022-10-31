@@ -12,15 +12,13 @@
     $info = $result -> fetch_array(MYSQLI_ASSOC);
 
     // var_dump($info);
+    
     if($info['commentPass'] === $commentPass){
         $sql = "UPDATE myBoardComment SET commentMsg = '{$commentMsg}', commentPass = '{$commentPass}' WHERE myCommentID = {$commentID}";
         $connect -> query($sql);
-        $commentResult = "good";
-        $commentResult2 = "false";
-        echo json_encode(array("result" => $commentResult));
+        echo json_encode(array("info" => $commentID));
     } else {
-        $commentResult = "good";
-        $commentResult2 = "false";
-        echo json_encode(array("result" => $commentResult2));
+        echo "<script>alert('비밀번호가 일치하지 않습니다. 다시 한 번 확인해주세요.')</script>";
+        echo "<script>history.back();</script>";
     }
 ?>

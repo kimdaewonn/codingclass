@@ -45,7 +45,7 @@
                 $blogImgDir = "../../assets/img/testImg/";
                 $testImgName = "Img_".time().rand(1,99999)."."."{$fileExtension}";
                 echo $testImgName;
-                $sql = "INSERT INTO test(myMemberID, testImageFile, testImageSize, color) VALUES('$myMemberID', '$testImgFile', '$testImgSize', '$color')";
+                $sql = "INSERT INTO test(myMemberID, testImageFile, testImageSize, color) VALUES('$myMemberID', '$testImgName', '$testImgSize', '$color')";
             } else {
                 echo "<script>alert('지원하는 이미지 파일이 아닙니다.'); history.back(1)</script>";
             }
@@ -62,7 +62,9 @@
     $result = $connect -> query($sql);
     $result = move_uploaded_file($testImgTmp, $blogImgDir.$testImgName);
 
-    var_dump($result);
+    // var_dump($result);
+    Header("Location: bookSaveComplete.php");
+
 
 ?>
 </body>

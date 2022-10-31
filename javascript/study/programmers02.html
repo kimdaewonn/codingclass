@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스 1단계</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">✔ 프로그래머스 1단계 : 짝수와 홀수</h2>
+                    <p class="t_box">
+                        코팅테스트 연습 > 연습문제 > 짝수와 홀수
+                    </p>
+
+            <hr> <!-- 구간나눔 -->  
+            
+                <h4 class="t_tit3">❓ 문제 설명</h4>
+                    <p class="t_desc2">
+                        정수 num이 짝수일 경우 "Even"을 반환하고 홀수인 경우 "Odd"를 반환하는 함수, solution을 완성해주세요.                    </p>
+                <h4 class="t_tit3">❗ 제한 조건</h4>
+                    <p class="t_desc2">
+                        num은 int 범위의 정수입니다.<br>
+                        0은 짝수입니다.
+                    </p>
+                <h4 class="t_tit3">🍖 입출력 예</h4>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>num</th>
+                            <th>return</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">3</td>
+                            <td class="ce">"Odd"</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">4</td>
+                            <td class="ce">"Even"</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <br> -->
+                <!-- <p class="t_box">
+                    🍙 입출력 예 설명<br><br>
+
+                    입출력 예 #1<br>
+                    12의 약수는 1, 2, 3, 4, 6, 12입니다. 이를 모두 더하면 28입니다.<br><br>
+                    
+                    입출력 예 #2<br>
+                    5의 약수는 1, 5입니다. 이를 모두 더하면 6입니다.
+                </p> -->
+                <hr>
+                <h3 class="t_tit2">⏳ 문제 풀이</h3>
+                    <div class="t_code">
+<pre><code class="language-js">function solution(num) {
+    let answer = '';
+    if(num % 2 == 0){
+        answer = 'Even';
+    } else {
+        answer = 'Odd';
+    }
+    return answer;
+}
+</code></pre>
+                    </div>
+                    <br>
+                <p class="t_desc">
+                    조건문 if를 통해서 num을 2로 나눈 나머지가 0이되는 수 = 짝수 그렇지 않은수는 홀수로 나눠주었습니다.
+                </p>
+                <hr>
+                <h3 class="t_tit2">👀 다른 사람의 풀이</h3>
+                <div class="t_code">
+<pre><code class="language-js">function evenOrOdd(num) {
+    return num % 2 ? "Odd" : "Even";
+}
+</code></pre>
+                </div>
+                <br>
+            <p class="t_desc">
+              다른분은 삼항연산자를 사용해서 더 짧고 쉽게 작성하셨네요.
+            </p>
+            <div class="t_link">
+                <a href="https://school.programmers.co.kr/learn/courses/30/lessons/12937?language=javascript">문제 풀기</a>
+            </div>
+                
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

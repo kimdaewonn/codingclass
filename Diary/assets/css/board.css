@@ -63,7 +63,7 @@ body{
     align-items: center;
     position: sticky;
     top: 70px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     z-index: 100;
     background: #f8fafcbd;
     backdrop-filter: blur(10px);
@@ -112,7 +112,7 @@ body{
     padding-left: 100px;
 }
 .select{
-    background: #3512a7;
+    background: #433382;
     color: #fff !important;
     border-radius: 50px;
     padding: 15px !important;
@@ -258,7 +258,7 @@ input#boardTitle{
     font-size: 16px;
 }
 .active{
-    background: #562ff3;
+    background: #433382;
     border-radius: 100px;
 }
 .active a{
@@ -272,11 +272,12 @@ input#boardTitle{
     width: 100%;
     height: 52px;
     border-radius: 50px;
-    background: #4B12A7;
+    background: #433382;
     color: #fff;
     font-size: 16px;
     border: none;
     display: block;
+    box-sizing: border-box;
 }
 
 .write_btn{
@@ -284,7 +285,7 @@ input#boardTitle{
     text-align: center;
     background: #ffffffc9;
     border: 1px solid #e6e5e6;
-    color: #431be4;
+    color: #433382;
     border-radius: 50px;
     font-size: 16px;
     backdrop-filter: blur(6px);
@@ -292,10 +293,10 @@ input#boardTitle{
 }
 
 .write_btn:hover{
-    background: #3512a7;
+    background: #433382;
     color: #fff;
     transition: background 0.25s;
-    border: 1px solid #3512a7;
+    border: 1px solid #433382;
 }
 .write_btn:not(:hover){
     transition: background 0.25s;
@@ -351,7 +352,7 @@ input#boardTitle{
 .Modi__btn-pass {
     padding: 17px;
     border-radius: 50px;
-    background-color: #3512A7;
+    background-color: #433382;
     color: #fff;
 }
 
@@ -415,7 +416,7 @@ input#boardTitle{
     font-family: 'IMHyemin';
 }
 .edit_function button:hover{
-    background: #2B0667;
+    background: #433382;
     color: #fff;
     padding: 10px;
     transform: scale(1.3);
@@ -424,7 +425,7 @@ input#boardTitle{
     transition: 0.25s;
 }
 .edit_function button.active {
-    background-color: purple;
+    background-color: #433382;
     color: #FFF;
 }
 
@@ -767,7 +768,7 @@ p.next{
 .commemt-header{
     display: inline-flex;
     padding: 5px 10px;
-    background: #3512a7;
+    background: #433382;
     border-radius: 100px;
     color: #fff;
     justify-content: space-between;
@@ -830,12 +831,13 @@ p.next{
 }
 .comment__write__msg input{
     width: 100%;
-    height: 100px;
+    height: 150px;
     background: #fff;
     border: 1px solid #dde3e8;
     font-size: 16px;
     padding: 15px;
     box-sizing: border-box;
+    border-radius: 20px;
 }
 .comment__write__info input{
     height: 38px;
@@ -847,7 +849,7 @@ p.next{
     margin-bottom: 20px;
 }
 .comment__write__msg button{
-    width: 100%;
+    /* width: 100%; */
     background: #58575b;
     display: inherit;
     padding: 10px 0;
@@ -855,9 +857,16 @@ p.next{
     font-size: 16px;
     transition: background 0.25s;
     cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
 }
 .comment__write__msg button:hover{
-    background: #4b12a7;
+    background: #433382;
 }
 .comment__write__msg button:not(:hover){
     transition: background 0.25s;

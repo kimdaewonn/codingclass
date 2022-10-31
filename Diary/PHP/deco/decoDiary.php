@@ -1,7 +1,12 @@
 <?php 
     include "../../connect/connect.php";
     include "../../connect/session.php";
+    include "../../connect/bookCheck.php";
     // include "../../connect/sessionCheck.php";
+
+    echo "<pre style='position:absolute; top:200px; left: 50px;'>";
+    var_dump($_SESSION);
+    echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +40,7 @@
                 </div>
                 <div class="header">
                     <div class="header_inner">
-                        <a href="../main/main.php"><img src="../../assets/img/site_header_logo.png" alt="logo"></a>
+                        <a href="../main/main.php"><img src="../../assets/img/site_header_logo2.png" alt="logo"></a>
                         <img class="hamburger_menu_open" src="../../assets/img/hamburger_btn.png" alt="">
                         <a href="../board/board.php">공지사항</a>
                         <a href="../event/event.php">이벤트</a>
@@ -104,7 +109,7 @@
     .header_inner a{
         color: #fff;
     }
-    .header_inner a img{
+    .hamburger_menu_open{
         filter: invert(1);
     }
     .deco_Diary_list{
@@ -113,28 +118,30 @@
     }
     .deco_info{
         max-width: 1160px;
-    margin: 0 auto;
-    height: 100%;
-    height: 500px;
-    margin-bottom: 30px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1;
+        margin: 0 auto;
+        height: 100%;
+        height: 500px;
+        margin-bottom: 30px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1;
+        text-align: center;
     }
     .deco_Diary_list_inner h2{
         color: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: updown3 1.2s alternate 0s infinite;
-    text-shadow: 0px 4px 0px #4b12a75c;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: updown4 1.2s alternate 0s infinite;
+        text-shadow: 0px 4px 0px #4b12a75c;
+        font-size: 55px;
     }
     .deco_info h2{
         font-size: 36px;
@@ -243,23 +250,25 @@
 
                         <h2>다이어리 꾸미기</h2>
                         <img style="filter: invert(1);" src="../../assets/img/site_board_notice_cross.png" alt="">
-                        <p>좋아하는 색상을 골라주세요 :3</p>
+                        <p>스크롤을 위아래로 조정해<br>좋아하는 색감을 찾아보세요 :3</p>
                     </div>
                     
-                    <form action="bookOpen.php" name="bookOpen" method="post" enctype="multipart/form-data">
+                    <form action="bookSave.php" name="bookOpen" method="post" enctype="multipart/form-data">
                         <fieldset>
                             <legend class="ir">블로그 게시글 작성 영역</legend>
                             <!-- <p>좋아하는 색상을 골라주세요 :3</p> -->
                             <div class="color_selection">
-                                <label for="color">카테고리 : </label>
+                                <label for="color">색상 : </label>
                                 <select name="color" id="color">
-                                    <option value="red">레드</option>
                                     <option value="blue">블루</option>
+                                    <option value="pink">핑크</option>
+                                    <option value="purple">퍼플</option>
                                 </select>
                             </div>
                             <div class="file_selection">
                                 <label for="testImage">파일</label>
                                 <input type="file" name="testImage" id="testImage" accept=".jpg, .jpeg, .png, .gif" placeholder="jpg, gif, png 파일만 넣어주세요">
+                                <!-- <input type="file" name="uploadfile" id="img-selector" accept="image/*"/> -->
                             </div>
                             <button type="submit" value="저장하기">저장하기</button>
                         </fieldset>
@@ -268,21 +277,18 @@
                 
                 <div class="deco_Diary_list one">
                     <div class="deco_Diary_list_inner">
-                        <h2>오렌지</h2>
-    <!-- <img class="grid_bg" src="../../assets/img/grid_box.png" alt=""> -->
+                        <h2>블루</h2>
                     </div>
                 </div>
                 <div class="deco_Diary_list two">
                     <div class="deco_Diary_list_inner">
-                        <h2>퍼플</h2>
-    <!-- <img class="grid_bg" src="../../assets/img/grid_box.png" alt=""> -->
+                        <h2>핑크</h2>
                         
                     </div>
                 </div>
                 <div class="deco_Diary_list three">
                     <div class="deco_Diary_list_inner">
-                        <h2>핑크</h2>
-    <!-- <img class="grid_bg" src="../../assets/img/grid_box.png" alt=""> -->
+                        <h2>퍼플</h2>
                         
                     </div>
                 </div>
@@ -305,6 +311,15 @@
 
     </div>
 </body>
+
+<!-- <button id="btn-image">
+    이미지
+</button> -->
+<!-- <input type="file" name="uploadfile" id="img-selector" accept="image/*" style="display:none;"/> -->
+<!-- <div class="text_cont">
+    <div style="font-size:10px; color:rgba(0, 0, 0, 0.175)">텍스트박스</div>
+    <textarea name="text" id="text" cols="30" rows="10" placeholder="여기에 텍스트를 입력하세요">ㅇㅇ</textarea>
+</div> -->
 <script src="../../assets/javascript/board.js"></script>
 <!-- <script src="../../assets/javascript/search.js"></script> -->
 <script src="../../assets/javascript/common.js"></script>

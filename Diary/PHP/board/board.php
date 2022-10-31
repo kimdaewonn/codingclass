@@ -177,6 +177,7 @@
         <?php include "../include/footer.php" ?>
     </div>
 </body>
+<script>document.querySelector(".header_inner a:nth-child(3)").classList.add("actived")</script>
 <script src="../../assets/javascript/board.js"></script>
 <!-- <script src="../../assets/javascript/search.js"></script> -->
 <script src="../../assets/javascript/common.js"></script>
