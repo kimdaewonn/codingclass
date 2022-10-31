@@ -9,6 +9,8 @@
     padding: 10px;
     padding-top: 0;
     display: none;
+    animation: flicker 1.5s infinite alternate;
+    background: #a146ea;
 }
 .music__header {
     width: 100%;
@@ -21,14 +23,16 @@
 }
 .music__header h2 {
     font-size: 14px;
-    color: #c4c4c4;
+    color: #fff;
 }
 .music__header > div {
-    color: #c4c4c4;
+    color: #fff;
 }
 .music__contents {
-    background: #c4c4c4;
+    background: #c6dbff;
     width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 .music__view {
     display: flex;
@@ -36,6 +40,10 @@
 }
 .music__view img {
     width: 75%;
+    border-radius: 50%;
+    border: solid 2px #6b10d3;
+    box-shadow: 3px 5px 20px #7b71e4;
+
 }
 .music__view img img {
     width: 100%;
@@ -72,7 +80,7 @@
 .music__control .progress {
     width: 100%;
     height: 6px;
-    background: rgb(170, 165, 165);
+    background: rgb(185 149 255 / 96%);
     border-radius: 5px;
 }
 .music__control .progress .bar {
@@ -175,10 +183,12 @@
 
 
 .music__footer {
-    background: #c4c4c4;
+    background: #c6dbff;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .music__list {
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     position: relative;
     display: none;
 }
@@ -218,16 +228,16 @@
     width: 5px;
 }
 .music__list ul::-webkit-scrollbar-thumb {
-    background-color: rgb(157, 167, 173);
+    background-color: rgb(117, 85, 231);
 }
 .music__list li {
     border-bottom: 1px solid #0000001f;
     list-style: none;
     position: relative;
-    padding: 15px 0;
+    padding: 5px 0;
 }
 .music__list li:hover {
-    background: rgba(67, 50, 221, 0.952);
+    background: rgba(124, 63, 223, 0.952);
     transform: translateY(5px);
     transition: all 0.8s;
 }
@@ -262,4 +272,99 @@
     left: 50%;
     top: 35%;
     transform: translate(-50%,-50%);
-}
+}  
+  /* 슬라이드 바 */
+  input[type=range] {
+    -webkit-appearance: none;
+    overflow: hidden;
+    width: 100%;
+    height: 10px;
+    background: transparent;
+    cursor: pointer;
+    background: #afa2d542;
+    border-radius: 0; /* iOS */
+  }
+  
+  input[type=range]:focus {
+      outline: none;
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 8px;
+    height: 12px;
+    background: #cbc3ee;
+    box-shadow: -100vw 0 0 100vw #eae8f3;
+    border: 0.1px solid #cbc3ee;
+
+    cursor: pointer;
+  }
+
+/*  */
+
+@keyframes flicker {
+    0%,
+    100% {
+        box-shadow: 0 0 0.3rem #fff, inset 0 0 0.3rem #fff,
+            0 0 1rem rgb(66, 42, 202), inset 0 0 1rem rgb(66, 42, 202),
+            0 0 2rem rgb(66, 42, 202), inset 0 0 2rem rgb(66, 42, 202);
+    }
+  }
+  @keyframes flicker2 {
+    0%,
+    100% {
+        box-shadow: 0 0 0.1rem #fff, inset 0 0 0.1rem #fff,
+            0 0 0.5rem rgb(129, 13, 224), inset 0 0 0.5rem rgb(129, 13, 224),
+            0 0 1rem rgb(129, 13, 224), inset 0 0 1rem rgb(129, 13, 224);
+    }
+  }
+  @keyframes flicker3 {
+    0%,
+    100% {
+        box-shadow: 0 0 0.2rem #fff, inset 0 0 0.2rem #fff,
+            0 0 0.9rem rgb(66, 42, 202), inset 0 0 0.9rem rgb(66, 42, 202),
+            0 0 1rem rgb(66, 42, 202), inset 0 0 1rem rgb(66, 42, 202);
+    }
+  }
+  @keyframes shakeX {
+    from,
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translate3d(-5px, 0, 0);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translate3d(5px, 0, 0);
+    }
+  }
+  @keyframes shakeY {
+    from,
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translate3d(0, -10px, 0);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translate3d(0, 10px, 0);
+    }
+  }

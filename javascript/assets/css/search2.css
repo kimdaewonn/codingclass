@@ -8,7 +8,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "NexonLv1Gothic";
-    font-weight: bold;
+    font-weight: 700;
     color: var(--htmlColor);
   }
   *,
@@ -78,6 +78,8 @@
     background-color: #F1F3F6;
     padding: 30px;
     text-align: center;
+    animation: flicker 1.5s infinite alternate;
+    
   }
   .search__wrap>span {
     font-size: 20px;
@@ -97,12 +99,15 @@
   .search__wrap .time {
     width: 140px;
     height: 140px;
-    line-height: 140px;
+    line-height: 128px;
     text-align: center;
     border-radius: 50%;
     margin: 0 auto;
     background: #1676ca7d;
     margin-bottom : 50px;
+    border: solid 5px #3186d17d;
+
+    
   }
   .search__wrap .time span {
     color: #fff;
@@ -140,7 +145,7 @@
     width: 70%;
     border-radius: 50px;
     font-size: 20px;
-    border: 2px solid #fff;
+    border: solid 5px #3186d17d;
     padding: 15px 40px;
     color: #fff;
     cursor: pointer;
@@ -624,3 +629,39 @@
         width: 96%;
     }
   }
+
+  @keyframes flicker {
+    0%,
+    100% {
+        box-shadow: 0 0 0.1rem #fff, inset 0 0 0.1rem #fff,
+            0 0 0.3rem rgb(66, 42, 202), inset 0 0 0.3rem rgb(66, 42, 202),
+            0 0 0.5rem rgb(66, 42, 202), inset 0 0 0.5rem rgb(66, 42, 202);
+    }
+  }
+  @keyframes flicker2 {
+    0%,
+    100% {
+        box-shadow: 0 0 0.1rem #fff, inset 0 0 0.1rem #fff,
+            0 0 0.5rem rgb(129, 13, 224), inset 0 0 0.5rem rgb(129, 13, 224),
+            0 0 1rem rgb(129, 13, 224), inset 0 0 1rem rgb(129, 13, 224);
+    }
+  }
+  @keyframes flicker3 {
+    0%,
+    100% {
+        box-shadow: 0 0 0.2rem #fff, inset 0 0 0.2rem #fff,
+            0 0 0.9rem rgb(66, 42, 202), inset 0 0 0.9rem rgb(66, 42, 202),
+            0 0 1rem rgb(66, 42, 202), inset 0 0 1rem rgb(66, 42, 202);
+    }
+  }
+  @keyframes flicker4 {
+    0%,100% {
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 1rem #08f,
+            inset 0 0 1rem #08f,
+            0 0 2rem #08f,
+            inset 0 0 2rem #08f;
+    }
+}

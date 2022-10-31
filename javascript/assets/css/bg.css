@@ -7,13 +7,13 @@ html::before {
 /* Adjusts to any size window <3 */
 
 :root {
-    --c1: hsl(219, 79%, 66%);
-    --c2: hsl(319, 100%, 60%);
+    --c1: hsl(245deg 26% 83%);
+    --c2: hsl(319deg 100% 50%);
     --c3: hsl(266, 49%, 25%);
-    --c4: hsl(60, 82%, 58%);
-    --c5: hsl(0, 67%, 55%);
+    --c4: hsl(0deg 0% 100%);
+    --c5: hsl(0deg 0% 100% / 0%);
     --c6: hsl(213, 96%, 11%);
-    --c2hsl: 319, 100%, 60%;
+    --c2hsl: 219, 40%, 50%;
 }
 
 @property --outrun {
