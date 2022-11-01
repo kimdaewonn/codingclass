@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스 1단계</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">✔ 프로그래머스 1단계 : 수박수박수박수박수박수?</h2>
+                    <p class="t_box">
+                        코팅테스트 연습 > 연습문제 > 수박수박수박수박수박수?
+                    </p>
+
+            <hr> <!-- 구간나눔 -->  
+            
+                <h4 class="t_tit3">❓ 문제 설명</h4>
+                    <p class="t_desc2">
+                        길이가 n이고, "수박수박수박수...."와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요.<br>
+                        예를들어 n이 4이면 "수박수박"을 리턴하고 3이라면 "수박수"를 리턴하면 됩니다.
+                <h4 class="t_tit3">❗ 제한 조건</h4>
+                    <p class="t_desc2">
+                        n은 길이 10,000이하인 자연수입니다.                    </p>
+                <h4 class="t_tit3">🍖 입출력 예</h4>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>n</th>
+                            <th>return</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">3</td>
+                            <td class="ce">"수박수"</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">4</td>
+                            <td class="ce">"수박수박"</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <br> -->
+                <!-- <p class="t_box">
+                    🍙 입출력 예 설명<br><br>
+
+                    입출력 예 #1<br>
+                    문제의 예시와 같습니다.<br><br>
+                    
+                    입출력 예 #2<br>
+                    9 + 8 + 7 = 24이므로 24를 return 하면 됩니다.
+                </p> -->
+                <hr>
+                <h3 class="t_tit2">⏳ 문제 풀이</h3>
+                    <div class="t_code">
+<pre><code class="language-js">function solution(n) {
+    let result = ""
+    for(let i = 1; i&lt;=n; i++){
+        if(i % 2 === 0){
+            result += "박"
+        }else{
+            result += "수"
+        }
+    }
+    return result
+}
+</code></pre>
+                    </div>
+                    <br>
+                <p class="t_desc">
+                짝수와 홀수에 따라 문자를 더해주는 코드를 for문과 if조건문으로 만들어봤습니다.
+                </p>
+                <hr>
+                <h3 class="t_tit2">👀 다른 사람의 풀이</h3>
+                <div class="t_code">
+<pre><code class="language-js">function solution(n) {
+    return "수박".repeat(n).substring(0,n)
+}
+</code></pre>
+                </div>
+                <br>
+            <p class="t_desc">
+               repeat와substring을 이용해서 이렇게 짧게도 가능하네요!
+            </p>
+            <div class="t_link">
+                <a href="https://school.programmers.co.kr/learn/courses/30/lessons/12922">문제 풀기</a>
+            </div>
+                
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
