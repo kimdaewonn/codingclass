@@ -14,7 +14,8 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Uto123RF";
+        font-family: "netmarble";
+        font-weight: 300;
       }
       .fixed {
         position: fixed;
@@ -86,20 +87,21 @@
         white-space: nowrap;
         color: #fff;
       }
-
       .sec1__text7 {
+        /* font-size: 2vw; */
+        white-space: nowrap;
+        color: #fff;
+        z-index: 1;
+      }
+      .sec1__text8 {
         width: 100%;
-        height: 100vh;
+        height: 50vh;
         /* background: rgba(34, 34, 34, 0.5); */
         background: url(https://images.unsplash.com/photo-1518467166778-b88f373ffec7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8dHVydGxlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
         background-size: cover;
         background-position: center center;
       }
-      .sec1__text8 {
-        font-size: 2vw;
-        white-space: nowrap;
-        color: #fff;
-      }
+  
       .sec1__text9 {
         font-size: 4vw;
         white-space: nowrap;
@@ -117,102 +119,102 @@
         color: #fff;
         text-align: center;
         line-height: 50vw;
-        font-size: 8vw;
-      }
-      .sec1__text12 {
-     
+        /* font-size: 8vw; */
       }
     </style>
   </head>
   <body>
-    <div class="scrollTop"></div>
+    <div class="scrollTop">0</div>
     <main id="contetns">
       <section id="section1">
         <div class="sec1">
           <div
             class="sec1__text1 fixed"
-            data-0="top: 50%; opacity:1"
-            data-500="top:30%; opacity:0"
+            data-0="top: 50%; opacity:1;"
+            data-500="top:30%; opacity:0;"
           >
             안녕하세요!
           </div>
           <div
             class="sec1__text2 fixed"
-            data-500="opacity:0; top: 70%; transform:translate(-50%, -50%) scale(1)"
-            data-1000="opacity:1; top:50%; transform:translate(-50%, -50%) scale(1)"
-            data-1500="opacity:1; top:50%; transform:translate(-50%, -50%) scale(0)"
+            data-500="opacity:0; top: 70%; transform:translate(-50%, -50%) scale(1);"
+            data-1000="opacity:1; top:50%; transform:translate(-50%, -50%) scale(1);"
+            data-1500="opacity:1; top:50%; transform:translate(-50%, -50%) scale(0);"
           >
             프론트앤드 개발자가 꿈인 김대원입니다!
           </div>
           <div
             class="sec1__text3 fixed"
-            data-1300="width: 0%; transform: translate(-50%, -50%) rotate(360deg)"
-            data-2300="width: 100%; transform: translate(-50%, -50%) rotate(0deg)"
+            data-1300="width: 0%; transform: translate(-50%, -50%) rotate(360deg);"
+            data-2300="width: 100%; transform: translate(-50%, -50%) rotate(0deg);"
           ></div>
           <div
             class="sec1__text4 fixed"
-            data-2000="opacity:1;transform: translate(-50%, -50%) scale(0) rotate(-360deg)"
-            data-3000="opacity:1;transform: translate(-50%, -50%) scale(1) rotate(0deg)"
-            data-3500="opacity:0; transform: translate(-50%, -50%) scale(1) rotate(0deg)"
+            data-2000="opacity:1;transform: translate(-50%, -50%) scale(0) rotate(-360deg);"
+            data-3000="opacity:1;transform: translate(-50%, -50%) scale(1) rotate(0deg);"
+            data-3500="opacity:0; transform: translate(-50%, -50%) scale(1) rotate(0deg);"
           >
             HELLO!😁
           </div>
           <div
             class="sec1__text5 fixed"
-            data-3500="opacity:0; top: 70%; transform:translate(-50%, -50%) scale(1)"
-            data-4000="opacity:1; top:50%; transform:translate(-50%, -50%) scale(1)"
-            data-4500="opacity:1; top:50%; transform:translate(-50%, -50%) scale(0)"
+            data-3500="opacity:0; top: 70%; transform:translate(-50%, -50%) scale(1);"
+            data-4000="opacity:1; top:50%; transform:translate(-50%, -50%) scale(1);"
+            data-4500="opacity:1; top:50%; transform:translate(-50%, -50%) scale(0);"
           >
             우공이산이라는 말이 있습니다.
           </div>
           <div
             class="sec1__text6 fixed"
-            data-4500="opacity:0; top: 70%; transform:translate(-50%, -50%) scale(1)"
-            data-5000="opacity:1; top:50%; transform:translate(-50%, -50%) scale(1)"
-            data-5500="opacity:1; top:50%; transform:translate(-50%, -50%) scale(0)"
+            data-4500="opacity:0; top: 70%; transform:translate(-50%, -50%) scale(1);"
+            data-5000="opacity:1; top:50%; transform:translate(-50%, -50%) scale(1);"
+            data-5500="opacity:1; top:50%; transform:translate(-50%, -50%) scale(0);"
           >
             우공이 산을 옮긴다는 말로, 남이 보기엔 어리석은 일처럼 보이지만
             한가지<br />
             일을 끝까지 밀고 나가면 언젠가는 목적을 달성할 수 있다는 뜻입니다.
           </div>
           <div
-            class="sec1__text7 fixed"
-            data-5500="width: 0%; transform: translate(-50%, -50%) rotate(0deg)"
-            data-5700="width: 10%; transform: translate(-50%, -50%) rotate(360deg)"
-            data-5900="width: 30%; transform: translate(-50%, -50%) rotate(360deg)"
-            data-6100="width: 50%; transform: translate(-50%, -50%) rotate(360deg)"
-            data-6300="width: 70%; transform: translate(-50%, -50%) rotate(360deg)"
-            data-6600="width: 100%; transform: translate(-50%, -50%) rotate(360deg)"
-          ></div>
-
+          class="sec1__text7 fixed"
+          data-5500="opacity:0; top: 70%; transform:translate(-50%, -50%) translateX(50%);font-size:2vw;"
+          data-6000="opacity:1; top:50%; transform:translate(-50%, -50%) scale(1); font-size:4vw;"
+          data-6600="opacity:1; top:50%; transform:translate(-50%, -50%) scale(0.5); font-size:6vw;"
+          data-7000="opacity:1; top:50%; transform:translate(-50%, -50%) scale(0); font-size:8vw;"
+        >
+          제가 좋아하는 동물입니다.
+        </div>
           <div
             class="sec1__text8 fixed"
-            data-6600="opacity:0; top: 70%; transform:translate(-50%, -50%) scale(1)"
-            data-7000="opacity:1; top:50%; transform:translate(-50%, -50%) scale(1)"
-            data-7500="opacity:1; top:50%; transform:translate(-50%, -50%) scale(0)"
-          >
-            제가 좋아하는 동물입니다.
-          </div>
+            data-5500="opacity:1; width: 0%; height:0; left:0; transform: translate(-50%, -50%) rotate(0deg);"
+            data-5700="opacity:1; width: 10%; height:10%; left:10%; transform: translate(-50%, -50%) rotate(360deg);"
+            data-5900="opacity:1; width: 30%; left:30%; height:30%; transform: translate(-50%, -50%) rotate(360deg);"
+            data-6100="opacity:1; width: 50%; left:50%; height:50%; transform: translate(-50%, -50%) rotate(360deg);"
+            data-6300="opacity:0.5; width: 70%; left:70%; height:70%; transform: translate(-50%, -50%) rotate(360deg);"
+            data-6600="opacity:0; width: 100%; left:100%; height:100%;transform: translate(-50%, -50%) rotate(360deg);"
+          ></div>
           <div
             class="sec1__text9 fixed"
-            data-7500="opacity:0; top: 70%; transform:translate(-50%, -50%) scale(1)"
-            data-8000="opacity:1; top:50%; transform:translate(-50%, -50%) scale(1)"
-            data-8100="opacity:1; top:50%; transform:translate(-50%, -50%) scale(0)"
+            data-7000="opacity:0; top: 70%; transform:translate(-50%, -50%) scale(1);"
+            data-7500="opacity:1; top:50%; transform:translate(-50%, -50%) scale(1);"
+            data-7600="opacity:1; top:50%; transform:translate(-50%, -50%) scale(0);"
           >
             다소 부족할지라도
           </div>
           <div
             class="sec1__text10 fixed"
-            data-8100="opacity:0; top: 70%; transform:translate(-50%, -50%) scale(1)"
-            data-8600="opacity:1; top:50%; transform:translate(-50%, -50%) scale(1)"
-            data-9100="opacity:1; top:50%; transform:translate(-50%, -50%) scale(0)"
+            data-7600="opacity:0; top: 70%; transform:translate(-50%, -50%) scale(1);"
+            data-8100="opacity:1; top:50%; transform:translate(-50%, -50%) scale(1);"
+            data-9100="opacity:1; top:50%; transform:translate(-50%, -50%) scale(0);"
           >
-            방향과 꾸준함이 중요하다고 생각합니다.
+            열정과 꾸준함, 방향이 중요하다고 생각합니다.
           </div>
           <div
             class="sec1__text11 fixed"
-            data-9100="width: 0%; transform: translate(-50%, -50%) rotate(360deg)"
-            data-9999="width: 100%; transform: translate(-50%, -50%) rotate(0deg)"
+            data-9100="width: 0%; transform: translate(-50%, -50%) rotate(0deg);"
+            data-9100="width: 30%; transform: translate(-50%, -50%) rotate(90deg);"
+            data-9300="width: 50%; transform: translate(-50%, -50%) rotate(-180deg);"
+            data-9500="width: 70%; transform: translate(-50%, -50%) rotate(180deg);"
+            data-10000="width: 100%; transform: translate(-50%, -50%) rotate(360deg);"
           >
             1편 끝
           </div>
