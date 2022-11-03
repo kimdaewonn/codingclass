@@ -23,17 +23,17 @@
     <!-- //header -->
 
     <main id="main">
-        <section id="banner" class="container section">
+    <section id="banner" class="container section">
             <h2 class="blind">회원가입 축하합니다.</h2>
             <div class="banner__inner style2">
                 <div class="img">
-                    <img src="assets/img/banner_img03.svg" alt="배너 이미지">
+                    <img src="../assets/img/banner_img03.svg" alt="배너 이미지">
                 </div>
                 <div class="desc">
                     어떤 일이라도 <em>노력</em>하고 즐기면 그 결과는 <em>빛</em>을 바란다고 생각합니다.<br>
                     회원가입을 축하드립니다.
-
-<?php
+                    <?php
+    include "../connect/connect.php";
     $youEmail = $_POST['youEmail'];
     $youName = $_POST['youName'];
     $youPass = $_POST['youPass'];
@@ -72,7 +72,6 @@
     }
     // 비밀번호 암호화
     // $youPass = sha1($youPass);
-
     // 휴대폰 번호 유효성 검사
     $check_number = preg_match("/^(010|011|016|017|018|019)-[0-9]{3,4}-[0-9]{4}$/", $youPhone);
     if($check_number == false){
@@ -133,17 +132,15 @@
         exit;
     }
 ?>
-
                 </div>
                 
                 <a class="btn btn_style1 mt30" href="main.html">메인으로</a>
             </div>
         </section>
         <!-- //banner -->
+
     </main>
     <!-- //main -->
-
-
 
 
     <?php include "../include/footer.php"?>

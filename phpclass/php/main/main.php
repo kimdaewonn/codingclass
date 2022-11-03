@@ -23,10 +23,8 @@
     <!-- //header -->
 
     <main id="main">
-        
     </main>
     <!-- //main -->
-
 
 
     <?php include "../include/footer.php"?>

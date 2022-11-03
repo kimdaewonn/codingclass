@@ -1,4 +1,3 @@
-
 <?php
     include "../connect/connect.php";
     include "../connect/session.php";
@@ -24,12 +23,12 @@
     <!-- //header -->
 
     <main id="main">
-        <section id="login" class="container section">
+    <section id="login" class="container section">
             <h2>로그인</h2>
             <p>
                 로그인을 하시면 게시글 및 댓글 작성이 가능합니다.<br>
                 회원가입을 하면 로그인을 할 수 있습니다.<br>
-                구경하실려면 admin@naver.com / 1234를 입력해주세요!
+                구경하시려면 "admin@naver.com / 1234" 를 입력해주세요
             </p>
             <div class="login__inner">
                 <div class="login__contents">
@@ -63,7 +62,6 @@
         <!-- //login -->
     </main>
     <!-- //main -->
-
 
 
     <?php include "../include/footer.php"?>

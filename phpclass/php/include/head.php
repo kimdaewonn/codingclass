@@ -7,9 +7,9 @@
 <meta name="robots" content="all">
 
 <!-- ICON -->
-<link rel="icon" href="../assets/img/icon_256.png" />
-<link rel="shortcut icon" href="../assets/img/icon_256.png" />
-<link rel="icon" type="image/png" sizes="256x256" href="../assets/img/icon_256.png" />
-<link rel="icon" type="image/png" sizes="192x192" href="../assets/img/icon_192.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/icon_32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="../assets/img/icon_16.png" />
+<link rel="icon" href="../assets/ico/icon_256.png" />
+<link rel="shortcut icon" href="../assets/ico/icon_256.png" />
+<link rel="icon" type="image/png" sizes="256x256" href="../assets/ico/icon_256.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/ico/icon_192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/ico/icon_32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/ico/icon_16.png" />

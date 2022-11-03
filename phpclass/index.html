@@ -4,52 +4,74 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PHP</title>
+    <title>Document</title>
     <link
-      href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css"
+      href="https://webfontworld.github.io/netmarble/Netmarble.css"
       rel="stylesheet"
     />
+
     <style>
       * {
         margin: 0;
         padding: 0;
-        font-family: "NexonLv1Gothic";
+        font-family: "netmarble";
       }
       a {
-        color: #000;
+        color: black;
         text-decoration: none;
         font-size: 20px;
+        position: relative;
+      }
+      a::before {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 18px;
+        background: #7178b485;
+        border-radius: 5px;
+        bottom: 12%;
+        left: 2px;
+        z-index: -1;
+      }
+      a:hover::before {
+        width: 98%;
+        transition: width 0.5s ease, color 1s ease;
       }
       a:hover {
-        text-decoration: underline;
-        text-underline-position: auto;
+        text-shadow: 0px 0px 2px #767fc5;
+        color: #eee;
       }
       li {
         list-style: none;
       }
+      h1 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+      }
       h2 {
         margin-bottom: 10px;
       }
-
       .box {
+        padding: 3%;
         max-width: 1200px;
         width: 100%;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
       }
-      .box h1 {
-        width: 100%;
-        margin-bottom: 20px;
-      }
       .box > div {
         width: 50%;
+      }
+      .mainPage {
+        font-size: 28px;
+        font-weight: bold;
       }
     </style>
   </head>
   <body>
     <div class="box">
-      <h1>PHP 프로젝트</h1>
+      <h1>PHP</h1>
       <div>
         <h2>HTML</h2>
         <ul>
@@ -57,13 +79,17 @@
           <li><a href="html/join.html" target="_blank">회원가입</a></li>
           <li><a href="html/join2.html" target="_blank">회원가입2</a></li>
           <li>
-            <a href="html/joinAgree.html" target="_blank">회원가입 동의</a>
+            <a href="html/joinInfo.html" target="_blank"
+              >회원가입 정보 페이지</a
+            >
           </li>
           <li>
-            <a href="html/joinResult.html" target="_blank">회원가입 결과</a>
+            <a href="html/joinResult.html" target="_blank"
+              >회원가입 결과 페이지</a
+            >
           </li>
           <br />
-          <li><a href="html/login.html" target="_blank">로그인 페이지</a></li>
+          <li><a href="html/login.html" target="_blank">로그인</a></li>
           <br />
           <li><a href="html/board.html" target="_blank">게시판 페이지</a></li>
           <li>
@@ -92,7 +118,7 @@
             >
           </li>
           <li>
-            <a href="html/blogModify.html" target="_blank"
+            <a href="html/boardModify.html" target="_blank"
               >블로그 수정 페이지</a
             >
           </li>
@@ -102,44 +128,32 @@
           <li>
             <a href="html/blogWrite.html" target="_blank">블로그 쓰기 페이지</a>
           </li>
-          <br /><br />
+          <br /><br /><br />
           <li><a href="#">블로그 댓글 페이지</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>PHP</h2>
+        <ul>
+          <li>
+            <a href="http://dw530.dothome.co.kr/myadmin/" target="_blank"
+              >MyAdmin</a
+            >
+          </li>
           <br />
-          <h2>PHP</h2>
-          <ul>
-            <li>
-              <a
-                href="http://dw530.dothome.co.kr/myadmin/index.php?route=/&route=%2F"
-                target="_blank"
-                >어드민</a
-              >
-            </li>
-            <br />
-            <li>
-              <a href="create/createMember.php" target="_blank"
-                >회원 테이블 만들기</a
-              >
-            </li>
-            <li>
-              <a href="create/createBoard.php" target="_blank"
-                >게시판 테이블 만들기</a
-              >
-            </li>
-            <li>
-              <a href="create/createBlog.php" target="_blank"
-                >블로그 테이블 만들기</a
-              >
-            </li>
-            <li>
-              <a href="create/createComment.php" target="_blank"
-                >댓글 테이블 만들기</a
-              >
-              <br />
-              <a href="join/join.php" target="_blank">회원가입 페이지</a>
-              <br />
-              <a href="join/login.php" target="_blank">로그인 페이지</a>
-            </li>
-          </ul>
+          <li>
+            <a href="php/main/main.php" target="_blank" class="mainPage"
+              >메인페이지</a
+            >
+          </li>
+          <br />
+          <br />
+          <li>
+            <a href="php/create/createMember.php">멤버(회원) 테이블 만들기</a>
+          </li>
+          <li><a href="php/create/createBoard.php">게시판 테이블 만들기</a></li>
+          <li><a href="php/create/createBlog.php">블로그 테이블 만들기</a></li>
+          <li><a href="php/create/createComment.php">댓글 테이블 만들기</a></li>
         </ul>
       </div>
     </div>
