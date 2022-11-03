@@ -310,6 +310,8 @@ const musicInner = document.querySelector(".music__inner");
 icon1Btn.addEventListener("click", ()=>{
     if(musicInner.style.display=="block"){
         musicInner.style.display="none"
+        musicAudio.pause();
+
     } else {
         musicInner.style.display="block"
     }
