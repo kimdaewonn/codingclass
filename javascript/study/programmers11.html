@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로그래머스 1단계</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <div class="main_menu">
+        <div class="document">
+          <h2 class="t_tit">
+            ✔ 프로그래머스 1단계 : 문자열 내림차순으로 배치하기
+          </h2>
+          <p class="t_box">
+            코팅테스트 연습 > 연습문제 > 문자열 내림차순으로 배치하기
+          </p>
+
+          <hr />
+          <!-- 구간나눔 -->
+
+          <h4 class="t_tit3">❓ 문제 설명</h4>
+          <p class="t_desc2">
+            문자열 s에 나타나는 문자를 큰것부터 작은 순으로 정렬해 새로운 문자열을 리턴하는 함수, solution을 완성해주세요.<br>
+            s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보다 작은 것으로 간주합니다.          
+            </p>
+
+          <h4 class="t_tit3">❗ 제한 사항</h4>
+          <p class="t_desc2">
+            str은 길이 1 이상인 문자열입니다.
+          </p>
+          <h4 class="t_tit3">🍖 입출력 예</h4>
+          <table class="t_table">
+            <thead>
+              <tr>
+                <th>s</th>
+                <th>return</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ce">"Zbcdefg"</td>
+                <td class="ce">"gfedcbZ"</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <br>
+          <p class="t_box">
+            🍙 입출력 예 설명<br><br>
+            예를들어 str이 "1234"이면 1234를 반환하고, "-1234"이면 -1234를 반환하면 됩니다.<br>
+            str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.<br>
+
+            </p> -->
+          <hr />
+          <h3 class="t_tit2">⏳ 문제 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(s) {
+    return s.split("").sort().reverse().join("");
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            다루기 쉽게 배열로 반환시켜서 sort로 먼저 오름차순으로 정렬해준뒤 거꾸로 정렬해주었습니다.
+          </p>
+          <hr />
+          <h3 class="t_tit2">👀 다른 사람의 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(s) {
+    return s.split('').sort((a, b) => {
+        if (a > b) return -1;
+        if (b > a) return 1;
+        return 0;
+    }).join('');
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            return값이 -1 0 1인지에 따라 나누어 계산하였습니다.
+          </p>
+          <div class="t_link">
+            <a
+              href="https://school.programmers.co.kr/learn/courses/30/lessons/12917"
+              >문제 풀기</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+      <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
