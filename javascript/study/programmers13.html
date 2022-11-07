@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로그래머스 1단계</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <div class="main_menu">
+        <div class="document">
+          <h2 class="t_tit">
+            ✔ 프로그래머스 1단계 : 가운데 글자 가져오기
+          </h2>
+          <p class="t_box">
+            코팅테스트 연습 > 연습문제 > 가운데 글자 가져오기
+          </p>
+
+          <hr />
+          <!-- 구간나눔 -->
+
+          <h4 class="t_tit3">❓ 문제 설명</h4>
+          <p class="t_desc2">
+            단어 s의 가운데 글자를 반환하는 함수, solution을 만들어 보세요.<br>
+            단어의 길이가 짝수라면 가운데 두글자를 반환하면 됩니다.
+        </p>
+
+          <h4 class="t_tit3">❗ 제한 사항</h4>
+          <p class="t_desc2">
+            s는 길이가 1 이상, 100이하인 스트링입니다.
+          </p>
+          <h4 class="t_tit3">🍖 입출력 예</h4>
+          <table class="t_table">
+            <thead>
+              <tr>
+                <th>s</th>
+                <th>return</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ce">"abcde"</td>
+                <td class="ce">"c"</td>
+              </tr>
+              <tr>
+                <td class="ce">"qwer"</td>
+                <td class="ce">"we"</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <br>
+          <p class="t_box">
+            🍙 입출력 예 설명<br><br>
+            예를들어 str이 "1234"이면 1234를 반환하고, "-1234"이면 -1234를 반환하면 됩니다.<br>
+            str은 부호(+,-)와 숫자로만 구성되어 있고, 잘못된 값이 입력되는 경우는 없습니다.<br>
+
+            </p> -->
+          <hr />
+          <h3 class="t_tit2">⏳ 문제 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(s) {
+    return s.substr(Math.ceil(s.length/2)-1,s.length%2===0?2:1);
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            substr(시작,길이)를 이용했고 짝홀의 경우를 삼항연산자로 한줄로 표현했습니다.
+          </p>
+          <hr />
+          <h3 class="t_tit2">👀 다른 사람의 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(s) {
+        var answer = '';
+        var idx = '';
+        if (s.length%2 != 0) {
+            idx = Math.floor(s.length/2);
+            answer = s[idx];
+        } else { 
+            idx = s.length/2 - 1
+            answer = s[idx] + s[idx+1];
+        }
+    
+    
+        return answer;
+    }
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+           if문을 사용한 같은 방법인것 같습니다.
+          </p>
+          <div class="t_link">
+            <a
+              href="https://school.programmers.co.kr/learn/courses/30/lessons/12903"
+              >문제 풀기</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+      <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
