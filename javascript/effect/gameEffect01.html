@@ -518,7 +518,7 @@
     <script src="../assets/js/memory.js"></script>
 
     <script>
-        $( function() {
+      
             $(".icon1").draggable({
                 drag: function() {
                     $(".mouse__cursor img").attr("src", "../assets/img/cursor.red.png")
@@ -549,14 +549,29 @@
                     $(".mouse__cursor img").attr("src", "../assets/img/cursor.blue.png")
                 },
             });
-            $(".music__wrap").draggable({
-
-            });
-            $(".search__wrap").draggable({
-            });
-            $(".memory__wrap").draggable({
-            });
-        } );
+            
+      $(".music__wrap, .search__wrap, .memory__wrap").draggable();
+      
+      $('.music__wrap, .search__wrap, .memory__wrap').mousedown(function(){
+        var maxZIndex =0;
+        var curZIndex =0;
+          $('.music__wrap, .search__wrap, .memory__wrap').each(function(index){
+              //숫자변환
+              curZIndex = parseInt( $(this).css('z-index') );
+              if(maxZIndex <curZIndex){
+                    maxZIndex = curZIndex;
+              }
+          });
+          // 드래그 팝업이 항상 위
+          $(this).css('z-index', maxZIndex+2);
+          $('.icon1').click(function(){
+            var maxZIndex =0;
+            var curZIndex =0;
+              $('.music__wrap').css('z-index', maxZIndex+2);
+          })
+      });
+      
+      
         
         window.addEventListener("mousemove", e => {
             gsap.to(".mouse__cursor", {duration: 0, left: e.pageX -5, top: e.pageY - 10});
