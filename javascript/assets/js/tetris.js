@@ -1,5 +1,6 @@
 const tetrisWrap = document.querySelector(".tetris__wrap");
 const playground = document.querySelector(".playground > ul");
+const score4 = document.querySelector(".tetris__score > span");
 // 변수설정
 let tetrisrouws = 15,
   tetriscols = 10;
