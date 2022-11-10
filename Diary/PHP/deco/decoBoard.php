@@ -37,7 +37,7 @@
                     <img src="../../assets/img/site_main_notice_heart.png" class="header_icon_05" alt="">
                     
                     <h2>DIARY BOARD</h2>
-                    <?php
+<?php
     if(isset($_GET['page'])){
         $page = (int) $_GET['page'];
     } else {
@@ -59,7 +59,7 @@
 ?>
                     <img src="../../assets/img/site_board_notice_cross.png" alt="">
                 </div>
-                <div class="section_selector">
+                <!-- <div class="section_selector">
                     <div class="section_container">
                         <a class="select" href="board.php">공지사항</a>
                         <a href="../event/event.php"">이벤트</a>
@@ -77,13 +77,7 @@
                         </fieldset>
                     </form>
                     <a class='write_btn' href='boardWrite.php'>글쓰기</a>
-                        <!-- if($_SESSION['myMemberID']=='1'||'2'||'3'){ -->
-                            <!-- $page = (int) $_GET['page']; -->
-                            <!-- echo "<a class='write_btn' href='boardWrite.php'>글쓰기</a>"; -->
-                        <!-- } else { -->
-                            <!-- echo "<a class='write_btn' style='display:none' href='boardWrite.php'>글쓰기</a>"; -->
-                        <!-- } -->
-                </div>
+                </div> -->
                 <div class="deco_list">
                     <div class="deco_list_inner">
                         <!-- <div class='deco_list_header'>

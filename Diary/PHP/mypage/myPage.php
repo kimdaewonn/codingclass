@@ -178,6 +178,36 @@
         </div>
     </div>
 
+
+    <!-- 닉네임 변경 -->
+    <div class="login__popup delete">
+        <div class="login__inner">
+            <div class="login__header">
+                <img src="../../assets/img/login_logo.png" alt="">
+                <h3>아이디 삭제</h3>
+                <div class="login-txt">
+                    <p>다시한번 확인하기 위해<br>하단의 입력칸에 [삭제하겠습니다]를 입력해주세요!</p>
+                </div>
+                <img class="login-cross"src="../../assets/img/login_cross.png" alt="">
+            </div>
+            <div class="login__cont">
+                <form name="login" action="deleteMyID.php" method="get">
+                    <fieldset>
+                        <legend class="ir">로그인 입력폼</legend>
+                            <div class="name">
+                                <label for="youDeleteAnswer" class="ir">이름</label>
+                                <input type="text" name="youDeleteAnswer" id="youDeleteAnswer" placeholder="삭제하겠습니다" class="input__style" required>
+                            </div>
+                        <hr class="login-divider">
+                        <button type="submit" class="input__Btn">삭제확인</button>
+                    </fieldset>
+                </form>
+            </div>
+            <button type="button" class="btn-close"><img src="../../assets/img/login_close.png" alt=""></button>
+        </div>
+    </div>
+
+
     <!-- 스크롤 -->
     <div style="display:none" class="scroll">
         <p>아래로 스크롤 해주세요.</p>
@@ -255,7 +285,7 @@
     // 두개의 테이블 join
     $myMemberID = $_SESSION['myMemberID'];
 
-    $sql = "SELECT b.myBoardID, b.boardTitle, b.boardContents, m.youName, m.youImageFile, b.boardImgFile, b.regTime, b.boardView, b.boardSection FROM myBoard b JOIN myMember m ON (b.myMemberID = m.myMemberID) WHERE b.myMemberID LIKE '$myMemberID' ORDER BY myBoardID DESC LIMIT 0, 3";
+    $sql = "SELECT b.myTipID, b.tipTitle, b.tipSection, b.tipSection, b.tipContents, b.regTime ,b.tipImgFile FROM myTip b JOIN myMember m ON (b.myMemberID = m.myMemberID) WHERE b.myMemberID LIKE '$myMemberID' ORDER BY myTipID DESC LIMIT 0, 3";
     // var_dump($sql);
     // $sql = $sql."ORDER BY myBoardID DESC LIMIT {$viewLimit}, {$viewNum}";
         $count = $result -> num_rows;
@@ -271,20 +301,20 @@
         if($viewCount > 0){
             for($i=1; $i<=3; $i++){
                 $info = $result -> fetch_array(MYSQLI_ASSOC);
-                echo "<a href='../../PHP/board/boardView.php?myBoardID={$info['myBoardID']}' class='myPage_myboard_list'>";
-                echo "<p class='myPage_myboard_list_num'>".$info['myBoardID']."</p>";
+                echo "<a href='../../PHP/tip/tipView.php?myTipID={$info['myTipID']}' class='myPage_myboard_list'>";
+                echo "<p class='myPage_myboard_list_num'>".$info['myTipID']."</p>";
                 echo "<div class='info_cont'>";
-                echo "<p class='myPage_section'>".$info['boardSection']."</p>";
+                echo "<p class='myPage_section'>".$info['tipSection']."</p>";
                 // echo "<h2>".$info['boardTitle']."</h2>";
                 // echo "<h2>".$info['boardContents']."</h2>";
                 echo "</div>";
                 echo "<div class='info_cont2'>";
-                echo "<img src='../../assets/img/blog/".$info['youImageFile']."' alt='프로필 이미지'>";
+                // echo "<img src='../../assets/img/blog/".$info['youImageFile']."' alt='프로필 이미지'>";
                 echo "<p class='cont_date'>".date('Y-m-d H:i',$info['regTime'])."</p>";
-                echo "<p class='cont_view'>".$info['boardTitle']."</p>";
-                echo "<p class='cont_name'>".$info['boardContents']."</p>";
+                echo "<p class='cont_view'>".$info['tipTitle']."</p>";
+                echo "<p class='cont_name'>".$info['tipContents']."</p>";
                 echo "</div>";
-                echo "<div style='background-image:url(../../assets/img/blog_board/".$info['boardImgFile']."' class='myPage_item_background')'></div>";
+                echo "<div style='background-image:url(../../assets/img/blog_tip/".$info['tipImgFile']."' class='myPage_item_background')'></div>";
                 // echo "<img class='myPage_item_background' src='../../assets/img/blog_board/".$info['boardImgFile']."' alt='게시물 이미지'>";
                 echo "</a>";
             }
@@ -318,6 +348,10 @@
                                 <p>답변 변경</p>
                                 <p>></p>
                             </div>
+                            <div class="myPlage__cont__item delete">
+                                <p>아이디 삭제 변경</p>
+                                <p>></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -342,12 +376,15 @@
     const birthPop = document.querySelector(".login__popup.birth");
     const namePop = document.querySelector(".login__popup.name");
     const qaPop = document.querySelector(".login__popup.Qa");
-
+    const deletePop = document.querySelector(".login__popup.delete");
+    
+    const profileBtnMain = document.querySelector(".profile__image__mod");
     const profillBtn = document.querySelector(".myPlage__cont__item.profill");
     const passBtn = document.querySelector(".myPlage__cont__item.pass");
     const birthBtn = document.querySelector(".myPlage__cont__item.birth");
     const nameBtn = document.querySelector(".myPlage__cont__item.name");
     const qaBtn = document.querySelector(".myPlage__cont__item.qa");
+    const deleteBtn = document.querySelector(".myPlage__cont__item.delete");
 
     // loginClose.addEventListener("click", ()=>{
     //     document.querySelector(".login__popup").classList.remove("show");
@@ -358,6 +395,10 @@
             // console.log(index);
             document.querySelector(".login__popup:nth-child("+ (index+1) +")").classList.remove("show");
         })
+    })
+    
+    profileBtnMain.addEventListener("click", ()=>{
+        profillPop.classList.add("show");
     })
 
     profillBtn.addEventListener("click", ()=>{
@@ -374,6 +415,10 @@
     })
     qaBtn.addEventListener("click", ()=>{
         qaPop.classList.add("show");
+    })
+
+    deleteBtn.addEventListener("click", ()=>{
+        deletePop.classList.add("show");
     })
 
 

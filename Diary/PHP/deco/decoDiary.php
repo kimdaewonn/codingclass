@@ -1,8 +1,8 @@
 <?php 
     include "../../connect/connect.php";
     include "../../connect/session.php";
+    include "../../connect/sessionCheck.php";
     include "../../connect/bookCheck.php";
-    // include "../../connect/sessionCheck.php";
 
     echo "<pre style='position:absolute; top:200px; left: 50px;'>";
     var_dump($_SESSION);
@@ -33,20 +33,22 @@
                     <img class="header_menu_close" src="../../assets/img/login_cross.png" alt="">
                     <a href="../board/board.php">공지사항</a>
                     <a href="../event/event.php">이벤트</a>
-                    <a href="../rank/rank.php">이달의 순위</a>
-                    <a href="../deco/decoDiary.php">다꾸하기</a>
-                    <a href="../info/info.php">정보</a>
+                    <!-- <a href="../rank/rank.php">이달의 순위</a> -->
+                    <a href="../deco/deco.php">다이어리 만들기</a>
+                    <a href="../deco/deco.php">꾸미기/자랑</a>
+                    <a href="../tip/tip.php">정보</a>
                     <a href="../faq/faq.php">FAQ</a>
                 </div>
                 <div class="header">
                     <div class="header_inner">
-                        <a href="../main/main.php"><img src="../../assets/img/site_header_logo2.png" alt="logo"></a>
+                        <a href="../main/main.php"><img src="../../assets/img/site_header_logo.png" alt="logo"></a>
                         <img class="hamburger_menu_open" src="../../assets/img/hamburger_btn.png" alt="">
                         <a href="../board/board.php">공지사항</a>
                         <a href="../event/event.php">이벤트</a>
-                        <a href="../rank/rank.php">이달의 순위</a>
-                        <a href="../deco/decoDiary.php">다꾸하기</a>
-                        <a href="../info/info.php">정보</a>
+                        <!-- <a href="../rank/rank.php">이달의 순위</a> -->
+                        <a href="../deco/decoDiary.php">다이어리 만들기</a>
+                        <a href="../deco/deco.php">꾸미기/자랑</a>
+                        <a href="../tip/tip.php">정보</a>
                         <a href="../faq/faq.php">FAQ</a>
                     </div>
                 </div>
@@ -140,7 +142,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         animation: updown4 1.2s alternate 0s infinite;
-        text-shadow: 0px 4px 0px #4b12a75c;
+        text-shadow: 0px 3px 0px #0000001f;
         font-size: 55px;
     }
     .deco_info h2{
@@ -148,10 +150,10 @@
         font-weight: bold;
         color: #fff;
     }
-    .one{background: rgb(255, 184, 52);}
-    .two{background: rgb(47, 144, 255);}
-    .three{background: rgb(255, 45, 122);}
-    .one, .two, .three{position: relative;}
+    .one{background:linear-gradient(129deg, #e0f3b0, #01b0bb); filter: hue-rotate(44deg) !important;}
+    .two{background:linear-gradient(129deg, #e0f3b0, #01b0bb); filter: hue-rotate(161deg) !important;}
+    .third{background:linear-gradient(129deg, #e0f3b0, #01b0bb); filter: hue-rotate(96deg) !important;}
+    .one, .two, .third{position: relative;}
 
     .site_inner{
         scroll-snap-type: y mandatory;
@@ -170,7 +172,7 @@
         /* height: 100vh; */
     }
     .deco_info select{
-        border: 2px solid #fff;
+        border: 1px solid #fff;
         background: none;
         border-radius: 100px;
         padding: 10px;
@@ -178,6 +180,8 @@
         color: #fff;
         padding-left: 100px;
         /* margin-bottom: 20px; */
+        width: 186px;
+        cursor: pointer;
     }
     .deco_info button{
         padding: 10px;
@@ -185,6 +189,9 @@
         box-shadow: 0px 10px 20px -10px #00000045;
         font-size: 16px;
         cursor: pointer;
+        margin-top: 20px;
+        width: 160px;
+        height: 56px;
     }
     .deco_title{
         display: flex;
@@ -204,7 +211,7 @@
     }
     .color_selection{
         position: relative;
-        margin-bottom: 20px;
+        margin-bottom: 44px;
     }
     .color_selection label{
         position: absolute;
@@ -231,6 +238,7 @@
         padding: 10px;
         margin-bottom: 20px;
         border: 1px solid #0000000d;
+        position: relative;
     }
 
     .file_selection label{
@@ -240,6 +248,31 @@
     .file_selection input{
         width: 70%;
         color: #fff;
+    }
+    .file_selection::before{
+        position: absolute;
+        content: '다이어리에 꾸미고 싶은 이미지를 골라주세요';
+        /* width: 100%; */
+        white-space: nowrap;
+        top: -30px;
+        left: 50%;
+        transform: translate(-50%,0);
+        font-size: 14px;
+        color: #ffffffbf;
+    }
+    .file_selection::after{
+        position: absolute;
+        content: '!';
+        width: 25px;
+        background: #fff6;
+        border-radius: 100%;
+        color: #879eac;
+        top: -35px;
+        left: -65px;
+        height: 25px;
+        line-height: 1.4;
+        box-sizing: border-box;
+        font-weight: bold;
     }
 </style>
             <div class="site_inner">
@@ -265,8 +298,9 @@
                                     <option value="purple">퍼플</option>
                                 </select>
                             </div>
+                            
                             <div class="file_selection">
-                                <label for="testImage">파일</label>
+                                <label for="testImage">파일 : </label>
                                 <input type="file" name="testImage" id="testImage" accept=".jpg, .jpeg, .png, .gif" placeholder="jpg, gif, png 파일만 넣어주세요">
                                 <!-- <input type="file" name="uploadfile" id="img-selector" accept="image/*"/> -->
                             </div>
@@ -286,7 +320,7 @@
                         
                     </div>
                 </div>
-                <div class="deco_Diary_list three">
+                <div class="deco_Diary_list third">
                     <div class="deco_Diary_list_inner">
                         <h2>퍼플</h2>
                         

@@ -2,9 +2,10 @@
     <img class="header_menu_close" src="../../assets/img/login_cross.png" alt="">
     <a href="../board/board.php">공지사항</a>
     <a href="../event/event.php">이벤트</a>
-    <a href="../rank/rank.php">이달의 순위</a>
-    <a href="../deco/deco.php">다꾸하기</a>
-    <a href="../info/info.php">정보</a>
+    <!-- <a href="../rank/rank.php">이달의 순위</a> -->
+    <a href="../deco/deco.php">다이어리 만들기</a>
+    <a href="../deco/deco.php">꾸미기/자랑</a>
+    <a href="../tip/tip.php">정보</a>
     <a href="../faq/faq.php">FAQ</a>
 </div>
 <div class="header">
@@ -13,9 +14,10 @@
         <img class="hamburger_menu_open" src="../../assets/img/hamburger_btn.png" alt="">
         <a href="../board/board.php">공지사항</a>
         <a href="../event/event.php">이벤트</a>
-        <a href="../rank/rank.php">이달의 순위</a>
-        <a href="../deco/deco.php">다꾸하기</a>
-        <a href="../info/info.php">정보</a>
+        <!-- <a href="../rank/rank.php">이달의 순위</a> -->
+        <a href="../deco/decoDiary.php">다이어리 만들기</a>
+        <a href="../deco/deco.php">꾸미기/자랑</a>
+        <a href="../tip/tip.php">정보</a>
         <a href="../faq/faq.php">FAQ</a>
     </div>
 </div>
@@ -34,8 +36,8 @@
             </span>
     <?php } else { ?>
         <a style="display:none" href="../login/logout.php" class="profile_cont_close"><img src="../../assets/img/login_cross.png" alt="로그아웃"></a>
-        <img src="../../assets/img/site_header_profile_no.png" class="loginplz" alt="logo">
-        <p style="margin-left:0">여기를 눌러 로그인!</p>
+        <img src="../../assets/img/site_header_profile_no.png" style="margin-left:5px; width:50px; border-radius:100px;"alt="logo">
+        <p class="loginplz" style="margin-left:0; cursor:pointer;">여기를 눌러 로그인!</p>
         <span class="btn_scroll_top">
             <a href="#">^</a>
         </span>

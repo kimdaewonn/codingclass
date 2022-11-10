@@ -5,9 +5,9 @@
 
     $myMemberID = $_SESSION['myMemberID'];
 
-    echo "<pre style='position:absolute; top:200px; left: 50px;'>";
-    var_dump($_SESSION);
-    echo "</pre>";
+    // echo "<pre style='position:absolute; top:200px; left: 50px;'>";
+    // var_dump($_SESSION);
+    // echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -33,9 +33,10 @@
                     <img class="header_menu_close" src="../../assets/img/login_cross.png" alt="">
                     <a href="../board/board.php">공지사항</a>
                     <a href="../event/event.php">이벤트</a>
-                    <a href="../rank/rank.php">이달의 순위</a>
-                    <a href="../deco/decoDiary.php">다꾸하기</a>
-                    <a href="../info/info.php">정보</a>
+                    <!-- <a href="../rank/rank.php">이달의 순위</a> -->
+                    <a href="../deco/deco.php">다이어리 만들기</a>
+                    <a href="../deco/deco.php">꾸미기/자랑</a>
+                    <a href="../tip/tip.php">정보</a>
                     <a href="../faq/faq.php">FAQ</a>
                 </div>
                 <div class="header">
@@ -44,9 +45,10 @@
                         <img class="hamburger_menu_open" src="../../assets/img/hamburger_btn.png" alt="">
                         <a href="../board/board.php">공지사항</a>
                         <a href="../event/event.php">이벤트</a>
-                        <a href="../rank/rank.php">이달의 순위</a>
-                        <a href="../deco/decoDiary.php">다꾸하기</a>
-                        <a href="../info/info.php">정보</a>
+                        <!-- <a href="../rank/rank.php">이달의 순위</a> -->
+                        <a href="../deco/decoDiary.php">다이어리 만들기</a>
+                        <a href="../deco/deco.php">꾸미기/자랑</a>
+                        <a href="../tip/tip.php">정보</a>
                         <a href="../faq/faq.php">FAQ</a>
                     </div>
                 </div>
