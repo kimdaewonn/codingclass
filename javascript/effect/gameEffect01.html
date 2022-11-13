@@ -57,7 +57,7 @@
         </div>
         <div class="icon4">
           <img src="../assets/img/folder.comp_pink.png" alt="분홍 폴더" />
-          <span>분홍 폴더</span>
+          <span>테트리스 게임</span>
         </div>
         <div class="icon5">
           <img src="../assets/img/folder.comp_yellow.png" alt="노랑 폴더" />
@@ -1124,22 +1124,59 @@
       </div>
       <!-- //같은그림찾기 -->
       <!-- 테트리스 -->
-      <div class="tetris__wrap">
+      <div class="tetris__wrap wrap">
         <div class="tetris__inner">
-          <div class="tetris__score">점수 : <span>0</span></div>
-          <div class="tetris__start"></div>
-          <div class="tetris__restart"></div>
-          <div class="tetris__play">
-            <div class="playground">
-              <ul></ul>
+            <div class="tetris__close__btn"><span>X</span></div>
+            <div class="tetris__title">
+                <div>TETRIS GAME</div>
             </div>
-          </div>
+            <div class="tetris__start show">
+                <div class="desc">
+                    <div class="tetris__desc__title">규칙</div>
+                    <div class="tetris__desc__desc">
+                        생존시간(초) x 1점<br>
+                        +<br>
+                        삭제한 줄 갯수 x 10점
+                    </div>
+                    <div class="tetris__desc__title">조작법</div>
+                    <div class="tetris__desc__desc">
+                        ← → ↓ : 이동<br>
+                        ↑ : 회전<br>
+                        space : 빠르게 내려찍기
+                    </div>
+                </div>
+                <div class="start__btn">START !</div>
+            </div>
+            <div class="tetris__restart">
+                <img src="../assets/img/dnace.gif" alt="춤추는 이미지">
+                <div class="desc">GAME OVER</div>
+                <div class="tetris__total">
+                    <div class="time"><span>0</span> 초</div>
+                    <div class="line"><span>0</span> 줄</div>
+                </div>
+                <div class="tetris__score"><span>0</span> 점</div>
+                <div class="restart__btn">RESTART !</div>
+            </div>
+            <div class="tetris__play">
+                <div class="playground">
+                    <ul></ul>
+                </div>
+            </div>
+            <div class="tetris__info">
+                <div class="tit">TIME :</div>
+                <div class="time"><span>0</span> 초</div>
+                <div class="tit">LINE :</div>
+                <div class="line"><span>0</span> 줄</div>
+            </div>
+            <div class="tetris__gif">
+                <img src="../assets/img/dnace.gif" alt="춤추는 이미지">
+            </div>
         </div>
-      </div>
+    </div>
+</div>
       <!-- //테트리스 -->
     </div>
     <script src="../assets/js/highlight.min.js"></script>
-    <!-- <script src="../assets/js/common.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="../assets/js/gsap.min.js"></script>
@@ -1183,26 +1220,32 @@
         },
       });
 
-      $(".music__wrap, .search__wrap, .memory__wrap").draggable();
+      $(
+        ".music__wrap, .search__wrap, .memory__wrap, .tetris__wrap"
+      ).draggable();
 
-      $(".music__wrap, .search__wrap, .memory__wrap").mousedown(function () {
-        var maxZIndex = 0;
-        var curZIndex = 0;
-        $(".music__wrap, .search__wrap, .memory__wrap").each(function (index) {
-          //숫자변환
-          curZIndex = parseInt($(this).css("z-index"));
-          if (maxZIndex < curZIndex) {
-            maxZIndex = curZIndex;
-          }
-        });
-        // 드래그 팝업이 항상 위
-        $(this).css("z-index", maxZIndex + 2);
-        $(".icon1").click(function () {
+      $(".music__wrap, .search__wrap, .memory__wrap, .tetris__wrap").mousedown(
+        function () {
           var maxZIndex = 0;
           var curZIndex = 0;
-          $(".music__wrap").css("z-index", maxZIndex + 2);
-        });
-      });
+          $(".music__wrap, .search__wrap, .memory__wrap, .tetris__wrap").each(
+            function (index) {
+              //숫자변환
+              curZIndex = parseInt($(this).css("z-index"));
+              if (maxZIndex < curZIndex) {
+                maxZIndex = curZIndex;
+              }
+            }
+          );
+          // 드래그 팝업이 항상 위
+          $(this).css("z-index", maxZIndex + 2);
+          $(".icon1").click(function () {
+            var maxZIndex = 0;
+            var curZIndex = 0;
+            $(".music__wrap").css("z-index", maxZIndex + 2);
+          });
+        }
+      );
 
       window.addEventListener("mousemove", (e) => {
         gsap.to(".mouse__cursor", {
