@@ -361,7 +361,7 @@ function checkMatch() {
       tetrisScore++;
       document.querySelector(".tetris__info .line span").innerText =
         tetrisScore;
-      duration > 200 ? (duration = duration - 20) : duration;
+      duration > 100 ? (duration = duration - 100) : duration;
     }
   });
 
