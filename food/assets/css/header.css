@@ -1,0 +1,43 @@
+#header {
+    position: relative;
+    border-bottom: 1px solid #E3E3E3;
+    position: relative;
+    height: 251px;
+}
+.header__inner h1 {
+    font-family: 'sebang';
+    color: #E16120;
+    font-weight: 700;
+    margin-left: 114px;
+    margin-top: 91px;
+    font-size: 40px;
+    
+}
+.header__inner {
+    display: flex;
+    align-items: center;
+}
+.header_center img {
+    width: 512px;
+    height: 248px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    
+
+}
+.header_center input {
+    width: 600px;
+    border: solid 1px #bebcbc;
+    height: 50px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 30%;
+    text-align: center;
+    border-radius: 30px;
+
+  
+}
