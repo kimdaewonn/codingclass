@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로그래머스 1단계</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <div class="main_menu">
+        <div class="document">
+          <h2 class="t_tit">✔ 프로그래머스 1단계 : 핸드폰 번호 가리기</h2>
+          <p class="t_box">코팅테스트 연습 > 연습문제 > 핸드폰 번호 가리기</p>
+          <hr />
+          <!-- 구간나눔 -->
+
+          <h4 class="t_tit3">❓ 문제 설명</h4>
+          <p class="t_desc2">
+            프로그래머스 모바일은 개인정보 보호를 위해 고지서를 보낼 때 고객들의 전화번호의 일부를 가립니다.<br>
+            전화번호가 문자열 phone_number로 주어졌을 때,<br>
+            전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수,solution을 완성해주세요.
+        </p>
+
+          <h4 class="t_tit3">❗ 제한조건</h4>
+          <p class="t_desc2">
+            phone_number는 길이 4 이상, 20이하인 문자열입니다.
+          </p>
+          <h4 class="t_tit3">🍖 입출력 예</h4>
+          <table class="t_table">
+            <thead>
+              <tr>
+                <th>phone_number</th>
+                <th>return</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ce">"01033334444"</td>
+                <td class="ce">"*******4444"</td>
+              </tr>
+              <tr>
+                <td class="ce">"027778888"</td>
+                <td class="ce">	"*****8888"</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <br />
+          <p class="t_box">
+            🍙 입출력 예 설명<br /><br />
+            입출력 예 #1<br />
+
+            위의 설명과 같습니다.<br>
+            입출력 예 #2<br />
+
+            자연수 2와 5의 최대공약수는 1, 최소공배수는 10이므로 [1, 10]을 리턴해야 합니다.
+          </p> -->
+          <hr />
+          <h3 class="t_tit2">⏳ 문제 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(phone_number) {
+    const len = phone_number.length - 4;
+    return "*".repeat(len) + phone_number.slice(-4);
+}
+
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            repeat메서드로 앞 번호들을*로 반환해주고 , slice로  뒤4자리를 잘라서 더해줍니다.
+          </p>
+          <hr />
+          <h3 class="t_tit2">👀 다른 사람의 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">const solution = n => [...n].fill("*",0,n.length-4).join("")
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            펼침연산자와 fill 메서드를 써서 한줄로 표현하셨네요 신박합니다!
+          </p>
+          <div class="t_link">
+            <a
+              href="https://school.programmers.co.kr/learn/courses/30/lessons/12948?language=javascript"
+              >문제 풀기</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+      <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

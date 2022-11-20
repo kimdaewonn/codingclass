@@ -35,7 +35,7 @@
                     height: window.innerHeight,
                 }
                 this.cameraParam = {
-                    fov: 1000,
+                    fov: 100,
                     near: 1,
                     far: 1000
                 }
@@ -74,7 +74,7 @@
                     this.cameraParam.near,
                     this.cameraParam.far
                 );
-                this.camera.position.set(0, 0, 1000);
+                this.camera.position.set(0, 0, 103);
                 this.camera.lookAt(new THREE.Vector3(0, 0, 0));
             }
             _setMesh() {
@@ -84,36 +84,39 @@
                 const geometry = new THREE.BufferGeometry();
                 const material = new THREE.PointsMaterial({
                     color: 0xffffff,
-                    size: 3
+                    size: 2,
                 });
 
-                for(let i=0; i<length; i++){
+                for( let i=0; i<length; i++ ){
                     const x = size * (Math.random() - 0.5);
                     const y = size * (Math.random() - 0.5);
                     const z = size * (Math.random() - 0.5);
 
-                    vertices.push(x,y,z);
+                    vertices.push(x, y, z);
                 }
                 geometry.setAttribute(
                     "position",
                     new THREE.Float32BufferAttribute(vertices, 3)
                 );
-                this.mesh = new THREE.Points(geometry,material);
-                this.scene.add(this.mesh)
-
+                this.mesh = new THREE.Points(geometry, material);
+                this.scene.add(this.mesh);
             }
             _setFog() {
                 this.scene.fog = new THREE.Fog(0xffffff, 50, 200);
             }
             _update() {
+                // this.mesh.rotation.x += .002;
+                // this.mesh.rotation.y += .002;
+                // this.mesh.rotation.z += .002;
+
                 let rotation = 0;
                 const radian = (rotation * Math.PI) / 180;
-                
-                rotation += 0.1; 
+
+                rotation += 0.1;
                 
                 this.camera.position.x = 1000 * Math.sin(rotation);
                 this.camera.position.z = 1000 * Math.cos(rotation);
-                this.mesh.position.y += 1;
+                this.mesh.rotation.y += 0.001;
             }
             _render() {
                 this._update();
