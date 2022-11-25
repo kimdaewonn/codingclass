@@ -1,0 +1,108 @@
+.banner__wrap {
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1920px;
+    box-sizing: border-box;
+    height: 518px;
+}
+.banner__inner {
+    padding-top: 120px;
+    position: relative;
+}
+.bannerImg {
+    margin-left: 380px;
+}
+.banner__box1 {
+    position: absolute;
+    top: 295px;
+    left: 220px;
+    background: url(../img/banner1.png);
+    width: 49px;
+    height: 49px;
+}
+.banner__box2 {
+    position: absolute;
+    top: 25px;
+    left: 398px;
+    background: url(../img/banner2.png);
+    width: 18px;
+    height: 18px;
+}
+.banner__box3 {
+    position: absolute;
+    top: 286px;
+    left: 958px;
+    background: url(../img/banner3.png);
+    width: 38px;
+    height: 38px;
+}
+.banner__box4 {
+    position: absolute;
+    top: 79px;
+    left: 1055px;
+    background: url(../img/banner4.png);
+    width: 19px;
+    height: 19px;
+}
+.banner__box5 {
+    position: absolute;
+    top: 382px;
+    left: 1121px;
+    background: url(../img/banner5.png);
+    width: 35px;
+    height: 35px;
+}
+.banner__box6 {
+    position: absolute;
+    top: 332px;
+    left: 1607px;
+    background: url(../img/banner6.png);
+    width: 30px;
+    height: 30px;
+}
+.banner__box7 {
+    position: absolute;
+    top: 73.86px;
+    left: 1106.87px;
+    background: url(../img/banner_king.png);
+    width: 427.14px;
+    height: 402.14px;
+}
+.banner__title {
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 400;
+    margin-bottom: 39px;
+}
+.banner__desc {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 300;
+    margin-bottom: 69px;
+}
+.banner__more {
+    background: #FF3344;
+    padding: 15px 78px;
+    margin-bottom: 120px;
+
+}
+.banner__more a {
+    font-weight: 400;
+    line-height: 18px;
+    color: #fff;
+}
+
+/* 블라인드 효과 */
+.blind{
+    position:absolute;
+    clip:rect(0 0 0 0);
+    width:1px;
+    height:1px;
+    margin:-1px;
+    overflow:hidden;
+}
+@media(max-width: 1300px){
+
+    
+}
