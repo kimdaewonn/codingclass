@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로그래머스 1단계</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <div class="main_menu">
+        <div class="document">
+          <h2 class="t_tit">✔ 프로그래머스 1단계 : x만큼 간격이 있는 n개의 숫자</h2>
+          <p class="t_box">코팅테스트 연습 > 연습문제 > x만큼 간격이 있는 n개의 숫자</p>
+          <hr />
+          <!-- 구간나눔 -->
+
+          <h4 class="t_tit3">❓ 문제 설명</h4>
+          <p class="t_desc2">
+            함수 solution은 정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴해야 합니다.<br>
+            다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요.
+        </p>
+
+          <h4 class="t_tit3">❗ 제한 조건</h4>
+          <p class="t_desc2">
+            x는 -10000000 이상, 10000000 이하인 정수입니다.
+            n은 1000 이하인 자연수입니다.
+          </p>
+          <h4 class="t_tit3">🍖 입출력 예</h4>
+          <table class="t_table">
+            <thead>
+              <tr>
+                <th>x</th>
+                <th>n</th>
+                <th>answer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ce">2</td>
+                <td class="ce">5</td>
+                <td class="ce">[2,4,6,8,10]</td>
+              </tr>
+              <tr>
+                <td class="ce">4</td>
+                <td class="ce">3</td>
+                <td class="ce">[4,8,12]</td>
+              </tr>
+              <tr>
+                <td class="ce">-4</td>
+                <td class="ce">2</td>
+                <td class="ce">[-4, -8]</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <br />
+          <p class="t_box">
+            🍙 입출력 예 설명<br /><br />
+            "try hello world"는 세 단어 "try", "hello", "world"로 구성되어 있습니다.
+            각 단어의 짝수번째 문자를 대문자로, 홀수번째 문자를 소문자로 바꾸면 "TrY", "HeLlO", "WoRlD"입니다.
+            따라서 "TrY HeLlO WoRlD" 를 리턴합니다.
+            </p> -->
+          <hr />
+          <h3 class="t_tit2">⏳ 문제 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(x, n) {
+    var answer = [];
+    for (let i = 1; i <= n; i++) {
+        answer.push(x*i)
+    }
+    return answer;
+}
+</code></pre>
+          </div>
+          <br />
+        <p class="t_desc">
+            x의 배수로 구성된 배열을 구성해줍니다.
+        </p>
+          <hr />
+          <h3 class="t_tit2">👀 다른 사람의 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(x, n) {
+    return Array(n).fill(x).map((v, i) => (i + 1) * v)
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            이게 한줄로도 가능하네요..
+          </p>
+          <div class="t_link">
+            <a
+              href="https://school.programmers.co.kr/learn/courses/30/lessons/12954"
+              >문제 풀기</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+      <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
