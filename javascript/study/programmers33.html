@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로그래머스 1단계</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <div class="main_menu">
+        <div class="document">
+          <h2 class="t_tit">✔ 프로그래머스 1단계 : 나머지가 1이 되는 수 찾기</h2>
+          <p class="t_box">코팅테스트 연습 > 연습문제 > 나머지가 1이 되는 수 찾기</p>
+          <hr />
+          <!-- 구간나눔 -->
+
+          <h4 class="t_tit3">❓ 문제 설명</h4>
+          <p class="t_desc2">
+            자연수 n이 매개변수로 주어집니다. n을 x로 나눈 나머지가 1이 되도록 하는 가장 작은 자연수 x를 return 하도록 solution 함수를 완성해주세요.<br>
+            답이 항상 존재함은 증명될 수 있습니다.
+        </p>
+
+          <h4 class="t_tit3">❗ 제한 조건</h4>
+          <p class="t_desc2">
+            3 ≤ n ≤ 1,000,000          
+            </p>
+          <h4 class="t_tit3">🍖 입출력 예</h4>
+          <table class="t_table">
+            <thead>
+              <tr>
+                <th>n</th>
+                <th>result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ce">10</td>
+                <td class="ce">3</td>
+              </tr>
+              <tr>
+                <td class="ce">12</td>
+                <td class="ce">11</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <p class="t_box">
+            🍙 입출력 예 설명<br /><br />
+            입출력 예 #1<br><br>
+            10을 3으로 나눈 나머지가 1이고, 3보다 작은 자연수 중에서 문제의 조건을 만족하는 수가 없으므로, 3을 return 해야 합니다.
+            
+            입출력 예 #2<br>
+            12를 11로 나눈 나머지가 1이고, 11보다 작은 자연수 중에서 문제의 조건을 만족하는 수가 없으므로, 11을 return 해야 합니다.
+            </p>
+          <hr />
+          <h3 class="t_tit2">⏳ 문제 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(n) {
+    for(let i = 2; i&lt;n;i++)
+        if(n%i==1) return i 
+}
+</code></pre>
+          </div>
+          <br />
+        <p class="t_desc">
+          2부터 시작해서 for문을 돌리며 나머지가 1이되는 수를 찾아줍니다.
+        </p>
+          <hr />
+          <h3 class="t_tit2">👀 다른 사람의 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(n, x = 1) {    
+    while (x++) {
+        if (n % x === 1) {
+            return x;
+        }
+    }    
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+           다른분은 while문으로 돌렸네요.
+          </p>
+          <div class="t_link">
+            <a
+              href="https://school.programmers.co.kr/learn/courses/30/lessons/87389"
+              >문제 풀기</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+      <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로그래머스 1단계</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <div class="main_menu">
+        <div class="document">
+          <h2 class="t_tit">✔ 프로그래머스 1단계 : 부족한 금액 계산하기</h2>
+          <p class="t_box">코팅테스트 연습 > 연습문제 > 부족한 금액 계산하기</p>
+          <hr />
+          <!-- 구간나눔 -->
+
+          <h4 class="t_tit3">❓ 문제 설명</h4>
+          <p class="t_desc2">
+            새로 생긴 놀이기구는 인기가 매우 많아 줄이 끊이질 않습니다. 이 놀이기구의 원래 이용료는 price원 인데, 놀이기구를 N 번 째 이용한다면 원래 이용료의 N배를 받기로 하였습니다. 즉, 처음 이용료가 100이었다면 2번째에는 200, 3번째에는 300으로 요금이 인상됩니다.
+            놀이기구를 count번 타게 되면 현재 자신이 가지고 있는 금액에서 얼마가 모자라는지를 return 하도록 solution 함수를 완성하세요.
+            단, 금액이 부족하지 않으면 0을 return 하세요.
+        </p>
+
+          <h4 class="t_tit3">❗ 제한사항</h4>
+          <p class="t_desc2">
+            놀이기구의 이용료 price : 1 ≤ price ≤ 2,500, price는 자연수
+            처음 가지고 있던 금액 money : 1 ≤ money ≤ 1,000,000,000, money는 자연수
+            놀이기구의 이용 횟수 count : 1 ≤ count ≤ 2,500, count는 자연수         
+            </p>
+          <h4 class="t_tit3">🍖 입출력 예</h4>
+          <table class="t_table">
+            <thead>
+              <tr>
+                <th>price</th>
+                <th>money</th>
+                <th>count</th>
+                <th>result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ce">3</td>
+                <td class="ce">20</td>
+                <td class="ce">4</td>
+                <td class="ce">10</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <p class="t_box">
+            🍙 입출력 예 설명<br /><br />
+            입출력 예 #1<br><br>
+            이용금액이 3인 놀이기구를 4번 타고 싶은 고객이 현재 가진 금액이 20이라면, 총 필요한 놀이기구의 이용 금액은 30 (= 3+6+9+12) 이 되어 10만큼 부족하므로 10을 return 합니다.            
+            <!-- 입출력 예 #2<br>
+            12를 11로 나눈 나머지가 1이고, 11보다 작은 자연수 중에서 문제의 조건을 만족하는 수가 없으므로, 11을 return 해야 합니다. -->
+            </p>
+          <hr />
+          <h3 class="t_tit2">⏳ 문제 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(price, money, count) {
+    let result = "";
+    let sumPrice = 0;
+    
+    for(let i = 1; i <= count; i++) {
+        sumPrice += price * i;   
+    }
+    if(sumPrice <= money) {
+        result = 0;
+    } else if(sumPrice > money) {
+        result = sumPrice - money;
+    }
+    return result;
+}
+</code></pre>
+          </div>
+          <br />
+        <p class="t_desc">
+            먼저 누적되는 합을 구해 담을 수 있는 sumPrice를 선언해줍니다.<br>
+            for문을 활용하여 count만큼 순회하며 price에 i를 곱한 값을 먼저 선언 해 둔 sumPrice에 담습니다.<br>
+            이 때 fot문에서 선언하는 i값은 1부터 시작해야 count값만큼만 순회할 수 있습니다.<br>
+            이후 for문 밖에서 if문을 활용해 sumPrice가 money보다 작거나 같은 경우에는 result에 0을 담고<br>
+            큰 경우는 else if로 조건을 넣어 result에 sumPrice에서 money를 뺀 값을 담습니다.<br>
+            if문 밖에서 result를 return하면 끝입니다.
+        </p>
+          <hr />
+          <h3 class="t_tit2">👀 다른 사람의 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(price, money, count) {
+    let answer = 0;
+
+    for (let i = 1; i <= count; i++) {
+        answer += price * i;
+    }
+
+    return answer > money ? answer - money : 0;
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+           제 풀이와 비슷하지만 삼항연산자를 쓰셨네요
+          </p>
+          <div class="t_link">
+            <a
+              href="https://school.programmers.co.kr/learn/courses/30/lessons/82612"
+              >문제 풀기</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+      <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
