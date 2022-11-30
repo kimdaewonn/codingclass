@@ -1,34 +1,45 @@
 @font-face {
-  font-family: "Migrabold-basic";
+  font-family: "Migra-Extrabold";
   font-weight: 800;
   font-style: normal;
-  src: url("../fonts/Migra\ Extrabold\ 800.otf") format("opentype");
+  src:url("../fonts/Migra-Extrabold.woff") format("woff"),
+  url("../fonts/Migra-Extrabold.woff2") format("woff2"),
+  url("../fonts/Migra-Extrabold.ttf") format("ttf"),
+  url("../fonts/Migra-Extrabold.eot") format("eot");
   font-display: swap;
 }
 @font-face {
-  font-family: "Migralight-basic";
+  font-family: "Migra-Extralight";
   font-weight: 200;
   font-style: normal;
-  src: url("../fonts/Migra\ Extralight\ 200.otf") format("opentype");
+  src: url("../fonts/Migra-Extralight.woff") format("woff"),
+  url("../fonts/Migra-Extralight.woff2") format("woff2"),
+  url("../fonts/Migra-Extralight.ttf") format("ttf"),
+  url("../fonts/Migra-Extralight.eot") format("eot");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Migrabold-Italic";
+  font-family: "MigraItalic-ExtraboldItalic";
   font-weight: 800;
   font-style: normal;
-  src: url("../fonts/Migra\ Italic\ Extrabold\ Italic\ 800.otf")
-    format("opentype");
+  src:url("../fonts/MigraItalic-ExtraboldItalic.woff") format("woff"),
+  url("../fonts/MigraItalic-ExtraboldItalic.woff2") format("woff2"),
+  url("../fonts/MigraItalic-ExtraboldItalic.ttf") format("ttf"),
+  url("../fonts/MigraItalic-ExtraboldItalic.eot") format("eot");
   font-display: swap;
 }
 @font-face {
-  font-family: "Migralight-Italic";
+  font-family: "MigraItalic-ExtralightItalic";
   font-weight: 200;
   font-style: normal;
-  src: url("../fonts/Migra\ Italic\ Extralight\ Italic\ 200.otf")
-    format("opentype");
+  src: url("../fonts/MigraItalic-ExtralightItalic.woff") format("woff"),
+  url("../fonts/MigraItalic-ExtralightItalic.woff2") format("woff2"),
+  url("../fonts/MigraItalic-ExtralightItalic.ttf") format("ttf"),
+  url("../fonts/MigraItalic-ExtralightItalic.eot") format("eot");
   font-display: swap;
 }
+
 
 @font-face {
   font-family: "NexonLv2Gothic";
