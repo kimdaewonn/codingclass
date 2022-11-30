@@ -1,0 +1,72 @@
+#header {
+  height: 100vh;
+  color: #fff;
+  position: relative;
+  background: #000;
+}
+.header__background {
+  width: 869px;
+  height: 833px;
+  left: 530px;
+  top: 200px;
+  position: absolute;
+}
+.header__inner {
+  position: relative;
+}
+.menu {
+  font-size: 30px;
+  position: absolute;
+  right: 45px;
+  top: 30px;
+  font-family: "NexonLv2Gothic";
+  font-weight: bold;
+}
+.icon_P {
+  margin-left: 123px;
+  padding-top: 50px;
+}
+.header__logo img {
+  width: 97px;
+  height: 93px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+.header__img {
+}
+.header__img img:nth-child(1) {
+  position: absolute;
+  top: 104px;
+  left: 20px;
+  width: 395px;
+  height: 300px;
+}
+.header__img img:nth-child(2) {
+  position: absolute;
+  top: 116px;
+  left: 330px;
+  width: 1581px;
+  height: 727px;
+}
+.header__img img:nth-child(3) {
+  position: absolute;
+  top: 555px;
+  right: 450px;
+  width: 2407px;
+  height: 570px;
+}
+.header__img img:nth-child(4) {
+  position: absolute;
+  top: 470px;
+  right: 110px;
+  width: 210px;
+  height: 261px;
+}
+.header__img img:nth-child(5) {
+  position: absolute;
+  top: 700px;
+  right: 20px;
+  width: 380px;
+  height: 551px;
+}
