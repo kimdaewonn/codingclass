@@ -18,11 +18,17 @@
     color: #fff;
     background: #5D8CF3;
 }
-.sec3_top img {
+.sec3_top img:nth-child(2) {
     width: 15vw;
     position: absolute;
     left: 60%;
     top: 24%;
+}
+.sec3_top img:nth-child(3) {
+    width: 65vw;
+    position: absolute;
+    left: -30%;
+    top: 10%;
 }
 .list {
     background: #00006B;
@@ -248,7 +254,7 @@
 .site_right_hand img {
     width: 60vw;
     right: 0;
-    top: -50%;
+    top: -60%;
     position: absolute;
     
 }
@@ -266,3 +272,58 @@
     font-size: 1.8vw;
     padding: 20px 30px;
 }
+.react {
+    display: flex;
+    flex-direction: column;
+    margin-top: 300px;
+}
+.react .react_img {
+    position: relative;
+
+}
+.react .react_img .react_h {
+    position: absolute;
+    top: -17%;
+    left: 15.5%;
+    color: #fff;
+    font-size: 8vw;
+    line-height: 0.8;
+    z-index: 1;
+}
+.react .react_img img {
+    width: 65vw;
+    float: right;
+}
+.react .react_flex {
+    display: flex;
+}
+.react .react_flex .react_p {
+    font-size: 1vw;
+    font-family: 'NexonLv2Gothic';
+    line-height: 1.4;
+    font-weight: 300;
+    margin-top: 50px;
+    margin-left: 200px;
+}
+.react .react_flex .react_view_btn {
+    display: flex;
+    color: #fff;
+    margin-top: 50px;
+    position: relative;
+    justify-content: flex-end;
+    margin-left: 200px;
+}
+.react .react_flex .react_view_btn div:nth-child(1) {
+    background: #000C42;
+    border-radius: 50%;
+    font-size: 1.8vw;
+    padding: 20px 30px;
+    margin-right: 20px;
+}
+.react .react_flex .react_view_btn div:nth-child(2) {
+    background: #000C42;
+    border-radius: 50%;
+    font-size: 1.8vw;
+    padding: 20px 30px;
+}
+/* 안되겟지? div:nth가맞겟지 */
