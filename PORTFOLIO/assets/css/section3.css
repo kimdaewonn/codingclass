@@ -138,18 +138,8 @@
 .site_img {
 }
 .site_img .img1 {
-    position: absolute;
-    width: 65vw;
-    right: 0;
-    top: 0;
 }
-.site_img .img2 {
-    position: absolute;
-    width: 100vw;
-    left: -40%;
-    top: 70%;
-}
-.web_standard {
+/* .web_standard {
     font-size: 8vw;
     line-height: 0.9;
     color: #fff;
@@ -157,31 +147,122 @@
     margin-left: 100px;
     position: relative;
     z-index: 1;
+} */
+.standard {
+    display: flex;
+    flex-direction: column;
+    margin-top: 300px;
+}
+.web_standard_img {
+    position: relative;
+
+}
+.web_standard_img img {
+    width: 65vw;
+    float: right;
 }
 .web_standard_p {
     font-size: 1vw;
     font-family: 'NexonLv2Gothic';
     line-height: 1.4;
     font-weight: 300;
-    margin-left: 100px;
-    margin-top: 270px;
+    margin-top: 50px;
+    margin-left: 200px;
 }
-.view_btn {
+.web_standard_h {
+    position: absolute;
+    top: -16%;
+    left: 15.5%;
+    color: #fff;
+    font-size: 8vw;
+    line-height: 0.8;
+    z-index: 1;
+}
+
+
+.standard_view_btn {
     display: flex;
     color: #fff;
-    margin-top: 100px;
+    margin-top: 150px;
     justify-content: flex-end;
+    margin-right: 200px;
+    position: relative;
 }
-.view_btn div:nth-child(1){
-    background: #000C42;
-    border-radius: 50%;
-    font-size: 2vw;
-    padding: 20px 40px;
+.site_left_hand img {
+    width: 60vw;
+    left: 0;
+    top: -50%;
+    position: absolute;
     
 }
-.view_btn div:nth-child(2){
+.standard_view_btn div:nth-child(1){
     background: #000C42;
     border-radius: 50%;
-    font-size: 2vw;
-    padding: 20px 40px;
+    font-size: 1.8vw;
+    padding: 20px 30px;
+    margin-right: 20px;
+    
+}
+.standard_view_btn div:nth-child(2){
+    background: #000C42;
+    border-radius: 50%;
+    font-size: 1.8vw;
+    padding: 20px 30px;
+}
+
+.responsive {
+    display: flex;
+    margin-top: 300px;
+}
+.responsive_img  {
+    position: relative;
+}
+.responsive_img img {
+    width: 65vw;
+}
+.responsive_p {
+    font-size: 1vw;
+    font-family: 'NexonLv2Gothic';
+    line-height: 1.4;
+    font-weight: 300;
+    margin-left: 30px;
+    margin-top: 100px;
+}
+.responsive_h {
+    position: absolute;
+    top: -16%;
+    right: -50%;
+    color: #000C42;
+    font-size: 8vw;
+    line-height: 0.8;
+    z-index: 1;
+}
+.responsive_view_btn {
+    display: flex;
+    color: #fff;
+    margin-top: 150px;
+    position: relative;
+    /* justify-content: flex-end; */
+    margin-left: 200px;
+}
+.site_right_hand img {
+    width: 60vw;
+    right: 0;
+    top: -50%;
+    position: absolute;
+    
+}
+.responsive_view_btn div:nth-child(1){
+    background: #000C42;
+    border-radius: 50%;
+    font-size: 1.8vw;
+    padding: 20px 30px;
+    margin-right: 20px;
+    
+}
+.responsive_view_btn div:nth-child(2){
+    background: #000C42;
+    border-radius: 50%;
+    font-size: 1.8vw;
+    padding: 20px 30px;
 }
