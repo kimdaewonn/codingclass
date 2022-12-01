@@ -1,70 +1,17 @@
+/* header */
 #header {
-  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+#header h1 {
   color: #fff;
-  background: #000;
-  position: relative;
-  z-index: -2;
-}
-.header_background {
-  background-image: url(/assets/img/header_background.png);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 100vw;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center center;
-  /* background-size: contain; */
-  z-index: -1;
-}
-.left_leg {
-  background-image: url(/assets/img/left_leg.png);
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: 50%;
-  left: -45%;
-}
-.right_leg {
-  background-image: url(/assets/img/right_leg.png);
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: -20%;
-  right: -30%;
-}
-.header_top {
-  display: flex;
-  padding: 20px 0 0 20px;
-}
-.header_logo {
-  margin-right: 10px;
-  
-}
-.logo_h {
-  line-height: 1;
-  margin-top: 30px;
-  
-}
-.menu {
-  margin-left: auto;
-  margin-right: 45px;
-  margin-top: 10px;
-  font-family: 'NexonLv2Gothic';
-  font-weight: bold;
-  font-size: 30px;
-}
-.header_center {
-  font-size: 200px;
-  text-align: center;
-  /* align-items: center;
-  vertical-align: middle; */
-  margin-top: 170px;
+  font-size: 14px;
   line-height: 0.9;
-
+  font-family: 'Migra-Extrabold';
+  margin-top: 5px;
+  padding: 20px 20px 20px 70px;
+  background: url(../img/logo.png) no-repeat;
+  background-size: contain;
 }

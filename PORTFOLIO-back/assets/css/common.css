@@ -1,12 +1,12 @@
 
 /* 컨테이너 */
-/* .container {
+.container {
   width: 100%;
   margin: 0 auto;
   max-width: 1920px;
   font-size: 21px;
   font-family: 'Migra-Extrabold';
-} */
+}
 /* 섹션 공통요소 */
 /* 폰트 */
 .nexon {
@@ -24,7 +24,7 @@ body.fixed {
   height: 100vh;
   overflow: hidden;
 }
-/* .scrollTop {
+.scrollTop {
   position: fixed;
   top: 50%;
   width: 100px;
@@ -35,9 +35,9 @@ body.fixed {
   text-align: center;
   line-height: 40px;
   z-index: 10000;
-} */
+}
 /* 마우스 */
-/* .mouse__cursor {
+.mouse__cursor {
   position: absolute;
   left: 0;
   top: 0;
@@ -63,4 +63,4 @@ body.fixed {
   user-select: none;
   pointer-events: none;
   transition: transform 0.3s, opacity 0.2s;
-} */
+}
