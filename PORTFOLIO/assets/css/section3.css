@@ -4,86 +4,184 @@
     overflow: hidden;
     position: relative;
     color: #000C42;
+    font-family: 'Migra-Extrabold';
+}
+.sec3 {
 }
 .sec3_top {
+    position: relative;
 }
 .sec3_top .work {
-    font-size: 30vw;
+    font-size: 25vw;
     text-align: right;
     font-family: 'Migra-Extrabold';
     color: #fff;
     background: #5D8CF3;
 }
-.sec3 {
-    position: relative;
-}
-.sec3 img:nth-child(1) {
+.sec3_top img {
+    width: 15vw;
     position: absolute;
-    right: 29%;
-    bottom: 30%;
-    width: 20vw;
-}
-.sec3 img:nth-child(2) {
-    position: absolute;
-    right: 2%;
-    bottom: -30%;
-    width: 5vw;
-}
-.sec3 img:nth-child(3) {
-    position: absolute;
-    right: 7%;
-    bottom: -30%;
-    width: 5vw;
-}
-.sec3 img:nth-child(4) {
-    position: absolute;
-    right: 12%;
-    bottom: -30%;
-    width: 5vw;
-}
-.sec3 img:nth-child(5) {
-    position: absolute;
-    right: 17%;
-    bottom: -30%;
-    width: 5vw;
-}
-.sec3 img:nth-child(6) {
-    position: absolute;
-    right: 22%;
-    bottom: -30%;
-    width: 5vw;
-}
-.sec3 img:nth-child(7) {
-    position: absolute;
-    right: 27%;
-    bottom: -30%;
-    width: 5vw;
-}
-.sec3 img:nth-child(8) {
-    position: absolute;
-    right: 32%;
-    bottom: -30%;
-    width: 5vw;
-}
-.sec3 img:nth-child(9) {
-    position: absolute;
-    right: 37%;
-    bottom: -30%;
-    width: 5vw;
-}
-.sec3 img:nth-child(10) {
-    position: absolute;
-    right: 42%;
-    bottom: -30%;
-    width: 5vw;
-}
- img:nth-child(11) {
-    position: absolute;
-    right: 47%;
-    bottom: -30%;
-    width: 5vw;
+    left: 60%;
+    top: 24%;
 }
 .list {
     background: #00006B;
-    height: 900px;
+    height: 600px;
+    position: relative;
+}
+.list img:nth-child(1) {
+    width: 5vw;
+    position: absolute;
+    right: 1%;
+    top: 1%;
+}
+.list img:nth-child(2) {
+    width: 5vw;
+    position: absolute;
+    right: 6%;
+    top: 1%;
+}
+.list img:nth-child(3) {
+    width: 5vw;
+    position: absolute;
+    right: 11%;
+    top: 1%;
+}
+.list img:nth-child(4) {
+    width: 5vw;
+    position: absolute;
+    right: 16%;
+    top: 1%;
+}
+.list img:nth-child(5) {
+    width: 5vw;
+    position: absolute;
+    right: 21%;
+    top: 1%;
+}
+.list img:nth-child(6) {
+    width: 5vw;
+    position: absolute;
+    right: 26%;
+    top: 1%;
+}
+.list img:nth-child(7) {
+    width: 5vw;
+    position: absolute;
+    right: 31%;
+    top: 1%;
+}
+.list img:nth-child(8) {
+    width: 5vw;
+    position: absolute;
+    right: 36%;
+    top: 1%;
+}
+.list img:nth-child(9) {
+    width: 5vw;
+    position: absolute;
+    right: 41%;
+    top: 1%;
+}
+.list img:nth-child(10) {
+    width: 5vw;
+    position: absolute;
+    right: 46%;
+    top: 1%;
+}
+.list_num {
+    padding-top: 250px;
+    display: flex;
+    font-size: 25vw;
+    color: #C23F1F;
+    font-family: 'Migra-Extrabold';
+    text-align: center;
+    justify-content: space-around;
+}
+.list_num .num1::before {
+    white-space: pre;
+    content: 'SITE \a CODING ';
+    text-align: left;
+    font-size: 5vw;
+    color: #fff;
+    position: absolute;
+    top: 60%;
+    left: 8%;
+    line-height: 0.9;
+}
+.list_num .num2::before {
+    /* white-space: pre; */
+    content: 'JAVASCRIPT';
+    text-align: left;
+    font-size: 5vw;
+    color: #fff;
+    position: absolute;
+    top: 64%;
+    left: 36%;
+    line-height: 0.9;
+}
+.list_num .num3::before {
+    white-space: pre;
+    content: 'TEAM \a PROJECT ';
+    text-align: right;
+    font-size: 5vw;
+    color: #fff;
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    line-height: 0.9;
+}
+/* web */
+.site_coding {
+    position: relative;
+}
+.site_img {
+}
+.site_img .img1 {
+    position: absolute;
+    width: 65vw;
+    right: 0;
+    top: 0;
+}
+.site_img .img2 {
+    position: absolute;
+    width: 100vw;
+    left: -40%;
+    top: 70%;
+}
+.web_standard {
+    font-size: 8vw;
+    line-height: 0.9;
+    color: #fff;
+    margin-top: 200px;
+    margin-left: 100px;
+    position: relative;
+    z-index: 1;
+}
+.web_standard_p {
+    font-size: 1vw;
+    font-family: 'NexonLv2Gothic';
+    line-height: 1.4;
+    font-weight: 300;
+    margin-left: 100px;
+    margin-top: 270px;
+}
+.view_btn {
+    display: flex;
+    color: #fff;
+    margin-top: 100px;
+    justify-content: flex-end;
+}
+.view_btn div:nth-child(1){
+    background: #000C42;
+    border-radius: 50%;
+    font-size: 2vw;
+    padding: 20px 40px;
+    
+}
+.view_btn div:nth-child(2){
+    background: #000C42;
+    border-radius: 50%;
+    font-size: 2vw;
+    padding: 20px 40px;
 }
