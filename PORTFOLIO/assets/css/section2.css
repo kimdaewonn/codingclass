@@ -1,6 +1,6 @@
 /* section2 */
 #section2 {
-    height: 2350px;
+    height: 3300px;
     background: #000;
     overflow: hidden;
     position: relative;
@@ -8,7 +8,6 @@
 }
 .sec2 {
 }
-
 @keyframes marquee {
     0% {
         left: 0;
@@ -42,7 +41,6 @@
     margin-left: -82vw;
 }
 .load span {
-    color: #fff;
     font-size: 30vw;
     font-family: 'Migra-Extrabold';
     white-space: nowrap;
@@ -72,6 +70,7 @@
     position: absolute;
     left: 77%; bottom: 0%;
     width: 20vw;
+    z-index: 1;
 }
 .sec2 .img .img6 {
     position: absolute;
@@ -109,6 +108,7 @@
     font-family: 'NexonLv2Gothic';
     line-height: 1.4;
     font-weight: 300;
+    
 }
 .about_p1 .ocean1 {
     width: 65vw;
@@ -118,12 +118,14 @@
     left: 0%;
     top: 60%;
     width: 100vw; 
+    z-index: 1;
 }
 .about_p1 .about_left_hand img:nth-child(2) {
     position: absolute;
     left: 45%;
     top: 80%;
     width: 18vw; 
+    z-index: 2;
 }
 
 .about_p2 {
