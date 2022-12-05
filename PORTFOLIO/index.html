@@ -2,13 +2,13 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PORTFOLIO</title>
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    
     <header id="header">
         <h1>
             <div class="logo_text">
@@ -21,16 +21,39 @@
 
     <main id="main">
         <section id="section1">
-            <div class="sec1">
-                <div class="main_text">
-                    <div>FRONTAND</div>
-                    <div>DEVELOPER</div>
-                </div>
-                <div class="img" aria-label="hidden">
-                    <img class="img1" src="assets/img/right_leg.png" alt="오른다리">
-                    <img class="img2" src="assets/img/left_leg.png" alt="왼다리">
-                </div>
+    <div class="scrollTop">0</div>
+
+        <div class="sec1">
+            <div 
+            class="main_text fixed">
+                <div>FRONTAND</div>
+                <div>DEVELOPER</div>
             </div>
+            <div class="img" aria-label="hidden">
+                <img class="img1 fixed"
+                data-0="transform: translate(120%, 10%) scale(0);"
+                data-10="transform: translate(80%, 15%) scale(1);"
+                data-20="transform: translate(70%, 20%) scale(1);"
+                data-30="transform: translate(60%, 25%) scale(1);"
+                data-40="transform: translate(50%, 30%) scale(1);"
+                data-50="transform: translate(40%, 35%) scale(1);"
+                data-60="transform: translate(30%, 40%) scale(1);"
+                data-70="transform: translate(20%, 45%) scale(1);"
+                data-80="transform: translate(20%, 45%) scale(1) rotate(20deg);"
+                data-90="transform: translate(20%, 45%) scale(1) rotate(40eg);"
+                src="assets/img/right_leg.png" alt="오른다리">
+                <img class="img2 fixed"
+                data-0="transform: translate(-120%, 45%) scale(0);"
+                data-10="transform: translate(-80%, 40%) scale(1);"
+                data-20="transform: translate(-70%, 35%) scale(1);"
+                data-30="transform: translate(-60%, 30%) scale(1);"
+                data-40="transform: translate(-50%, 25%) scale(1);"
+                data-50="transform: translate(-40%, 20%) scale(1);"
+                data-60="transform: translate(-30%, 15%) scale(1);"
+                data-70="transform: translate(-20%, 10%) scale(1);"
+                src="assets/img/left_leg.png" alt="왼다리">
+            </div>
+        </div>
         </section>
         <!-- //section1 -->
 
