@@ -18,7 +18,8 @@
     font-size: 8vw;
     line-height: 0.9;
 }
-.sec1 .img {}
+.sec1 .img {
+}
 .sec1 .img .img1 {
     position: absolute;
     right: 0; bottom: 50%;
