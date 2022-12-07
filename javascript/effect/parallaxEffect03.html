@@ -826,7 +826,7 @@
 
               // top 버튼
               document.querySelector("#parallax__top").addEventListener("click", () => {
-                window.scrollTo({left:0, top:0, behavior:"smooth"});
+                window.scrollTop({left:0, top:0, behavior:"smooth"});
               });
               // 소수점 제거
               document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);

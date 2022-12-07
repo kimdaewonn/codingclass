@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로그래머스 1단계</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <div class="main_menu">
+        <div class="document">
+          <h2 class="t_tit">✔ 프로그래머스 1단계 : 소수 찾기</h2>
+          <p class="t_box">코팅테스트 연습 > 연습문제 > 소수 찾기</p>
+          <hr />
+          <!-- 구간나눔 -->
+
+          <h4 class="t_tit3">❓ 문제 설명</h4>
+          <p class="t_desc2">
+            1부터 입력받은 숫자 n 사이에 있는 소수의 개수를 반환하는 함수, solution을 만들어 보세요.<br>
+            소수는 1과 자기 자신으로만 나누어지는 수를 의미합니다.<br>
+            (1은 소수가 아닙니다.)
+          </p>
+
+          <h4 class="t_tit3">❗ 제한 조건</h4>
+          <p class="t_desc2">
+            n은 2이상 1000000이하의 자연수입니다.
+          </p>
+          <h4 class="t_tit3">🍖 입출력 예</h4>
+          <table class="t_table">
+            <thead>
+              <tr>
+                <th>n</th>
+                <th>result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ce">10</td>
+                <td class="ce">4</td>
+              </tr>
+              <tr>
+                <td class="ce">5</td>
+                <td class="ce">3</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <p class="t_box">
+            🍙 입출력 예 설명<br /><br />
+            입출력 예 #1<br />
+            1부터 10 사이의 소수는 [2,3,5,7] 4개가 존재하므로 4를 반환<br>
+            입출력 예 #2<br />
+            1부터 5 사이의 소수는 [2,3,5] 3개가 존재하므로 3를 반환
+          </p>
+          <hr />
+          <h3 class="t_tit2">⏳ 문제 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(n) {
+    let answer = 0;
+    const arr = new Array(n+1).fill(true);
+      
+    for(let i = 2; i &lt;= n; ++i){
+        if(arr[i] === false){
+            continue; 
+        }
+        for(let k = i * 2; k &lt;= n; k += i){
+            arr[k] = false;
+        }
+    }
+    for(let i = 2; i &lt;= n; ++i){
+        if(arr[i] === true){
+            answer++;
+        }
+    }
+    return answer;
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            2부터 소수를 구하고자 하는모든 수를 나열합니다<br>
+            2는 소수이니 써줍니다.<br>
+            자기 자신을 제외한 2의 배수를 모두지웁니다.<br>
+            이과정을 반복하면 남는게 소수가 됩니다.
+          </p>
+          <hr />
+          <h3 class="t_tit2">👀 다른 사람의 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(n){
+    let s= [...Array(n).keys()]
+    // console.log(s);
+    s[0]=0
+    for(let i=2; i<=parseInt(n**.5)+1;i++){
+    // console.log(i);
+
+    for (let j=2 ; j<=(n-i)/i+1; j++){
+        s[i*j-1]=0
+    }
+    }
+    return s.filter(x=>Boolean(x)).length;
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            참신한 풀이법이라 가져왔습니다.
+          </p>
+          <div class="t_link">
+            <a
+              href="https://school.programmers.co.kr/learn/courses/30/lessons/12921"
+              >문제 풀기</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+      <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

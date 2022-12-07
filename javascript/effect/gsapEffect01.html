@@ -136,10 +136,10 @@
         // gsap.to(".square", {y: 500, duration: 2, rotation: 0, skewY: 3, borderRadius: 100, delay: 2})
         // gsap.to(".square", {x: 0, duration: 2, rotation: 300, skewY: 1, width: 400, delay: 4})
         // gsap.to(".square", {y: 0, duration: 2, rotation: 0, width: 200, delay: 6})
-        
+   
         // 타임라인 사용법
         // tl.to 한번 쓰면 그 다음부터는 '.to'만 써도 됨, delay를 쓰지 않아도 된다는 장점
-        // ease:elastic
+         // ease:"elastic",
         const tl = gsap.timeline({repeat: 2, yoyo: true});
         tl.to(".square", {x: 1000, duration: 5, rotation: 300, skewY: 1,  borderRadius: 0})
         .to(".square", {y: 500, duration: 5, rotation: 0, skewY: 3,  borderRadius: 100})
