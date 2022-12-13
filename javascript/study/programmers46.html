@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로그래머스 0단계</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <div class="main_menu">
+        <div class="document">
+          <h2 class="t_tit">✔ 프로그래머스 0단계 : 분수의 덧셈</h2>
+          <p class="t_box">코딩테스트 연습 > 코딩테스트 입문 > 분수의 덧셈</p>
+          <hr />
+          <!-- 구간나눔 -->
+
+          <h4 class="t_tit3">❓ 문제 설명</h4>
+          <p class="t_desc2">
+            첫 번째 분수의 분자와 분모를 뜻하는 denum1, num1,두 번째 분수의 분자와 분모를 뜻하는 denum2, num2가 매개변수로 주어집니다.<br>
+            두 분수를 더한 값을 기약 분수로 나타냈을 때 분자와 분모를 순서대로 담은 배열을 return 하도록 solution 함수를 완성해보세요.
+          </p>
+
+          <h4 class="t_tit3">❗ 제한 사항</h4>
+          <p class="t_desc2">
+            0 &lt;denum1, num1, denum2, num2 &lt; 1,000
+          </p>
+          <h4 class="t_tit3">🍖 입출력 예</h4>
+          <table class="t_table">
+            <thead>
+              <tr>
+                <th>denum1</th>
+                <th>num1</th>
+                <th>denum2</th>
+                <th>num2</th>
+                <th>result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ce">1</td>
+                <td class="ce">2</td>
+                <td class="ce">3</td>
+                <td class="ce">4</td>
+                <td class="ce">[5,4]</td>
+              </tr>
+              <tr>
+                <td class="ce">9</td>
+                <td class="ce">2</td>
+                <td class="ce">1</td>
+                <td class="ce">3</td>
+                <td class="ce">[29,6]</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <p class="t_box">
+            🍙 입출력 예 설명<br /><br />
+            입출력 예 #1<br>
+            1 / 2 + 3 / 4 = 5 / 4입니다. 따라서 [5, 4]를 return 합니다.<br>
+            입출력 예 #2<br>
+            9 / 2 + 1 / 3 = 29 / 6입니다. 따라서 [29, 6]을 return 합니다.
+          </p>
+          <hr />
+          <h3 class="t_tit2">⏳ 문제 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(denum1, num1, denum2, num2) {
+  let top = denum1 * num2 + denum2 * num1;
+  // 분자 구하기
+  let bot = num1 * num2;
+  // 분모 구하기
+  
+  // 유클리드 호제법. 최대공약수 구하기
+  let a = top;
+  let b = bot;
+  while(a % b !== 0){
+      let r = a % b;
+      
+      if(r !== 0){
+          a = b;
+          b = r;
+      }
+  }
+  // 최대공약수로 나눠서 배열안에 넣어주기
+  return [top/b,bot/b]    
+}
+
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            1. 분자와 분모를 통분해서 구해줍니다.<br>
+            2. 최대 공약수를 구해줍니다.<br>
+            3. 최대공약수로 나눠서 배열 안에 넣어줍니다.<br>
+          </p>
+          <hr />
+          <h3 class="t_tit2">👀 다른 사람의 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function fnGCD(a, b){
+  return (a%b)? fnGCD(b, a%b) : b;
+}
+
+function solution(denum1, num1, denum2, num2) {
+  let denum = denum1*num2 + denum2*num1;
+  let num = num1 * num2;
+  let gcd = fnGCD(denum, num); //최대공약수
+
+  return [denum/gcd, num/gcd];
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            최대 공약수를 구해서 푸신건 저와 같지만 깔끔하게 푸셨길래 가져왔습니다.
+          </p>
+          <div class="t_link">
+            <a
+              href="https://school.programmers.co.kr/learn/courses/30/lessons/120808"
+              >문제 풀기</a
+            >
+          </div>
+          <p class="t_desc">
+            0단계라 만만하게 봤는데 쉬운 분수를 코드로 표현하려니 뇌정지가 왔습니다<br>
+            오랜만에 들어보는 기약분수까지 쉽지않네요..<br>
+          </p>
+        </div>
+      </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+      <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

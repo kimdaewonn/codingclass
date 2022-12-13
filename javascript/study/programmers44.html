@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로그래머스 0단계</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <div class="main_menu">
+        <div class="document">
+          <h2 class="t_tit">✔ 프로그래머스 0단계 : 몫 구하기</h2>
+          <p class="t_box">코딩테스트 연습 > 코딩테스트 입문 > 몫 구하기</p>
+          <hr />
+          <!-- 구간나눔 -->
+
+          <h4 class="t_tit3">❓ 문제 설명</h4>
+          <p class="t_desc2">
+            정수 num1, num2가 매개변수로 주어질 때,<br>
+            num1을 num2로 나눈 몫을 return 하도록 solution 함수를 완성해주세요.
+          </p>
+
+          <h4 class="t_tit3">❗ 제한 조건</h4>
+          <p class="t_desc2">
+            0 < num1 ≤ 100<br>
+            0 < num2 ≤ 100
+          </p>
+          <h4 class="t_tit3">🍖 입출력 예</h4>
+          <table class="t_table">
+            <thead>
+              <tr>
+                <th>num1</th>
+                <th>num2</th>
+                <th>num3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ce">10</td>
+                <td class="ce">5</td>
+                <td class="ce">2</td>
+              </tr>
+              <tr>
+                <td class="ce">7</td>
+                <td class="ce">2</td>
+                <td class="ce">3</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <p class="t_box">
+            🍙 입출력 예 설명<br /><br />
+            입출력 예 #1<br>
+            num1이 10, num2가 5이므로 10을 5로 나눈 몫 2를 return 합니다.<br>
+            입출력 예 #2<br>
+            num1이 7, num2가 2이므로 7을 2로 나눈 몫 3을 return 합니다.
+          </p>
+          <hr />
+          <h3 class="t_tit2">⏳ 문제 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(num1, num2) {
+    let mo = Math.floor(num1 / num2)
+    return mo;
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            Math.floor 함수를 이용해서 나머지값을 버림해서 풀었습니다.
+          </p>
+          <hr />
+          <h3 class="t_tit2">👀 다른 사람의 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(num1, num2) {
+    return parseInt(num1 / num2);
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            정수를 출력하는 방법을 쓰셨네요.
+          </p>
+          <div class="t_link">
+            <a
+              href="https://school.programmers.co.kr/learn/courses/30/lessons/120805"
+              >문제 풀기</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+      <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
