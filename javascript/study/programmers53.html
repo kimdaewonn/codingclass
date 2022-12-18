@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로그래머스 0단계</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <div class="main_menu">
+        <div class="document">
+          <h2 class="t_tit">✔ 프로그래머스 0단계 : 배열의 평균값</h2>
+          <p class="t_box">코딩테스트 연습 > 코딩테스트 입문 > 배열의 평균값</p>
+          <hr />
+          <!-- 구간나눔 -->
+
+        <h4 class="t_tit3">❓ 문제 설명</h4>
+          <p class="t_desc2">
+            정수 배열 numbers가 매개변수로 주어집니다. numbers의 원소의 평균값을 return하도록 solution 함수를 완성해주세요.
+        <h4 class="t_tit3">❗ 제한 사항</h4>
+            <p class="t_desc2">
+                0 ≤ numbers의 원소 ≤ 1,000<br>
+                1 ≤ numbers의 길이 ≤ 100<br>
+                정답의 소수 부분이 .0 또는 .5인 경우만 입력으로 주어집니다.
+            </p>
+          <h4 class="t_tit3">🍖 입출력 예</h4>
+          <table class="t_table">
+            <thead>
+              <tr>
+                <th>numbers</th>
+                <th>result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ce">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</td>
+                <td class="ce">5.5</td>
+              </tr>
+              <tr>
+                <td class="ce">[89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]</td>
+                <td class="ce">94.0</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <p class="t_box">
+            🍙 입출력 예 설명<br /><br />
+            입출력 예 #1<br>
+
+            numbers의 원소들의 평균 값은 5.5입니다.<br>
+            입출력 예 #2<br>
+            
+            numbers의 원소들의 평균 값은 94.0입니다.
+         </p>
+          <hr />
+          <h3 class="t_tit2">⏳ 문제 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(numbers) {
+    let sum = 0;
+    for(let i =0; i&lt;numbers.length;i++){
+        sum += numbers[i]
+    }
+    let result = sum/numbers.length
+    return result
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            for문을 써서 배열을 합을 구하고 배열의 갯수로 나눠서 리턴해줬습니다. 
+          </p>
+          <hr />
+          <h3 class="t_tit2">👀 다른 사람의 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(numbers) {
+    var answer = 0;
+    for(i of numbers) {
+        answer += i
+    }
+    return answer / numbers.length;
+
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            같은 방법인데 for of를 사용했네요
+          </p>
+          <div class="t_link">
+            <a
+              href="https://school.programmers.co.kr/learn/courses/30/lessons/120817"
+              >문제 풀기</a
+            >
+          </div>
+          <!-- <p class="t_desc">
+            0단계라 만만하게 봤는데 쉬운 분수를 코드로 표현하려니 뇌정지가 왔습니다<br>
+            오랜만에 들어보는 기약분수까지 쉽지않네요..<br>
+          </p> -->
+        </div>
+      </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+      <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>

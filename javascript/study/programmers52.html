@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프로그래머스 0단계</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <main id="main">
+      <div class="main_menu">
+        <div class="document">
+          <h2 class="t_tit">✔ 프로그래머스 0단계 : 각도기</h2>
+          <p class="t_box">코딩테스트 연습 > 코딩테스트 입문 > 각도기</p>
+          <hr />
+          <!-- 구간나눔 -->
+
+        <h4 class="t_tit3">❓ 문제 설명</h4>
+          <p class="t_desc2">
+            각에서 0도 초과 90도 미만은 예각, 90도는 직각, 90도 초과 180도 미만은 둔각 180도는 평각으로 분류합니다.<br>
+            각 angle이 매개변수로 주어질 때 예각일 때 1, 직각일 때 2, 둔각일 때 3, 평각일 때 4를 return하도록 solution 함수를 완성해주세요.
+        <h4 class="t_tit3">❗ 제한 사항</h4>
+            <p class="t_desc2">
+                0 &lt; angle ≤ 180
+                angle은 정수입니다.
+            </p>
+          <h4 class="t_tit3">🍖 입출력 예</h4>
+          <table class="t_table">
+            <thead>
+              <tr>
+                <th>angle</th>
+                <th>result</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="ce">70</td>
+                <td class="ce">1</td>
+              </tr>
+              <tr>
+                <td class="ce">91</td>
+                <td class="ce">3</td>
+              </tr>
+              <tr>
+                <td class="ce">180</td>
+                <td class="ce">4</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <p class="t_box">
+            🍙 입출력 예 설명<br /><br />
+            입출력 예 #1<br>
+
+            angle이 70이므로 예각입니다. 따라서 1을 return합니다.<br>
+            입출력 예 #2<br>
+            
+            angle이 91이므로 둔각입니다. 따라서 3을 return합니다.<br>
+            입출력 예 #2<br>
+            
+            angle이 180이므로 평각입니다. 따라서 4를 return합니다.
+         </p>
+          <hr />
+          <h3 class="t_tit2">⏳ 문제 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(angle) {
+    if (0 &lt; angle && angle &lt; 90) {return 1}
+    else if (angle === 90) {return 2}
+    else if (90 &lt; angle && angle &lt; 180) {return 3}
+    else return 4;
+}
+
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            조건을 걸고 아니면 다음으로 넘겨서 리턴해줍니다.<br>
+            &&연산자 기호를 안썼다가 왜 안되지 하면서 한참동안 해맸네요..
+          </p>
+          <hr />
+          <h3 class="t_tit2">👀 다른 사람의 풀이</h3>
+          <div class="t_code">
+<pre><code class="language-js">function solution(angle) {
+    return [0, 90, 91, 180].filter(x => angle>=x).length;
+}
+</code></pre>
+          </div>
+          <br />
+          <p class="t_desc">
+            삼항연산자까지는 생각했는데 필터로 푸는방법이 있을 줄은 몰랐습니다.
+          </p>
+          <div class="t_link">
+            <a
+              href="https://school.programmers.co.kr/learn/courses/30/lessons/120829#"
+              >문제 풀기</a
+            >
+          </div>
+          <!-- <p class="t_desc">
+            0단계라 만만하게 봤는데 쉬운 분수를 코드로 표현하려니 뇌정지가 왔습니다<br>
+            오랜만에 들어보는 기약분수까지 쉽지않네요..<br>
+          </p> -->
+        </div>
+      </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+      <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
