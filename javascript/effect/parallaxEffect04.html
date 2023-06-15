@@ -763,6 +763,10 @@
 
             document.querySelectorAll(".content__item").forEach(item =>{
                 if(scrollTop > item.offsetTop - window.innerHeight/2){
+                    console.log( 'scroll',item.offsetTop);
+                    console.log( 'offset',item.offsetTop);
+                    console.log( 'window.innerHeight',window.innerHeight);
+                    
                     item.classList.add("show");
                 }
             });
