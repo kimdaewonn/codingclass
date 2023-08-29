@@ -719,6 +719,7 @@
                 const searchWord = e.innerText;
                 // console.log(e.value)
                 findProperty(searchWord);
+                // searchWord를 넣어보셈  findProperty에
             });
         })
 
@@ -726,11 +727,16 @@
         //속성 찾기
         function findProperty(search) {
             const targetData = cssProperty.find((data) => data.name === search)
+            // cssProperty배열의 데이터 중에 name속성의 값이  search인것을 찾아라?
+            console.log(search);
+            
+            
 
             if (targetData == null) {
                 searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요!";
                 return;
             }
+            
 
             searchDesc.textContent = targetData.desc;
         };

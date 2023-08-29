@@ -62,7 +62,7 @@
                     <span>z</span>
                 </div>
                 <div>전체 속성 갯수 : <span class="num">0</span></div>
-                <div><span class="search_num">0</span></div>
+                <div>찾은 갯수 : <span class="search_num">0</span></div>
             </div>
             <div class="search__list">
                 <div class="css">
@@ -1196,13 +1196,19 @@
         let count = 0;
 
          // 속성 갯수 설정하기
-         searchInfo.innerHTML = searchList.length;
-        currSearchInfo.innerHTML = `${searchList.length}`;
+        searchInfo.innerHTML = searchList.length;
+        // currSearchInfo.innerHTML = `${searchList.length}`;
 
         // 알파벳 해당하는 설명
         searchKeyword.forEach((el, idx) => {
+            console.log(el);
+            
+            
             el.addEventListener('click', (alpha) => {
+                
                 searchKeyword.forEach((del) => {
+                    // el = del
+                    
                     del.classList.remove('active');
                 });
                 let cnt = 0;
@@ -1212,7 +1218,7 @@
                 searchList.forEach(el => {
                     if(idx === 0) {
                         el.classList.remove('hide');
-                        currSearchInfo.innerHTML = `찾은 속성 갯수 : ${searchList.length}`;
+                        currSearchInfo.innerHTML = `찾은 속성 갯수 : ${searchList.length}개`;
                     }
 
                     else {
@@ -1220,6 +1226,8 @@
 
                         // 알파벳 첫글자 === css 속성의 첫글자
                         if (searchWord.charAt(0) === cssName.charAt(0)) {
+                            
+                            // 해당인덱스 문자 리턴
                             el.classList.remove('hide');
                         }
                         else {
@@ -1227,6 +1235,7 @@
                         }
 
                         if (!el.classList.value) {
+                            
                             cnt++;
                         }
                         if(!cnt) currSearchInfo.innerHTML = `${alpha.target.outerText}로 시작하는 속성은 없습니다.`;

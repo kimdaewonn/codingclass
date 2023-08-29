@@ -1159,11 +1159,13 @@
             searchList.forEach(el => {
                 const cssType = el.dataset.type;                         //CSS 유형 모든 값
                 const cssName = el.querySelector("strong").innerText;    //CSS 속성 모든 값
-
+                // strong안에있는내용으로바꿔줌
                 if(cssName.includes(searchWord) || cssType.includes(searchWord)){
                     el.classList.remove("hide");
+                    // 조건맞는거 보여주기
                 } else {
                     el.classList.add("hide");
+                    // 나머지 지우기
                 }
             });
 
