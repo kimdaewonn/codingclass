@@ -454,7 +454,10 @@
       let currentIndex = 0; //현재 보이는 이미지
       let sliderCount = slider.length; //이미지 갯수
       let sliderWidth = sliderImg.offsetWidth; //이미지 가로값
+      // border padding 포함 margin 포함x
       let sliderClone = sliderInner.firstElementChild.cloneNode(true); //첫번째 이미지 복사
+      // let clone  = sliderInner.firstElementChild
+      // <div class="slider"></div> 가져옴
       sliderInner.appendChild(sliderClone); //첫번째 이미지를 마지막에 넣어줌
 
       function sliderEffect() {
