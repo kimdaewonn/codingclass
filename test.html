@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+<<<<<<< HEAD
     .container {
       height: 5000px;
       background: #f5f5f5f5;
@@ -37,5 +38,74 @@
 
             });
   </script>
+=======
+/*반응형 테이블*/
+* reset.css */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*====================*/
+section {max-width:960px; margin:30px auto; padding:30px;}
+table {
+  width: 100%;
+}
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+th {
+  background: #f4f4f4;
+}
+.demo01 th {
+  width: 30%;
+  text-align: left;
+}
+
+@media only screen and (max-width:768px) {
+.demo01 {
+  margin: 0 -10px;
+}
+.demo01 th,  .demo01 td {
+  width: 100%;
+  display: block;
+  border-top: none;
+}
+.demo01 tr:first-child th {
+  border-top: 1px solid #ddd;
+}
+}
+ 
+	/*
+	Label the data
+	*/
+	#custom-responsive-table td:before { content: attr(data-title); }
+}
+  </style>
+</head>
+<body>
+  <section>
+    <table class="demo01">
+      <tr>
+        <th>CSS</th>
+        <td>Cascading Style Sheets(CSS, 캐스케이딩 스타일 시트, 스타일 시트)란... 생략</td>
+      </tr>
+      <tr>
+        <th>반응형 디자인</th>
+        <td>반응형 디자인(Responsive Web Design)이란... 생략</td>
+      </tr>
+    </table>
+  </section>
+<p>https://bootsnipp.com/snippets/featured/no-more-tables-respsonsive-table</p
+
+>>>>>>> 758aab640bf46c68c435d7a22658193e54170521
 </body>
 </html>

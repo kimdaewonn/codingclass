@@ -947,10 +947,14 @@
         //글씨 쪼개기(다중)
         descAll.forEach( desc => {
             let splitText = desc.innerText;
+            
             let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
-
+                // console.log(splitWrap);
             desc.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
+            console.log(splitWrap);
+            
             desc.setAttribute("aria-label",splitText);
+            //있어도 없어도그만
 
         }); 
 
