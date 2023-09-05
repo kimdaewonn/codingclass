@@ -1,13 +1,41 @@
-for( let i=2; i<=9; i++){
-  for( let j=1; j<=9; j++){
-      let sum = i * j;
-      document.write(i + "*" + j + "=" + sum);
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      height: 5000px;
+      background: #f5f5f5f5;
+    }
+    .dd {
+      position: fixed;
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="dd">
+      ㅎㅎ
+    </div>
 
-for(let i =2; i<=9;i++){
-  for(let j =1; i<=9;i++){
-    let sum = i + j
-    document.write(i + '*'+ j + '=' + sum)
-  }
-}
+  </div>
+  <script>
+
+                //top버튼 시작
+                window.addEventListener("scroll", () => {
+              let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //다써줌 브라우저 호환문제
+
+
+              // 02
+              // top 버튼
+              document.querySelector(".dd").addEventListener("click", () => {
+                window.scrollTo(0,0);
+              });
+
+            });
+  </script>
+</body>
+</html>

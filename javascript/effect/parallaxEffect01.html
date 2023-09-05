@@ -921,6 +921,7 @@ document.querySelectorAll("#parallax__nav li a").forEach(li => {
             document.querySelectorAll("#parallax__nav li").forEach(li => {
                 li.classList.remove("active");
             });
+            // document.querySelector("#parallax__nav li:nth-child("+(index+1)+")").classList.add("active");
             document.querySelector("#parallax__nav li:nth-child("+(index+1)+")").classList.add("active");
         }
     });
