@@ -422,12 +422,14 @@
             // <a href="#" class="dot active">이미지1</a>
             slider.forEach(()=>{
                 dotIndex += "<a href='#' class='dot'>이미지1</a>"
+                // 슬라이드갯수만큼 닷생성
             })
             sliderDot.innerHTML = dotIndex;
             //첫번째 닷 버튼한테 활성화 표시(active)
             sliderDot.firstChild.classList.add("active");
         }
         init();
+        // 일단 닷 생성 실행
 
          //이미지 이동
          function gotoSlider(num){
@@ -439,6 +441,7 @@
             // 1. 닷 메뉴 클래스 모두 삭제
             // 2. 해당 닷 메뉴한테 클래스 추가
 
+            // goSlider 안에 있어서 같이 연동됨 버튼이랑 
             let dotActive = document.querySelectorAll(".slider__dot .dot");
             dotActive.forEach(el => el.classList.remove("active"));
             dotActive[num].classList.add("active");
