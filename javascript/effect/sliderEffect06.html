@@ -479,6 +479,7 @@
         const sliderBtn = document.querySelector(".slider__btn")                // 버튼
         const sliderBtnPrev = document.querySelector(".slider__btn .prev")      // 왼쪽 버튼
         const sliderBtnNext = document.querySelector(".slider__btn .next")      // 오른쪽 버튼
+        // console.log(slider)
         
         let currentIndex = 0,
             sliderLength = slider.length,
@@ -487,10 +488,12 @@
             sliderLast = slider[sliderLength-1];         //마지막 이미지
             cloneFirst = sliderFirst.cloneNode(true),    //첫번째 이미지 복사
             cloneLast = sliderLast.cloneNode(true);      //마지막 이미지 복사
+            // console.log(cloneLast)
             dotIndex = "";
 
         sliderInner.appendChild(cloneFirst);
         sliderInner.insertBefore(cloneLast, sliderFirst);
+        // 마지막복사본을 처음복사본앞에 삽입
 
         function init(){
             for(let i=1; i<=slider.length; i++){
@@ -522,7 +525,7 @@
         //순간이동 이미지 슬라이드
         function checkIndex(){
             sliderInner.classList.remove("transition");
-            console.log(currentIndex)
+            // console.log(currentIndex)
             //마지막 이미지
             if(currentIndex == sliderLength){
                 sliderInner.style.left = -(1 * sliderWidth)+"px";
