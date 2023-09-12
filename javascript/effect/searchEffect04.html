@@ -701,6 +701,7 @@
         //출력하기
         cssProperty.map((el, index) => {
             searchNum.innerText = index + 1;
+            // console.log(el)
             searchList.innerHTML += `<span>${el.name}</span>`;
         })
 
@@ -728,7 +729,8 @@
         function findProperty(search) {
             const targetData = cssProperty.find((data) => data.name === search)
             // cssProperty배열의 데이터 중에 name속성의 값이  search인것을 찾아라?
-            console.log(search);
+            // console.log(targetData)
+            // console.log(search);
             
             
 

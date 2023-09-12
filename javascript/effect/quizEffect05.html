@@ -1403,6 +1403,7 @@
 
             // 사용자가 체크한 보기 == 문제 정답
             quizInfo.forEach((question, number) => {
+                // console.log(question)
                 const userSelector = `input[name=select${number}]:checked`;         //사용자가 체크한 것
                 const quizSelectsWrap = quizSelects[number];
                 const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;
@@ -1410,14 +1411,15 @@
                 const quizView = document.querySelectorAll(".quiz__view");          //강아지
 
                 if(userAnswer == question.answerResult){
-                    console.log("정답")
+                    // console.log("정답")
                     quizView[number].classList.add("like");
                     count ++;
                     
                 } else{
-                    console.log("오답")
+                    // console.log("오답")
                     quizView[number].classList.add("dislike");
                     const divBox = document.createElement("div");
+                    console.log(quizSelectsWrap)
                     quizSelectsWrap.appendChild(divBox).innerHTML = `<p class=result>
                         ${question.answerEx}</p>`;
                 }
@@ -1429,9 +1431,9 @@
             });
             // 정답 갯수
             // 전체 문제수
-            console.log(quizInfo.length)
+            // console.log(quizInfo.length)
             // 맞춘 갯수
-            console.log(count)
+            // console.log(count)
 
         };
         
