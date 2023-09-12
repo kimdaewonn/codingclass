@@ -458,6 +458,7 @@
     <script>
         // 마우스 좌표
         window.addEventListener("mousemove", (event) => {
+            // console.log(event)
             document.querySelector(".clientX").innerText = event.clientX;
             document.querySelector(".clientY").innerText = event.clientY;
             document.querySelector(".offsetX").innerText = event.offsetX;
@@ -476,76 +477,9 @@
             cursor.style.top = e.clientY - 25 + "px";
         });
         
-        // 노가다 방법
-
-        // document.querySelector(".style1").addEventListener("mouseover", () => {
-        //    cursor.classList.add("style1"); 
-        // });
-        // document.querySelector(".style1").addEventListener("mouseout", () => {
-        //    cursor.classList.remove("style1"); 
-        // });
-
-        // document.querySelector(".style2").addEventListener("mouseover", () => {
-        //    cursor.classList.add("style2"); 
-        // });
-        // document.querySelector(".style2").addEventListener("mouseout", () => {
-        //    cursor.classList.remove("style2"); 
-        // });
-
-        // document.querySelector(".style3").addEventListener("mouseover", () => {
-        //    cursor.classList.add("style3"); 
-        // });
-        // document.querySelector(".style3").addEventListener("mouseout", () => {
-        //    cursor.classList.remove("style3"); 
-        // });
-
-        // document.querySelector(".style4").addEventListener("mouseover", () => {
-        //    cursor.classList.add("style4"); 
-        // });
-        // document.querySelector(".style4").addEventListener("mouseout", () => {
-        //    cursor.classList.remove("style4"); 
-        // });
-
-        // document.querySelector(".style5").addEventListener("mouseover", () => {
-        //    cursor.classList.add("style5"); 
-        // });
-        // document.querySelector(".style5").addEventListener("mouseout", () => {
-        //    cursor.classList.remove("style5"); 
-        // });
-
-        // document.querySelector(".style6").addEventListener("mouseover", () => {
-        //    cursor.classList.add("style6"); 
-        // });
-        // document.querySelector(".style6").addEventListener("mouseout", () => {
-        //    cursor.classList.remove("style6"); 
-        // });
-
-        // for문
-
-        // for(let i=1; i<=6; i++){
-        //     document.querySelector(".style"+i).addEventListener("mouseover", () => {
-        //         cursor.classList.add("style"+i); 
-        //     });
-        //     document.querySelector(".style"+i).addEventListener("mouseout", () => {
-        //         cursor.classList.remove("style"+i); 
-        //     });
-        // }
-
-        // forEach문
-
-        //   document.querySelectorAll(".mouse__wrap span").forEach((span, num) => {
-        //     span.addEventListener("mouseover", () => {
-        //       cursor.classList.add("style" + (num+1));
-        //     });
-        //     span.addEventListener("mouseout", () => {
-        //       cursor.classList.remove("style" + (num+1));
-        //     });
-        //   });
-
-        // getAtrribute()
-
             document.querySelectorAll(".mouse__wrap span").forEach((span) => {
             let attr = span.getAttribute("class");
+            console.log(attr)
 
             span.addEventListener("mouseover", () => {
             cursor.classList.add(attr);

@@ -406,6 +406,7 @@
     const span = document.querySelectorAll(".spanWrap .span");
 
         const mouseMove = (e) => {
+            console.log(e.pageY)
             let positionSlow = (e.pageX - (window.innerWidth/2)) * 0.1;
             let positionFast = (e.pageX - (window.innerWidth/2)) * 0.2;
 
